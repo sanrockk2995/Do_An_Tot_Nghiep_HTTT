@@ -1,0 +1,23 @@
+# Build artifacts
+backend/target/
+frontend/dist/
+
+# Dependencies
+frontend/node_modules/
+node_modules/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude session metadata (công cụ AI, không thuộc mã nguồn)
+.claude/

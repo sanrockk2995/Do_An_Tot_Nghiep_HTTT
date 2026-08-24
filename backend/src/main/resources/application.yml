@@ -1,0 +1,67 @@
+spring:
+  application:
+    name: routine-backend
+
+  datasource:
+    # Server MySQL/MariaDB dùng chung: 10.216.1.218 (đổi qua biến môi trường nếu cần)
+    url: jdbc:mysql://${DB_HOST:10.216.1.218}:${DB_PORT:3306}/${DB_NAME:routine_db}?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Ho_Chi_Minh
+    username: ${DB_USER:sanrockk}
+    password: ${DB_PASSWORD:1}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 20
+      minimum-idle: 5
+
+  jpa:
+    hibernate:
+      ddl-auto: none          # Schema do Flyway quản lý
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: false
+        dialect: org.hibernate.dialect.MySQLDialect
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      force: true
+
+app:
+  jwt:
+    # Đổi secret này trong production! Yêu cầu >= 64 ký tự Base64.
+    secret: ${JWT_SECRET:RoutineSuperSecretKeyForGraduationProjectChangeMeInProduction20242025ABCDEF}
+    access-token-ttl-minutes: 30
+    refresh-token-ttl-days: 7
+    refresh-cookie-name: routine_refresh_token
+  cors:
+    allowed-origins: http://localhost:5173,http://localhost:3000
+    # true → chấp nhận thêm mọi origin http(s)://<IP> (truy cập quản trị qua LAN)
+    allow-lan: true
+  security:
+    # Danh sách IP được phép đăng nhập hệ thống nội bộ (/auth/login).
+    # Hỗ trợ: IP đơn | dải CIDR 192.168.1.0/24 | khoảng a-b | wildcard 192.168.* | "*" = mọi IP
+    staff-ip-whitelist: "*"
+    staff-ip-whitelist-enabled: true
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+logging:
+  level:
+    com.routine: INFO
+    org.hibernate.SQL: WARN
