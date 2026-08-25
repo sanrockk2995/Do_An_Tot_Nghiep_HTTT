@@ -76,6 +76,17 @@ public class OrderController {
         return ResponseEntity.ok(orderService.updateStatus(id, request.getStatus()));
     }
 
+    /** Khách hàng tự huỷ đơn ONLINE đang chờ xác nhận của chính mình. */
+    @PutMapping("/{id}/cancel")
+    @PreAuthorize("isAuthenticated()")
+    public ResponseEntity<OrderDtos.OrderResponse> cancelByCustomer(@PathVariable Long id) {
+        if (!com.routine.security.SecurityUtils.isCustomer()) {
+            throw new com.routine.exception.ForbiddenException("Chỉ dành cho tài khoản khách hàng");
+        }
+        return ResponseEntity.ok(orderService.cancelByCustomer(id,
+                com.routine.security.SecurityUtils.currentCustomerId()));
+    }
+
     /** Xuất hóa đơn PDF để in. */
     @GetMapping("/{id}/invoice")
     @PreAuthorize("hasAnyRole('ADMIN', 'SALES_STAFF', 'ACCOUNTANT')")
