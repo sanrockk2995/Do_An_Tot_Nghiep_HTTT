@@ -15,6 +15,25 @@ export default function MyOrdersPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [detail, setDetail] = useState(null);
+  const [cancellingId, setCancellingId] = useState(null);
+
+  /** Khách tự huỷ đơn đang chờ xác nhận (backend hoàn lại tồn kho). */
+  async function handleCancel(order) {
+    if (!window.confirm(
+      `Huỷ đơn ${order.orderNumber}?\nHàng trong đơn sẽ được hoàn lại kho.`
+    )) return;
+    setCancellingId(order.id);
+    setError('');
+    try {
+      const { data: updated } = await api.put(`/orders/${order.id}/cancel`);
+      setOrders((prev) => prev.map((o) => (o.id === updated.id ? updated : o)));
+      if (detail?.id === updated.id) setDetail(updated);
+    } catch (err) {
+      setError(err.message || 'Không huỷ được đơn hàng.');
+    } finally {
+      setCancellingId(null);
+    }
+  }
 
   useEffect(() => {
     let alive = true;
@@ -51,7 +70,12 @@ export default function MyOrdersPage() {
         Xem lại toàn bộ đơn hàng đã đặt, trạng thái giao/nhận và chi tiết sản phẩm.
       </p>
 
-      {error && <div className="alert alert-error">{error}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert" style={{ marginBottom: 16 }}>
+          {error}
+          <button className="btn btn-ghost" style={{ marginLeft: 12, padding: '2px 8px' }} onClick={() => setError('')}>✕</button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: '60px 0' }}>
@@ -105,12 +129,24 @@ export default function MyOrdersPage() {
                     </span>
                   </td>
                   <td>
-                    <button
-                      className="btn btn-outline"
-                      onClick={() => setDetail(o)}
-                    >
-                      Chi tiết
-                    </button>
+                    <div style={{ display: 'flex', gap: 6 }}>
+                      <button
+                        className="btn btn-outline"
+                        onClick={() => setDetail(o)}
+                      >
+                        Chi tiết
+                      </button>
+                      {o.status === 'PENDING' && o.channel === 'ONLINE' && (
+                        <button
+                          className="btn btn-ghost text-danger"
+                          onClick={() => handleCancel(o)}
+                          disabled={cancellingId === o.id}
+                          title="Huỷ đơn đang chờ xác nhận"
+                        >
+                          {cancellingId === o.id ? 'Đang huỷ...' : 'Huỷ đơn'}
+                        </button>
+                      )}
+                    </div>
                   </td>
                 </tr>
               ))}
@@ -163,6 +199,15 @@ export default function MyOrdersPage() {
             </dl>
 
             <div className="modal-actions">
+              {detail.status === 'PENDING' && detail.channel === 'ONLINE' && (
+                <button
+                  className="btn btn-ghost text-danger"
+                  onClick={() => handleCancel(detail)}
+                  disabled={cancellingId === detail.id}
+                >
+                  {cancellingId === detail.id ? 'Đang huỷ...' : 'Huỷ đơn này'}
+                </button>
+              )}
               <button className="btn btn-ghost" onClick={() => setDetail(null)}>Đóng</button>
             </div>
           </div>

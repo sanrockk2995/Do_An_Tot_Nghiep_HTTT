@@ -274,6 +274,26 @@ public class OrderService {
         return toResponse(orderRepository.save(order));
     }
 
+    /**
+     * Khách tự huỷ đơn của mình: chỉ cho huỷ đơn ONLINE đang PENDING,
+     * hoàn lại tồn kho qua luồng updateStatus chuẩn.
+     */
+    @Transactional
+    public OrderDtos.OrderResponse cancelByCustomer(Long id, Long customerId) {
+        Order order = getOrder(id);
+        if (order.getCustomer() == null || !customerId.equals(order.getCustomer().getId())) {
+            throw new com.routine.exception.ForbiddenException("Bạn không có quyền huỷ đơn hàng này");
+        }
+        if (!"ONLINE".equals(order.getChannel())) {
+            throw new BadRequestException("Chỉ có thể huỷ đơn đặt online");
+        }
+        if (!"PENDING".equals(order.getStatus())) {
+            throw new BadRequestException("Chỉ có thể huỷ đơn khi đang chờ xác nhận. "
+                    + "Vui lòng liên hệ nhân viên để được hỗ trợ.");
+        }
+        return updateStatus(id, "CANCELLED");
+    }
+
     /** Lịch sử mua hàng của một khách. */
     @Transactional(readOnly = true)
     public Page<OrderDtos.OrderResponse> listByCustomer(Long customerId, int page, int size) {
