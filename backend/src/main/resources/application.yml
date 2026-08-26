@@ -46,8 +46,8 @@ app:
     refresh-token-ttl-days: 7
     refresh-cookie-name: routine_refresh_token
   cors:
-    allowed-origins: http://localhost:5173,http://localhost:3000
-    # true → chấp nhận thêm mọi origin http(s)://<IP> (truy cập quản trị qua LAN)
+    allowed-origins: http://localhost:5173,http://localhost:3000,https://routine.hoanguyendev.id.vn
+    # true → chấp nhận thêm mọi origin http(s)://<IP> và mọi tên miền (tunnel/LAN)
     allow-lan: true
   security:
     # Danh sách IP được phép đăng nhập hệ thống nội bộ (/auth/login).

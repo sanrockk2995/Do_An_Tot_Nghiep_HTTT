@@ -32,6 +32,7 @@ import OnlineOrdersPage from './pages/admin/OnlineOrdersPage';
 import WarehousePage from './pages/admin/WarehousePage';
 import StocktakePage from './pages/admin/StocktakePage';
 import UsersPage from './pages/admin/UsersPage';
+import AdminReportsPage from './pages/admin/AdminReportsPage';
 import AccountingPage from './pages/admin/AccountingPage';
 import StaffOrdersPage from './pages/admin/StaffOrdersPage';
 import PayrollPage from './pages/admin/PayrollPage';
@@ -96,6 +97,7 @@ export default function App() {
               <Route path="kho-hang" element={<WarehousePage />} />
               <Route path="kiem-ke" element={<StocktakePage />} />
               <Route path="nhan-vien" element={<UsersPage />} />
+              <Route path="bao-cao" element={<AdminReportsPage />} />
               <Route path="hoa-don" element={<StaffOrdersPage />} />
               <Route path="ho-so" element={<ProfilePage />} />
             </Route>

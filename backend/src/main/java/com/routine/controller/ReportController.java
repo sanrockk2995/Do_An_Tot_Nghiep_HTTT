@@ -1,7 +1,9 @@
 package com.routine.controller;
 
 import com.routine.dto.ReportDtos;
+import com.routine.security.SecurityUtils;
 import com.routine.service.ExcelExportService;
+import com.routine.service.ReportPdfService;
 import com.routine.service.ReportService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +29,7 @@ public class ReportController {
 
     private final ReportService reportService;
     private final ExcelExportService excelExportService;
+    private final ReportPdfService reportPdfService;
 
     private LocalDateTime resolveFrom(LocalDateTime from) {
         return from != null ? from : ReportService.defaultFrom();
@@ -100,5 +103,33 @@ public class ReportController {
                 .contentType(MediaType.parseMediaType(
                         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
                 .body(xlsx);
+    }
+
+    /**
+     * UC "In báo cáo" (Quản lý): xuất báo cáo ra PDF khổ A4 để in hoặc tải về.
+     * type: doanh-thu | san-pham-ban-chay | ton-kho
+     */
+    @GetMapping("/in")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<byte[]> printReport(
+            @RequestParam String type,
+            @RequestParam(required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
+            @RequestParam(required = false)
+            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to,
+            @RequestParam(defaultValue = "day") String groupBy) {
+        String reporterName;
+        try {
+            reporterName = SecurityUtils.currentFullName();
+        } catch (Exception e) {
+            reporterName = "Quản lý";
+        }
+        byte[] pdf = reportPdfService.generate(
+                type, resolveFrom(from), resolveTo(to), groupBy, reporterName);
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION,
+                        "inline; filename=\"bao-cao-" + type + ".pdf\"")
+                .contentType(MediaType.APPLICATION_PDF)
+                .body(pdf);
     }
 }

@@ -36,6 +36,10 @@ public class CorsConfig {
             // Mẫu khớp mọi host dạng IP: http://192.168.x.x:5173, http://10.0.0.5 ...
             origins.add("http://*:*");
             origins.add("https://*:*");
+            // Mẫu KHÔNG port — bắt buộc cho origin qua reverse proxy/tunnel
+            // (vd https://ten-mien.tunnel chỉ gửi Origin "https://ten-mien.tunnel", không kèm :443)
+            origins.add("http://*");
+            origins.add("https://*");
         }
         config.setAllowedOriginPatterns(origins);
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));

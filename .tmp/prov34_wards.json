@@ -1,0 +1,13456 @@
+[
+ {
+  "province": "Thành phố Hà Nội",
+  "wards": [
+   {
+    "name": "An Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Vì",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Đình",
+    "type": "Phường"
+   },
+   {
+    "name": "Bát Tràng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bạch Mai",
+    "type": "Phường"
+   },
+   {
+    "name": "Bất Bạt",
+    "type": "Xã"
+   },
+   {
+    "name": "Bồ Đề",
+    "type": "Phường"
+   },
+   {
+    "name": "Chuyên Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Chương Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Chương Mỹ",
+    "type": "Phường"
+   },
+   {
+    "name": "Cầu Giấy",
+    "type": "Phường"
+   },
+   {
+    "name": "Cổ Đô",
+    "type": "Xã"
+   },
+   {
+    "name": "Cửa Nam",
+    "type": "Phường"
+   },
+   {
+    "name": "Dân Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Dương Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Dương Nội",
+    "type": "Phường"
+   },
+   {
+    "name": "Gia Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Giảng Võ",
+    "type": "Phường"
+   },
+   {
+    "name": "Hai Bà Trưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoà Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Xá",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoài Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoàn Kiếm",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoàng Liệt",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoàng Mai",
+    "type": "Phường"
+   },
+   {
+    "name": "Hà Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Hát Môn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Đạo",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hạ Bằng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Hà",
+    "type": "Phường"
+   },
+   {
+    "name": "Hồng Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Vân",
+    "type": "Xã"
+   },
+   {
+    "name": "Khương Đình",
+    "type": "Phường"
+   },
+   {
+    "name": "Kim Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Liên",
+    "type": "Phường"
+   },
+   {
+    "name": "Kiến Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Kiều Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Biên",
+    "type": "Phường"
+   },
+   {
+    "name": "Láng",
+    "type": "Phường"
+   },
+   {
+    "name": "Lĩnh Nam",
+    "type": "Phường"
+   },
+   {
+    "name": "Minh Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Mê Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Phù",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Đô",
+    "type": "Phường"
+   },
+   {
+    "name": "Ngọc Hà",
+    "type": "Phường"
+   },
+   {
+    "name": "Ngọc Hồi",
+    "type": "Xã"
+   },
+   {
+    "name": "Nội Bài",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Đổng",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Cát",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Diễn",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Lương",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Nghĩa",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Thượng",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Xuyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Lợi",
+    "type": "Phường"
+   },
+   {
+    "name": "Phúc Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phương Liệt",
+    "type": "Phường"
+   },
+   {
+    "name": "Phượng Dực",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Bị",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Oai",
+    "type": "Xã"
+   },
+   {
+    "name": "Quốc Oai",
+    "type": "Xã"
+   },
+   {
+    "name": "Suối Hai",
+    "type": "Xã"
+   },
+   {
+    "name": "Sóc Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Tây",
+    "type": "Phường"
+   },
+   {
+    "name": "Sơn Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Liệt",
+    "type": "Phường"
+   },
+   {
+    "name": "Thanh Oai",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Trì",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Xuân",
+    "type": "Phường"
+   },
+   {
+    "name": "Thiên Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận An",
+    "type": "Xã"
+   },
+   {
+    "name": "Thư Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Thường Tín",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Cát",
+    "type": "Phường"
+   },
+   {
+    "name": "Thượng Phúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch Thất",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiến Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Giã",
+    "type": "Xã"
+   },
+   {
+    "name": "Trần Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Hồ",
+    "type": "Phường"
+   },
+   {
+    "name": "Tây Mỗ",
+    "type": "Phường"
+   },
+   {
+    "name": "Tây Phương",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Tựu",
+    "type": "Phường"
+   },
+   {
+    "name": "Tùng Thiện",
+    "type": "Phường"
+   },
+   {
+    "name": "Tương Mai",
+    "type": "Phường"
+   },
+   {
+    "name": "Từ Liêm",
+    "type": "Phường"
+   },
+   {
+    "name": "Việt Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Vân Đình",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Miếu - Quốc Tử Giám",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Tuy",
+    "type": "Phường"
+   },
+   {
+    "name": "Vật Lại",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Mai",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Phương",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Đỉnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Yên Bài",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Yên Lãng",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Nghĩa",
+    "type": "Phường"
+   },
+   {
+    "name": "Yên Sở",
+    "type": "Phường"
+   },
+   {
+    "name": "Yên Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Ô Chợ Dừa",
+    "type": "Phường"
+   },
+   {
+    "name": "Ô Diên",
+    "type": "Xã"
+   },
+   {
+    "name": "Đa Phúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Đan Phượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đoài Phương",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Ngạc",
+    "type": "Phường"
+   },
+   {
+    "name": "Đại Mỗ",
+    "type": "Phường"
+   },
+   {
+    "name": "Đại Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Xuyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Định Công",
+    "type": "Phường"
+   },
+   {
+    "name": "Đống Đa",
+    "type": "Phường"
+   },
+   {
+    "name": "Ứng Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Ứng Thiên",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Bắc Ninh",
+  "wards": [
+   {
+    "name": "An Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Biên Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Biển Động",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Đài",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Giang",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc Lũng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bố Hạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Bồng Lai",
+    "type": "Phường"
+   },
+   {
+    "name": "Cao Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Chi Lăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Chũ",
+    "type": "Phường"
+   },
+   {
+    "name": "Cảnh Thụy",
+    "type": "Phường"
+   },
+   {
+    "name": "Cẩm Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Dương Hưu",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiệp Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoàng Vân",
+    "type": "Xã"
+   },
+   {
+    "name": "Hạp Lĩnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Hợp Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Kinh Bắc",
+    "type": "Phường"
+   },
+   {
+    "name": "Kiên Lao",
+    "type": "Xã"
+   },
+   {
+    "name": "Kép",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Bão",
+    "type": "Xã"
+   },
+   {
+    "name": "Lâm Thao",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Tài",
+    "type": "Xã"
+   },
+   {
+    "name": "Lạng Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Lục Nam",
+    "type": "Xã"
+   },
+   {
+    "name": "Lục Ngạn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lục Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mão Điền",
+    "type": "Phường"
+   },
+   {
+    "name": "Mỹ Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Nghĩa Phương",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Thiện",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhân Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Nhân Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhã Nam",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Xá",
+    "type": "Phường"
+   },
+   {
+    "name": "Nếnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Phù Khê",
+    "type": "Phường"
+   },
+   {
+    "name": "Phù Lãng",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Phương Liễu",
+    "type": "Phường"
+   },
+   {
+    "name": "Phượng Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Phật Tích",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Quế Võ",
+    "type": "Phường"
+   },
+   {
+    "name": "Sa Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Song Liễu",
+    "type": "Phường"
+   },
+   {
+    "name": "Sơn Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Động",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Đa",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Tiên Du",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Lục",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiền Phong",
+    "type": "Phường"
+   },
+   {
+    "name": "Trung Chính",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Kênh",
+    "type": "Xã"
+   },
+   {
+    "name": "Trí Quả",
+    "type": "Phường"
+   },
+   {
+    "name": "Trường Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Trạm Lộ",
+    "type": "Phường"
+   },
+   {
+    "name": "Tuấn Đạo",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân An",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Chi",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Dĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Tiến",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Yên Tử",
+    "type": "Xã"
+   },
+   {
+    "name": "Từ Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Tự Lạn",
+    "type": "Phường"
+   },
+   {
+    "name": "Việt Yên",
+    "type": "Phường"
+   },
+   {
+    "name": "Vân Hà",
+    "type": "Phường"
+   },
+   {
+    "name": "Vân Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Võ Cường",
+    "type": "Phường"
+   },
+   {
+    "name": "Văn Môn",
+    "type": "Xã"
+   },
+   {
+    "name": "Vũ Ninh",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Cẩm",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Dũng",
+    "type": "Phường"
+   },
+   {
+    "name": "Yên Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Thế",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Định",
+    "type": "Xã"
+   },
+   {
+    "name": "Đa Mai",
+    "type": "Phường"
+   },
+   {
+    "name": "Đào Viên",
+    "type": "Phường"
+   },
+   {
+    "name": "Đèo Gia",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Cứu",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Lai",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Kỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Nguyên",
+    "type": "Phường"
+   },
+   {
+    "name": "Đồng Việt",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Quảng Ninh",
+  "wards": [
+   {
+    "name": "An Sinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Ba Chẽ",
+    "type": "Xã"
+   },
+   {
+    "name": "Bãi Cháy",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Khê",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Liêu",
+    "type": "Xã"
+   },
+   {
+    "name": "Cao Xanh",
+    "type": "Phường"
+   },
+   {
+    "name": "Cái Chiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Cô Tô",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Cẩm Phả",
+    "type": "Phường"
+   },
+   {
+    "name": "Cửa Ông",
+    "type": "Phường"
+   },
+   {
+    "name": "Hiệp Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoàng Quế",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoành Bồ",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoành Mô",
+    "type": "Xã"
+   },
+   {
+    "name": "Hà An",
+    "type": "Phường"
+   },
+   {
+    "name": "Hà Lầm",
+    "type": "Phường"
+   },
+   {
+    "name": "Hà Tu",
+    "type": "Phường"
+   },
+   {
+    "name": "Hạ Long",
+    "type": "Phường"
+   },
+   {
+    "name": "Hải Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Lạng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Gai",
+    "type": "Phường"
+   },
+   {
+    "name": "Kỳ Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Lương Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Lục Hồn",
+    "type": "Xã"
+   },
+   {
+    "name": "Móng Cái 1",
+    "type": "Phường"
+   },
+   {
+    "name": "Móng Cái 2",
+    "type": "Phường"
+   },
+   {
+    "name": "Móng Cái 3",
+    "type": "Phường"
+   },
+   {
+    "name": "Mông Dương",
+    "type": "Phường"
+   },
+   {
+    "name": "Mạo Khê",
+    "type": "Phường"
+   },
+   {
+    "name": "Phong Cốc",
+    "type": "Phường"
+   },
+   {
+    "name": "Quang Hanh",
+    "type": "Phường"
+   },
+   {
+    "name": "Quảng Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng La",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Yên",
+    "type": "Phường"
+   },
+   {
+    "name": "Quảng Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Thống Nhất",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuần Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Uông Bí",
+    "type": "Phường"
+   },
+   {
+    "name": "Việt Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Vàng Danh",
+    "type": "Phường"
+   },
+   {
+    "name": "Vân Đồn",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Vĩnh Thực",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Tử",
+    "type": "Phường"
+   },
+   {
+    "name": "Điền Xá",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Mai",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Ngũ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Triều",
+    "type": "Phường"
+   },
+   {
+    "name": "Đường Hoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Đầm Hà",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Hải Phòng",
+  "wards": [
+   {
+    "name": "An Biên",
+    "type": "Phường"
+   },
+   {
+    "name": "An Dương",
+    "type": "Phường"
+   },
+   {
+    "name": "An Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "An Hải",
+    "type": "Phường"
+   },
+   {
+    "name": "An Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "An Lão",
+    "type": "Xã"
+   },
+   {
+    "name": "An Phong",
+    "type": "Phường"
+   },
+   {
+    "name": "An Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "An Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "An Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "An Trường",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Bạch Long Vĩ",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Bạch Đằng",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc An Phụ",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc Thanh Miện",
+    "type": "Xã"
+   },
+   {
+    "name": "Chu Văn An",
+    "type": "Phường"
+   },
+   {
+    "name": "Chí Linh",
+    "type": "Phường"
+   },
+   {
+    "name": "Chí Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Chấn Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Cát Hải",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Cẩm Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Giàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Dương Kinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Gia Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Phúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Viên",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoà Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Hà Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hà Nam",
+    "type": "Xã"
+   },
+   {
+    "name": "Hà Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Hà Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Hùng Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Đạo",
+    "type": "Phường"
+   },
+   {
+    "name": "Hải An",
+    "type": "Phường"
+   },
+   {
+    "name": "Hải Dương",
+    "type": "Phường"
+   },
+   {
+    "name": "Hải Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng An",
+    "type": "Phường"
+   },
+   {
+    "name": "Hồng Bàng",
+    "type": "Phường"
+   },
+   {
+    "name": "Hồng Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Hợp Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Khúc Thừa Dụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Kinh Môn",
+    "type": "Phường"
+   },
+   {
+    "name": "Kiến An",
+    "type": "Phường"
+   },
+   {
+    "name": "Kiến Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiến Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiến Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiến Thụy",
+    "type": "Xã"
+   },
+   {
+    "name": "Kẻ Sặt",
+    "type": "Xã"
+   },
+   {
+    "name": "Lai Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Lê Chân",
+    "type": "Phường"
+   },
+   {
+    "name": "Lê Thanh Nghị",
+    "type": "Phường"
+   },
+   {
+    "name": "Lê Ích Mộc",
+    "type": "Phường"
+   },
+   {
+    "name": "Lê Đại Hành",
+    "type": "Phường"
+   },
+   {
+    "name": "Lưu Kiếm",
+    "type": "Phường"
+   },
+   {
+    "name": "Lạc Phượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mao Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam An Phụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Sách",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Thanh Miện",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Triệu",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Đồ Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Đồng",
+    "type": "Phường"
+   },
+   {
+    "name": "Nghi Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyên Giáp",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Bỉnh Khiêm",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Lương Bằng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Trãi",
+    "type": "Phường"
+   },
+   {
+    "name": "Nguyễn Đại Năng",
+    "type": "Phường"
+   },
+   {
+    "name": "Ngô Quyền",
+    "type": "Phường"
+   },
+   {
+    "name": "Nhị Chiểu",
+    "type": "Phường"
+   },
+   {
+    "name": "Ninh Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Liễn",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Phạm Sư Mạnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Quyết Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Miện",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiên Hương",
+    "type": "Phường"
+   },
+   {
+    "name": "Thuỷ Nguyên",
+    "type": "Phường"
+   },
+   {
+    "name": "Thành Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Thái Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch Khôi",
+    "type": "Phường"
+   },
+   {
+    "name": "Tiên Lãng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Trần Hưng Đạo",
+    "type": "Phường"
+   },
+   {
+    "name": "Trần Liễu",
+    "type": "Phường"
+   },
+   {
+    "name": "Trần Nhân Tông",
+    "type": "Phường"
+   },
+   {
+    "name": "Trần Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuệ Tĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân An",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Kỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tứ Kỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tứ Minh",
+    "type": "Phường"
+   },
+   {
+    "name": "Việt Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Việt Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Am",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Bảo",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Lại",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Yết Kiêu",
+    "type": "Xã"
+   },
+   {
+    "name": "Ái Quốc",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Hải",
+    "type": "Phường"
+   },
+   {
+    "name": "Đường An",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồ Sơn",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Hưng Yên",
+  "wards": [
+   {
+    "name": "A Sào",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Nguyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Định",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Thái Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Thụy Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Tiên Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Đông Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Đông Quan",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Chí Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Diên Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiệp Cường",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoàn Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoàng Hoa Thám",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Hồng Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Vũ",
+    "type": "Xã"
+   },
+   {
+    "name": "Khoái Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiến Xương",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Lê Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Lê Quý Đôn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Bằng",
+    "type": "Xã"
+   },
+   {
+    "name": "Lạc Đạo",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Mễ Sở",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Hào",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Cường",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Thái Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Thụy Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Tiên Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Tiền Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Đông Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Dân",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Trụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Du",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Trãi",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Văn Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngự Thiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Như Quỳnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phạm Ngũ Lão",
+    "type": "Xã"
+   },
+   {
+    "name": "Phố Hiến",
+    "type": "Phường"
+   },
+   {
+    "name": "Phụ Dực",
+    "type": "Xã"
+   },
+   {
+    "name": "Phụng Công",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Lịch",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh An",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Phụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Nam",
+    "type": "Phường"
+   },
+   {
+    "name": "Thái Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Thái Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Thái Thụy",
+    "type": "Xã"
+   },
+   {
+    "name": "Thư Trì",
+    "type": "Xã"
+   },
+   {
+    "name": "Thư Vũ",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Hồng",
+    "type": "Phường"
+   },
+   {
+    "name": "Thần Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Thụy Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Hoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên La",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Lữ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiền Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Triệu Việt Vương",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Lý",
+    "type": "Phường"
+   },
+   {
+    "name": "Trần Hưng Đạo",
+    "type": "Phường"
+   },
+   {
+    "name": "Trần Lãm",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Thái Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Thụy Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Tiền Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Tống Trân",
+    "type": "Xã"
+   },
+   {
+    "name": "Việt Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Việt Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Vũ Phúc",
+    "type": "Phường"
+   },
+   {
+    "name": "Vũ Quý",
+    "type": "Xã"
+   },
+   {
+    "name": "Vũ Thư",
+    "type": "Xã"
+   },
+   {
+    "name": "Vũ Tiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Trúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Ái Quốc",
+    "type": "Xã"
+   },
+   {
+    "name": "Ân Thi",
+    "type": "Xã"
+   },
+   {
+    "name": "Đoàn Đào",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Quan",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Thái Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Thụy Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Tiên Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Tiền Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Đường Hào",
+    "type": "Phường"
+   },
+   {
+    "name": "Đại Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Bằng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Hợp",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Ninh Bình",
+  "wards": [
+   {
+    "name": "Bình An",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Lục",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Chất Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Cát Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Cúc Phương",
+    "type": "Xã"
+   },
+   {
+    "name": "Cổ Lễ",
+    "type": "Xã"
+   },
+   {
+    "name": "Duy Hà",
+    "type": "Phường"
+   },
+   {
+    "name": "Duy Tiên",
+    "type": "Phường"
+   },
+   {
+    "name": "Duy Tân",
+    "type": "Phường"
+   },
+   {
+    "name": "Gia Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Trấn",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Tường",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Viễn",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Vân",
+    "type": "Xã"
+   },
+   {
+    "name": "Giao Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Giao Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Giao Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Giao Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Giao Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Giao Phúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Giao Thuỷ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiển Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoa Lư",
+    "type": "Phường"
+   },
+   {
+    "name": "Hà Nam",
+    "type": "Phường"
+   },
+   {
+    "name": "Hải An",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Hậu",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Quang",
+    "type": "Phường"
+   },
+   {
+    "name": "Khánh Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Nhạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Thiện",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Bảng",
+    "type": "Phường"
+   },
+   {
+    "name": "Kim Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Thanh",
+    "type": "Phường"
+   },
+   {
+    "name": "Kim Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Lai Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Liêm Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Liêm Tuyền",
+    "type": "Phường"
+   },
+   {
+    "name": "Liên Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Lê Hồ",
+    "type": "Phường"
+   },
+   {
+    "name": "Lý Nhân",
+    "type": "Xã"
+   },
+   {
+    "name": "Lý Thường Kiệt",
+    "type": "Phường"
+   },
+   {
+    "name": "Minh Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Hoa Lư",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Trực",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Xang",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Định",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Úy",
+    "type": "Phường"
+   },
+   {
+    "name": "Nho Quan",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhân Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Cường",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Doanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phát Diệm",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Vân",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Phủ Lý",
+    "type": "Phường"
+   },
+   {
+    "name": "Quang Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Thiện",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Lưu",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỹ Nhất",
+    "type": "Xã"
+   },
+   {
+    "name": "Rạng Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Chúc",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Điệp",
+    "type": "Phường"
+   },
+   {
+    "name": "Thanh Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Liêm",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiên Trường",
+    "type": "Phường"
+   },
+   {
+    "name": "Thành Nam",
+    "type": "Phường"
+   },
+   {
+    "name": "Tiên Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Trung Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Trường Thi",
+    "type": "Phường"
+   },
+   {
+    "name": "Trần Thương",
+    "type": "Xã"
+   },
+   {
+    "name": "Trực Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Hoa Lư",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Trụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Vũ Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Vị Khê",
+    "type": "Phường"
+   },
+   {
+    "name": "Vụ Bản",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Trường",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Cường",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Mô",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Mạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Yên Thắng",
+    "type": "Phường"
+   },
+   {
+    "name": "Yên Từ",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Ý Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông A",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Hoa Lư",
+    "type": "Phường"
+   },
+   {
+    "name": "Đại Hoàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Định Hóa",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Văn",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Cao Bằng",
+  "wards": [
+   {
+    "name": "Bạch Đằng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Bế Văn Đàn",
+    "type": "Xã"
+   },
+   {
+    "name": "Ca Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Canh Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Cô Ba",
+    "type": "Xã"
+   },
+   {
+    "name": "Cần Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Cốc Pàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà An",
+    "type": "Xã"
+   },
+   {
+    "name": "Huy Giáp",
+    "type": "Xã"
+   },
+   {
+    "name": "Hà Quảng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Đạo",
+    "type": "Xã"
+   },
+   {
+    "name": "Hạ Lang",
+    "type": "Xã"
+   },
+   {
+    "name": "Hạnh Phúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Lý Bôn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lý Quốc",
+    "type": "Xã"
+   },
+   {
+    "name": "Lũng Nặm",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Khai",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Tâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Tuấn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyên Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Huệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Nùng Trí Cao",
+    "type": "Phường"
+   },
+   {
+    "name": "Phan Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phục Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Hán",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Uyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Lộ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Kim",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Thành Công",
+    "type": "Xã"
+   },
+   {
+    "name": "Thông Nông",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch An",
+    "type": "Xã"
+   },
+   {
+    "name": "Thục Phán",
+    "type": "Phường"
+   },
+   {
+    "name": "Trà Lĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Trùng Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Giang",
+    "type": "Phường"
+   },
+   {
+    "name": "Tĩnh Túc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tổng Cọt",
+    "type": "Xã"
+   },
+   {
+    "name": "Vinh Quý",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Trường",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Thổ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đoài Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Đàm Thuỷ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đình Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Độc Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Long",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Tuyên Quang",
+  "wards": [
+   {
+    "name": "An Tường",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình An",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Ca",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Thuận",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Xa",
+    "type": "Xã"
+   },
+   {
+    "name": "Bạch Ngọc",
+    "type": "Xã"
+   },
+   {
+    "name": "Bạch Xa",
+    "type": "Xã"
+   },
+   {
+    "name": "Bạch Đích",
+    "type": "Xã"
+   },
+   {
+    "name": "Bản Máy",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Mê",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Bằng Hành",
+    "type": "Xã"
+   },
+   {
+    "name": "Bằng Lang",
+    "type": "Xã"
+   },
+   {
+    "name": "Cao Bồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiêm Hoá",
+    "type": "Xã"
+   },
+   {
+    "name": "Cán Tỷ",
+    "type": "Xã"
+   },
+   {
+    "name": "Côn Lôn",
+    "type": "Xã"
+   },
+   {
+    "name": "Du Già",
+    "type": "Xã"
+   },
+   {
+    "name": "Giáp Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà An",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoàng Su Phì",
+    "type": "Xã"
+   },
+   {
+    "name": "Hà Giang 1",
+    "type": "Phường"
+   },
+   {
+    "name": "Hà Giang 2",
+    "type": "Phường"
+   },
+   {
+    "name": "Hàm Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Hùng An",
+    "type": "Xã"
+   },
+   {
+    "name": "Hùng Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Hùng Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồ Thầu",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Khuôn Lùng",
+    "type": "Xã"
+   },
+   {
+    "name": "Khâu Vai",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiên Đài",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiến Thiết",
+    "type": "Xã"
+   },
+   {
+    "name": "Lao Chải",
+    "type": "Xã"
+   },
+   {
+    "name": "Linh Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Lâm Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Lùng Tám",
+    "type": "Xã"
+   },
+   {
+    "name": "Lũng Cú",
+    "type": "Xã"
+   },
+   {
+    "name": "Lũng Phìn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lực Hành",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Ngọc",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Xuân",
+    "type": "Phường"
+   },
+   {
+    "name": "Mèo Vạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Mậu Duệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Lâm",
+    "type": "Phường"
+   },
+   {
+    "name": "Nghĩa Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Đường",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhữ Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Niêm Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nà Hang",
+    "type": "Xã"
+   },
+   {
+    "name": "Nông Tiến",
+    "type": "Phường"
+   },
+   {
+    "name": "Nấm Dẩn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Dịch",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Lưu",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Phố Bảng",
+    "type": "Xã"
+   },
+   {
+    "name": "Pà Vầy Sủ",
+    "type": "Xã"
+   },
+   {
+    "name": "Pờ Ly Ngài",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Quản Bạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Nguyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Sà Phìn",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Thuỷ",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Vĩ",
+    "type": "Xã"
+   },
+   {
+    "name": "Sủng Máng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Thuỷ",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Thàng Tín",
+    "type": "Xã"
+   },
+   {
+    "name": "Thái Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thái Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Thái Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thông Nguyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Nông",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thắng Mố",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Nguyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Tri Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Sinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tát Ngà",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân An",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Trào",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Trịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tùng Bá",
+    "type": "Xã"
+   },
+   {
+    "name": "Tùng Vài",
+    "type": "Xã"
+   },
+   {
+    "name": "Việt Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Tuy",
+    "type": "Xã"
+   },
+   {
+    "name": "Vị Xuyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Vân",
+    "type": "Xã"
+   },
+   {
+    "name": "Xín Mần",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Cường",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Hoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Nguyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đường Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đường Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Tâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Văn",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Yên",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Lào Cai",
+  "wards": [
+   {
+    "name": "A Mú Sung",
+    "type": "Xã"
+   },
+   {
+    "name": "Bát Xát",
+    "type": "Xã"
+   },
+   {
+    "name": "Bản Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Bản Liền",
+    "type": "Xã"
+   },
+   {
+    "name": "Bản Lầu",
+    "type": "Xã"
+   },
+   {
+    "name": "Bản Xèo",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Nhai",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Ái",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Cam Đường",
+    "type": "Phường"
+   },
+   {
+    "name": "Cao Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Ken",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Quế",
+    "type": "Xã"
+   },
+   {
+    "name": "Chấn Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Chế Tạo",
+    "type": "Xã"
+   },
+   {
+    "name": "Cát Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Cảm Nhân",
+    "type": "Xã"
+   },
+   {
+    "name": "Cầu Thia",
+    "type": "Phường"
+   },
+   {
+    "name": "Cốc Lầu",
+    "type": "Xã"
+   },
+   {
+    "name": "Cốc San",
+    "type": "Xã"
+   },
+   {
+    "name": "Dương Quỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Dền Sáng",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hạnh Phúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hợp Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Khao Mang",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Lao Chải",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lào Cai",
+    "type": "Phường"
+   },
+   {
+    "name": "Lâm Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Lâm Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Lùng Phình",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Lục Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỏ Vàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mù Cang Chải",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Bo",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Hum",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Khương",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Lai",
+    "type": "Xã"
+   },
+   {
+    "name": "Mậu A",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Cường",
+    "type": "Phường"
+   },
+   {
+    "name": "Nghĩa Lộ",
+    "type": "Phường"
+   },
+   {
+    "name": "Nghĩa Tâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Đô",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngũ Chỉ Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Chày",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Có",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Xé",
+    "type": "Xã"
+   },
+   {
+    "name": "Pha Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Dụ Hạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Dụ Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Phình Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Púng Luông",
+    "type": "Xã"
+   },
+   {
+    "name": "Quy Mông",
+    "type": "Xã"
+   },
+   {
+    "name": "Sa Pa",
+    "type": "Phường"
+   },
+   {
+    "name": "Si Ma Cai",
+    "type": "Xã"
+   },
+   {
+    "name": "Sín Chéng",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Thác Bà",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Bằng La",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Tâm",
+    "type": "Phường"
+   },
+   {
+    "name": "Trạm Tấu",
+    "type": "Xã"
+   },
+   {
+    "name": "Trấn Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Trịnh Tường",
+    "type": "Xã"
+   },
+   {
+    "name": "Tà Xi Láng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hợp",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Lĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tú Lệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tả Củ Tỷ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tả Phìn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tả Van",
+    "type": "Xã"
+   },
+   {
+    "name": "Tằng Lỏong",
+    "type": "Xã"
+   },
+   {
+    "name": "Việt Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Võ Lao",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Bàn",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Chấn",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Ái",
+    "type": "Xã"
+   },
+   {
+    "name": "Y Tý",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Bái",
+    "type": "Phường"
+   },
+   {
+    "name": "Yên Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Âu Lâu",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Cuông",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Thái Nguyên",
+  "wards": [
+   {
+    "name": "An Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Bể",
+    "type": "Xã"
+   },
+   {
+    "name": "Bá Xuyên",
+    "type": "Phường"
+   },
+   {
+    "name": "Bách Quang",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Bạch Thông",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Kạn",
+    "type": "Phường"
+   },
+   {
+    "name": "Bằng Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Bằng Vân",
+    "type": "Xã"
+   },
+   {
+    "name": "Cao Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Chợ Mới",
+    "type": "Xã"
+   },
+   {
+    "name": "Chợ Rã",
+    "type": "Xã"
+   },
+   {
+    "name": "Chợ Đồn",
+    "type": "Xã"
+   },
+   {
+    "name": "Côn Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Cường Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Giàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Dân Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Sàng",
+    "type": "Phường"
+   },
+   {
+    "name": "Hiệp Lực",
+    "type": "Xã"
+   },
+   {
+    "name": "Hợp Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Kha Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Phượng",
+    "type": "Xã"
+   },
+   {
+    "name": "La Bằng",
+    "type": "Xã"
+   },
+   {
+    "name": "La Hiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Lam Vỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Linh Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Na Rì",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Cường",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghinh Tường",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghiên Loan",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Tá",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngân Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nà Phặc",
+    "type": "Xã"
+   },
+   {
+    "name": "Phan Đình Phùng",
+    "type": "Phường"
+   },
+   {
+    "name": "Phong Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Xuyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Đình",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Thuận",
+    "type": "Phường"
+   },
+   {
+    "name": "Phượng Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Phổ Yên",
+    "type": "Phường"
+   },
+   {
+    "name": "Phủ Thông",
+    "type": "Xã"
+   },
+   {
+    "name": "Quan Triều",
+    "type": "Phường"
+   },
+   {
+    "name": "Quang Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Quyết Thắng",
+    "type": "Phường"
+   },
+   {
+    "name": "Quân Chu",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Bạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Sông Công",
+    "type": "Phường"
+   },
+   {
+    "name": "Sảng Mộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Mai",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Thành Công",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Quan",
+    "type": "Xã"
+   },
+   {
+    "name": "Thần Sa",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Tràng Xá",
+    "type": "Xã"
+   },
+   {
+    "name": "Trại Cau",
+    "type": "Xã"
+   },
+   {
+    "name": "Trần Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Cương",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Kỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Tích Lương",
+    "type": "Phường"
+   },
+   {
+    "name": "Vô Tranh",
+    "type": "Xã"
+   },
+   {
+    "name": "Võ Nhai",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Hán",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Lang",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Lăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thông",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Xuân",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Điềm Thụy",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Phúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Từ",
+    "type": "Xã"
+   },
+   {
+    "name": "Định Hóa",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Hỷ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Phúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Xuân",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Lạng Sơn",
+  "wards": [
+   {
+    "name": "Ba Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Gia",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Bằng Mạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Cai Kinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Cao Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Chi Lăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiến Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Công Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoa Thám",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoàng Văn Thụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Vũ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Hội Hoan",
+    "type": "Xã"
+   },
+   {
+    "name": "Hữu Liên",
+    "type": "Xã"
+   },
+   {
+    "name": "Hữu Lũng",
+    "type": "Xã"
+   },
+   {
+    "name": "Khuất Xá",
+    "type": "Xã"
+   },
+   {
+    "name": "Kháng Chiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiên Mộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Kỳ Lừa",
+    "type": "Phường"
+   },
+   {
+    "name": "Lương Văn Tri",
+    "type": "Phường"
+   },
+   {
+    "name": "Lộc Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Lợi Bác",
+    "type": "Xã"
+   },
+   {
+    "name": "Mẫu Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Na Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Na Sầm",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhân Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhất Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Quan Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Quý Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Quốc Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Quốc Việt",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Thanh",
+    "type": "Phường"
+   },
+   {
+    "name": "Thiện Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiện Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiện Thuật",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiện Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Thái Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thất Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Thống Nhất",
+    "type": "Xã"
+   },
+   {
+    "name": "Thụy Hùng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tri Lễ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tràng Định",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuấn Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Tri",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Văn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Đoàn",
+    "type": "Xã"
+   },
+   {
+    "name": "Vân Nham",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Lãng",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Quan",
+    "type": "Xã"
+   },
+   {
+    "name": "Vũ Lăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Vũ Lễ",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Phúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Điềm He",
+    "type": "Xã"
+   },
+   {
+    "name": "Đoàn Kết",
+    "type": "Xã"
+   },
+   {
+    "name": "Đình Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Kinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Đồng Đăng",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Phú Thọ",
+  "wards": [
+   {
+    "name": "An Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "An Nghĩa",
+    "type": "Xã"
+   },
+   {
+    "name": "Bao La",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Nguyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Tuyền",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Xuyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Bản Nguyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Bằng Luân",
+    "type": "Xã"
+   },
+   {
+    "name": "Cao Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Cao Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Cao Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Chân Mộng",
+    "type": "Xã"
+   },
+   {
+    "name": "Chí Tiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Chí Đám",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Cự Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Dân Chủ",
+    "type": "Xã"
+   },
+   {
+    "name": "Dũng Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiền Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiền Quan",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoàng An",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoàng Cương",
+    "type": "Xã"
+   },
+   {
+    "name": "Hy Cương",
+    "type": "Xã"
+   },
+   {
+    "name": "Hùng Việt",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Cần",
+    "type": "Xã"
+   },
+   {
+    "name": "Hạ Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Lựu",
+    "type": "Xã"
+   },
+   {
+    "name": "Hội Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hợp Kim",
+    "type": "Xã"
+   },
+   {
+    "name": "Hợp Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Khả Cửu",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Bôi",
+    "type": "Xã"
+   },
+   {
+    "name": "Kỳ Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Lai Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Cốc",
+    "type": "Xã"
+   },
+   {
+    "name": "Lâm Thao",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lạc Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Lạc Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lạc Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Lập Thạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Mai Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Mai Hạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Đài",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Bi",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Hoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Thàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Vang",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Động",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyệt Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhân Nghĩa",
+    "type": "Xã"
+   },
+   {
+    "name": "Nông Trang",
+    "type": "Phường"
+   },
+   {
+    "name": "Nật Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Phù Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phùng Nguyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Thọ",
+    "type": "Phường"
+   },
+   {
+    "name": "Phúc Yên",
+    "type": "Phường"
+   },
+   {
+    "name": "Pà Cò",
+    "type": "Xã"
+   },
+   {
+    "name": "Quy Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Quyết Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Sông Lô",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Dương Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Nông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Đảo",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Ba",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Miếu",
+    "type": "Phường"
+   },
+   {
+    "name": "Thanh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Thuỷ",
+    "type": "Xã"
+   },
+   {
+    "name": "Thu Cúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thung Nai",
+    "type": "Xã"
+   },
+   {
+    "name": "Thái Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Cốc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Thịnh Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Thọ Văn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thống Nhất",
+    "type": "Phường"
+   },
+   {
+    "name": "Thổ Tang",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Lữ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiền Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Toàn Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Trạm Thản",
+    "type": "Xã"
+   },
+   {
+    "name": "Tu Vũ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Mai",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Pheo",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Cốc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tề Lỗ",
+    "type": "Xã"
+   },
+   {
+    "name": "Việt Trì",
+    "type": "Phường"
+   },
+   {
+    "name": "Vân Bán",
+    "type": "Xã"
+   },
+   {
+    "name": "Vân Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Vân Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Võ Miếu",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Lang",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Miếu",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh An",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Chân",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Phúc",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Tường",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Yên",
+    "type": "Phường"
+   },
+   {
+    "name": "Vạn Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Hòa",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Lãng",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Lũng",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Viên",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Đài",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Kỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Lãng",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Trị",
+    "type": "Xã"
+   },
+   {
+    "name": "Âu Cơ",
+    "type": "Phường"
+   },
+   {
+    "name": "Đan Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đoan Hùng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đà Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Đào Xá",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Đình",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đạo Trù",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Nhàn",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Điện Biên",
+  "wards": [
+   {
+    "name": "Búng Lao",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Sinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Chà Tở",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Chà",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Lay",
+    "type": "Phường"
+   },
+   {
+    "name": "Mường Luân",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Lạn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Mùn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Nhà",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Nhé",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Phăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Pồn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Thanh",
+    "type": "Phường"
+   },
+   {
+    "name": "Mường Toong",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Tùng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Ảng",
+    "type": "Xã"
+   },
+   {
+    "name": "Na Sang",
+    "type": "Xã"
+   },
+   {
+    "name": "Na Son",
+    "type": "Xã"
+   },
+   {
+    "name": "Nà Bủng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nà Hỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Nà Tấu",
+    "type": "Xã"
+   },
+   {
+    "name": "Núa Ngam",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Kè",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Nèn",
+    "type": "Xã"
+   },
+   {
+    "name": "Pa Ham",
+    "type": "Xã"
+   },
+   {
+    "name": "Phình Giàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Pu Nhi",
+    "type": "Xã"
+   },
+   {
+    "name": "Pú Nhung",
+    "type": "Xã"
+   },
+   {
+    "name": "Quài Tở",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Sam Mứn",
+    "type": "Xã"
+   },
+   {
+    "name": "Si Pa Phìn",
+    "type": "Xã"
+   },
+   {
+    "name": "Sáng Nhè",
+    "type": "Xã"
+   },
+   {
+    "name": "Sín Chải",
+    "type": "Xã"
+   },
+   {
+    "name": "Sín Thầu",
+    "type": "Xã"
+   },
+   {
+    "name": "Sính Phình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh An",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Nưa",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuần Giáo",
+    "type": "Xã"
+   },
+   {
+    "name": "Tìa Dình",
+    "type": "Xã"
+   },
+   {
+    "name": "Tủa Chùa",
+    "type": "Xã"
+   },
+   {
+    "name": "Tủa Thàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Xa Dung",
+    "type": "Xã"
+   },
+   {
+    "name": "Điện Biên Phủ",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Lai Châu",
+  "wards": [
+   {
+    "name": "Bum Nưa",
+    "type": "Xã"
+   },
+   {
+    "name": "Bum Tở",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Lư",
+    "type": "Xã"
+   },
+   {
+    "name": "Bản Bo",
+    "type": "Xã"
+   },
+   {
+    "name": "Dào San",
+    "type": "Xã"
+   },
+   {
+    "name": "Hua Bum",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Thu",
+    "type": "Xã"
+   },
+   {
+    "name": "Khoen On",
+    "type": "Xã"
+   },
+   {
+    "name": "Khun Há",
+    "type": "Xã"
+   },
+   {
+    "name": "Khổng Lào",
+    "type": "Xã"
+   },
+   {
+    "name": "Lê Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Mù Cả",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Khoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Kim",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Mô",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Than",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Tè",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Cuổi",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Hàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Mạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Sỏ",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Tăm",
+    "type": "Xã"
+   },
+   {
+    "name": "Pa Tần",
+    "type": "Xã"
+   },
+   {
+    "name": "Pa Ủ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Thổ",
+    "type": "Xã"
+   },
+   {
+    "name": "Pu Sam Cáp",
+    "type": "Xã"
+   },
+   {
+    "name": "Pắc Ta",
+    "type": "Xã"
+   },
+   {
+    "name": "Sin Suối Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Sì Lở Lầu",
+    "type": "Xã"
+   },
+   {
+    "name": "Sìn Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Than Uyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Thu Lũm",
+    "type": "Xã"
+   },
+   {
+    "name": "Tà Tổng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phong",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Uyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Tả Lèng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tủa Sín Chải",
+    "type": "Xã"
+   },
+   {
+    "name": "Đoàn Kết",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Sơn La",
+  "wards": [
+   {
+    "name": "Bình Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Bó Sinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng An",
+    "type": "Phường"
+   },
+   {
+    "name": "Chiềng Cơi",
+    "type": "Phường"
+   },
+   {
+    "name": "Chiềng Hoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Hặc",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Khoong",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Khương",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng La",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Lao",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Mai",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Mung",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Sinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Chiềng Sung",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Sơ",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiềng Sại",
+    "type": "Xã"
+   },
+   {
+    "name": "Co Mạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Phù",
+    "type": "Xã"
+   },
+   {
+    "name": "Huổi Một",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Bon",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Hẹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Lóng Phiêng",
+    "type": "Xã"
+   },
+   {
+    "name": "Lóng Sập",
+    "type": "Xã"
+   },
+   {
+    "name": "Mai Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Muổi Nọi",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Bang",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Bám",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Bú",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Chanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Chiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Cơi",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Giôn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Hung",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Khiêng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường La",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Lèo",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Lạn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Lầm",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Sại",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường É",
+    "type": "Xã"
+   },
+   {
+    "name": "Mộc Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Mộc Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Ngọc Chiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Lầu",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Ty",
+    "type": "Xã"
+   },
+   {
+    "name": "Phiêng Cằm",
+    "type": "Xã"
+   },
+   {
+    "name": "Phiêng Khoài",
+    "type": "Xã"
+   },
+   {
+    "name": "Phiêng Pằn",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Púng Bánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Pắc Ngà",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Nhai",
+    "type": "Xã"
+   },
+   {
+    "name": "Song Khủa",
+    "type": "Xã"
+   },
+   {
+    "name": "Suối Tọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Sông Mã",
+    "type": "Xã"
+   },
+   {
+    "name": "Sốp Cộp",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Thảo Nguyên",
+    "type": "Phường"
+   },
+   {
+    "name": "Tà Hộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tà Xùa",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Tô Hiệu",
+    "type": "Phường"
+   },
+   {
+    "name": "Tô Múa",
+    "type": "Xã"
+   },
+   {
+    "name": "Tường Hạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tạ Khoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Vân Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Vân Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Nha",
+    "type": "Xã"
+   },
+   {
+    "name": "Xím Vàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Đoàn Kết",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Thanh Hóa",
+  "wards": [
+   {
+    "name": "An Nông",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Đình",
+    "type": "Xã"
+   },
+   {
+    "name": "Biện Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bá Thước",
+    "type": "Xã"
+   },
+   {
+    "name": "Bát Mọt",
+    "type": "Xã"
+   },
+   {
+    "name": "Bỉm Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Các Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Công Chính",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Thạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Tú",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Vân",
+    "type": "Xã"
+   },
+   {
+    "name": "Cổ Lũng",
+    "type": "Xã"
+   },
+   {
+    "name": "Giao An",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiền Kiệt",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoa Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoạt Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoằng Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoằng Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoằng Hóa",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoằng Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoằng Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoằng Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoằng Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoằng Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Hà Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Hà Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàm Rồng",
+    "type": "Phường"
+   },
+   {
+    "name": "Hóa Quỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hạc Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Hải Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Hải Lĩnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Hậu Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồ Vương",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồi Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Hợp Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiên Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Lam Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Linh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Luận Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Lĩnh Toại",
+    "type": "Xã"
+   },
+   {
+    "name": "Lưu Vệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Chanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Lát",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Mìn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mậu Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Na Mèo",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Sầm Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Nga An",
+    "type": "Xã"
+   },
+   {
+    "name": "Nga Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nga Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghi Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Nguyệt Viên",
+    "type": "Phường"
+   },
+   {
+    "name": "Nguyệt Ấn",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Liên",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Lặc",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Ngọc Trạo",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhi Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Như Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Như Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Nông Cống",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Pù Luông",
+    "type": "Xã"
+   },
+   {
+    "name": "Pù Nhi",
+    "type": "Xã"
+   },
+   {
+    "name": "Quan Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Chiểu",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Trung",
+    "type": "Phường"
+   },
+   {
+    "name": "Quý Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Quý Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Chính",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Ngọc",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Quảng Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Sao Vàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Điện",
+    "type": "Xã"
+   },
+   {
+    "name": "Sầm Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Lư",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam chung",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Kỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Quân",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiên Phủ",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiết Ống",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiệu Hóa",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiệu Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiệu Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiệu Toán",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiệu Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Thành Vinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Thăng Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thường Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch Quảng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thắng Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thắng Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Thọ Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thọ Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Thọ Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Thọ Ngọc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thọ Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Thọ Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Trang",
+    "type": "Xã"
+   },
+   {
+    "name": "Triệu Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Triệu Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Chính",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Hạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Trúc Lâm",
+    "type": "Phường"
+   },
+   {
+    "name": "Trường Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Văn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Dân",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Đô",
+    "type": "Xã"
+   },
+   {
+    "name": "Tĩnh Gia",
+    "type": "Phường"
+   },
+   {
+    "name": "Tượng Lĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tống Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Vân Du",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Nho",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Chinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Du",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Tín",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Khương",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Nhân",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Trường",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Định",
+    "type": "Xã"
+   },
+   {
+    "name": "Điền Lư",
+    "type": "Xã"
+   },
+   {
+    "name": "Điền Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Đào Duy Tư",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Quang",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Tiến",
+    "type": "Phường"
+   },
+   {
+    "name": "Định Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Định Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Tiến",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Nghệ An",
+  "wards": [
+   {
+    "name": "An Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Anh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Anh Sơn Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Chuẩn",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bích Hào",
+    "type": "Xã"
+   },
+   {
+    "name": "Bạch Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Bạch Ngọc",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Cam Phục",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiêu Lưu",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Con Cuông",
+    "type": "Xã"
+   },
+   {
+    "name": "Cát Ngạn",
+    "type": "Xã"
+   },
+   {
+    "name": "Cửa Lò",
+    "type": "Phường"
+   },
+   {
+    "name": "Diễn Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Giai Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Giai Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoa Quân",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoàng Mai",
+    "type": "Phường"
+   },
+   {
+    "name": "Huồi Tụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hùng Chân",
+    "type": "Xã"
+   },
+   {
+    "name": "Hùng Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Nguyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Nguyên Nam",
+    "type": "Xã"
+   },
+   {
+    "name": "Hạnh Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hợp Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hữu Khuông",
+    "type": "Xã"
+   },
+   {
+    "name": "Hữu Kiệm",
+    "type": "Xã"
+   },
+   {
+    "name": "Keng Đu",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Bảng",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Liên",
+    "type": "Xã"
+   },
+   {
+    "name": "Lam Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lượng Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Hợp",
+    "type": "Xã"
+   },
+   {
+    "name": "Môn Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Chọng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Ham",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Lống",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Quàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Típ",
+    "type": "Xã"
+   },
+   {
+    "name": "Mường Xén",
+    "type": "Xã"
+   },
+   {
+    "name": "Mậu Thạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Na Loi",
+    "type": "Xã"
+   },
+   {
+    "name": "Na Ngoi",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Đàn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nga My",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghi Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Hành",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Mai",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Đàn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhân Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhôn Mai",
+    "type": "Xã"
+   },
+   {
+    "name": "Nậm Cắn",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Quan Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Quang Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Quế Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳ Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳ Hợp",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Lưu",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Mai",
+    "type": "Phường"
+   },
+   {
+    "name": "Quỳnh Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Tam",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Quỳnh Văn",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Hợp",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiên Nhẫn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuần Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Thành Bình Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Thành Vinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Thái Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Thông Thụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Thần Lĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiền Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Tri Lễ",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Vinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân An",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Kỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Mai",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Hiếu",
+    "type": "Phường"
+   },
+   {
+    "name": "Tương Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Vinh Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Vinh Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "Vinh Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Vân Du",
+    "type": "Xã"
+   },
+   {
+    "name": "Vân Tụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Hiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Văn Kiều",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Tường",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn An",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Na",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Đô Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Hiếu",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Huệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Đồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Châu",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Hà Tĩnh",
+  "wards": [
+   {
+    "name": "Bắc Hồng Lĩnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Can Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Duệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Xuyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Cổ Đạm",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Hanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoành Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Hà Huy Tập",
+    "type": "Phường"
+   },
+   {
+    "name": "Hà Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Phố",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Đô",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Ninh",
+    "type": "Phường"
+   },
+   {
+    "name": "Hồng Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Hoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Kỳ Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Kỳ Hoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Kỳ Khang",
+    "type": "Xã"
+   },
+   {
+    "name": "Kỳ Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Kỳ Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Kỳ Văn",
+    "type": "Xã"
+   },
+   {
+    "name": "Kỳ Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Mai Hoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Mai Phụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Hồng Lĩnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Nghi Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Phúc Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Sông Trí",
+    "type": "Phường"
+   },
+   {
+    "name": "Sơn Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Kim 1",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Kim 2",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiên Cầm",
+    "type": "Xã"
+   },
+   {
+    "name": "Thành Sen",
+    "type": "Phường"
+   },
+   {
+    "name": "Thượng Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạch Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Toàn Lưu",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Lưu",
+    "type": "Xã"
+   },
+   {
+    "name": "Trần Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Tùng Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tứ Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Việt Xuyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Vũ Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Vũng Áng",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Yên Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Đan Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Kinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Đồng",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Quảng Trị",
+  "wards": [
+   {
+    "name": "A Dơi",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Lòng",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Đồn",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc Gianh",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Bến Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Bến Quan",
+    "type": "Xã"
+   },
+   {
+    "name": "Bố Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Cam Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Cam Lộ",
+    "type": "Xã"
+   },
+   {
+    "name": "Cồn Cỏ",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Cồn Tiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Cửa Tùng",
+    "type": "Xã"
+   },
+   {
+    "name": "Cửa Việt",
+    "type": "Xã"
+   },
+   {
+    "name": "Diên Sanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Dân Hóa",
+    "type": "Xã"
+   },
+   {
+    "name": "Gio Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiếu Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoàn Lão",
+    "type": "Xã"
+   },
+   {
+    "name": "Hướng Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Hướng Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Hướng Phùng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Lăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Khe Sanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Ngân",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "La Lay",
+    "type": "Xã"
+   },
+   {
+    "name": "Lao Bảo",
+    "type": "Xã"
+   },
+   {
+    "name": "Lìa",
+    "type": "Xã"
+   },
+   {
+    "name": "Lệ Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Lệ Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Hóa",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Ba Đồn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Cửa Việt",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Gianh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Hải Lăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Đông Hà",
+    "type": "Phường"
+   },
+   {
+    "name": "Ninh Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Nha",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Trị",
+    "type": "Phường"
+   },
+   {
+    "name": "Sen Ngư",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Triệu Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Triệu Cơ",
+    "type": "Xã"
+   },
+   {
+    "name": "Triệu Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Thuần",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuyên Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuyên Hóa",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuyên Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuyên Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuyên Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tà Rụt",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Gianh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hoàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Định",
+    "type": "Xã"
+   },
+   {
+    "name": "Ái Tử",
+    "type": "Xã"
+   },
+   {
+    "name": "Đakrông",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Hà",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Hới",
+    "type": "Phường"
+   },
+   {
+    "name": "Đồng Lê",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Đồng Thuận",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Huế",
+  "wards": [
+   {
+    "name": "A Lưới 1",
+    "type": "Xã"
+   },
+   {
+    "name": "A Lưới 2",
+    "type": "Xã"
+   },
+   {
+    "name": "A Lưới 3",
+    "type": "Xã"
+   },
+   {
+    "name": "A Lưới 4",
+    "type": "Xã"
+   },
+   {
+    "name": "A Lưới 5",
+    "type": "Xã"
+   },
+   {
+    "name": "An Cựu",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Chân Mây – Lăng Cô",
+    "type": "Xã"
+   },
+   {
+    "name": "Dương Nỗ",
+    "type": "Phường"
+   },
+   {
+    "name": "Hóa Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Hưng Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương An",
+    "type": "Phường"
+   },
+   {
+    "name": "Hương Thủy",
+    "type": "Phường"
+   },
+   {
+    "name": "Hương Trà",
+    "type": "Phường"
+   },
+   {
+    "name": "Khe Tre",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Long",
+    "type": "Phường"
+   },
+   {
+    "name": "Kim Trà",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Quảng",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc An",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Thượng",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Dinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Phong Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Phong Quảng",
+    "type": "Phường"
+   },
+   {
+    "name": "Phong Thái",
+    "type": "Phường"
+   },
+   {
+    "name": "Phong Điền",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Bài",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Vang",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Vinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Xuân",
+    "type": "Phường"
+   },
+   {
+    "name": "Quảng Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Thủy",
+    "type": "Phường"
+   },
+   {
+    "name": "Thuận An",
+    "type": "Phường"
+   },
+   {
+    "name": "Thuận Hóa",
+    "type": "Phường"
+   },
+   {
+    "name": "Thủy Xuân",
+    "type": "Phường"
+   },
+   {
+    "name": "Vinh Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Vỹ Dạ",
+    "type": "Phường"
+   },
+   {
+    "name": "Đan Điền",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Đà Nẵng",
+  "wards": [
+   {
+    "name": "An Hải",
+    "type": "Phường"
+   },
+   {
+    "name": "An Khê",
+    "type": "Phường"
+   },
+   {
+    "name": "An Thắng",
+    "type": "Phường"
+   },
+   {
+    "name": "Avương",
+    "type": "Xã"
+   },
+   {
+    "name": "Bà Nà",
+    "type": "Xã"
+   },
+   {
+    "name": "Bàn Thạch",
+    "type": "Phường"
+   },
+   {
+    "name": "Bến Giằng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bến Hiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Chiên Đàn",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Lệ",
+    "type": "Phường"
+   },
+   {
+    "name": "Duy Nghĩa",
+    "type": "Xã"
+   },
+   {
+    "name": "Duy Xuyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Gò Nổi",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiệp Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Cường",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoà Khánh",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoà Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Vang",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Xuân",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoàng Sa",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Hà Nha",
+    "type": "Xã"
+   },
+   {
+    "name": "Hùng Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Trà",
+    "type": "Phường"
+   },
+   {
+    "name": "Hải Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Hải Vân",
+    "type": "Phường"
+   },
+   {
+    "name": "Hội An",
+    "type": "Phường"
+   },
+   {
+    "name": "Hội An Tây",
+    "type": "Phường"
+   },
+   {
+    "name": "Hội An Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Khâm Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "La Dêê",
+    "type": "Xã"
+   },
+   {
+    "name": "La Êê",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Chiểu",
+    "type": "Phường"
+   },
+   {
+    "name": "Lãnh Ngọc",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Trà My",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngũ Hành Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Nông Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Núi Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Chánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Năng",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Trà",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Quế Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Quế Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Quế Sơn Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Sông Kôn",
+    "type": "Xã"
+   },
+   {
+    "name": "Sông Vàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Cẩm Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Trà",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Kỳ",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Khê",
+    "type": "Phường"
+   },
+   {
+    "name": "Thu Bồn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thăng An",
+    "type": "Xã"
+   },
+   {
+    "name": "Thăng Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thăng Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Thăng Trường",
+    "type": "Xã"
+   },
+   {
+    "name": "Thăng Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Thượng Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Giáp",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Leng",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Liên",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà My",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Tập",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Vân",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Đốc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Việt An",
+    "type": "Xã"
+   },
+   {
+    "name": "Vu Gia",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Điện Bàn",
+    "type": "Phường"
+   },
+   {
+    "name": "Điện Bàn Bắc",
+    "type": "Phường"
+   },
+   {
+    "name": "Điện Bàn Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Điện Bàn Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Đắc Pring",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Phú",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Quảng Ngãi",
+  "wards": [
+   {
+    "name": "An Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Dinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Gia",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Tô",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Tơ",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Vinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Vì",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Xa",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Động",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Chương",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Bờ Y",
+    "type": "Xã"
+   },
+   {
+    "name": "Cà Đam",
+    "type": "Xã"
+   },
+   {
+    "name": "Cẩm Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Dục Nông",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Chim",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Tơi",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Đal",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Cường",
+    "type": "Xã"
+   },
+   {
+    "name": "Kon Braih",
+    "type": "Xã"
+   },
+   {
+    "name": "Kon Plông",
+    "type": "Xã"
+   },
+   {
+    "name": "Kon Tum",
+    "type": "Phường"
+   },
+   {
+    "name": "Kon Đào",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Phụng",
+    "type": "Xã"
+   },
+   {
+    "name": "Lân Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Lý Sơn",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Minh Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỏ Cày",
+    "type": "Xã"
+   },
+   {
+    "name": "Mô Rai",
+    "type": "Xã"
+   },
+   {
+    "name": "Măng Bút",
+    "type": "Xã"
+   },
+   {
+    "name": "Măng Ri",
+    "type": "Xã"
+   },
+   {
+    "name": "Măng Đen",
+    "type": "Xã"
+   },
+   {
+    "name": "Mộ Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Hành",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Lộ",
+    "type": "Phường"
+   },
+   {
+    "name": "Nguyễn Nghiêm",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọk Bay",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọk Réo",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọk Tụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Rờ Kơi",
+    "type": "Xã"
+   },
+   {
+    "name": "Sa Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Sa Huỳnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Sa Loong",
+    "type": "Xã"
+   },
+   {
+    "name": "Sa Thầy",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Hạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Kỳ",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Mai",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Tây Hạ",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Tây Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Tịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Bồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiện Tín",
+    "type": "Xã"
+   },
+   {
+    "name": "Thọ Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Bồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Câu",
+    "type": "Phường"
+   },
+   {
+    "name": "Trà Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Trương Quang Trọng",
+    "type": "Phường"
+   },
+   {
+    "name": "Trường Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Tu Mơ Rông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Trà",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Trà Bồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tư Nghĩa",
+    "type": "Xã"
+   },
+   {
+    "name": "Tịnh Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Tường",
+    "type": "Xã"
+   },
+   {
+    "name": "Vệ Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Xốp",
+    "type": "Xã"
+   },
+   {
+    "name": "Ya Ly",
+    "type": "Xã"
+   },
+   {
+    "name": "Đình Cương",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Trà Bồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk BLa",
+    "type": "Phường"
+   },
+   {
+    "name": "Đăk Cấm",
+    "type": "Phường"
+   },
+   {
+    "name": "Đăk Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Kôi",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Mar",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Môn",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Plô",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Pxi",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Pék",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Rve",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Rơ Wa",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Sao",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Tô",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Tờ Kan",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Ui",
+    "type": "Xã"
+   },
+   {
+    "name": "Đặng Thùy Trâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Phổ",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Khánh Hòa",
+  "wards": [
+   {
+    "name": "Anh Dũng",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Ngòi",
+    "type": "Phường"
+   },
+   {
+    "name": "Bác Ái",
+    "type": "Xã"
+   },
+   {
+    "name": "Bác Ái Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Bác Ái Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo An",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc Cam Ranh",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc Khánh Vĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Nha Trang",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc Ninh Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Cam An",
+    "type": "Xã"
+   },
+   {
+    "name": "Cam Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Cam Linh",
+    "type": "Phường"
+   },
+   {
+    "name": "Cam Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Cam Ranh",
+    "type": "Phường"
+   },
+   {
+    "name": "Cà Ná",
+    "type": "Xã"
+   },
+   {
+    "name": "Công Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Diên Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Diên Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Diên Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Diên Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Diên Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Thắng",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoà Trí",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Vĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Lâm Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Cam Ranh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Khánh Vĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Nha Trang",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Ninh Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Nha Trang",
+    "type": "Phường"
+   },
+   {
+    "name": "Ninh Chử",
+    "type": "Phường"
+   },
+   {
+    "name": "Ninh Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Ninh Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Phan Rang",
+    "type": "Phường"
+   },
+   {
+    "name": "Phước Dinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Hậu",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Hữu",
+    "type": "Xã"
+   },
+   {
+    "name": "Suối Dầu",
+    "type": "Xã"
+   },
+   {
+    "name": "Suối Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận Nam",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Khánh Vĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Sa",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Tu Bông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Định",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Khánh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Khánh Vĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Nha Trang",
+    "type": "Phường"
+   },
+   {
+    "name": "Tây Ninh Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Đô Vinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Hải",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Khánh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Ninh Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Đại Lãnh",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Gia Lai",
+  "wards": [
+   {
+    "name": "Albá",
+    "type": "Xã"
+   },
+   {
+    "name": "An Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "An Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "An Khê",
+    "type": "Phường"
+   },
+   {
+    "name": "An Lão",
+    "type": "Xã"
+   },
+   {
+    "name": "An Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "An Nhơn",
+    "type": "Phường"
+   },
+   {
+    "name": "An Nhơn Bắc",
+    "type": "Phường"
+   },
+   {
+    "name": "An Nhơn Nam",
+    "type": "Phường"
+   },
+   {
+    "name": "An Nhơn Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "An Nhơn Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "An Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "An Toàn",
+    "type": "Xã"
+   },
+   {
+    "name": "An Vinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Ayun",
+    "type": "Xã"
+   },
+   {
+    "name": "Ayun Pa",
+    "type": "Phường"
+   },
+   {
+    "name": "Biển Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Bàu Cạn",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình An",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Định",
+    "type": "Phường"
+   },
+   {
+    "name": "Bồng Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Bờ Ngoong",
+    "type": "Xã"
+   },
+   {
+    "name": "Canh Liên",
+    "type": "Xã"
+   },
+   {
+    "name": "Canh Vinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Chơ Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Chư A Thai",
+    "type": "Xã"
+   },
+   {
+    "name": "Chư Krey",
+    "type": "Xã"
+   },
+   {
+    "name": "Chư Prông",
+    "type": "Xã"
+   },
+   {
+    "name": "Chư Păh",
+    "type": "Xã"
+   },
+   {
+    "name": "Chư Pưh",
+    "type": "Xã"
+   },
+   {
+    "name": "Chư Sê",
+    "type": "Xã"
+   },
+   {
+    "name": "Cát Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Cửu An",
+    "type": "Xã"
+   },
+   {
+    "name": "Diên Hồng",
+    "type": "Phường"
+   },
+   {
+    "name": "Gào",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoài Nhơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoài Nhơn Bắc",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoài Nhơn Nam",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoài Nhơn Tây",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoài Nhơn Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoài Ân",
+    "type": "Xã"
+   },
+   {
+    "name": "Hra",
+    "type": "Xã"
+   },
+   {
+    "name": "Hội Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Hội Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Boòng",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Băng",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Chia",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Dom",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Dreh",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Dơk",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Grai",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Hiao",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Hrung",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Hrú",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Khươl",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Ko",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Krái",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Krêl",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Le",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Ly",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Lâu",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Mơ",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Nan",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia O",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Pa",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Phí",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Pia",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Pnôn",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Púch",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Rbol",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Rsai",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Sao",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Tul",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Tôr",
+    "type": "Xã"
+   },
+   {
+    "name": "KDang",
+    "type": "Xã"
+   },
+   {
+    "name": "Kbang",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Kon Chiêng",
+    "type": "Xã"
+   },
+   {
+    "name": "Kon Gang",
+    "type": "Xã"
+   },
+   {
+    "name": "Krong",
+    "type": "Xã"
+   },
+   {
+    "name": "Kông Bơ La",
+    "type": "Xã"
+   },
+   {
+    "name": "Kông Chro",
+    "type": "Xã"
+   },
+   {
+    "name": "Lơ Pang",
+    "type": "Xã"
+   },
+   {
+    "name": "Mang Yang",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngô Mây",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhơn Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Cát",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Mỹ Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Mỹ Nam",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Mỹ Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Phù Mỹ Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Thiện",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Túc",
+    "type": "Xã"
+   },
+   {
+    "name": "Pleiku",
+    "type": "Phường"
+   },
+   {
+    "name": "Pờ Tó",
+    "type": "Xã"
+   },
+   {
+    "name": "Quy Nhơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Quy Nhơn Bắc",
+    "type": "Phường"
+   },
+   {
+    "name": "Quy Nhơn Nam",
+    "type": "Phường"
+   },
+   {
+    "name": "Quy Nhơn Tây",
+    "type": "Phường"
+   },
+   {
+    "name": "Quy Nhơn Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "SRó",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Lang",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Quan",
+    "type": "Phường"
+   },
+   {
+    "name": "Thống Nhất",
+    "type": "Phường"
+   },
+   {
+    "name": "Tuy Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuy Phước Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuy Phước Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuy Phước Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tơ Tung",
+    "type": "Xã"
+   },
+   {
+    "name": "Uar",
+    "type": "Xã"
+   },
+   {
+    "name": "Vân Canh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vạn Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân An",
+    "type": "Xã"
+   },
+   {
+    "name": "Ya Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Ya Ma",
+    "type": "Xã"
+   },
+   {
+    "name": "Ân Hảo",
+    "type": "Xã"
+   },
+   {
+    "name": "Ân Tường",
+    "type": "Xã"
+   },
+   {
+    "name": "Đak Pơ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đak Rong",
+    "type": "Xã"
+   },
+   {
+    "name": "Đak Sơmei",
+    "type": "Xã"
+   },
+   {
+    "name": "Đak Đoa",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Song",
+    "type": "Xã"
+   },
+   {
+    "name": "Đề Gi",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Cơ",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Đắk Lắk",
+  "wards": [
+   {
+    "name": "Buôn Hồ",
+    "type": "Phường"
+   },
+   {
+    "name": "Buôn Ma Thuột",
+    "type": "Phường"
+   },
+   {
+    "name": "Buôn Đôn",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Kiến",
+    "type": "Phường"
+   },
+   {
+    "name": "Cuôr Đăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Cư Bao",
+    "type": "Phường"
+   },
+   {
+    "name": "Cư M’gar",
+    "type": "Xã"
+   },
+   {
+    "name": "Cư M’ta",
+    "type": "Xã"
+   },
+   {
+    "name": "Cư Prao",
+    "type": "Xã"
+   },
+   {
+    "name": "Cư Pui",
+    "type": "Xã"
+   },
+   {
+    "name": "Cư Pơng",
+    "type": "Xã"
+   },
+   {
+    "name": "Cư Yang",
+    "type": "Xã"
+   },
+   {
+    "name": "Dang Kang",
+    "type": "Xã"
+   },
+   {
+    "name": "Dliê Ya",
+    "type": "Xã"
+   },
+   {
+    "name": "Dray Bhăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Dur Kmăl",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Bung",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Bá",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Drông",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Drăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Hiao",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea H’leo",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Kao",
+    "type": "Phường"
+   },
+   {
+    "name": "Ea Kar",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Khăl",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Kiết",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Kly",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Knuếc",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Knốp",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Ktur",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Ly",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea M’Droh",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Na",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Ning",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Nuôl",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Phê",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Păl",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Riêng",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Rốk",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Súp",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Trang",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Tul",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Wer",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Wy",
+    "type": "Xã"
+   },
+   {
+    "name": "Ea Ô",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòa Hiệp",
+    "type": "Phường"
+   },
+   {
+    "name": "Hòa Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòa Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòa Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Lốp",
+    "type": "Xã"
+   },
+   {
+    "name": "Ia Rvê",
+    "type": "Xã"
+   },
+   {
+    "name": "Krông Ana",
+    "type": "Xã"
+   },
+   {
+    "name": "Krông Bông",
+    "type": "Xã"
+   },
+   {
+    "name": "Krông Búk",
+    "type": "Xã"
+   },
+   {
+    "name": "Krông Nô",
+    "type": "Xã"
+   },
+   {
+    "name": "Krông Năng",
+    "type": "Xã"
+   },
+   {
+    "name": "Krông Pắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Krông Á",
+    "type": "Xã"
+   },
+   {
+    "name": "Liên Sơn Lắk",
+    "type": "Xã"
+   },
+   {
+    "name": "M’Drắk",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Ka",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Hòa 1",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Hòa 2",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Mỡ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Yên",
+    "type": "Phường"
+   },
+   {
+    "name": "Pơng Drang",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Suối Trai",
+    "type": "Xã"
+   },
+   {
+    "name": "Sông Cầu",
+    "type": "Phường"
+   },
+   {
+    "name": "Sông Hinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Thành Nhất",
+    "type": "Phường"
+   },
+   {
+    "name": "Tuy An Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuy An Nam",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuy An Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuy An Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuy Hòa",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân An",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Lập",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Vân Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Vụ Bổn",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Cảnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Lãnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Đài",
+    "type": "Phường"
+   },
+   {
+    "name": "Yang Mao",
+    "type": "Xã"
+   },
+   {
+    "name": "Ô Loan",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Hòa",
+    "type": "Phường"
+   },
+   {
+    "name": "Đắk Liêng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đắk Phơi",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Bình",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Lâm Đồng",
+  "wards": [
+   {
+    "name": "1 Bảo Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "2 Bảo Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "3 Bảo Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "B' Lao",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Thuận",
+    "type": "Phường"
+   },
+   {
+    "name": "Bảo Lâm 1",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Lâm 2",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Lâm 3",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Lâm 4",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Lâm 5",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Bắc Gia Nghĩa",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc Ruộng",
+    "type": "Xã"
+   },
+   {
+    "name": "Cam Ly - Đà Lạt",
+    "type": "Phường"
+   },
+   {
+    "name": "Cát Tiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Cát Tiên 2",
+    "type": "Xã"
+   },
+   {
+    "name": "Cát Tiên 3",
+    "type": "Xã"
+   },
+   {
+    "name": "Cư Jút",
+    "type": "Xã"
+   },
+   {
+    "name": "D'Ran",
+    "type": "Xã"
+   },
+   {
+    "name": "Di Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiệp Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Thắng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoài Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàm Kiệm",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàm Liêm",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàm Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàm Thuận Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàm Thuận Nam",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàm Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàm Thắng",
+    "type": "Phường"
+   },
+   {
+    "name": "Hàm Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Hải Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Ka Đô",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiến Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Krông Nô",
+    "type": "Xã"
+   },
+   {
+    "name": "La Dạ",
+    "type": "Xã"
+   },
+   {
+    "name": "La Gi",
+    "type": "Phường"
+   },
+   {
+    "name": "Langbiang - Đà Lạt",
+    "type": "Phường"
+   },
+   {
+    "name": "Liên Hương",
+    "type": "Xã"
+   },
+   {
+    "name": "Lâm Viên - Đà Lạt",
+    "type": "Phường"
+   },
+   {
+    "name": "Lương Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lạc Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Mũi Né",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Ban - Lâm Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Dong",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Gia Nghĩa",
+    "type": "Phường"
+   },
+   {
+    "name": "Nam Hà - Lâm Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Đà",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghị Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhân Cơ",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Gia",
+    "type": "Xã"
+   },
+   {
+    "name": "Nâm Nung",
+    "type": "Xã"
+   },
+   {
+    "name": "Phan Rí Cửa",
+    "type": "Xã"
+   },
+   {
+    "name": "Phan Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Phan Thiết",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Quý",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Phú Sơn - Lâm Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Thuỷ",
+    "type": "Phường"
+   },
+   {
+    "name": "Phúc Thọ - Lâm Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Hội",
+    "type": "Phường"
+   },
+   {
+    "name": "Quảng Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Khê",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Trực",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Quảng Tín",
+    "type": "Xã"
+   },
+   {
+    "name": "Suối Kiết",
+    "type": "Xã"
+   },
+   {
+    "name": "Sông Lũy",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận An",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận Hạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiến Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Trà Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuy Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuy Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuyên Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Tà Hine",
+    "type": "Xã"
+   },
+   {
+    "name": "Tà Năng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tà Đùng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tánh Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hà - Lâm Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hảo",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Hương - Đà Lạt",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Trường - Đà Lạt",
+    "type": "Phường"
+   },
+   {
+    "name": "Đam Rông 1",
+    "type": "Xã"
+   },
+   {
+    "name": "Đam Rông 2",
+    "type": "Xã"
+   },
+   {
+    "name": "Đam Rông 3",
+    "type": "Xã"
+   },
+   {
+    "name": "Đam Rông 4",
+    "type": "Xã"
+   },
+   {
+    "name": "Đinh Trang Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đinh Văn - Lâm Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Gia Nghĩa",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Đơn Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Đạ Huoai",
+    "type": "Xã"
+   },
+   {
+    "name": "Đạ Huoai 2",
+    "type": "Xã"
+   },
+   {
+    "name": "Đạ Huoai 3",
+    "type": "Xã"
+   },
+   {
+    "name": "Đạ Tẻh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đạ Tẻh 2",
+    "type": "Xã"
+   },
+   {
+    "name": "Đạ Tẻh 3",
+    "type": "Xã"
+   },
+   {
+    "name": "Đắk Mil",
+    "type": "Xã"
+   },
+   {
+    "name": "Đắk Sắk",
+    "type": "Xã"
+   },
+   {
+    "name": "Đắk Wil",
+    "type": "Xã"
+   },
+   {
+    "name": "Đắk song",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Kho",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức An",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Linh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Trọng",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Tây Ninh",
+  "wards": [
+   {
+    "name": "An Lục Long",
+    "type": "Xã"
+   },
+   {
+    "name": "An Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "An Tịnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Minh",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Bến Cầu",
+    "type": "Xã"
+   },
+   {
+    "name": "Bến Lức",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Cần Giuộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Cần Đước",
+    "type": "Xã"
+   },
+   {
+    "name": "Cầu Khởi",
+    "type": "Xã"
+   },
+   {
+    "name": "Dương Minh Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "Gò Dầu",
+    "type": "Phường"
+   },
+   {
+    "name": "Hiệp Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Hưng Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Hảo Đước",
+    "type": "Xã"
+   },
+   {
+    "name": "Hậu Nghĩa",
+    "type": "Xã"
+   },
+   {
+    "name": "Hậu Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Hậu",
+    "type": "Phường"
+   },
+   {
+    "name": "Kiến Tường",
+    "type": "Phường"
+   },
+   {
+    "name": "Long An",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Cang",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Chữ",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Hoa",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Hựu",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Mộc Hoá",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ An",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Hạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Lệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Quý",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhơn Hoà Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhơn Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhựt Tảo",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Thạnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Ninh Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Chỉ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Vinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Vĩnh Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Rạch Kiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Điền",
+    "type": "Phường"
+   },
+   {
+    "name": "Thuận Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Hóa",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Thủ Thừa",
+    "type": "Xã"
+   },
+   {
+    "name": "Truông Mít",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Vong",
+    "type": "Xã"
+   },
+   {
+    "name": "Trảng Bàng",
+    "type": "Phường"
+   },
+   {
+    "name": "Tuyên Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Tuyên Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân An",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Biên",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Lân",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Lập",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Ninh",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Trụ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Tập",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tầm Vu",
+    "type": "Xã"
+   },
+   {
+    "name": "Vàm Cỏ",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Công",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Huệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Lập",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Đồng Nai",
+  "wards": [
+   {
+    "name": "An Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "An Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "An Viễn",
+    "type": "Xã"
+   },
+   {
+    "name": "Biên Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Bom Bo",
+    "type": "Xã"
+   },
+   {
+    "name": "Bàu Hàm",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình An",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Long",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Phước",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Bù Gia Mập",
+    "type": "Xã"
+   },
+   {
+    "name": "Bù Đăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Vinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Chơn Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Cẩm Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Dầu Giây",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Kiệm",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàng Gòn",
+    "type": "Phường"
+   },
+   {
+    "name": "Hưng Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hố Nai",
+    "type": "Phường"
+   },
+   {
+    "name": "La Ngà",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Hà",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Khánh",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc Quang",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc Tấn",
+    "type": "Xã"
+   },
+   {
+    "name": "Minh Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Minh Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Nam Cát Tiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Nha Bích",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhơn Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lý",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Nghĩa",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Riềng",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Vinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước An",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Phước Long",
+    "type": "Phường"
+   },
+   {
+    "name": "Phước Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Tân",
+    "type": "Phường"
+   },
+   {
+    "name": "Sông Ray",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Hiệp",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Phước",
+    "type": "Phường"
+   },
+   {
+    "name": "Thanh Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thiện Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Thọ Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thống Nhất",
+    "type": "Xã"
+   },
+   {
+    "name": "Trảng Bom",
+    "type": "Xã"
+   },
+   {
+    "name": "Trảng Dài",
+    "type": "Phường"
+   },
+   {
+    "name": "Trấn Biên",
+    "type": "Phường"
+   },
+   {
+    "name": "Trị An",
+    "type": "Xã"
+   },
+   {
+    "name": "Tà Lài",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân An",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Khai",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Quan",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Triều",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Bắc",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Lập",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Quế",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Đường",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Định",
+    "type": "Xã"
+   },
+   {
+    "name": "Đa Kia",
+    "type": "Xã"
+   },
+   {
+    "name": "Đak Lua",
+    "type": "Xã"
+   },
+   {
+    "name": "Đak Nhau",
+    "type": "Xã"
+   },
+   {
+    "name": "Đăk Ơ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Định Quán",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Tâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Xoài",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Hồ Chí Minh",
+  "wards": [
+   {
+    "name": "An Hội Tây",
+    "type": "Phường"
+   },
+   {
+    "name": "An Hội Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "An Khánh",
+    "type": "Phường"
+   },
+   {
+    "name": "An Long",
+    "type": "Xã"
+   },
+   {
+    "name": "An Lạc",
+    "type": "Phường"
+   },
+   {
+    "name": "An Nhơn",
+    "type": "Phường"
+   },
+   {
+    "name": "An Nhơn Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "An Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "An Phú Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "An Thới Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "An Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Bà Rịa",
+    "type": "Phường"
+   },
+   {
+    "name": "Bà Điểm",
+    "type": "Xã"
+   },
+   {
+    "name": "Bàn Cờ",
+    "type": "Phường"
+   },
+   {
+    "name": "Bàu Bàng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bàu Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Chánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Cơ",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Dương",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Giã",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Hưng Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Lợi Trung",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Quới",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Thạnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Thới",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Tiên",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Trưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Trị Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Tân",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Tây",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Bảy Hiền",
+    "type": "Phường"
+   },
+   {
+    "name": "Bắc Tân Uyên",
+    "type": "Xã"
+   },
+   {
+    "name": "Bến Cát",
+    "type": "Phường"
+   },
+   {
+    "name": "Bến Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Chánh Hiệp",
+    "type": "Phường"
+   },
+   {
+    "name": "Chánh Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Chánh Phú Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Châu Pha",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Chợ Lớn",
+    "type": "Phường"
+   },
+   {
+    "name": "Chợ Quán",
+    "type": "Phường"
+   },
+   {
+    "name": "Cát Lái",
+    "type": "Phường"
+   },
+   {
+    "name": "Côn Đảo",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Cần Giờ",
+    "type": "Xã"
+   },
+   {
+    "name": "Cầu Kiệu",
+    "type": "Phường"
+   },
+   {
+    "name": "Cầu Ông Lãnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Củ Chi",
+    "type": "Xã"
+   },
+   {
+    "name": "Diên Hồng",
+    "type": "Phường"
+   },
+   {
+    "name": "Dĩ An",
+    "type": "Phường"
+   },
+   {
+    "name": "Dầu Tiếng",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Định",
+    "type": "Phường"
+   },
+   {
+    "name": "Gò Vấp",
+    "type": "Phường"
+   },
+   {
+    "name": "Hiệp Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Hiệp Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoà Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoà Lợi",
+    "type": "Phường"
+   },
+   {
+    "name": "Hòa Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòa Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Hóc Môn",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Hạnh Thông",
+    "type": "Phường"
+   },
+   {
+    "name": "Hồ Tràm",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Hội",
+    "type": "Phường"
+   },
+   {
+    "name": "Kim Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Linh Xuân",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Hương",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Nguyên",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Phước",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Trường",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Lái Thiêu",
+    "type": "Phường"
+   },
+   {
+    "name": "Minh Phụng",
+    "type": "Phường"
+   },
+   {
+    "name": "Minh Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Nghĩa Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngãi Giao",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhiêu Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "Nhuận Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhà Bè",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú An",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Giáo",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Hoà Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lâm",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Lợi",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Mỹ",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Nhuận",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Thuận",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Thạnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Thọ",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Thọ Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Định",
+    "type": "Phường"
+   },
+   {
+    "name": "Phước Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Long",
+    "type": "Phường"
+   },
+   {
+    "name": "Phước Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Thắng",
+    "type": "Phường"
+   },
+   {
+    "name": "Rạch Dừa",
+    "type": "Phường"
+   },
+   {
+    "name": "Sài Gòn",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Long",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Thắng",
+    "type": "Phường"
+   },
+   {
+    "name": "Thanh An",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận An",
+    "type": "Phường"
+   },
+   {
+    "name": "Thuận Giao",
+    "type": "Phường"
+   },
+   {
+    "name": "Thái Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Thông Tây Hội",
+    "type": "Phường"
+   },
+   {
+    "name": "Thường Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh An",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Mỹ Tây",
+    "type": "Phường"
+   },
+   {
+    "name": "Thới An",
+    "type": "Phường"
+   },
+   {
+    "name": "Thới Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Thủ Dầu Một",
+    "type": "Phường"
+   },
+   {
+    "name": "Thủ Đức",
+    "type": "Phường"
+   },
+   {
+    "name": "Trung Mỹ Tây",
+    "type": "Phường"
+   },
+   {
+    "name": "Trừ Văn Thố",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân An Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Hiệp",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Hải",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Khánh",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Mỹ",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Nhựt",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Phước",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Sơn Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Sơn Nhì",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Sơn Nhất",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Thuận",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Thới Hiệp",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Tạo",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Uyên",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Vĩnh Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Đông Hiệp",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Định",
+    "type": "Phường"
+   },
+   {
+    "name": "Tây Nam",
+    "type": "Phường"
+   },
+   {
+    "name": "Tây Thạnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Tăng Nhơn Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Hội",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Tân",
+    "type": "Phường"
+   },
+   {
+    "name": "Vũng Tàu",
+    "type": "Phường"
+   },
+   {
+    "name": "Vườn Lài",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuyên Mộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Xuân Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Xuân Thới Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Xóm Chiếu",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Hưng Thuận",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Đất Đỏ",
+    "type": "Xã"
+   },
+   {
+    "name": "Đức Nhuận",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Vĩnh Long",
+  "wards": [
+   {
+    "name": "An Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "An Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "An Hội",
+    "type": "Phường"
+   },
+   {
+    "name": "An Ngãi Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "An Phú Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "An Qui",
+    "type": "Xã"
+   },
+   {
+    "name": "An Trường",
+    "type": "Xã"
+   },
+   {
+    "name": "An Định",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Tri",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Minh",
+    "type": "Phường"
+   },
+   {
+    "name": "Bình Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Đại",
+    "type": "Xã"
+   },
+   {
+    "name": "Bảo Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bến Tre",
+    "type": "Phường"
+   },
+   {
+    "name": "Châu Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Chợ Lách",
+    "type": "Xã"
+   },
+   {
+    "name": "Càng Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Cái Ngang",
+    "type": "Xã"
+   },
+   {
+    "name": "Cái Nhum",
+    "type": "Xã"
+   },
+   {
+    "name": "Cái Vồn",
+    "type": "Phường"
+   },
+   {
+    "name": "Cầu Kè",
+    "type": "Xã"
+   },
+   {
+    "name": "Cầu Ngang",
+    "type": "Xã"
+   },
+   {
+    "name": "Duyên Hải",
+    "type": "Phường"
+   },
+   {
+    "name": "Giao Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Giồng Trôm",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiếu Phụng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiếu Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiệp Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hàm Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòa Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòa Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòa Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòa Thuận",
+    "type": "Phường"
+   },
+   {
+    "name": "Hùng Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Khánh Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Nhượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hương Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Hồ",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Hữu",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Vĩnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Đức",
+    "type": "Phường"
+   },
+   {
+    "name": "Lưu Nghiệp Anh",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Lộc Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Lục Sỹ Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỏ Cày",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Chánh Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyệt Hóa",
+    "type": "Phường"
+   },
+   {
+    "name": "Ngãi Tứ",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngũ Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhuận Phú Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhơn Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhị Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhị Trường",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Khương",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Phụng",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Quới",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Tân",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Túc",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Hậu",
+    "type": "Phường"
+   },
+   {
+    "name": "Phước Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Mỹ Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Quới An",
+    "type": "Xã"
+   },
+   {
+    "name": "Quới Thiện",
+    "type": "Xã"
+   },
+   {
+    "name": "Quới Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Song Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Song Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Ngãi",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Đức",
+    "type": "Phường"
+   },
+   {
+    "name": "Thành Thới",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Trị",
+    "type": "Xã"
+   },
+   {
+    "name": "Thới Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiên Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Tiểu Cần",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Ngãi",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Côn",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Cú",
+    "type": "Xã"
+   },
+   {
+    "name": "Trà Vinh",
+    "type": "Phường"
+   },
+   {
+    "name": "Trà Ôn",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Long Hòa",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân An",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hào",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hòa",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hạnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Long Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Lược",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Ngãi",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Quới",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thành Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Tập Ngãi",
+    "type": "Xã"
+   },
+   {
+    "name": "Tập Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Vinh Kim",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Đôn Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Đại An",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Khởi",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Đồng Tháp",
+  "wards": [
+   {
+    "name": "An Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "An Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "An Hữu",
+    "type": "Xã"
+   },
+   {
+    "name": "An Long",
+    "type": "Xã"
+   },
+   {
+    "name": "An Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "An Thạnh Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Sao",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Hàng Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Trưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Xuân",
+    "type": "Phường"
+   },
+   {
+    "name": "Cai Lậy",
+    "type": "Phường"
+   },
+   {
+    "name": "Cao Lãnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Chợ Gạo",
+    "type": "Xã"
+   },
+   {
+    "name": "Cái Bè",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Gò Công",
+    "type": "Phường"
+   },
+   {
+    "name": "Gò Công Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiệp Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Hậu Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Ngự",
+    "type": "Phường"
+   },
+   {
+    "name": "Hội Cư",
+    "type": "Xã"
+   },
+   {
+    "name": "Kim Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Lai Vung",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Phú Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Thuận",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Tiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Định",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Hoà Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Lấp Vò",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ An Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Ngãi",
+    "type": "Phường"
+   },
+   {
+    "name": "Mỹ Phong",
+    "type": "Phường"
+   },
+   {
+    "name": "Mỹ Phước Tây",
+    "type": "Phường"
+   },
+   {
+    "name": "Mỹ Quí",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Thiện",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Tho",
+    "type": "Phường"
+   },
+   {
+    "name": "Mỹ Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Trà",
+    "type": "Phường"
+   },
+   {
+    "name": "Mỹ Tịnh An",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Đức Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngũ Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhị Quý",
+    "type": "Phường"
+   },
+   {
+    "name": "Phong Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Cường",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Hựu",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Thọ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phương Thịnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Sa Đéc",
+    "type": "Phường"
+   },
+   {
+    "name": "Sơn Qui",
+    "type": "Phường"
+   },
+   {
+    "name": "Tam Nông",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Thanh Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tháp Mười",
+    "type": "Xã"
+   },
+   {
+    "name": "Thường Lạc",
+    "type": "Phường"
+   },
+   {
+    "name": "Thường Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Thới Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Trung An",
+    "type": "Phường"
+   },
+   {
+    "name": "Tràm Chim",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Dương",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hương",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hồng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hộ Cơ",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Khánh Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Nhuận Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phú Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phú Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phước 1",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phước 2",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Phước 3",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thuận Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thới",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hựu",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Kim",
+    "type": "Xã"
+   },
+   {
+    "name": "Đạo Thạnh",
+    "type": "Phường"
+   },
+   {
+    "name": "Đốc Binh Kiều",
+    "type": "Xã"
+   },
+   {
+    "name": "Đồng Sơn",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh An Giang",
+  "wards": [
+   {
+    "name": "An Biên",
+    "type": "Xã"
+   },
+   {
+    "name": "An Châu",
+    "type": "Xã"
+   },
+   {
+    "name": "An Cư",
+    "type": "Xã"
+   },
+   {
+    "name": "An Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "An Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Ba Chúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình An",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Thạnh Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Đức",
+    "type": "Phường"
+   },
+   {
+    "name": "Chi Lăng",
+    "type": "Phường"
+   },
+   {
+    "name": "Châu Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Châu Đốc",
+    "type": "Phường"
+   },
+   {
+    "name": "Chợ Mới",
+    "type": "Xã"
+   },
+   {
+    "name": "Chợ Vàm",
+    "type": "Xã"
+   },
+   {
+    "name": "Cô Tô",
+    "type": "Xã"
+   },
+   {
+    "name": "Cù Lao Giêng",
+    "type": "Xã"
+   },
+   {
+    "name": "Cần Đăng",
+    "type": "Xã"
+   },
+   {
+    "name": "Giang Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Giồng Riềng",
+    "type": "Xã"
+   },
+   {
+    "name": "Gò Quao",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Lạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Hà Tiên",
+    "type": "Phường"
+   },
+   {
+    "name": "Hòn Nghệ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòn Đất",
+    "type": "Xã"
+   },
+   {
+    "name": "Hội An",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Kiên Hải",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Kiên Lương",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Kiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Xuyên",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Hoà Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Thới",
+    "type": "Phường"
+   },
+   {
+    "name": "Mỹ Đức",
+    "type": "Xã"
+   },
+   {
+    "name": "Ngọc Chúc",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhơn Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhơn Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Núi Cấm",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú An",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Hữu",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Quốc",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Phú Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Rạch Giá",
+    "type": "Phường"
+   },
+   {
+    "name": "Sơn Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Sơn Kiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Thoại Sơn",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Mỹ Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Thổ Châu",
+    "type": "Đặc khu"
+   },
+   {
+    "name": "Thới Sơn",
+    "type": "Phường"
+   },
+   {
+    "name": "Tiên Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Tri Tôn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân An",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Tây Yên",
+    "type": "Xã"
+   },
+   {
+    "name": "Tô Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Tịnh Biên",
+    "type": "Phường"
+   },
+   {
+    "name": "U Minh Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Vân Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh An",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Gia",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hoà Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hậu",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Phong",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thông",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Thạnh Trung",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Tuy",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Tế",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Xương",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Điều",
+    "type": "Xã"
+   },
+   {
+    "name": "Óc Eo",
+    "type": "Xã"
+   },
+   {
+    "name": "Ô Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Thái",
+    "type": "Xã"
+   },
+   {
+    "name": "Định Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Định Mỹ",
+    "type": "Xã"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Cần Thơ",
+  "wards": [
+   {
+    "name": "An Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "An Lạc Thôn",
+    "type": "Xã"
+   },
+   {
+    "name": "An Ninh",
+    "type": "Xã"
+   },
+   {
+    "name": "An Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Bình Thủy",
+    "type": "Phường"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Cái Khế",
+    "type": "Phường"
+   },
+   {
+    "name": "Cái Răng",
+    "type": "Phường"
+   },
+   {
+    "name": "Cù Lao Dung",
+    "type": "Xã"
+   },
+   {
+    "name": "Cờ Đỏ",
+    "type": "Xã"
+   },
+   {
+    "name": "Gia Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiệp Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà An",
+    "type": "Xã"
+   },
+   {
+    "name": "Hoà Tú",
+    "type": "Xã"
+   },
+   {
+    "name": "Hỏa Lựu",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Phú",
+    "type": "Phường"
+   },
+   {
+    "name": "Hồ Đắc Kiện",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Hoà",
+    "type": "Phường"
+   },
+   {
+    "name": "Kế Sách",
+    "type": "Xã"
+   },
+   {
+    "name": "Lai Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Liêu Tú",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Bình",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Mỹ",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Phú 1",
+    "type": "Phường"
+   },
+   {
+    "name": "Long Tuyền",
+    "type": "Phường"
+   },
+   {
+    "name": "Lâm Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Lương Tâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Lịch Hội Thượng",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Hương",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Quới",
+    "type": "Phường"
+   },
+   {
+    "name": "Mỹ Tú",
+    "type": "Xã"
+   },
+   {
+    "name": "Mỹ Xuyên",
+    "type": "Phường"
+   },
+   {
+    "name": "Ngã Bảy",
+    "type": "Phường"
+   },
+   {
+    "name": "Ngã Năm",
+    "type": "Phường"
+   },
+   {
+    "name": "Ngọc Tố",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhu Gia",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhơn Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Nhơn Ái",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Kiều",
+    "type": "Phường"
+   },
+   {
+    "name": "Phong Nẫm",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Hữu",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Lợi",
+    "type": "Phường"
+   },
+   {
+    "name": "Phú Tâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Phương Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Thới",
+    "type": "Phường"
+   },
+   {
+    "name": "Phụng Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Sóc Trăng",
+    "type": "Phường"
+   },
+   {
+    "name": "Thuận Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Thuận Hưng",
+    "type": "Phường"
+   },
+   {
+    "name": "Thạnh An",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Phú",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Quới",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Thới An",
+    "type": "Xã"
+   },
+   {
+    "name": "Thạnh Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Thốt Nốt",
+    "type": "Phường"
+   },
+   {
+    "name": "Thới An Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Thới An Đông",
+    "type": "Phường"
+   },
+   {
+    "name": "Thới Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thới Lai",
+    "type": "Xã"
+   },
+   {
+    "name": "Thới Long",
+    "type": "Phường"
+   },
+   {
+    "name": "Trung Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Trung Nhứt",
+    "type": "Phường"
+   },
+   {
+    "name": "Trường Khánh",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Long Tây",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Thành",
+    "type": "Xã"
+   },
+   {
+    "name": "Trường Xuân",
+    "type": "Xã"
+   },
+   {
+    "name": "Trần Đề",
+    "type": "Xã"
+   },
+   {
+    "name": "Tài Văn",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân An",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hoà",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Lộc",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Phước Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Châu",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Phước",
+    "type": "Phường"
+   },
+   {
+    "name": "Vĩnh Thuận Đông",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Trinh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Tường",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Viễn",
+    "type": "Xã"
+   },
+   {
+    "name": "Vị Thanh",
+    "type": "Phường"
+   },
+   {
+    "name": "Vị Thanh 1",
+    "type": "Xã"
+   },
+   {
+    "name": "Vị Thủy",
+    "type": "Xã"
+   },
+   {
+    "name": "Vị Tân",
+    "type": "Phường"
+   },
+   {
+    "name": "Xà Phiên",
+    "type": "Xã"
+   },
+   {
+    "name": "Ô Môn",
+    "type": "Phường"
+   },
+   {
+    "name": "Đông Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Ngãi",
+    "type": "Xã"
+   },
+   {
+    "name": "Đại Thành",
+    "type": "Phường"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Cà Mau",
+  "wards": [
+   {
+    "name": "An Trạch",
+    "type": "Xã"
+   },
+   {
+    "name": "An Xuyên",
+    "type": "Phường"
+   },
+   {
+    "name": "Biển Bạch",
+    "type": "Xã"
+   },
+   {
+    "name": "Bạc Liêu",
+    "type": "Phường"
+   },
+   {
+    "name": "Châu Thới",
+    "type": "Xã"
+   },
+   {
+    "name": "Cái Nước",
+    "type": "Xã"
+   },
+   {
+    "name": "Cái Đôi Vàm",
+    "type": "Xã"
+   },
+   {
+    "name": "Giá Rai",
+    "type": "Phường"
+   },
+   {
+    "name": "Gành Hào",
+    "type": "Xã"
+   },
+   {
+    "name": "Hiệp Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Hoà Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Hòa Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Hưng Hội",
+    "type": "Xã"
+   },
+   {
+    "name": "Hưng Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồ Thị Kỷ",
+    "type": "Xã"
+   },
+   {
+    "name": "Hồng Dân",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh An",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Khánh Lâm",
+    "type": "Xã"
+   },
+   {
+    "name": "Long Điền",
+    "type": "Xã"
+   },
+   {
+    "name": "Láng Tròn",
+    "type": "Phường"
+   },
+   {
+    "name": "Lý Văn Lâm",
+    "type": "Phường"
+   },
+   {
+    "name": "Lương Thế Trân",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Phích",
+    "type": "Xã"
+   },
+   {
+    "name": "Nguyễn Việt Khái",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Quới",
+    "type": "Xã"
+   },
+   {
+    "name": "Ninh Thạnh Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Năm Căn",
+    "type": "Xã"
+   },
+   {
+    "name": "Phan Ngọc Hiển",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Hiệp",
+    "type": "Xã"
+   },
+   {
+    "name": "Phong Thạnh",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Phú Tân",
+    "type": "Xã"
+   },
+   {
+    "name": "Phước Long",
+    "type": "Xã"
+   },
+   {
+    "name": "Quách Phẩm",
+    "type": "Xã"
+   },
+   {
+    "name": "Sông Đốc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tam Giang",
+    "type": "Xã"
+   },
+   {
+    "name": "Thanh Tùng",
+    "type": "Xã"
+   },
+   {
+    "name": "Thới Bình",
+    "type": "Xã"
+   },
+   {
+    "name": "Trí Phải",
+    "type": "Xã"
+   },
+   {
+    "name": "Trần Phán",
+    "type": "Xã"
+   },
+   {
+    "name": "Trần Văn Thời",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Hưng",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thuận",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Thành",
+    "type": "Phường"
+   },
+   {
+    "name": "Tân Tiến",
+    "type": "Xã"
+   },
+   {
+    "name": "Tân Ân",
+    "type": "Xã"
+   },
+   {
+    "name": "Tạ An Khương",
+    "type": "Xã"
+   },
+   {
+    "name": "U Minh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Hậu",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Lộc",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Lợi",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Mỹ",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Phước",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Thanh",
+    "type": "Xã"
+   },
+   {
+    "name": "Vĩnh Trạch",
+    "type": "Phường"
+   },
+   {
+    "name": "Đá Bạc",
+    "type": "Xã"
+   },
+   {
+    "name": "Đông Hải",
+    "type": "Xã"
+   },
+   {
+    "name": "Đất Mũi",
+    "type": "Xã"
+   },
+   {
+    "name": "Đất Mới",
+    "type": "Xã"
+   },
+   {
+    "name": "Đầm Dơi",
+    "type": "Xã"
+   },
+   {
+    "name": "Định Thành",
+    "type": "Xã"
+   }
+  ]
+ }
+]

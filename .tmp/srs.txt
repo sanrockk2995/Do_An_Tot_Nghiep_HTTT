@@ -1,0 +1,2135 @@
+
+TRƯỜNG ĐẠI HỌC CÔNG NGHỆ GTVT
+KHOA CÔNG NGHỆ THÔNG TIN
+
+
+
+
+
+BÁO CÁO MÔN HỌC 
+ĐỒ ÁN HỆ THỐNG THÔNG TIN
+
+Tên đề tài:
+HỆ THỐNG QUẢN LÝ BÁN QUẦN ÁO THỜI TRANG
+
+
+GIÁO VIÊN HƯỚNG DẪN:
+ThS. LÊ THỊ CHI
+SINH VIÊN THỰC HIỆN:
+TRẦN ĐỨC ANH
+CÙ ĐỨC LONG
+NGUYỄN VĂN HÒA
+
+
+
+LỚP:
+ĐỖ VŨ TÙNG
+TRỊNH HỮU MẠNH
+
+74DCHT21
+
+
+<w:docGrid w:linePitch="326"/></w:sectPr></w:pPr><w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t>HÀ NỘI 2026
+MỤC LỤC
+Lời mở đầu</w:r><w:r w:rsidR="00105E21"><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r w:rsidR="00105E21"><w:rPr><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715485 \h </w:instrText></w:r><w:r w:rsidR="00105E21"><w:rPr><w:webHidden/></w:rPr></w:r><w:r w:rsidR="00105E21"><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r w:rsidR="00105E21"><w:rPr><w:webHidden/></w:rPr><w:t>6
+CHƯƠNG 1: PHÂN TÍCH YÊU CẦU</w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715486 \h </w:instrText></w:r><w:r><w:rPr><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:t>7
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715487" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t xml:space="preserve">1.1 GIỚI THIỆU</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715487 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>7
+1.1.1. Giới thiệu về đơn vị khảo sát</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715488 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>7
+1.1.2. Mục đích</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715489 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>8
+1.1.3. Phạm vi hệ thống</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715490 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>9
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715491" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>1.2. MÔ TẢ TỔNG QUAN</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715491 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>10
+1.2.1 Góc nhìn sản phẩm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715492 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>10
+1.2.2. Các tác nhân (Actors)</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715493 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>10
+1.2.3. Môi trường hoạt động</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715494 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>11
+1.2.4. Ràng buộc thiết kế</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715495 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>12
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715496" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>1.3. YÊU CẦU CHỨC NĂNG</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715496 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>12
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715497" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>1.4. YÊU CẦU PHI CHỨC NĂNG</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715497 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>12
+1.4.1. Hiệu năng (Performance)</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715498 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>13
+1.4.2. Bảo mật (Security)</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715499 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>13
+1.4.3. Độ tin cậy (Reliability)</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715500 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>13
+1.4.4. Khả năng sử dụng (Usability)</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715501 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>14
+1.4.5. Khả năng mở rộng (Scalability)</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715502 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>14
+1.4.6. Tính toàn vẹn dữ liệu (Data Integrity)</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715503 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>14
+1.4.7. Khả năng bảo trì (Maintainability)</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715504 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>15
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715505" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>1.5. MÔ HÌNH DỮ LIỆU (TÓM TẮT)</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715505 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>15
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715506" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>1.6 PHỤ LỤC</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715506 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>15
+1.6.1. Rủi ro hệ thống</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715507 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>15
+1.6.2. Hướng phát triển tương lai</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715508 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>16
+CHƯƠNG 2: THIẾT KẾ HỆ THỐNG</w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715509 \h </w:instrText></w:r><w:r><w:rPr><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:t>17
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715510" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>2.1. Biểu đồ Usecase</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715510 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>17
+2.1.1. Biểu đồ Usecase tổng quan hệ thống</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715511 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>17
+2.1.2. Biểu đồ Usecase chi tiết</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715512 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>17
+2.1.2.1. UseCase đăng nhập</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715513 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>17
+2.1.2.2. Usecase quản lý tài khoản</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715514 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>20
+2.1.2.3. Khách hàng</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715515 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>33
+A. Khách xem</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715516 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>33
+a) Đăng ký tài khoản</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715517 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>33
+b) Xem sản phẩm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715518 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>36
+B. Khách mua</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715519 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>40
+a)  Lịch sử mua hàng</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715520 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>41
+b) Đặt hàng sản phẩm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715521 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>43
+c) Đánh giá sản phẩm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715522 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>46
+d) Quản lý giỏ hàng</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715523 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>48
+2.1.2.4. Nhân viên bán hàng</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715524 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>54
+a) Quản lý khách hàng</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715525 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>54
+b) Truy vấn sản phẩm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715526 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>63
+c) Quản lý khuyến mại</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715527 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>67
+d) Quản lý hóa đơn</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715528 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>70
+2.1.2.5. Nhân viên kho</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715529 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>76
+2.1.2.6. Nhân viên kế toán</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715530 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>89
+2.1.2.7. Quản lý</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715531 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>100
+a) Báo cáo - Thống kê</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715532 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>101
+b) Quản lý cung cấp</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715533 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>105
+c) Quản lý sản phẩm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715534 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>114
+d) Quản lý nhân viên</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715535 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>123
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715536" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>2.2. Biểu đồ lớp</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715536 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>131
+2.2.1. Mô tả các bảng cơ sở dữ liệu</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715537 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>132
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715538" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>2.3.  Biểu đồ trạng thái</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715538 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>141
+2.3.1. Biểu đồ trạng thái của lớp Tài khoản</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715539 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>142
+2.3.2. Biểu đồ trạng thái của lớp Hóa đơn</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715540 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>142
+2.3.3 Biểu đồ trạng thái của lớp Thanh toán</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715541 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>142
+2.3.4. Biểu đồ trạng thái của lớp Phiếu nhập</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715542 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>143
+2.3.5. Biểu đồ trạng thái của lớp Sản phẩm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715543 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>143
+2.3.6. Biểu đồ trạng thái của lớp Nhà cung cấp</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715544 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>144
+2.3.7. Biểu đồ trạng thái của lớp Khuyến mại</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715545 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>144
+2.3.8. Biểu đồ trạng thái của lớp Đánh giá</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715546 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>145
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715547" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>2.4. Biểu đồ thành phần</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715547 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>145
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715548" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>2.5. Biểu đồ triển khai</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715548 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>145
+CHƯƠNG 3: XÂY DỰNG CÀI ĐẶT, VÀ KIỂM THỬ PHẦN MỀM</w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715549 \h </w:instrText></w:r><w:r><w:rPr><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:t>146
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715550" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>3.1. Xây dựng các chức năng chính của phần mềm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715550 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>146
+3.1.1. Đăng nhập</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715551 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>146
+3.1.2. Đăng ký</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715552 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>146
+3.1.3. Giao diện chính</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715553 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>147
+3.1.4. Giao diện mục “Sản phẩm”</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715554 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>148
+3.1.5.Giao diện sản phẩm Đồ nam</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715555 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>148
+3.1.6. Giao diện sản phẩm Sale</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715556 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>149
+3.1.7. Trung tâm hỗ trợ</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715557 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>150
+3.1.8. Tìm kiếm sản phẩm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715558 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>150
+3.1.9. Giao diện mục sản phẩm yêu thích</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715559 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>151
+3.1.10.Giao diện mục thêm vào giỏ hàng</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715560 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>151
+3.1.11.Giao diện mục đăng nhập của admin</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715561 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>152
+3.1.12.Giao diện mục Quản lý</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715562 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>153
+3.1.13.Giao diện mục Kế toán</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715563 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>153
+3.1.14.Giao diện mục Nhân viên bán hàng</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715564 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>154
+3.1.14.Giao diện mục Nhân viên kho</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715565 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>154
+<w:tab w:val="right" w:leader="dot" w:pos="9062"/></w:tabs><w:rPr><w:rFonts w:asciiTheme="minorHAnsi" w:eastAsiaTheme="minorEastAsia" w:hAnsiTheme="minorHAnsi" w:cstheme="minorBidi"/><w:noProof/><w:sz w:val="22"/><w:szCs w:val="22"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:hyperlink w:anchor="_Toc227715566" w:history="1"><w:r w:rsidRPr="00DA08A3"><w:rPr><w:rStyle w:val="Hyperlink"/><w:noProof/></w:rPr><w:t>3.2. Kiểm thử phần mềm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715566 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>155
+3.2.1. Chiến lược kiểm thử</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715567 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>155
+3.2.1.1. Kiểm thử đơn vị</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715568 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>155
+3.2.1.2. Kiểm thử tích hợp</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715569 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>155
+3.2.1.3. Kiểm thử hệ thống</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715570 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>156
+3.2.1.4. Kiểm thử chấp nhận</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715571 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>156
+3.2.2. Thực hành kiểm thử</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715572 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>156
+a. Kiểm thử chức năng Đăng nhập</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715573 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>156
+b. Kiểm thử chức năng đăng ký</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715574 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>158
+c. Kiểm thử chức năng tìm kiếm</w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715575 \h </w:instrText></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:noProof/><w:webHidden/></w:rPr><w:t>161
+Kết luận</w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715576 \h </w:instrText></w:r><w:r><w:rPr><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:t>163
+Tài liệu tham khảo</w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="begin"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:instrText xml:space="preserve"> PAGEREF _Toc227715577 \h </w:instrText></w:r><w:r><w:rPr><w:webHidden/></w:rPr></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:fldChar w:fldCharType="separate"/></w:r><w:r><w:rPr><w:webHidden/></w:rPr><w:t>165
+
+
+
+
+BẢNG PHÂN CÔNG CÔNG VIỆC
+
+
+STT
+Mã sinh viên
+Thành viên
+Công việc được giao
+Mức độ hoàn thành
+1
+74DCHT22118
+Đỗ Vũ Tùng
+- Các yêu cầu phi chức năng
+- Vẽ UC, Activity, Sequence Quản lý
+- Kiểm thử đăng nhập , đăng kí
+
+Đã hoàn thành
+2
+74DCHT22152
+Cù Đức Long
+- Mô tả tổng quan về đề tài
+- Vẽ UC, Activity, Sequence Nhân viên kho
+
+Đã hoàn thành
+3
+74DCHT21197
+Nguyễn Văn Hòa
+- Các chức năng hệ thống
+- Vẽ UC, Activity, Sequence Nhân viên bán hàng
+
+Đã hoàn thành
+4
+74DCHT22231
+Trần Đức Anh
+- Giới thiệu đề tài
+- Vẽ UC, Activity, Sequence Khách hàng
+- Kiểm thử tìm kiếm
+-Tổng hợp báo cáo
+
+Đã hoàn thành 
+5
+74DCHT22091
+Trịnh Hữu Mạnh
+- Mô hình dữ liệu &amp; phụ lục
+- Vẽ UC, Activity, Sequence Nhân viên kế toán
+
+Đã hoàn thành
+
+Lời mở đầu
+Trong thời đại công nghệ thông tin phát triển mạnh mẽ như hiện nay, việc ứng dụng các hệ thống phần mềm vào hoạt động kinh doanh đã trở thành nhu cầu thiết yếu của các doanh nghiệp và cửa hàng. Đặc biệt trong lĩnh vực kinh doanh quần áo thời trang, số lượng sản phẩm đa dạng, khách hàng đông đảo và các hoạt động như nhập hàng, bán hàng, quản lý tồn kho, chăm sóc khách hàng diễn ra thường xuyên, đòi hỏi phải có một hệ thống quản lý hiệu quả, chính xác và nhanh chóng.
+Trước đây, nhiều cửa hàng quần áo vẫn thực hiện việc quản lý bằng phương pháp thủ công hoặc sử dụng các công cụ đơn giản như sổ sách hoặc bảng tính, dẫn đến nhiều hạn chế như mất nhiều thời gian, dễ xảy ra sai sót, khó kiểm soát hàng tồn kho và doanh thu, cũng như gặp khó khăn trong việc thống kê và báo cáo. Do đó, việc xây dựng một hệ thống quản lý bán quần áo thời trang là rất cần thiết nhằm nâng cao hiệu quả quản lý, giảm thiểu sai sót và hỗ trợ quá trình kinh doanh một cách khoa học và hiện đại.
+Đề tài “Phân tích thiết kế hệ thống quản lý bán quần áo thời trang” được thực hiện nhằm nghiên cứu và xây dựng mô hình hệ thống quản lý phù hợp với nhu cầu thực tế của cửa hàng. Hệ thống sẽ hỗ trợ các chức năng chính như quản lý sản phẩm, quản lý khách hàng, quản lý đơn hàng, quản lý nhập xuất kho, quản lý nhân viên và thống kê báo cáo. Việc phân tích và thiết kế hệ thống sẽ giúp xác định rõ các yêu cầu chức năng, xây dựng mô hình dữ liệu, sơ đồ luồng dữ liệu và kiến trúc hệ thống trước khi tiến hành phát triển phần mềm.
+Thông qua đề tài này, người thực hiện có cơ hội vận dụng các kiến thức đã học về phân tích thiết kế hệ thống, cơ sở dữ liệu và phát triển phần mềm để xây dựng một hệ thống quản lý hoàn chỉnh, đáp ứng nhu cầu quản lý bán hàng trong thực tế.
+
+
+CHƯƠNG 1: PHÂN TÍCH YÊU CẦU
+1.1 GIỚI THIỆU
+1.1.1. Giới thiệu về đơn vị khảo sát
+Đơn vị khảo sát: Cửa hàng thời trang Routine Cầu Giấy
+Địa chỉ: 133 Cầu Giấy, quận Cầu Giấy, thành phố Hà Nội.
+Email: cskh@routine.vn
+Lịch sử hình thành của đơn vị:
+Thương hiệu Routine được thành lập tại Việt Nam từ năm 2013. 
+Ban đầu mở cửa hàng đầu tiên tại Hà Nội (dưới tên “Oz Homeland”) rồi đổi tên thành Routine và mở rộng ra nhiều tỉnh thành. 
+Cửa hàng hoạt động theo mô hình bán lẻ trực tiếp tại cửa hàng kết hợp với các kênh bán hàng trực tuyến. Các sản phẩm của cửa hàng bao gồm nhiều loại quần áo và phụ kiện thời trang như áo sơ mi, áo thun, quần jeans, quần kaki, áo khoác và nhiều sản phẩm khác.
+Hiện nay, cửa hàng có cơ cấu tổ chức gồm nhiều bộ phận khác nhau nhằm đảm bảo hoạt động kinh doanh diễn ra hiệu quả. Các bộ phận chính bao gồm:
+Quản lý cửa hàng
+Nhân viên bán hàng
+Nhân viên kho
+Nhân viên kế toán
+Bộ phận chăm sóc khách hàng
+Mỗi bộ phận đảm nhiệm một vai trò riêng trong quá trình vận hành cửa hàng. Quản lý chịu trách nhiệm điều hành hoạt động chung của cửa hàng, theo dõi doanh thu và quản lý nhân sự. Nhân viên bán hàng trực tiếp tư vấn và hỗ trợ khách hàng trong quá trình mua sắm. Nhân viên kho quản lý hàng hóa và theo dõi tình trạng tồn kho. Bộ phận kế toán phụ trách các hoạt động liên quan đến tài chính và thanh toán.
+Trong quá trình khảo sát thực tế, nhóm nhận thấy rằng một số hoạt động quản lý tại cửa hàng vẫn còn thực hiện bằng các phương pháp thủ công như sử dụng sổ sách hoặc bảng tính Excel để lưu trữ dữ liệu. Việc quản lý theo cách này có thể dẫn đến một số hạn chế như khó tìm kiếm dữ liệu, dễ xảy ra sai sót khi nhập liệu và mất nhiều thời gian trong việc tổng hợp báo cáo.
+Do đó, việc xây dựng một hệ thống quản lý bán hàng cho cửa hàng thời trang Routine là cần thiết nhằm hỗ trợ quản lý sản phẩm, khách hàng, đơn hàng và tồn kho một cách hiệu quả hơn. Hệ thống phần mềm này sẽ giúp tự động hóa nhiều quy trình quản lý, giảm thiểu sai sót và nâng cao hiệu quả hoạt động kinh doanh của cửa hàng.
+
+Hình 1 1: Cửa hàng Routine
+
+Hình 1.2: Một số sản phẩm của cửa hàng
+1.1.2. Mục đích
+Tài liệu SRS (Software Requirements Specification) được xây dựng nhằm mô tả chi tiết các yêu cầu của hệ thống quản lý bán quần áo thời trang Routine. Tài liệu này đóng vai trò là cơ sở để các thành viên trong nhóm phát triển phần mềm hiểu rõ các chức năng cần xây dựng và các yêu cầu cần đáp ứng của hệ thống.
+Mục đích của tài liệu bao gồm:
+Mô tả đầy đủ các yêu cầu chức năng và yêu cầu phi chức năng của hệ thống.
+Làm cơ sở cho quá trình phân tích, thiết kế, phát triển và triển khai phần mềm.
+Cung cấp tài liệu tham khảo cho các thành viên trong nhóm phát triển, quản lý dự án và các bên liên quan.
+Là cơ sở để kiểm thử và đánh giá hệ thống sau khi hoàn thành.
+Ngoài ra, tài liệu này còn giúp đảm bảo rằng tất cả các thành viên tham gia vào quá trình phát triển phần mềm đều có cùng một sự hiểu biết về mục tiêu và phạm vi của hệ thống. Điều này giúp giảm thiểu các sai sót trong quá trình phát triển và đảm bảo hệ thống được xây dựng đúng theo yêu cầu đặt ra.
+Hệ thống quản lý bán quần áo thời trang Routine được xây dựng nhằm hỗ trợ cửa hàng trong việc quản lý sản phẩm, khách hàng, đơn hàng, tồn kho và các hoạt động kinh doanh khác một cách hiệu quả và chính xác hơn so với phương pháp quản lý thủ công hiện tại.
+1.1.3. Phạm vi hệ thống
+Hệ thống quản lý bán quần áo thời trang Routine được xây dựng nhằm hỗ trợ các hoạt động quản lý và kinh doanh tại cửa hàng Routine Cầu Giấy. Hệ thống giúp quản lý các thông tin liên quan đến sản phẩm, khách hàng, đơn hàng, tồn kho và nhân viên trong cửa hàng.
+Phần mềm được thiết kế nhằm thay thế các phương pháp quản lý thủ công hiện tại như ghi chép sổ sách hoặc sử dụng bảng tính Excel, từ đó giúp nâng cao hiệu quả quản lý và giảm thiểu sai sót trong quá trình vận hành cửa hàng.
+Hệ thống cho phép thực hiện các chức năng chính sau:
+Quản lý sản phẩm
+Hệ thống cho phép quản lý thông tin các sản phẩm quần áo thời trang của cửa hàng. Các thông tin sản phẩm bao gồm mã sản phẩm, tên sản phẩm, giá bán, số lượng tồn kho, danh mục sản phẩm và mô tả sản phẩm. Người quản lý có thể thêm mới, chỉnh sửa hoặc xóa thông tin sản phẩm trong hệ thống.
+Quản lý khách hàng
+Hệ thống lưu trữ thông tin khách hàng như họ tên, số điện thoại, địa chỉ và lịch sử mua hàng. Việc quản lý thông tin khách hàng giúp cửa hàng theo dõi hành vi mua sắm và hỗ trợ các chương trình chăm sóc khách hàng.
+Quản lý đơn hàng
+Hệ thống cho phép nhân viên bán hàng tạo hóa đơn bán hàng khi khách hàng mua sản phẩm. Nhân viên có thể chọn sản phẩm, nhập số lượng, tính tổng tiền và thực hiện thanh toán.
+Quản lý kho
+Hệ thống hỗ trợ theo dõi số lượng tồn kho của các sản phẩm. Khi có hoạt động nhập hàng hoặc bán hàng, hệ thống sẽ tự động cập nhật số lượng tồn kho.
+Quản lý nhân viên
+Hệ thống cho phép quản lý thông tin nhân viên làm việc tại cửa hàng, bao gồm thông tin cá nhân, chức vụ và tài khoản đăng nhập hệ thống.
+Báo cáo và thống kê
+Hệ thống cung cấp các báo cáo như doanh thu theo ngày, tháng, năm; thống kê sản phẩm bán chạy và báo cáo tồn kho.
+Hệ thống có thể được triển khai dưới dạng:
+Ứng dụng Web chạy trên trình duyệt
+
+1.2. MÔ TẢ TỔNG QUAN
+1.2.1 Góc nhìn sản phẩm
+Hệ thống quản lý bán quần áo thời trang Routine là một phần mềm hỗ trợ quản lý hoạt động kinh doanh tại cửa hàng Routine. Hệ thống cho phép quản lý các thông tin liên quan đến sản phẩm, khách hàng, đơn hàng, tồn kho và nhân viên trong cửa hàng.
+Hệ thống được xây dựng như một phần mềm độc lập có khả năng kết nối với cơ sở dữ liệu để lưu trữ và xử lý thông tin. Người dùng có thể truy cập hệ thống thông qua giao diện phần mềm để thực hiện các chức năng quản lý và bán hàng.
+Hệ thống có thể được triển khai dưới dạng:
+ Ứng dụng Web truy cập thông qua trình duyệt
+Cơ sở dữ liệu của hệ thống có thể sử dụng các hệ quản trị cơ sở dữ liệu phổ biến như MySQL  để lưu trữ toàn bộ dữ liệu liên quan đến hoạt động bán hàng.
+1.2.2. Các tác nhân (Actors)
+Các tác nhân là những đối tượng bên ngoài hệ thống có tương tác trực tiếp với phần mềm.
+Trong hệ thống quản lý bán quần áo thời trang Routine, các tác nhân chính bao gồm:
+Quản lý
+Quản lý là người chịu trách nhiệm điều hành hoạt động của cửa hàng. Quản lý có quyền truy cập vào hầu hết các chức năng của hệ thống như quản lý sản phẩm, quản lý nhân viên, theo dõi doanh thu và xem các báo cáo thống kê.
+Nhân viên bán hàng
+Nhân viên bán hàng là người trực tiếp phục vụ khách hàng tại cửa hàng. Nhân viên có thể thực hiện các chức năng như tìm kiếm sản phẩm, tạo hóa đơn bán hàng và thực hiện thanh toán cho khách hàng.
+Nhân viên kho
+Nhân viên kho chịu trách nhiệm quản lý hàng hóa trong kho của cửa hàng. Nhân viên kho có thể cập nhật số lượng hàng nhập, xuất hàng và kiểm tra tình trạng tồn kho.
+Nhân viên kế toán
+Nhân viên kế toán phụ trách các hoạt động liên quan đến tài chính như kiểm tra hóa đơn bán hàng, theo dõi doanh thu và lập báo cáo tài chính.
+
+1.2.3. Môi trường hoạt động
+Hệ thống quản lý bán quần áo Routine được thiết kế để hoạt động trên môi trường máy tính của cửa hàng.
+Các yêu cầu về môi trường hoạt động của hệ thống bao gồm:
+Hệ điều hành
+Windows 10
+Windows 11
+Trình duyệt
+Trong trường hợp hệ thống được triển khai dưới dạng ứng dụng web, người dùng có thể truy cập hệ thống thông qua các trình duyệt phổ biến như:
+Google Chrome
+Cốc cốc
+Cơ sở dữ liệu
+Hệ thống sử dụng cơ sở dữ liệu quan hệ để lưu trữ dữ liệu. Một số hệ quản trị cơ sở dữ liệu có thể sử dụng gồm:
+MySQL
+
+
+1.2.4. Ràng buộc thiết kế
+Trong quá trình thiết kế hệ thống, một số ràng buộc cần được tuân thủ nhằm đảm bảo hệ thống hoạt động ổn định và dễ bảo trì.
+Ràng buộc về kiến trúc hệ thống
+Hệ thống được thiết kế theo mô hình kiến trúc phần mềm như:
+MVC (Model – View – Controller)
+3-Tier Architecture
+Việc áp dụng các mô hình kiến trúc này giúp tách biệt giữa phần giao diện người dùng, phần xử lý nghiệp vụ và phần dữ liệu.
+Ràng buộc về cơ sở dữ liệu
+Dữ liệu của hệ thống được lưu trữ trong cơ sở dữ liệu quan hệ. Thiết kế cơ sở dữ liệu cần đảm bảo tính toàn vẹn dữ liệu và tránh trùng lặp dữ liệu.
+Ràng buộc về bảo mật
+Hệ thống yêu cầu người dùng đăng nhập bằng tài khoản trước khi sử dụng. Mỗi loại người dùng sẽ được phân quyền truy cập khác nhau đối với các chức năng của hệ thống.
+1.3. YÊU CẦU CHỨC NĂNG
+1. Quản lý sản phẩm: Thêm, sửa, xóa mềm, tìm kiếm, danh sách. 
+2. Quản lý khách hàng: Thêm, sửa, tìm kiếm, lịch sử mua hàng.
+3. Quản lý đơn hàng/hóa đơn: Tạo hóa đơn, quản lý dòng sản phẩm, tính tiền, hủy đơn, thanh toán tiền mặt/chuyển khoản, in/xuất hóa đơn. 
+4. Quản lý kho: Nhập kho, điều chỉnh tồn, kiểm kê, báo cáo tồn. 
+5. Quản lý nhân viên: Thêm, sửa, kích hoạt/vô hiệu hóa, phân quyền. 
+6. Báo cáo thống kê: Doanh thu theo thời gian, sản phẩm bán chạy, tồn kho.
+1.4. YÊU CẦU PHI CHỨC NĂNG
+Yêu cầu phi chức năng mô tả các đặc điểm và tiêu chuẩn mà hệ thống phải đáp ứng trong quá trình hoạt động. Các yêu cầu này không mô tả trực tiếp các chức năng của hệ thống mà tập trung vào hiệu năng, bảo mật, độ tin cậy và khả năng sử dụng của phần mềm.
+1.4.1. Hiệu năng (Performance)
+Hệ thống cần đảm bảo hoạt động ổn định và có khả năng xử lý nhanh chóng các thao tác của người dùng.
+Các yêu cầu về hiệu năng bao gồm:
+Hệ thống phải phản hồi các thao tác của người dùng trong thời gian không quá 3 giây đối với các thao tác thông thường như tìm kiếm sản phẩm hoặc tạo hóa đơn.
+Hệ thống phải có khả năng xử lý đồng thời nhiều giao dịch bán hàng trong giờ cao điểm của cửa hàng.
+Hệ thống phải đảm bảo việc truy xuất dữ liệu từ cơ sở dữ liệu diễn ra nhanh chóng và chính xác.
+Các thao tác tìm kiếm sản phẩm hoặc khách hàng cần trả kết quả trong thời gian dưới 2 giây.
+1.4.2. Bảo mật (Security)
+Bảo mật là yếu tố quan trọng đối với hệ thống quản lý bán hàng vì hệ thống lưu trữ nhiều thông tin quan trọng như dữ liệu khách hàng, thông tin sản phẩm và doanh thu.
+Các yêu cầu về bảo mật bao gồm:
+Người dùng phải đăng nhập vào hệ thống bằng tài khoản và mật khẩu trước khi mua hàng.
+Mật khẩu của người dùng phải được mã hóa khi lưu trữ trong cơ sở dữ liệu.
+Hệ thống phải phân quyền người dùng theo vai trò như quản lý, nhân viên bán hàng và kế toán.
+Người dùng chỉ được phép truy cập vào các chức năng phù hợp với quyền hạn của mình.
+Hệ thống cần có cơ chế sao lưu dữ liệu định kỳ nhằm tránh mất dữ liệu trong trường hợp xảy ra sự cố.
+1.4.3. Độ tin cậy (Reliability)
+Hệ thống cần đảm bảo hoạt động ổn định trong quá trình sử dụng để tránh gây gián đoạn hoạt động kinh doanh của cửa hàng.
+Các yêu cầu về độ tin cậy bao gồm:
+Hệ thống phải hoạt động ổn định trong thời gian dài mà không xảy ra lỗi nghiêm trọng.
+Dữ liệu của hệ thống phải được lưu trữ an toàn và không bị mất khi xảy ra sự cố như mất điện hoặc lỗi phần mềm.
+Hệ thống phải có cơ chế phục hồi dữ liệu khi xảy ra lỗi hoặc sự cố hệ thống.
+1.4.4. Khả năng sử dụng (Usability)
+Hệ thống được thiết kế để nhân viên cửa hàng có thể dễ dàng sử dụng mà không cần nhiều kiến thức về công nghệ thông tin.
+Các yêu cầu về khả năng sử dụng bao gồm:
+Giao diện người dùng cần được thiết kế đơn giản, dễ hiểu và dễ thao tác.
+Các chức năng của hệ thống cần được sắp xếp một cách hợp lý để người dùng có thể dễ dàng tìm kiếm và sử dụng.
+Hệ thống hỗ trợ tiếng Việt để phù hợp với nhân viên cửa hàng.
+Các thông báo lỗi cần hiển thị rõ ràng để người dùng có thể dễ dàng nhận biết và xử lý.
+1.4.5. Khả năng mở rộng (Scalability)
+Hệ thống cần có khả năng mở rộng trong tương lai khi quy mô kinh doanh của cửa hàng phát triển.
+Các yêu cầu về khả năng mở rộng bao gồm:
+Hệ thống có thể mở rộng để quản lý nhiều cửa hàng hoặc chi nhánh trong tương lai.
+Hệ thống có thể tích hợp với các nền tảng bán hàng trực tuyến như website hoặc ứng dụng di động.
+Cơ sở dữ liệu của hệ thống phải được thiết kế linh hoạt để có thể lưu trữ khối lượng dữ liệu lớn khi số lượng sản phẩm và khách hàng tăng lên.
+1.4.6. Tính toàn vẹn dữ liệu (Data Integrity)
+Hệ thống cần đảm bảo dữ liệu được lưu trữ chính xác và nhất quán.
+Các yêu cầu bao gồm:
+Không cho phép trùng mã sản phẩm trong hệ thống.
+Không cho phép nhập số lượng sản phẩm âm hoặc dữ liệu không hợp lệ.
+Các bảng dữ liệu phải có khóa chính và khóa ngoại để đảm bảo mối quan hệ giữa các bảng.
+Hệ thống phải kiểm tra dữ liệu trước khi lưu vào cơ sở dữ liệu.
+
+1.4.7. Khả năng bảo trì (Maintainability)
+Hệ thống cần được thiết kế sao cho dễ dàng sửa lỗi và nâng cấp trong tương lai.
+Các yêu cầu bao gồm:
+Mã nguồn cần được viết theo chuẩn lập trình rõ ràng và có chú thích.
+Cấu trúc hệ thống phải được thiết kế theo mô hình kiến trúc phần mềm phù hợp.
+Hệ thống cần có tài liệu hướng dẫn sử dụng và tài liệu thiết kế hệ thống.
+1.5. MÔ HÌNH DỮ LIỆU (TÓM TẮT)
+Các thực thể  của hệ thống bao gồm: 
+USERS (Id,Email,Phone,Role)
+CUSTOMERS (Id,Email,Phone,Tier)
+PRODUCTS (Id,Category_id,Code,Name,Price,Stock,Status)
+PRODUCT_IMAGES(Id,Product_id,Image_url)
+PRODUCT_VARIANTS (Id,Product_id,Size,Color,Stock)
+ORDERS (Id,Order_nember,Customer_id,Created_by,Total,Status)
+ORDER_ITEMS (Id,Order_id,Product_id,Quantity,Price)
+ORDER_STATUS_HISTORY (Id,Order_id,From_status,To_status,Actor_id)
+SHIPMENTS (Id,Order_id)
+CART_ITEMS (Id,Customer_id,Product_id,Quantity,Size,Color)
+WISHLIST_ITEMS (Id,Customer_id ,Product_id)
+PRODUCT_REVIEWS (Id,Product_id,Customer_id,Rating)
+PRODUCT_REVIEW_IMAGES (Review_id,Image_url)
+PROMOTIONS (Id,Code,Name,Type,Discount_value,Max_discount_amount,start_date,end_date,status)
+PROMOTION_PRODUCTS (id,promotion_id,product_id)
+DISCOUNT_CODES (id,code,discount_type,discount_value)
+PROMOTION_USAGE_LOG (id,Mô hình dữ liệu hệ thống)
+NHA_CUNG_CAP (id,ma_ncc,ten_ncc,trang_thai)
+PHIEU_NHAP_KHO (id,ma_phieu_nhap)
+CHI_TIET_PHIEU_NHAP(id,phieu_nhap_id ,product_id,so_luong_nhap,gia_nhap)
+PHIEU_XUAT_KHO (id,ma_phieu_xuat,order_id,nguoi_tao_id,nguoi_duyet_id,trang_thai,ly_do_xuat)
+LICH_SU_TON_KHO (id,product_id,nguoi_thuc_hien_id,loai_thay_doi,so_luong_truoc,so_luong_sau)
+
+1.6 PHỤ LỤC
+1.6.1. Rủi ro hệ thống
+Mất dữ liệu
+Lỗi tính tiền
+Quá tải hệ thống
+Sai sót khi nhập dữ liệu
+Lỗi kết nối cơ sở dữ liệu
+Lỗi phần mềm khi cập nhật hệ thống
+Truy cập trái phép vào hệ thống
+Mất điện hoặc sự cố phần cứng
+Sai lệch dữ liệu tồn kho
+1.6.2. Hướng phát triển tương lai
+Ứng dụng Mobile
+Thanh toán online
+Quản lý nhiều chi nhánh
+AI dự đoán nhu cầu sản phẩm
+Tích hợp bán hàng online (Website / App)
+Quản lý chương trình khuyến mãi
+Hệ thống tích điểm khách hàng
+Phân tích dữ liệu bán hàng
+Tích hợp quét mã vạch sản phẩm
+Kết nối với hệ thống vận chuyển
+
+
+
+CHƯƠNG 2: THIẾT KẾ HỆ THỐNG
+
+2.1. Biểu đồ Usecase
+2.1.1. Biểu đồ Usecase tổng quan hệ thống
+
+2.1.2. Biểu đồ Usecase chi tiết
+2.1.2.1. UseCase đăng nhập
+
+
+Đặc tả “Đăng nhập”
+Tên UC
+Đăng nhập
+Actor
+- Quản lý
+- Nhân viên
+- Khách hàng
+Mô tả
+Use case mô tả quy trình người dùng truy cập hệ thống, nhập thông tin tài khoản (tên đăng nhập &amp; mật khẩu) để xác thực và vào hệ thống với quyền tương ứng.
+Tiền điều kiện
+- Người dùng đã có tài khoản hợp lệ trong hệ thống.
+- Hệ thống đang hoạt động và sẵn sàng tiếp nhận yêu cầu đăng nhập.
+Luồng chính
+- Actor truy cập vào màn hình đăng nhập.
+- Hệ thống hiển thị form nhập tài khoản và mật khẩu.
+- Actor nhập tên đăng nhập và mật khẩu.
+- Actor chọn nút Đăng nhập.
+- Hệ thống kiểm tra thông tin đã nhập.
+- Hệ thống xác thực tài khoản.
+Luồng phụ
+- Actor nhập sai mật khẩu =&gt; Hệ thống thông báo: "Sai mật khẩu, vui lòng thử lại."
+- Actor nhập tên đăng nhập không có trong hệ thống = &gt;Hệ thống thông báo: "Tài khoản không tồn tại" ,Quay lại bước nhập thông tin.
+
+Biểu đồ hoạt động “đăng nhập”
+
+
+Biểu đồ tuần tự “đăng nhập”
+
+2.1.2.2. Usecase quản lý tài khoản
+
+
+Đặc tả “Quản lý tài khoản”
+Tên UC
+Quản lý tài khoản
+Actor
+- Quản lý
+- Nhân viên
+- Khách hàng
+Mô tả
+Use case mô tả quá trình người dùng (tùy vai trò) đăng nhập vào hệ thống, xem thông tin và cập nhật thông tin tài khoản cá nhân,bảo mật thông tin người  hoặc đăng xuất khỏi hệ thống.
+Tiền điều kiện
+- Người dùng đã có tài khoản hợp lệ.
+- Hệ thống hoạt động bình thường.
+- Người dùng phải thực hiện Đăng nhập trước (vì UC này include Đăng nhập).
+Luồng chính
+- Actor truy cập vào chức năng Quản lý tài khoản.
+- Hệ thống gọi Use Case Đăng nhập (include) để xác thực.
+- Sau khi đăng nhập thành công, hệ thống hiển thị giao diện quản lý tài khoản (thông tin cá nhân, tùy chọn cập nhật,bảo mật, đăng xuất).
+- Actor xem thông tin tài khoản.
+- Actor chọn một trong các chức năng:
+Cập nhật thông tin (extend)
+Đăng xuất (extend)
+Bảo mật ( extend)
+Luồng phụ
+Hệ thống không lấy được dữ liệu tài khoản (lỗi server) =&gt; Hiển thị thông báo: "Không thể tải thông tin tài khoản, vui lòng thử lại sau." =&gt; Kết thúc use case.
+Biểu đồ hoạt động “Quản lý tài khoản”
+
+Biểu đồ tuần tự “Quản lý tài khoản”
+
+
+Đặc tả “Cập nhật thông tin”
+Tên UC
+Cập nhật thông tin
+Actor
+- Quản lý
+- Nhân viên
+- Khách hàng
+Mô tả
+Use case mô tả quá trình người dùng sửa đổi các thông tin cá nhân như họ tên, email, số điện thoại, địa chỉ, mật khẩu… Hệ thống cập nhật thông tin mới vào cơ sở dữ liệu nếu hợp lệ.
+Tiền điều kiện
+-  Actor đã đăng nhập thành công vào hệ thống.
+- Actor đang ở màn hình Quản lý tài khoản.
+- Cơ sở dữ liệu hoạt động bình thường.
+Luồng chính
+ - Actor chọn chức năng “Cập nhật thông tin” trong giao diện quản lý tài khoản.
+- Hệ thống hiển thị form chứa thông tin cá nhân hiện tại.
+- Actor chỉnh sửa các trường thông tin mong muốn (ví dụ: email, số điện thoại, họ tên, mật khẩu…).
+- Actor nhấn nút “Lưu thay đổi”.
+- Hệ thống kiểm tra các trường dữ liệu:
+Định dạng email
+Số điện thoại
+Mật khẩu (nếu đổi)
+- Nếu tất cả dữ liệu hợp lệ, hệ thống lưu thông tin mới vào cơ sở dữ liệu.
+- Hệ thống hiển thị thông báo “Cập nhật thông tin thành công”.
+- Hệ thống quay về trang thông tin tài khoản đã được cập nhật.
+Luồng phụ
+- Email không đúng dạng / Số điện thoại sai định dạng / Mật khẩu quá yếu =&gt; Hệ thống báo lỗi tương ứng:“Email không hợp lệ.”,“Số điện thoại không hợp lệ.” =&gt; Actor sửa thông tin và quay lại bước lưu.
+
+Biểu đồ hoạt động “Cập nhật thông tin ”
+
+Biểu đồ tuần tự “Cập nhật thông tin ”
+
+Đặc tả “Bảo mật tài khoản”
+Tên UC
+Bảo mật tài 
+Actor
+- Quản lý
+- Nhân viên
+- Khách hàng
+Mô tả
+Use case mô tả quá trình người dùng thay đổi mật khẩu tài khoản để đảm bảo tính bảo mật khi sử dụng hệ thống.
+Tiền điều kiện
+- Người dùng đã có tài khoản hợp lệ. 
+- Người dùng đã đăng nhập vào hệ thống. 
+- Người dùng truy cập vào mục Bảo mật trong phần quản lý tài khoản.
+
+Luồng chính
+- Actor chọn mục Bảo mật trong giao diện quản lý tài khoản. 
+- Hệ thống hiển thị giao diện Đổi mật khẩu. 
+- Actor nhập các thông tin: 
+Mật khẩu hiện tại 
+Mật khẩu mới 
+Xác nhận mật khẩu mới 
+- Actor nhấn Lưu thay đổi. 
+- Hệ thống kiểm tra thông tin đã nhập. 
+- Nếu hợp lệ, hệ thống cập nhật mật khẩu mới cho tài khoản. 
+- Hệ thống hiển thị thông báo Đổi mật khẩu thành công.
+Luồng phụ
+Mật khẩu hiện tại không đúng
+Hệ thống hiển thị thông báo: “Mật khẩu hiện tại không chính xác.” 
+Mật khẩu xác nhận không khớp
+Hệ thống hiển thị thông báo: “Mật khẩu xác nhận không khớp.” 
+Dữ liệu nhập không hợp lệ
+Hệ thống yêu cầu người dùng nhập lại thông tin.
+
+
+Biểu đồ hoạt động “Bảo mật tài khoản”
+
+Biểu đồ tuần tự “Bảo mật tài khoản”
+
+
+Đặc tả “Đăng xuất”
+Tên UC
+Đăng xuất
+Actor
+- Quản lý
+- Nhân viên
+- Khách hàng
+Mô tả
+Use case mô tả quá trình người dùng thoát khỏi hệ thống sau khi đã đăng nhập. Việc đăng xuất giúp kết thúc phiên làm việc và đảm bảo tính bảo mật thông tin cá nhân.
+Tiền điều kiện
+- Actor đã đăng nhập hệ thống.
+- Actor đang ở bất kỳ màn hình nào có chức năng Đăng xuất.
+Luồng chính
+- Actor chọn chức năng “Đăng xuất” từ giao diện hệ thống.
+- Hệ thống hiển thị thông báo xác nhận (nếu có):“Bạn có chắc chắn muốn đăng xuất không?”
+- Actor chọn “Đồng ý”.
+- Hệ thống xóa thông tin phiên đăng nhập hiện tại (session/token).
+- Hệ thống chuyển người dùng về màn hình Đăng nhập.
+- Use case kết thúc.
+Luồng phụ
+- Actor chọn “Đăng xuất” nhưng session đã tự hết hạn (timeout).=&gt; Hệ thống hiển thị:“Phiên làm việc của bạn đã hết hạn.”=&gt; Hệ thống đưa actor về màn hình Đăng nhập.
+Biểu đồ hoạt động “Đăng xuất”
+
+Biểu đồ tuần tự “Đăng xuất”
+
+2.1.2.3. Khách hàng
+A. Khách xem
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
+a) Đăng ký tài khoản
+
+Đặc tả “Đăng ký tài khoản”
+Tên UC
+Đăng ký tài khoản
+Actor
+Khách xem
+Mô tả
+Người dùng nhập các thông tin cần thiết để đăng ký tài khoản. Sau khi nhập xong, hệ thống sẽ kiểm tra tính hợp lệ và lưu thông tin vào cơ sở dữ liệu
+Tiền điều kiện
+Hệ thống hiển thị giao diện đăng ký tài khoản
+Người dùng chưa có tài khoản trong hệ thống
+Luồng chính
+- Người dùng chọn chức năng “Đăng ký tài khoản” từ giao diện hệ thống.
+- Hệ thống hiển thị form nhập thông tin (họ tên, email, số điện thoại, mật khẩu…).
+- Người dùng nhập đầy đủ các thông tin yêu cầu.
+- Hệ thống tự động kiểm tra tính hợp lệ của thông tin:
+Định dạng email hợp lệ
+Số điện thoại đúng quy tắc
+Mật khẩu đủ độ dài
+Không bỏ trống trường bắt buộc
+- Nếu thông tin hợp lệ, hệ thống tiến hành lưu thông tin người dùng vào cơ sở dữ liệu.
+- Hệ thống lưu vào CSDL và chuyển người dùng sang màn hình trang chủ.
+Luồng phụ
+- Nếu email sai định dạng hệ thống báo: “Email không hợp lệ”
+- Nếu số điện thoại không đúng định dạng và không đủ 10 – 11 số, hệ thống báo: “Số điện thoại không hợp lệ”
+- Nếu trống thông tin, hệ thống báo: “Vui lòng nhập đầy đủ thông tin”
+- Nếu mật khẩu yếu, hệ thống báo: “Mật khẩu phải từ 8 ký tự trở lên”
+- Người dùng nhập lại và gửi lại thông tin.
+
+Biều đồ hoạt động “Đăng ký tài khoản”
+
+Biểu đồ tuần tự  “Đăng ký tài khoản”
+
+b) Xem sản phẩm
+
+Đặc tả “Xem sản phẩm”
+Tên UC
+Xem sản phẩm
+Actor
+Khách xem, Khách mua
+Mô tả
+Người dùng có thể xem danh sách các sản phẩm đang bán trên hệ thống. Từ danh sách, người dùng có thể chọn xem chi tiết sản phẩm theo nhu cầu
+Tiền điều kiện
+Hệ thống phải có dữ liệu sản phẩm.
+Người dùng truy cập vào giao diện xem sản phẩm
+Luồng chính
+- Người dùng chọn chức năng “Xem sản phẩm” trên giao diện.
+- Hệ thống gửi yêu cầu truy vấn danh sách sản phẩm đến cơ sở dữ liệu (SQL).
+- Hệ thống hiển thị danh sách sản phẩm lên giao diện.
+Luồng phụ
+
+
+Biểu đồ hoạt động “Xem sản phẩm”
+
+Biều đồ tuần tự “Xem sản phẩm”
+
+Đặc tả “Tìm kiếm sản phẩm”
+Tên UC
+Tìm kiếm sản phẩm
+Actor
+Khách xem, Khách mua
+Mô tả
+Người dùng có thể nhập tên hoặc từ khóa để lọc danh sách sản phẩm nhằm nhanh chóng tìm được sản phẩm mong muốn
+Tiền điều kiện
+Người dùng đang ở giao diện xem sản phẩm
+Luồng chính
+- Người dùng chọn chức năng “Tìm kiếm sản phẩm”
+- Người dùng nhập từ khóa tìm kiếm vào ô tìm kiếm.
+- Hệ thống xử lý gửi truy vấn đến CSDL và hiển thị danh sách sản phẩm phù hợp với từ khóa.
+Luồng phụ
+- Không tìm thấy sản phẩm phù hợp: hệ thống hiển thị “Không tìm thấy sản phẩm phù hợp.”
+
+Biểu đồ hoạt động “Tìm kiếm sản phẩm”
+
+Biều đồ tuần tự “Tìm kiếm sản phẩm”
+
+Đặc tả “Chi tiết sản phẩm”
+Tên UC
+Xem chi tiết sản phẩm
+Actor
+Khách xem, Khách mua
+Mô tả
+Người dùng có thể xem thông tin chi tiết của một sản phẩm như giá, mô tả, hình ảnh, thuộc tính… từ danh sách sản phẩm
+Tiền điều kiện
+Người dùng đang ở trang chủ xem sản phẩm và đã chọn một sản phẩm cụ thể
+Luồng chính
+- Người dùng chọn một sản phẩm trong danh sách.
+- Hệ thống hiển thị trang chi tiết sản phẩm như:
+Tên sản phẩm
+Hình ảnh
+Giá
+Mô tả
+Thuộc tính khác (nếu có)
+- Người dùng có thể quay lại danh sách hoặc tiếp tục thao tác
+Luồng phụ
+
+
+Biểu đồ hoạt động “Chi tiết sản phẩm”
+
+Biều đồ tuần tự  “Chi tiết sản phẩm”
+
+B. Khách mua
+
+a)  Lịch sử mua hàng
+
+Đặc tả “Lịch sử mua hàng”
+Tên UC
+Lịch sử mua hàng
+Actor
+Khách mua
+Mô tả
+Khách mua có thể xem lại toàn bộ lịch sử các đơn hàng mà họ đã đặt trên hệ thống, bao gồm thông tin đơn hàng, ngày mua, trạng thái và chi tiết sản phẩm
+Tiền điều kiện
+Người dùng phải đăng nhập vào hệ thống
+Luồng chính
+- Người dùng chọn chức năng “Lịch sử mua hàng” từ giao diện hệ thống.
+- Hệ thống hiển thị danh sách các đơn hàng trước đây của người dùng, bao gồm: mã đơn hàng, ngày mua, tổng tiền, trạng thái đơn hàng.
+- Người dùng có thể chọn một đơn hàng bất kỳ để xem chi tiết đơn hàng (sản phẩm, số lượng, giá, địa chỉ giao hàng, phương thức thanh toán...).
+Luồng phụ
+- Trường hợp không có lịch sử mua hàng: Hệ thống hiển thị thông báo: “Bạn chưa có đơn hàng nào.”
+
+Biều đồ hoạt động “Lịch sử mua hàng”
+
+Biều đồ tuần tự  “Lịch sử mua hàng”
+
+
+b) Đặt hàng sản phẩm
+
+Đặc tả “Đặt hàng”
+Tên UC
+Đặt hang sản phẩm
+Actor
+Khách mua
+Mô tả
+Cho phép khách mua nhập thông tin giao hàng, chọn phương thức giao hàng và thanh toán để tạo đơn hàng trên hệ thống
+Tiền điều kiện
+- Khách mua đã chọn sản phẩm.
+- Người dùng đã đăng nhập
+Luồng chính
+Khách mua truy cập trang Thanh toán / Đặt hàng 
+Hệ thống hiển thị: 
+Thông tin sản phẩm trong đơn 
+Tổng tiền tạm tính 
+Khách mua nhập hoặc cập nhật: 
+Họ tên 
+Số điện thoại 
+Địa chỉ giao hàng 
+Khách mua chọn phương thức giao hàng 
+Hệ thống tính và hiển thị: 
+Phí vận chuyển 
+Tổng thanh toán 
+Khách mua chọn phương thức thanh toán 
+Khách mua nhấn nút “Đặt hàng” 
+Hệ thống: 
+Tạo đơn hàng 
+Xử lý thanh toán (nếu có) 
+Nếu thành công: 
+Hiển thị thông báo: “Đặt hàng thành công” 
+Luồng phụ
+Nếu khách chưa nhập đủ thông tin giao hàng→ Hệ thống hiển thị lỗi và yêu cầu nhập đầy đủ
+
+Biểu đồ hoạt động “Đặt hàng”
+
+Biều đồ hoạt tuần tự “Đặt hàng”
+
+c) Đánh giá sản phẩm
+
+Đặc tả “Đánh giá sản phẩm”
+Tên UC
+Đánh giá sản phẩm
+Actor
+Khách mua
+Mô tả
+Khách mua có thể gửi đánh giá (số sao, nhận xét) về một sản phẩm mà họ đã mua trên hệ thống.
+Tiền điều kiện
+Người dùng đã đăng nhập vào hệ thống.
+Người dùng đã mua sản phẩm muốn đánh giá
+Luồng chính
+- Khách mua chọn chức năng “Xem chi tiết” để hiển thị chi tiết đơn hàng đã mua
+- Hệ thống hiển thị form đánh giá, bao gồm: số sao, nội dung nhận xét, hình ảnh (nếu có).
+- Khách mua nhập thông tin đánh giá.
+- Khách mua nhấn “Gửi đánh giá”.
+- Hệ thống lưu đánh giá vào cơ sở dữ liệu.
+- Hệ thống thông báo “Gửi đánh giá thành công” và hiển thị đánh giá vừa tạo
+Luồng phụ
+
+
+Biểu đồ hoạt động “Đánh giá sản phẩm”
+
+Biều đồ tuần tự “Đánh giá sản phẩm”
+
+d) Quản lý giỏ hàng
+
+Đặc tả “Cập nhật sản phẩm”
+Tên UC
+Cập nhật sản phẩm
+Actor
+Khách mua
+Mô tả
+Cho phép khách mua điều chỉnh số lượng của sản phẩm trong giỏ hàng
+Tiền điều kiện
+- Người dùng đang ở giao diện Xem giỏ hàng.
+- Sản phẩm đang tồn tại trong giỏ hàng
+Luồng chính
+- Người dùng chọn chức năng "Cập nhật” tại một sản phẩm.
+- Người dùng nhập số lượng hoặc chọn mẫu mới.
+- Hệ thống kiểm tra tính hợp lệ của số lượng.
+- Hệ thống cập nhật giỏ hàng và hiển thị thông báo “Cập nhật thành công” và lưu vào CSDL
+Luồng phụ
+- Nếu số lượng mới vượt quá số lượng tồn kho, hệ thống yêu cầu nhập lại
+- Nếu người dùng nhập số lượng bằng 0, hệ thống đề xuất xóa sản phẩm
+
+Biểu đồ hoạt động “Cập nhật sản phẩm”
+
+Biều đồ tuần tự “Cập nhật sản phẩm”
+
+Đặc tả “Thêm sản phẩm”
+Tên UC
+Thêm sản phẩm
+Actor
+Khách mua
+Mô tả
+Cho phép khách mua thêm một sản phẩm vào giỏ
+Tiền điều kiện
+- Người dùng đã đăng nhập.
+- Người dùng đang xem chi tiết sản phẩm
+Luồng chính
+- Người dùng chọn chức năng "Thêm vào giỏ" ở một sản phẩm.
+- Hệ thống thêm sản phẩm vào giỏ hàng.
+- Hệ thống hiển thị thông báo “Thêm sản phẩm thành công” và lưu vào CSDL
+Luồng phụ
+- Nếu sản phẩm hết hàng, hệ thống thông báo “Sản phẩm tạm hết hàng”.
+- Nếu số lượng nhập vào không hợp lệ, hệ thống yêu cầu người dùng nhập lại
+
+Biểu đồ hoạt động “Thêm sản phẩm”
+
+Biều đồ tuần tự “Thêm sản phẩm”
+
+Đặc tả “Xóa sản phẩm”
+Tên UC
+Xóa sản phẩm
+Actor
+Khách mua
+Mô tả
+Cho phép khách mua xóa một sản phẩm ra khỏi giỏ hàng
+Tiền điều kiện
+Người dùng đang xem giỏ hàng
+Người dùng đã đăng nhập.
+Luồng chính
+- Người dùng chọn chức năng “Xóa sản phẩm” tại sản phẩm muốn xóa.
+- Hệ thống xóa sản phẩm khỏi giỏ và thông báo “Đã xóa sản phẩm”
+Luồng phụ
+
+
+Biểu đồ hoạt động “Xóa sản phẩm”
+
+Biểu đồ tuần tự  “Xóa sản phẩm”
+
+2.1.2.4. Nhân viên bán hàng
+
+a) Quản lý khách hàng
+
+
+Đặc tả “Xem danh sách khách hàng”
+Tên UC
+Xem danh sách khách hàng
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Nhân viên bán hàng và quản lý có thể xem toàn bộ danh sách khách hàng trong hệ thống.
+Tiền điều kiện
+Người dùng phải đăng nhập vào hệ thống
+Luồng chính
+- Người dùng chọn chức năng "Xem danh sách khách hàng" từ giao diện hệ thống.
+- Hệ thống hiển thị danh sách các khách hàng hiện có trong hệ thống.
+- Người dùng có thể duyệt qua danh sách khách hàng hoặc lựa chọn thao tác với khách hàng như "Cập nhật thông tin", "Tìm kiếm khách hàng",...
+Luồng phụ
+- Nếu không có khách hàng trong hệ thống, hệ thống sẽ thông báo "Danh sách khách hàng trống"
+- Nếu hệ thống không thể tải danh sách khách hàng, thông báo lỗi sẽ xuất hiện yêu cầu người dùng thử lại
+Biểu đồ hoạt động “Xem danh sách khách hàng” 
+Biểu đồ tuần tự “Xem danh sách khách hàng” 
+
+Đặc tả “Thêm khách hàng”
+Tên UC
+Thêm khách hàng
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Cho phép nhân viên bán hàng và quản lý thêm khách hàng mới vào hệ thống bằng cách nhập thông tin khách hàng
+Tiền điều kiện
+Người dùng đã đăng nhập vào hệ thống
+Luồng chính
+-  Actor chọn chức năng “Thêm khách hàng” từ giao diện hệ thống.
+- Hệ thống hiển thị form nhập thông tin khách hàng (họ tên, số điện thoại, email, địa chỉ...).
+- Actor nhập đầy đủ thông tin khách hàng vào form.
+- Actor nhấn nút “Lưu”.
+- Hệ thống kiểm tra tính hợp lệ của dữ liệu:
+Định dạng email
+Độ dài số điện thoại
+Không được để trống trường bắt buộc
+- Hệ thống lưu thông tin khách hàng vào cơ sở dữ liệu.
+- Hệ thống thông báo “Thêm khách hàng thành công”
+Luồng phụ
+- Thông tin không hợp lệ
+Hệ thống thông báo lỗi (ví dụ: sai định dạng email, số điện thoại không đúng).
+Yêu cầu actor nhập lại
+- Khách hàng đã tồn tại
+Nếu số điện thoại hoặc email trùng với khách hàng đã có trong hệ thống, hệ thống thông báo “Khách hàng đã tồn tại.”
+Yêu cầu kiểm tra lại.
+- Lỗi kết nối hoặc lỗi hệ thống
+Hệ thống hiển thị thông báo lỗi và yêu cầu thử lại
+Biểu đồ hoạt động “Thêm khách hàng” 
+
+Biểu đồ tuần tự “Thêm khách hàng” 
+
+Đặc tả “Tìm kiếm khách hàng”
+Tên UC
+Tìm kiếm khách hàng
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Cho phép nhân viên bán hàng và quản lý tìm kiếm khách hàng theo các tiêu chí như tên, số điện thoại, email, hoặc địa chỉ
+Tiền điều kiện
+Người dùng phải đăng nhập vào hệ thống
+Luồng chính
+- Người dùng chọn chức năng "Tìm kiếm khách hàng" từ giao diện hệ thống.
+-Hệ thống hiển thị form tìm kiếm và yêu cầu người dùng nhập tiêu chí tìm kiếm (tên, số điện thoại, email, v.v.).
+-Người dùng nhập thông tin tìm kiếm và nhấn "Tìm kiếm".
+-Hệ thống hiển thị kết quả tìm kiếm các khách hàng phù hợp với tiêu chí tìm kiếm
+Luồng phụ
+- Nếu không có khách hàng nào khớp với tiêu chí tìm kiếm, hệ thống sẽ thông báo "Không tìm thấy khách hàng"
+- Nếu thông tin nhập vào không hợp lệ (ví dụ, sai định dạng email), hệ thống sẽ yêu cầu người dùng nhập lại đúng thông tin
+Biểu đồ hoạt động “Tìm kiếm khách hàng” 
+Biểu đồ tuần tự “Tìm kiếm khách hàng” 
+
+ Đặc tả “Cập nhật thông tin”
+Tên UC
+Cập nhật thông tin
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Cho phép quản lý và nhân viên bán hàng cập nhật thông tin khách hàng trong hệ thống
+Tiền điều kiện
+Người dùng phải đăng nhập vào hệ thống
+Luồng chính
+- Người dùng chọn khách hàng cần cập nhật từ danh sách khách hàng hoặc tìm kiếm khách hàng.
+- Hệ thống hiển thị thông tin khách hàng cần cập nhật.
+- Người dùng chỉnh sửa thông tin khách hàng và nhấn "Lưu".
+- Hệ thống kiểm tra tính hợp lệ của thông tin được cập nhật.
+- Hệ thống lưu thông tin cập nhật vào cơ sở dữ liệu và thông báo "Cập nhật thông tin thành công"
+Luồng phụ
+- Nếu dữ liệu nhập vào không hợp lệ, hệ thống thông báo lỗi và yêu cầu chỉnh sửa thông tin
+- Nếu khách hàng không có trong hệ thống, hệ thống sẽ thông báo không tìm thấy và yêu cầu kiểm tra lại thông tin
+Biểu đồ hoạt động “Cập nhật thông tin” 
+Biểu đồ tuần tự “Cập nhật thông tin” 
+
+b) Truy vấn sản phẩm
+
+Đặc tả “Xem thông tin sản phẩm”
+Tên UC
+Xem thông tin sản phẩm
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Cho phép người dùng xem chi tiết thông tin của một sản phẩm trong hệ thống
+Tiền điều kiện
+- Người dùng phải đăng nhập vào hệ thống
+- Người dùng đã thực hiện tìm kiếm sản phẩm và chọn một sản phẩm cụ thể trong danh sách kết quả
+Luồng chính
+- Người dùng chọn một sản phẩm từ danh sách kết quả tìm kiếm.
+
+- Hệ thống hiển thị chi tiết sản phẩm, bao gồm: tên, mã, 
+giá, mô tả, tồn kho,...
+
+Luồng phụ
+- Sản phẩm không còn tồn tại trong hệ thống sẽ thông báo “Sản phẩm không tồn tại” 
+Biểu đồ hoạt động “Xem thông tin sản phẩm” 
+Biểu đồ tuần tự “Xem thông tin sản phẩm” 
+Đặc tả “Tìm kiếm sản phẩm”
+Tên UC
+Tìm kiếm sản phẩm
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Cho phép người dùng tìm kiếm sản phẩm trong hệ thống theo các tiêu chí như tên sản phẩm, mã sản phẩm hoặc danh mục
+Tiền điều kiện
+Người dùng đã đăng nhập vào hệ thống và chọn chức năng “Truy vấn sản phẩm”
+Luồng chính
+- Hệ thống hiển thị giao diện tìm kiếm sản phẩm
+- Người dùng nhập thông tin tìm kiếm (tên, mã hoặc từ khóa liên quan).
+- Người dùng chọn “Tìm kiếm”.
+- Hệ thống xử lý yêu cầu và hiển thị danh sách sản phẩm phù hợp với tiêu chí tìm kiếm
+Luồng phụ
+<w:id w:val="-1241591700"/></w:sdtPr><w:sdtEndPr/><w:sdtContent><w:r w:rsidR="00C64F1A"><w:rPr><w:rFonts w:eastAsia="Caudex"/><w:color w:val="000000" w:themeColor="text1"/><w:sz w:val="26"/><w:szCs w:val="26"/><w:lang w:val="en-US"/></w:rPr><w:t>- Không tìm thấy sản phẩm → Hệ thống thông báo “Không tìm thấy sản phẩm phù hợp”.
+<w:id w:val="770252321"/></w:sdtPr><w:sdtEndPr/><w:sdtContent><w:r w:rsidR="00C64F1A"><w:rPr><w:rFonts w:eastAsia="Caudex"/><w:color w:val="000000" w:themeColor="text1"/><w:sz w:val="26"/><w:szCs w:val="26"/><w:lang w:val="en-US"/></w:rPr><w:t>- Người dùng bỏ trống trường tìm kiếm → Hệ thống yêu cầu nhập ít nhất một tiêu chí
+Biểu đồ hoạt động  “Tìm kiếm sản phẩm” 
+Biểu đồ tuần tự “Tìm kiếm sản phẩm” 
+c) Quản lý khuyến mại
+
+
+Đặc tả “Xem thông tin khuyến mại”
+Tên UC
+Xem thông tin khuyến mại
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Nhân viên bán hàng và quản lý có thể xem thông tin về các chương trình khuyến mại hiện có trong hệ thống
+Tiền điều kiện
+Người dùng phải đăng nhập vào hệ thống
+Luồng chính
+- Người dùng chọn chức năng "Xem thông tin khuyến mại" từ giao diện hệ thống
+- Hệ thống hiển thị thông tin về các chương trình khuyến mại hiện có trong hệ thống
+- Người dùng có thể lựa chọn chi tiết chương trình khuyến mại để xem thông tin them
+Luồng phụ
+- Nếu không có thông tin khuyến mại nào trong hệ thống, hệ thống sẽ thông báo "Không có thông tin khuyến mại"
+- Nếu có lỗi trong quá trình tải thông tin, hệ thống sẽ xuất hiện thông báo lỗi và yêu cầu người dùng thử lại
+Biểu đồ hoạt động “Xem thông tin khuyến mại” 
+Biểu đồ tuần tự “Xem thông tin khuyến mại” 
+Đặc tả “Áp dụng KM”
+Tên UC
+Áp dụng khuyến mại
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Nhân viên bán hàng và quản lý có thể áp dụng chương trình khuyến mại cho các đơn hàng hoặc khách hàng trong hệ thống
+Tiền điều kiện
+Người dùng phải đăng nhập vào hệ thống và có quyền áp dụng khuyến mại
+Luồng chính
+- Nhân viên bán hàng hoặc quản lý chọn chức năng "Áp dụng khuyến mại".
+- Người dùng nhập mã khuyễn mại
+- Hệ thống xác nhận và áp dụng khuyến mại cho đối tượng đã chọn.
+- Hệ thống hiển thị kết quả áp dụng khuyến mại (giảm giá, giá trị ưu đãi, v.v.)
+Luồng phụ
+- Nếu không có khuyến mại nào có thể áp dụng cho đối tượng, hệ thống sẽ thông báo "Không có chương trình khuyến mại phù hợp".
+- Nếu có lỗi trong quá trình áp dụng, hệ thống sẽ xuất hiện thông báo lỗi và yêu cầu thử lại
+Biểu đồ hoạt động “Áp dụng KM” 
+Biểu đồ tuần tự “Áp dụng KM” 
+d) Quản lý hóa đơn
+
+
+Đặc tả “Xem thông tin hóa đơn”
+Tên UC
+Xem thông tin hóa đơn
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Actor có thể xem chi tiết thông tin của một hóa đơn bao gồm: mã hóa đơn, thời gian tạo, danh sách sản phẩm, số lượng, đơn giá, tổng tiền và nhân viên tạo hóa đơn
+Tiền điều kiện
+Người dùng phải đăng nhập vào hệ thống.
+Hóa đơn cần xem phải tồn tại trong hệ thống
+Luồng chính
+- Người dùng chọn chức năng “Xem thông tin hóa đơn” từ giao diện quản lý hóa đơn.
+- Hệ thống hiển thị danh sách các hóa đơn có trong hệ thống.
+- Người dùng chọn một hóa đơn cụ thể cần xem.
+- Hệ thống hiển thị đầy đủ thông tin chi tiết của hóa đơn đã chọn
+Luồng phụ
+- Nếu không có hóa đơn trong hệ thống: hệ thống hiển thị thông báo “Danh sách hóa đơn trống”
+- Nếu người dùng chọn hóa đơn không tồn tại hoặc bị lỗi dữ liệu: hệ thống hiển thị thông báo lỗi và yêu cầu chọn lại
+Biểu đồ hoạt động “Xem thông tin hóa đơn” 
+Biểu đồ tuần tự “Xem thông tin hóa đơn” 
+Đặc tả “Tạo hóa đơn”
+Tên UC
+Tạo hóa đơn
+Actor
+Nhân viên bán hàng, quản lý
+Mô tả
+Nhân viên bán hàng tạo mới một hóa đơn bằng cách nhập thông tin khách hàng, thêm sản phẩm, số lượng và xác nhận thanh toán
+Tiền điều kiện
+Actor phải đăng nhập hệ thống.
+Hệ thống phải có danh sách sản phẩm hợp lệ
+Luồng chính
+- Người dùng chọn chức năng “Tạo hóa đơn” từ giao diện.
+- Hệ thống hiển thị form tạo hóa đơn mới.
+- Người dùng nhập thông tin khách hàng (nếu có) hoặc chọn khách hàng có sẵn.
+- Người dùng thêm sản phẩm vào hóa đơn, nhập số lượng từng sản phẩm.
+- Hệ thống tự động tính tổng tiền.
+- Người dùng xác nhận và lưu hóa đơn.
+- Hệ thống ghi nhận dữ liệu và thông báo “Tạo hóa đơn thành công”
+Luồng phụ
+- Nếu người dùng nhập số lượng sản phẩm vượt quá số lượng tồn kho: hệ thống hiển thị cảnh báo và yêu cầu nhập lại.
+- Nếu thông tin bắt buộc bị bỏ trống: hệ thống hiển thị thông báo lỗi.
+- Nếu kết nối hoặc lưu dữ liệu gặp lỗi: hệ thống báo “Không thể tạo hóa đơn, vui lòng thử lại”
+Biểu đồ hoạt động “Tạo hóa đơn” 
+Biểu đồ tuần tự “Tạo hóa đơn” 
+2.1.2.5. Nhân viên kho
+Usecase “Quản lý kho”
+
+
+Đặc tả chức năng “ Kiểm kê kho” 
+
+Tên UC
+Kiểm kê kho
+Actor
+Nhân viên kho
+Mô tả UC
+Kiểm tra số lượng thực tế so với hệ thống
+Tiền điều kiện
+Actor đang xem hàng tồn kho
+Luồng sự kiện chính
+- Actor chọn “Kiểm kê”
+- Actor kiểm đếm thực tế
+- Actor nhập số lượng thực vào hệ thống
+- Hệ thống so sánh với số lượng hệ thống
+- Hệ thống tạo báo cáo chênh lệch
+Luồng sự kiện phụ
+Chênh lệch lớn: Hệ thống cảnh báo để xác minh lại.
+
+Biểu đồ hoạt động “Kiểm kê kho"
+
+Biểu đồ tuần tự “Kiểm kê kho"
+
+Đặc tả chức năng “ Danh sách hàng tồn kho” 
+Tên UC
+Danh sách hàng tồn kho
+Actor
+Nhân viên kho
+Mô tả UC
+Xem danh sách hàng còn tồn trong kho
+Tiền điều kiện
+Actor đã đăng nhập
+Luồng sự kiện chính
+- Actor “Danh sách hàng tồn kho ”
+- Hệ thống truy vấn dữ liệu tồn kho
+- Actor có thể chọn lọc , tìm kiếm
+
+Luồng sự kiện phụ
+Nếu không có hàng tồn kho thì hiển thị không có dữ liệu
+
+
+Biểu đồ hoạt động của “Danh sách hàng tồn kho"
+
+
+Biểu đồ tuần tự “Danh sách tồn kho"
+
+
+
+Biểu đồ hoạt động “Tạo phiếu nhập kho"
+
+
+
+
+
+
+Biểu đồ tuần tự “Tạo phiếu nhập kho"
+
+
+Đặc tả chức năng “ In phiếu nhập kho” 
+Tên UC
+In phiếu nhập kho
+Actor
+Nhân viên kho
+Mô tả UC
+In  phiếu nhập kho
+Tiền điều kiện
+- Actor đã đăng nhập
+- Tất cả thông tin phiếu nhập kho hợp lệ
+Luồng sự kiện chính
+ - Actor nhấn “In phiếu nhập”
+- Hệ thống tạo file Excel
+- Actor tải hoặc in
+Luồng sự kiện phụ
+Nếu dữ liệu phiếu nhập bị lỗi (thiếu sản phẩm, số lượng âm…)thì nhân viên quay lại chỉnh sửa (Use Case: Chỉnh sửa phiếu nhập)
+
+Biểu đồ hoạt động “In phiếu nhập kho"
+
+
+
+
+
+
+
+
+
+
+
+Biểu đồ tuần tự “In phiếu nhập kho"
+
+
+Đặc tả chức năng “ Tạo phiếu xuất kho” 
+Tên UC
+Tạo phiếu xuất kho
+Actor
+Nhân viên kho
+Mô tả UC
+Lập phiếu xuất khi bán hoặc chuyển hàng
+Tiền điều kiện
+Có đủ tồn kho
+Luồng sự kiện chính
+- Actor mở “Tạo phiếu xuất kho”
+- Nhập thông tin sản phẩm, số lượng, lý do xuất
+- Hệ thống kiểm tra tồn kho
+- Hệ thống tạo phiếu xuất
+Luồng sự kiện phụ
+Không đủ tồn: báo lỗi “không đủ hàng”
+Số lượng nhập &lt;=0: báo lỗi
+
+Biểu đồ hoạt động “Tạo phiếu xuất kho"
+
+
+
+
+
+
+Biểu đồ tuần tự “Tạo phiếu xuất kho"
+
+
+
+Đặc tả chức năng “In phiếu xuất kho”
+Tên UC
+In phiếu xuất kho
+Actor
+Nhân viên kho
+Mô tả UC
+In hoặc tải phiếu xuất kho.
+Tiền điều kiện
+- Actor đã đăng nhập
+- Phiếu xuất kho đã được tạo trước đó
+- Dữ liệu phiếu hợp lệ
+Luồng sự kiện chính
+- Actor nhấn “In phiếu xuất”
+- Hệ thống tạo Ecxel
+- Actor in hoặc tải
+Luồng sự kiện phụ
+<w:id w:val="565095995"/></w:sdtPr><w:sdtEndPr/><w:sdtContent><w:r w:rsidR="00C64F1A"><w:rPr><w:rFonts w:eastAsia="Caudex"/><w:sz w:val="26"/><w:szCs w:val="26"/><w:lang w:val="en-US"/></w:rPr><w:t>Không tìm thấy phiếu xuất kho thì nhân viên kho nhập mã phiếu → Hệ thống kiểm tra
+
+<w:tab w:val="clear" w:pos="420"/></w:tabs><w:spacing w:after="160" w:line="360" w:lineRule="auto"/><w:rPr><w:b/><w:bCs/><w:sz w:val="26"/><w:szCs w:val="26"/><w:lang w:val="en-US"/></w:rPr></w:pPr><w:r><w:rPr><w:b/><w:bCs/><w:sz w:val="26"/><w:szCs w:val="26"/><w:lang w:val="en-US"/></w:rPr><w:t>Biểu đồ hoạt động “In phiếu xuất kho"
+
+
+
+
+
+
+Biểu đồ tuần tự “In phiếu xuất kho"
+
+2.1.2.6. Nhân viên kế toán
+Usecase “Quản lý tài chính”
+
+
+
+Đặc tả  “Doanh thu”.
+
+Tên UC
+Doanh thu
+Actor
+Nhân viên kế toán, quản lý
+Mô tả 
+Nhân viên kế toán xem và tra cứu doanh thu theo ngày, tháng, năm hoặc theo từng loại sản phẩm.
+Tiền điều kiện
+Người dùng phải đăng nhập và đã chọn mục “Quản lý tài chính”.
+Luồng chính
+- Hệ thống hiển thị giao diện doanh thu.
+- Người dùng chọn thời gian cần xem (ngày/tháng/năm).
+- Nhân viên bấm “Xem doanh thu”.
+- Hệ thống truy xuất dữ liệu và hiển thị doanh thu.
+Luồng phụ
+- Nếu không có dữ liệu, hệ thống thông báo “Không tìm thấy dữ liệu”.
+- Nếu chọn sai định dạng ngày, hệ thống yêu cầu nhập lại.
+
+Biểu đồ hoạt động “Doanh thu"
+
+Biểu đồ tuần tự “Doanh thu"
+
+
+Đặc tả “Bảng lương nhân viên”
+Tên UC
+Bảng lương nhân viên
+Actor
+Nhân viên kế toán, quản lý
+Mô tả 
+Nhân viên kế toán xem bảng lương, cập nhật hệ số, phụ cấp hoặc tạo bảng lương hằng tháng.
+Tiền điều kiện
+Người dùng phải đăng nhập và đã chọn mục “Quản lý tài chính”.
+Luồng chính
+- Hệ thống hiển thị danh sách nhân viên.
+- Người dùng chọn tháng cần tạo hoặc xem bảng lương.
+- Hệ thống hiển thị bảng lương tương ứng.
+- Nhân viên có thể cập nhật phụ cấp, thưởng, khấu trừ.
+Luồng phụ
+-  Nếu nhập sai số liệu, hệ thống yêu cầu nhập lại.
+- Nếu chưa chọn tháng, hệ thống báo lỗi.
+- Nếu muốn lưu, nhân viên bấm “Cập nhật”.
+
+Biểu đồ hoạt động “Bảng lương nhân viên"
+
+Biểu đồ tuần tự “Bảng lương nhân viên"
+
+Đặc tả  “Đơn hàng online”
+Tên UC
+Đơn hàng online
+Actor
+Nhân viên kế toán, quản lý
+Mô tả 
+Nhân viên kế toán hoặc quản lý theo dõi và quản lý các đơn hàng được đặt qua hệ thống online. Hệ thống cho phép xem thông tin đơn hàng, số lượng sản phẩm, tổng tiền và trạng thái thanh toán để phục vụ cho việc quản lý tài chính.
+Tiền điều kiện
+Người dùng phải đăng nhập và đã chọn mục “Quản lý tài chính”.
+Luồng chính
+- Hệ thống hiển thị danh sách các đơn hàng online. 
+- Người dùng chọn đơn hàng cần xem. 
+- Hệ thống hiển thị thông tin chi tiết đơn hàng (sản phẩm, số lượng, tổng tiền, trạng thái). 
+- Người dùng có thể kiểm tra hoặc cập nhật trạng thái đơn hàng.
+Luồng phụ
+- Nếu không có đơn hàng online, hệ thống hiển thị thông báo “Không có đơn hàng”. 
+- Nếu xảy ra lỗi khi tải dữ liệu, hệ thống hiển thị thông báo lỗi cho người dùng.
+
+Biểu đồ hoạt động “Đơn hàng online"
+
+Biểu đồ tuần tự “Đơn hàng online”
+
+
+Đặc tả “Hóa đơn nhập hàng”
+Tên UC
+Hóa đơn nhập hàng
+Actor
+Nhân viên kế toán, quản lý
+Mô tả 
+Nhân viên kế toán và quản lý xem, kiểm tra và quản lý các hóa đơn nhập hàng từ nhà cung cấp.
+Tiền điều kiện
+Người dùng phải đăng nhập và đã chọn mục “Quản lý tài chính”.
+Luồng chính
+- Hệ thống hiển thị danh sách hoá đơn nhập hàng.
+- Người dùng chọn hoá đơn muốn xem.
+- Hệ thống hiển thị chi tiết hoá đơn (sản phẩm, số lượng, giá, ngày nhập).
+- Người dùng có thể xác nhận, ghi chú hoặc cập nhật trạng thái.
+Luồng phụ
+- Nếu hoá đơn không tồn tại, hệ thống thông báo “Không tìm thấy hoá đơn”.
+- Nếsu muốn lọc hoá đơn theo ngày, nhân viên chọn bộ lọc.
+
+Biểu đồ hoạt động “Hóa đơn nhập hàng"
+
+Biểu đồ tuần tự “Hóa đơn nhập hàng"
+
+Đặc tả “In/xuất báo cáo tài chính”
+Tên UC
+In/xuất báo cáo tài chính
+Actor
+Nhân viên kế toán, quản lý
+Mô tả UC
+Nhân viên kế toán hoặc quản lý thực hiện xem, in hoặc xuất các báo cáo tài chính của hệ thống như doanh thu, chi phí và lợi nhuận để phục vụ cho việc quản lý và thống kê.
+Tiền điều kiện
+Người dùng phải đăng nhập và đã chọn mục “Quản lý tài chính”.
+Luồng chính
+- Hệ thống hiển thị giao diện báo cáo tài chính. 
+- Người dùng chọn loại báo cáo và khoảng thời gian cần xem. 
+- Hệ thống tổng hợp và hiển thị dữ liệu báo cáo tài chính. 
+- Người dùng chọn chức năng in hoặc xuất báo cáo. 
+- Hệ thống thực hiện in hoặc xuất báo cáo ra file (PDF, Excel...).
+Luồng phụ
+- Nếu không có dữ liệu trong khoảng thời gian đã chọn, hệ thống hiển thị thông báo “Không có dữ liệu báo cáo”. 
+- Nếu xảy ra lỗi khi xuất file, hệ thống hiển thị thông báo lỗi cho người dùng.
+
+Biểu đồ hoạt động “In/xuất báo cáo tài chính "
+
+Biểu đồ tuần tự “In/xuất báo cáo tài chính "
+
+2.1.2.7. Quản lý
+
+
+a) Báo cáo - Thống kê
+Đặc tả “Xem báo cáo”
+Tên UC
+Xem báo cáo
+Actor
+Quản lý
+Tiền điều kiện
+Quản lý đăng nhập vào hệ thống.
+Hệ thống có dữ liệu báo cáo thống kê trong cơ sở dữ liệu.
+Miêu tả UC
+Mô tả Actor xem danh sách tất cả các báo cáo đã được tạo.
+Từ UC này, Actor có thể thực hiện thêm 2 UC mở rộng:
+- Sửa báo cáo
+- In báo cáo
+Luồng sự kiện chính
+- Actor chọn chức năng “Xem danh sách báo cáo”.
+- Hệ thống truy xuất dữ liệu và hiển thị danh sách báo:
+Tên báo cáo
+Thời gian tạo
+Người lập
+Trạng thái
+- Actor xem chi tiết hoặc lọc danh sách theo thời gian, loại báo cáo…
+- Actor chọn một báo cáo cụ thể để thao tác them (dẫn đến các extend).
+
+Biểu đồ họat động “Xem báo cáo”
+
+Biểu đồ tuần tự “Xem báo cáo”
+
+
+Đặc tả “In báo cáo”
+Tên UC
+In báo cáo
+Actor
+Quản lý
+Tiền điều kiện
+- Actor đã đăng nhập.
+- Báo cáo cần in phải tồn tại.
+- Actor đang mở báo cáo hoặc danh sách báo cáo.
+Miêu tả UC
+Cho phép Quản lý in một báo cáo bất kỳ thông qua hệ thống.
+Luồng sự kiện chính
+- Actor chọn chức năng “In báo cáo” trên một báo cáo.
+- Hệ thống hiển thị bản xem trước báo cáo (Print Preview).
+- Actor chọn máy in hoặc định dạng in (PDF, giấy A4…).
+- Actor nhấn Print / Xuất file.
+- Hệ thống gửi lệnh in hoặc tạo file PDF.
+- Hệ thống thông báo “In báo cáo thành công” hoặc cho phép tải file PDF.
+
+Biểu đồ hoạt động “In báo cáo”
+
+Biểu đồ tuần tự “In báo cáo”
+
+b) Quản lý cung cấp
+
+
+
+
+Đặc tả “Xem danh sách nhà cung cấp”
+Tên UC
+Xem danh sách nhà cung cấp
+Actor
+Quản lý
+Tiền điều kiện
+Actor đã đăng nhập vào hệ thống.
+Miêu tả UC
+Cho phép Actor xem danh sách tất cả các nhà cung cấp.
+Luồng sự kiện chính
+- Actor chọn chức năng “Danh sách nhà cung cấp” trong hệ thống.
+- Hệ thống hiển thị danh sách nhà cung cấp (tên, địa chỉ, số điện thoại, email…).
+- Actor có thể cuộn, tìm kiếm hoặc lọc danh sách nhà cung cấp.
+- Actor chọn một nhà cung cấp để xem chi tiết.
+- Hệ thống hiển thị thông tin chi tiết của nhà cung cấp đó.
+Luồng sự kiện phụ 
+- Sửa nhà cung cấp
+- Xóa nhà cung cấp
+- Thêm  nhà cung cấp
+
+Biểu đồ hoạt động “Xem danh sách nhà cung cấp”
+
+
+Biểu đồ tuần tự “Xem danh sách nhà cung cấp”
+
+Đặc tả “Sửa nhà cung cấp”
+Tên UC
+Sửa nhà cung cấp
+Actor
+Quản lý
+Tiền điều kiện
+Actor đang xem chi tiết nhà cung cấp.
+Miêu tả UC
+Cho phép Actor cập nhật thông tin nhà cung cấp.
+Luồng sự kiện chính
+- Actor chọn chức năng “Sửa” trên thông tin nhà cung cấp.
+- Hệ thống hiển thị form chỉnh sửa.
+- Actor cập nhật thông tin và nhấn “Lưu”.
+- Hệ thống xác nhận “Sửa nhà cung cấp thành công” và cập nhật danh sách.
+Luồng sự kiện phụ 
+Actor chọn “Hủy cập nhâp”  🡪 Hệ thống trở về màn hình trước đó mà không lưu thay đổi.
+
+Biều đồ hoạt động “Sửa nhà cung cấp”
+
+
+Biểu đồ tuần tự “Sửa nhà cung cấp”
+
+
+Đặc tả “Xóa nhà cung cấp”
+Tên UC
+Xóa nhà cung cấp
+Actor
+Quản lý
+Tiền điều kiện
+Actor đang xem chi tiết nhà cung cấp.
+Miêu tả UC
+Cho phép Quản lý xóa một nhà cung cấp khỏi hệ thống.
+Luồng sự kiện chính
+- Actor chọn chức năng “Xóa” trên thông tin nhà cung cấp.
+- Hệ thống yêu cầu xác nhận hành động xóa.
+- Actor xác nhận xóa.
+- Hệ thống xóa nhà cung cấp và thông báo “Xóa nhà cung cấp thành công”.
+Luồng sự kiện phụ 
+Actor chọn “Hủy Xóa”  🡪 Hệ thống trở về màn hình trước đó mà không lưu thay đổi.
+
+Biểu đồ hoạt động “Xóa nhà cung cấp”
+
+
+Biểu đồ tuần tự “Xóa nhà cung cấp”
+
+
+Đặc tả “Thêm nhà cung cấp”
+Tên UC
+Thêm nhà cung cấp
+Actor
+Quản lý
+Tiền điều kiện
+Actor đang xem chi tiết nhà cung cấp.
+Miêu tả UC
+Cho phép Actor thêm nhà cung cấp.
+Luồng sự kiện chính
+- Actor chọn chức năng “Thêm nhà cung cấp”.
+- Hệ thống hiển thị form thêm mới.
+- Actor nhập thông tin nhà cung cấp (tên, địa chỉ, số điện thoại, email…).
+- Actor nhấn “Lưu”.
+- Hệ thống xác nhận “Thêm nhà cung cấp thành công” và cập nhật danh sách.
+Luồng sự kiện phụ 
+Actor chọn “Hủy”  Hệ thống trở về màn hình trước đó mà không lưu.
+
+Biểu đồ hoạt động “Thêm nhà cung cấp” 
+
+
+Biểu đồ tuần tự “Thêm nhà cung cấp”
+
+c) Quản lý sản phẩm
+
+Đặc tả “Xem danh sách sản phẩm”
+Tên UC
+Xem danh sách sản phẩm
+Actor
+Quản lý
+Tiền điều kiện
+- Actor đã đăng nhập hệ thống.
+- Hệt thống có thể có hoặc không có sản phẩm.
+Miêu tả UC
+Cho phép Actor xem danh sách sản phẩm hiện có trong hệ thống.
+Luồng sự kiện chính
+- Actor chọn chức năng “Danh sách sản phẩm”.
+- Hệ thống hiển thị danh sách sản phẩm (mã SP, tên SP, giá, tồn kho…).
+- Actor có thể tìm kiếm, lọc, sắp xếp sản phẩm theo nhiều tiêu chí.
+- Actor chọn một sản phẩm để xem chi tiết hoặc chọn thêm mới.
+- Hệ thống hiển thị thông tin chi tiết của sản phẩm được chọn (hoặc form thêm mới).
+Luồng sự kiện phụ
+- UC Thêm sản phẩm
+- UC Sửa sản phẩm
+- UC Xóa sản phẩm
+
+Biều đồ hoạt động “Xem danh sách sản phẩm”
+
+Biểu đồ tuần tự “Xem danh sách sản phẩm”
+
+
+Đặc tả “Thêm sản phẩm”
+Tên UC
+Thêm sản phẩm
+Actor
+Quản lý, Bán hàng
+Tiền điều kiện
+Actor đang ở màn hình danh sách sản phẩm.
+Miêu tả UC
+Cho phép Quản lý thêm sản phẩm mới vào hệ thống.
+Luồng sự kiện chính
+- Actor chọn “Thêm sản phẩm”.
+- Hệ thống hiển thị form thêm sản phẩm.
+- Actor nhập thông tin (tên, giá, số lượng, mô tả…).
+- Actor nhấn “Lưu”.
+- Hệ thống thông báo “Thêm sản phẩm thành công” và cập nhật danh sách.
+Luồng sự kiện phụ 
+Actor chọn “Hủy”  Hệ thống trở về màn hình trước đó mà không lưu.
+
+Biểu đồ hoạt động “Thêm sản phẩm”
+
+Biểu đồ tuần tự “Thêm sản phẩm”
+
+
+Đặc tả “Sửa sản phầm”
+Tên UC
+Sửa sản phẩm
+Actor
+Quản lý, Bán hàng
+Tiền điều kiện
+Actor đang xem chi tiết một sản phẩm.
+Miêu tả UC
+Cho phép Quản lý chỉnh sửa thông tin sản phẩm.
+Luồng sự kiện chính
+- Actor chọn “Sửa sản phẩm”.
+- Hệ thống hiển thị form chỉnh sửa.
+- Actor cập nhật thông tin.
+- Actor nhấn “Lưu”.
+- Hệ thống thông báo “Sửa sản phẩm thành công” và cập nhật danh sách.
+Luồng sự kiện phụ 
+Actor chọn “Hủy”  Hệ thống trở về màn hình trước đó mà không lưu thay đổi.
+
+Biểu đồ hoạt động “Sửa sản phẩm”
+
+Biểu đồ tuần tự “Sửa sản phẩm”
+
+
+Đặc tả “Xóa sản phẩm”
+Tên UC
+Xóa sản phẩm
+Actor
+Quản lý
+Tiền điều kiện
+Actor đang xem chi tiết một sản phẩm.
+Miêu tả UC
+Cho phép Quản lý xóa sản phẩm khỏi hệ thống.
+Luồng sự kiện chính
+- Actor chọn “Xóa sản phẩm”.
+- Hệ thống yêu cầu xác nhận.
+- Actor xác nhận xóa.
+- Hệ thống xóa sản phẩm và thông báo “Xóa sản phẩm thành công”.
+Luồng sự kiện phụ 
+Actor chọn “Hủy”  Hệ thống trở về màn hình trước đó mà không lưu thay đổi.
+
+Biểu đồ hoạt động “Xóa sản phẩm”
+
+Biểu đồ tuần tự “Xóa sản phẩm”
+
+
+d) Quản lý nhân viên
+
+Đặc tả “Xem danh sách nhân viên”
+Tên UC
+Xem danh sách nhân viên
+Actor
+Quản lý
+Tiền điều kiện
+- Actor đã đăng nhập vào hệ thống.
+- Actor có quyền quản lý nhân viên.
+Miêu tả UC
+Cho phép Quản lý xem toàn bộ danh sách nhân viên hiện có trong hệ thống.
+Luồng sự kiện chính
+- Actor chọn menu “Danh sách nhân viên”.
+- Hệ thống hiển thị danh sách nhân viên (Mã NV, họ tên, ngày sinh, chức vụ, trạng thái…).
+- Actor có thể tìm kiếm, lọc, phân trang hoặc xem chi tiết nhân viên.
+- Actor có thể chọn các thao tác mở rộng như Thêm, Sửa, Xóa.
+Luồng sự kiện phụ 
+- UC Thêm nhân viên
+- UC Sửa nhân viên
+- UC Xóa nhân viên
+
+Biều đồ hoạt động “Xem danh sách nhân viên”
+
+
+Biều đồ tuần tự “Xem danh sách nhân viên”
+
+Đặc tả “Thêm nhân viên”
+Tên UC
+Thêm nhân viên
+Actor
+Quản lý
+Tiền điều kiện
+Actor đang ở màn hình danh sách nhân viên.
+Miêu tả UC
+Cho phép thêm một nhân viên mới.
+Luồng sự kiện chính
+- Actor chọn “Thêm nhân viên”.
+- Hệ thống hiển thị form nhập thông tin nhân viên.
+- Actor nhập đầy đủ thông tin (họ tên, chức vụ, lương, email…).
+- Actor nhấn “Lưu”.
+- Hệ thống thông báo “Thêm nhân viên thành công” và cập nhật danh sách.
+Luồng sự kiện phụ 
+Actor chọn “Hủy" Hệ thống trở về màn hình trước đó mà không lưu.
+
+Biều đồ hoạt động “Thêm nhân viên”
+
+
+Biểu đồ tuần tự “Thêm nhân viên”
+
+
+
+
+Đặc tả “Sửa nhân viên”
+Tên UC
+Sửa nhân viên
+Actor
+Quản lý
+Tiền điều kiện
+Actor đang xem chi tiết nhân viên.
+Miêu tả UC
+Cho phép chỉnh sửa thông tin của một nhân viên.
+Luồng sự kiện chính
+- Actor chọn “Sửa nhân viên”.
+- Hệ thống hiển thị form chỉnh sửa.
+- Actor cập nhật thông tin.
+- Actor nhấn “Lưu”.
+- Hệ thống hiển thị “Cập nhật thành công”.
+Luồng sự kiện phụ 
+Actor chọn “Hủy” Hệ thống trở về màn hình trước đó mà không lưu thay đổi.
+
+Biều đồ hoat động “Sửa nhân viên”
+
+Biều đồ tuần tự “Sửa nhân viên”
+
+
+Đặc tả “Khóa nhân viên”
+Tên UC
+Khóa nhân viên
+Actor
+Quản lý 
+Tiền điều kiện
+Actor đang xem chi tiết một nhân viên.
+Miêu tả UC
+Cho phép Quản lý khóa nhân viên khỏi hệ thống.
+Luồng sự kiện chính
+- Actor chọn “Khóa nhân viên”.
+- Hệ thống xóa sản phẩm và thông báo “Khóa nhân viên thành công”.
+
+Biểu đồ hoạt động "Khóa nhân viên”
+
+Biểu đồ tuần tự  “Khóa nhân viên”
+2.2. Biểu đồ lớp
+
+2.2.1. Mô tả các bảng cơ sở dữ liệu
+Bảng users
+
+Bảng categories
+
+Bảng products
+
+Bảng procduct variants
+
+Bảng customers
+
+Bảng cart_items
+
+Bảng wishlist_items
+
+Bảng product_reviews
+
+Bảng orders
+
+Bảng order_items
+
+Bảng promotions
+
+Bảng promotion products
+Bảng suppliers
+
+
+Bảng phiếu nhập kho
+
+Bảng phiếu xuất kho
+
+Bảng chi tiết phiếu nhập kho
+
+Bảng chi tiết phiếu xuất kho
+
+Bảng kiểm kê
+
+Bảng chi tiết kiểm kê
+
+2.3.  Biểu đồ trạng thái
+2.3.1. Biểu đồ trạng thái của lớp Tài khoản
+
+2.3.2. Biểu đồ trạng thái của lớp Hóa đơn
+
+2.3.3 Biểu đồ trạng thái của lớp Thanh toán
+
+2.3.4. Biểu đồ trạng thái của lớp Phiếu nhập
+
+2.3.5. Biểu đồ trạng thái của lớp Sản phẩm
+
+2.3.6. Biểu đồ trạng thái của lớp Nhà cung cấp
+
+2.3.7. Biểu đồ trạng thái của lớp Khuyến mại
+
+2.3.8. Biểu đồ trạng thái của lớp Đánh giá
+
+
+2.4. Biểu đồ thành phần
+
+
+2.5. Biểu đồ triển khai
+
+
+CHƯƠNG 3: XÂY DỰNG CÀI ĐẶT, VÀ KIỂM THỬ PHẦN MỀM
+3.1. Xây dựng các chức năng chính của phần mềm
+3.1.1. Đăng nhập
+Giao diện phần “Đăng nhập”
+Đây là giao diện đầu tiên xuất hiện của phần mềm “ Cửa hàng thời trang Routine”. Trước khi bạn muốn vào hệ thống để quản lý thì bạn phải đăng nhập . Nếu không đăng nhập bạn sẽ không thể sử dụng được bất kỳ chức năng nào của hệ thống.
+3.1.2. Đăng ký
+Giao diện phần “Đăng ký”
+Đây là chức ănng đăng kí tài khoản quản lý để đăng nhập vào trang chủ, chức năng với các ô nhập thông tin như email, số điện thoại và mật khẩu. Bên dưới có phần điều khoản và chính sách bảo mật, cùng với nút Đăng ký và một số lựa chọn khác liên quan đến tài khoản.
+3.1.3. Giao diện chính
+Giả sử đăng nhập thành công với tài khoản admin ta sẽ được giao diện và những chức năng để lựa chọn như hình vẽ
+Trong phần trang chủ gồm có các danh mục như Tất cả, áo sơ mi, áo khoác, quần jean,... để ta có thể lựa chọn.
+Giao diện chính 
+3.1.4. Giao diện mục “Sản phẩm”
+Giao diện trang “sản phẩm”
+Trong hình là giao diện trang sản phẩm của website thời trang. Trên trang hiển thị các sản phẩm với hình ảnh minh họa như quần, áo và phụ kiện. Bên trái có bộ lọc danh mục sản phẩm như quần jeans và quần kaki để người dùng lựa chọn loại sản phẩm muốn xem. Phần chính của trang hiển thị các sản phẩm theo dạng lưới, mỗi sản phẩm có hình ảnh và biểu tượng yêu thích. Nhìn chung đây là khu vực hiển thị và lọc sản phẩm của website bán quần áo.
+3.1.5.Giao diện sản phẩm Đồ nam
+Giao diện sản phẩm “Đồ nam”
+Giao diện sản phẩm đồ nam cho phép người dùng xem danh sách các sản phẩm dành cho nam giới, lọc theo danh mục và sắp xếp sản phẩm theo tiêu chí mong muốn. Người dùng có thể xem thông tin sản phẩm và thêm sản phẩm vào giỏ hàng để thực hiện mua sắm.
+Ngoài ra, mỗi sản phẩm đều có nút "Thêm vào giỏ", cho phép người dùng thêm sản phẩm trực tiếp vào giỏ hàng để tiến hành mua sắm.
+3.1.6. Giao diện sản phẩm Sale
+Giao diện sản phẩm Sale
+Chức năng Sale cho phép hiển thị các sản phẩm đang được giảm giá hoặc khuyến mãi. Người dùng có thể xem thông tin sản phẩm, giá ưu đãi và thêm sản phẩm vào giỏ hàng. Chức năng này giúp thu hút khách hàng và tăng doanh số bán hàng.
+3.1.7. Trung tâm hỗ trợ
+Giao diện phần “Trung tâm hỗ trợ”
+Giao diện Trung tâm hỗ trợ cho phép người dùng tìm kiếm và xem thông tin hướng dẫn liên quan đến dịch vụ như giao hàng, đổi trả và thanh toán. Hệ thống hiển thị nội dung hỗ trợ phù hợp với từ khóa mà người dùng nhập vào, giúp giải quyết vấn đề nhanh chóng và thuận tiện.
+3.1.8. Tìm kiếm sản phẩm
+Giao diện phần “Tìm kiếm sản phẩm”
+Chức năng tìm kiếm cho phép người dùng nhập từ khóa để tìm nhanh thông tin về sản phẩm, khách hàng hoặc dữ liệu trong hệ thống.
+Kết quả tìm kiếm sẽ được hiển thị dưới dạng danh sách phù hợp với điều kiện đã nhập.
+3.1.9. Giao diện mục sản phẩm yêu thích
+Giao diện mục “Sản phẩm ưa thích”
+Giao diện danh mục sản phẩm ưa thích của website Routine. Trên trang hiển thị các sản phẩm mà người dùng đã đánh dấu yêu thích, mỗi sản phẩm có hình ảnh, tên sản phẩm, giá tiền, đánh giá sao và nút “Thêm vào giỏ”. Bên trái màn hình có bộ lọc danh mục sản phẩm như áo khoác, áo sơ mi, phụ kiện, quần kaki cùng với các bộ lọc về khoảng giá và màu sắc để người dùng dễ dàng tìm kiếm sản phẩm phù hợp. Phía trên còn có thanh điều hướng và thanh tìm kiếm của website.
+
+3.1.10.Giao diện mục thêm vào giỏ hàng
+Giao diện phần “Thêm vào giỏ hàng”
+Đây là giao diện giỏ hàng của website Routine sau khi người dùng thêm sản phẩm vào giỏ hàng. Trên trang hiển thị danh sách các sản phẩm đã chọn, bao gồm hình ảnh sản phẩm, tên sản phẩm, thông tin màu sắc, kích thước, giá tiền và số lượng. Người dùng có thể tăng giảm số lượng, lưu vào yêu thích hoặc xóa sản phẩm khỏi giỏ hàng. Bên phải là phần tóm tắt đơn hàng, hiển thị tạm tính, phí vận chuyển, tổng tiền, ô nhập mã giảm giá và nút tiến hành thanh toán.
+3.1.11.Giao diện mục đăng nhập của admin
+Giao diện phần “Đăng nhập của admin”
+
+Đây là giao diện trang đăng nhập của hệ thống Routine. Bên phải màn hình là form đăng nhập với các ô nhập email và mật khẩu. Phía trên có tùy chọn vai trò người dùng như quản lý, nhân viên bán hàng, nhân viên kho và kế toán. Bên dưới là nút đăng nhập để truy cập vào hệ thống. Bên trái là hình ảnh quảng bá thương hiệu Routine với logo và hình ảnh người mẫu thời trang.
+
+3.1.12.Giao diện mục Quản lý
+Giao diện phần “Quản lý”
+
+Đây là giao diện Dashboard của hệ thống quản lý "ROUTINE" gồm: Thanh menu (điều hướng các mục: Tổng quan, Tạo hóa đơn, Sản phẩm, Khách hàng, Khuyến mại, Nhà cung cấp, Đơn hàng online, Kho hàng, Kiểm kê,...) và Nội dung chính (thống kê doanh thu, số lượng đơn hàng, sản phẩm đã bán, cảnh báo hàng sắp hết, biểu đồ tăng trưởng theo thời gian và danh sách sản phẩm bán chạy).
+
+3.1.13.Giao diện mục Kế toán
+
+Giao diện phần “Kế toán”
+
+Đây là giao diện trang báo cáo và thống kê của hệ thống quản lý Routine. Trang hiển thị các thông tin tổng quan như tổng doanh thu, số hóa đơn và giá trị trung bình mỗi đơn hàng trong một khoảng thời gian nhất định. Bên trái là menu quản lý gồm các mục như bảng lương, báo cáo, hóa đơn, đơn hàng online và cài đặt. Phần chính của trang hiển thị khu vực thống kê doanh thu và dữ liệu báo cáo của hệ thống.
+3.1.14.Giao diện mục Nhân viên bán hàng
+Giao diện phần “Nhân viên bán hàng”
+
+Đây là giao diện tạo hóa đơn của hệ thống bán hàng Routine. Bên trái là menu quản lý bán hàng với các mục như tạo hóa đơn, sản phẩm, khách hàng, khuyến mãi và cài đặt. Ở phần trung tâm hiển thị danh sách sản phẩm kèm hình ảnh, tên và giá để nhân viên lựa chọn. Bên phải là khu vực hóa đơn mới, nơi hiển thị thông tin khách hàng, danh sách sản phẩm đã chọn, tạm tính, tổng tiền và nút thanh toán.
+
+3.1.14.Giao diện mục Nhân viên kho
+
+Giao diện nhân viên kho
+Đây là giao diện quản lý kho hàng, giúp theo dõi và kiểm soát toàn bộ sản phẩm trong kho. Người dùng có thể xem nhanh các chỉ số như tổng SKU, tình trạng tồn và giá trị tồn kho.Hệ thống hỗ trợ tìm kiếm, lọc sản phẩm và hiển thị chi tiết số lượng tồn, trạng thái từng mặt hàng.Các thao tác như nhập kho, xuất kho, kiểm kê và xuất dữ liệu được tích hợp trực tiếp. Giao diện trực quan, dễ sử dụng, phù hợp cho việc quản lý hàng hóa hiệu quả.
+3.2. Kiểm thử phần mềm
+3.2.1. Chiến lược kiểm thử
+Dựa vào kiến thức đã tìm hiểu Chiến lược kiểm thử tổng thể của một hệ thống phần 
+mềm bao gồm 4 mức như sau (từ thấp đến cao):
+Kiểm thử đơn vị (Unit Testing)
+Kiểm thử tích hợp (Integration Testing)
+Kiểm thử hệ thống (System Testing)
+Kiểm thử chấp nhận (Acceptance Testing)
+3.2.1.1. Kiểm thử đơn vị
+Kiểm thử đơn vị được thực hiện trong quá trình phát triển (coding) ứng dụng. Mục tiêu của Kiểm thử đơn vị là cô lập một phần code và xác minh tính chính xác của đơn vị đó. Trong lập trình thủ tục, một đơn vị có thể là một chức năng hoặc thủ tục riêng lẻ. Kiểm thử đơn vị thường được thực hiện bởi developer.
+Trong quy trình phát triển phần mềm, quy trình kiểm thử phần mềm, Mô hình chữ V, kiểm thử đơn vị là cấp độ kiểm thử đầu tiên được thực hiện trước khi kiểm thử tích hợp. Kiểmm thử đơn vị là một kỹ thuật WhiteBox testing, thường được thực hiện bởi developer. Tuy nhiên trong một thực tế, do thời gian bị giới hạn hoặc yêu cầu của cácdeveloper, các kỹ sư QA cũng thực hiện kiểm thử đơn vị.
+Kiểm thử theo phương pháp này không thể tìm được mọi lỗi của ứng dụng. Không thể
+đánh giá mọi tình hướng có thể xảy ra trong chương trình.
+3.2.1.2. Kiểm thử tích hợp
+Kiểm thử tích hợp hay còn gọi là tích hợp và kiểm thử (integration and testing, viết tắt là: I&amp;T) là một trong các giai đoạn kiểm thử phần mềm. Mỗi môddun phần mềm riêng biệt được kết hợp lại và kiểm thử theo nhóm
+Kiểm thử tích hợp xảy ra sau kiểm thử đơn vị (Unit Test) và trước kiểm thử xác nhận. Kiểm thử tích hợp nhận môđun đầu vào đã được kiểm thử đơn vị, nhóm chúng vào các tập hợp lớn hơn, áp dụng các ca kiểm thử đã được định nghĩa trong kế hoạch kiểm thử tích hợp vào tập hợp đó, và cung cấp đầu ra cho hệ thống tích hợp.
+3.2.1.3. Kiểm thử hệ thống
+Kiểm thử hệ thống hay còn gọi là System Testing, là kiểm tra lại toàn bộ hệ thống sau khi tích hợp, nhằm đảm bảo hệ thống đáp ứng các yêu cầu đề ra.
+System Testing sẽ được thực hiện sau integration testing. Đây là một bước giữ vai trò quan trọng trong việc cho ra đời một sản phẩm chất lượng cao. Đây là một bước giữ vai trò quan trọng trong việc cho ra đời một sản phẩm chất lượng cao.
+Kiểm thử hệ thống được thực hiện trên một hệ thống hoàn chỉnh, tích hợp.Nó cho phép kiểm tra sự tuân thủ của hệ thống theo yêu cầu. Loại kiểm thử này kiểm tra sự tương tác tổng thể của các thành phần. Nó liên quan đến tải, hiệu suất, độ tin cậy và kiểm tra bảo mật.
+Kiểm thử hệ thống thường xuyên nhất là kiểm tra cuối cùng để xác minh rằng hệ thống đáp ứng các đặc điểm kỹ thuật. Nó đánh giá cả nhu cầu chức năng và phi chức năng để thử nghiệm.
+3.2.1.4. Kiểm thử chấp nhận
+Kiểm thử chấp nhận là kiểm thử để thử xem phần mềm đã thoả mãn tất cả yêu cầu của khách hàng và khách hàng đã chấp nhận sản phẩm hay chưa. Kiểm thử chấp nhận về cơ bản được thực hiện bởi người dùng hoặc khách hàng.
+3.2.2. Thực hành kiểm thử 
+a. Kiểm thử chức năng Đăng nhập
+Mô tả chức năng Đăng nhập
+Mục tiêu: Cho phép nhân viên và quản lý xác thực danh tính để truy cập hệ thống quản lý bán hàng.
+Dữ liệu đầu vào: Email, Mật khẩu, Vai trò (Quản lý / Nhân viên bán hàng / Nhân viên kho / Kế toán).
+Điều kiện bắt buộc: Người dùng phải chọn đúng vai trò tương ứng với tài khoản đã được cấp.
+Quy trình xử lý:
+Nhập Email, Mật khẩu và chọn Vai trò.
+Hệ thống kiểm tra tính hợp lệ của Email và Mật khẩu.
+Hệ thống đối chiếu vai trò được chọn với vai trò thực tế của tài khoản trong cơ sở dữ liệu.
+Nếu hợp lệ, cấp quyền truy cập và chuyển hướng đến giao diện tương ứng với vai trò.
+Kết quả: Đăng nhập thành công và chuyển hướng đến dashboard theo vai trò, hoặc hiển thị thông báo lỗi cụ thể nếu thất bại.
+
+Ký hiệu quy ước
+T (True): Nhập đúng / hợp lệ
+F (False): Nhập sai / không hợp lệ
+- : Không xét đến / bỏ qua điều kiện này
+
+Bảng quyết định
+
+Điều kiện
+TH1
+TH2
+TH3
+TH4
+TH5
+TH6
+Nhập đầy đủ thông tin
+F
+T
+T
+T
+T
+T
+Email đúng định dạng
+-
+F
+T
+T
+T
+T
+Mật khẩu hợp lệ (≥ 8 ký tự)
+-
+-
+F
+T
+T
+T
+Email/Mật khẩu khớp tài khoản
+-
+-
+-
+F
+T
+T
+Vai trò khớp với tài khoản
+-
+-
+-
+-
+F
+T
+Kết quả
+Báo thiếu thông tin
+Báo Email sai định dạng
+Báo MK không hợp lệ
+Báo sai thông tin đăng nhập
+Báo vai trò không khớp
+Đăng nhập thành công
+
+Bảng Test Case
+
+TC ID
+Tên test case
+Dữ liệu nhập
+Bước thực hiện
+Kết quả mong đợi
+TC01
+Đăng nhập thành công
+Email đúng, MK đúng, vai trò đúng (Quản lý)
+Chọn vai trò Quản lý, nhập đúng Email và MK, bấm Đăng nhập
+Đăng nhập thành công, chuyển đến dashboard Quản lý
+TC02
+Email sai định dạng
+Email sai định dạng, MK hợp lệ, vai trò Quản lý
+Nhập Email sai định dạng, nhập MK và chọn vai trò, bấm Đăng nhập
+Báo lỗi "Email không đúng định dạng"
+TC03
+Email để trống
+Email trống, MK hợp lệ, vai trò Quản lý
+Bỏ trống Email, nhập MK và chọn vai trò, bấm Đăng nhập
+Báo lỗi "Email hoặc mật khẩu đang để trống"
+TC04
+Mật khẩu để trống
+Email đúng, MK để trống, vai trò Quản lý
+Nhập Email hợp lệ, bỏ trống MK, chọn vai trò, bấm Đăng nhập
+Báo lỗi " Email haowcj mật khẩ đng để trống "
+TC05
+Mật khẩu không hợp lệ
+Email đúng, MK dưới 6 ký tự, vai trò đúng
+Nhập MK ngắn, điền các trường còn lại hợp lệ, bấm Đăng nhập
+Báo lỗi " Mật khẩu phải có ít nhất 6 ký tự "
+TC06
+Sai thông tin đăng nhập
+Email tồn tại nhưng MK sai, vai trò đúng
+Nhập đúng Email, nhập sai MK, chọn vai trò đúng, bấm Đăng nhập
+Báo lỗi "Mật khẩu không chính xác"
+TC07
+Vai trò không khớp – Kế toán
+Email &amp; MK đúng của tài khoản Quản lý, chọn vai trò Kế toán
+Nhập đúng thông tin Quản lý, chọn vai trò Kế toán, bấm Đăng nhập
+Báo lỗi " Vai tro khong khop voi tai khoan dang nhap "
+TC08
+Vai trò không khớp – NV bán hàng
+Email &amp; MK đúng của tài khoản Quản lý, chọn Nhân viên bán hàng
+Nhập đúng thông tin Quản lý, chọn vai trò NV bán hàng, bấm Đăng nhập
+Báo lỗi " Vai tro khong khop voi tai khoan dang nhap "
+TC09
+Vai trò không khớp – NV kho
+Email &amp; MK đúng của tài khoản Quản lý, chọn Nhân viên kho
+Nhập đúng thông tin Quản lý, chọn vai trò NV kho, bấm Đăng nhập
+Báo lỗi " Vai tro khong khop voi tai khoan dang nhap "
+
+b. Kiểm thử chức năng đăng ký
+Mô tả chức năng Đăng ký
+Mục tiêu: Cho phép khách hàng tạo tài khoản mới để mua sắm và quản lý đơn hàng.
+Dữ liệu đầu vào: Email, Số điện thoại, Mật khẩu (tối thiểu 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt).
+Điều kiện bắt buộc: Người dùng phải tích chọn đồng ý với Điều khoản sử dụng và Chính sách bảo mật của hệ thống.
+Quy trình xử lý: 1. Nhập thông tin. 2. Hệ thống kiểm tra tính hợp lệ và sự tồn tại của dữ liệu (trùng Email/SĐT). 3. Lưu trữ tài khoản vào cơ sở dữ liệu.
+Kết quả: Đăng ký thành công và chuyển hướng người dùng về trang chủ hoặc trang cá nhân.
+Ký hiệu quy ước:
+T (True): Nhập đúng/ hợp lệ
+F (False): Nhập sai/ không hợp lệ
+- : Không xét đến bỏ qua điều kiện này.
+Bảng quyết định:
+Điều kiện
+TH1
+TH2
+TH3
+TH4
+TH5
+Nhập đầy đủ thông tin
+F
+T
+T
+T
+T
+Email đúng định dạng
+-
+F
+T
+T
+T
+Mật khẩu hợp lệ
+-
+-
+F
+T
+T
+Xác nhận điều khoản
+-
+-
+-
+F
+T
+Actions
+
+
+
+
+
+
+Bảng Test Case:
+TC ID
+Tên test case
+Dữ liệu nhập
+Bước thực hiện
+Kết quả mong đợi
+TC01
+Đăng ký thành công
+Tất cả thông tin đúng, hợp lệ, đã tích điều khoản
+Nhập và bấm đăng ký
+
+Thành công
+TC02
+Thiếu thông tin email
+Để trống Email, các trường khác đúng
+Nhập và bấm đăng ký
+Hiển thị lỗi: "Vui lòng nhập Email"
+TC03
+Email sai định dạng
+Nhập Email thiếu @ hoặc sai đuôi (vd: test@abc)
+Nhập và bấm đăng ký
+Hiển thị lỗi: "Email không hợp lệ"
+TC04
+Email đã tồn tại
+Để trống Mật khẩu
+Nhập và bấm đăng ký
+
+Hiển thị lỗi: "Email đã tồn tại"
+TC05
+Thiếu mật khẩu
+Để trống Mật khẩu
+Nhập và bấm đăng ký
+Hiển thị lỗi: "Vui lòng nhập mật khẩu"
+TC06
+Mật khẩu không đúng yêu cầu
+Nhập mật khẩu dưới 8 ký tự, thiếu ký tự đặc biệt, chữ hoa
+Nhập và bấm đăng ký
+Hiển thị lỗi: "Mật khẩu phải từ 8 ký tự trở lên"
+TC07
+Chưa tích điều khoản
+Nhập đúng hết nhưng không tích checkbox
+
+Nhập và bấm đăng ký
+B Hiển thị lỗi: "Bạn phải đồng ý với điều khoản"
+TC08
+Thiếu số điện thoại
+Để trống SĐT
+Nhập và bấm đăng ký
+Hiển thị lỗi: "Bạn phải đồng ý với điều khoản"
+TC09
+SĐT đã tồn tại 
+Nhập SĐT đã được đăng ký trước đó
+Nhập và bấm đăng ký
+Hiển thị lỗi: "Số điện thoại đã tồn tại"
+TC10
+Thiếu tên đang nhập
+Để trống tên đăng nhập 
+Nhập và bấm đăng ký
+Hiển thị lỗi: "Vui lòng nhập họ và tên”
+TC011
+Sai định dạng SĐT
+Nhập không đủ hay thử số
+Nhập và bấm đăng ký
+
+Hiển thị lỗi "Điện thoại phải đủ 10 số"
+
+c. Kiểm thử chức năng tìm kiếm
+Mô tả chức năng đổi tìm kiếm:
+Chức năng tìm kiếm cho phép người dùng nhập từ khóa vào ô tìm kiếm để tìm nhanh các sản phẩm mong muốn trong hệ thống. Hệ thống sẽ xử lý từ khóa và hiển thị danh sách sản phẩm phù hợp với nội dung tìm kiếm.
+Chức năng này giúp người dùng tiết kiệm thời gian khi cần tìm sản phẩm cụ thể thay vì phải duyệt toàn bộ danh sách sản phẩm.
+Bảng quyết định:
+
+Điều kiện
+TH1
+TH2
+TH3
+TH4
+TH5
+Tìm kiếm hợp lệ
+F
+T
+T
+T
+T
+Tìm kiếm sẩn phẩm không có
+-
+T
+F
+T
+F
+Trống
+-
+-
+T
+F
+F
+Kí tự
+ -
+- 
+F 
+F
+T
+Actions
+
+
+
+
+
+
+Bảng Test Case:
+TC ID
+Tên test case
+Dữ liệu nhập
+Kết quả mong đợi
+Kết quả thực tế
+TC01
+Tìm kiếm hợp lệ
+ao
+Hien thị sản phẩm có chữ “ao”
+Pass
+TC02
+Tìm kiếm sẩn phẩm không có
+
+test sp k ton tai
+Không hiển thị sản phẩm
+Pass
+TC03
+Trống
+
+
+Hien thị tất cả sản phẩm
+Pass
+TC04
+Kí tự
+@@@##$%^
+Không hiển thị sản phẩm
+Pass
+
+
+
+Kết luận
+Qua quá trình nghiên cứu, phân tích và thực hiện đề tài “Phân tích thiết kế hệ thống quản lý bán quần áo thời trang”, nhóm 5 đã hoàn thành các mục tiêu đề ra và rút ra được những kết luận quan trọng về cả mặt lý thuyết lẫn thực tiễn ứng dụng.
+
+Hệ thống đã được thiết kế dựa trên quy trình nghiệp vụ thực tế của cửa hàng, giải quyết triệt để những bất cập của phương thức quản lý thủ công. Cụ thể, nhóm đã xây dựng thành công bộ tài liệu đặc tả yêu cầu hệ thống (SRS), thiết kế chi tiết các biểu đồ Use Case để làm rõ chức năng của từng tác nhân, cùng các biểu đồ Activity và Sequence để minh họa luồng xử lý dữ liệu. Đặc biệt, việc xây dựng các kịch bản kiểm thử (Test Case) cho các chức năng quan trọng như đăng nhập, quản lý kho và đổi mật khẩu đã giúp đảm bảo tính logic và độ tin cậy của hệ thống ngay từ giai đoạn thiết kế.
+Sản phẩm của đề tài không chỉ là một bài tập kỹ thuật mà còn là giải pháp tối ưu hóa vận hành. Việc tự động hóa khâu quản lý kho giúp giảm thiểu sai sót, báo cáo doanh thu chính xác giúp người quản lý đưa ra quyết định kinh doanh kịp thời. Giao diện được thiết kế hướng tới sự đơn giản, giúp nhân viên bán hàng thao tác nhanh chóng, nâng cao hiệu suất phục vụ khách hàng.
+Mặc dù đã đạt được những kết quả khả quan, hệ thống vẫn còn một số điểm cần cải thiện như: chưa tích hợp sâu các phương thức thanh toán điện tử hiện đại hay các thuật toán gợi ý sản phẩm thông minh. Trong giai đoạn tiếp theo, nhóm định hướng sẽ phát triển hoàn thiện phần mềm, tích hợp nền tảng Cloud để quản lý đa chi nhánh và xây dựng ứng dụng di động dành cho khách hàng để tăng cường tính kết nối.
+Kết luận lại, đề tài đã giúp các thành viên trong nhóm củng cố kiến thức về quy trình phát triển phần mềm chuyên nghiệp, rèn luyện kỹ năng làm việc nhóm và tư duy hệ thống, tạo tiền đề vững chắc cho việc thực hiện các dự án thực tế trong tương lai.
+
+
+
+
+
+Tài liệu tham khảo
+Lê Trung Kiên, Giáo trình Công nghệ phần mềm, Trường Đại học Công nghệ Giao thông Vận tải, 2024.
+Nguyễn Văn Ba, Phân tích và thiết kế hệ thống thông tin, NXB Đại học Quốc gia Hà Nội, 2015.
+Trần Công Tú, Kỹ thuật phần mềm: Phương pháp hướng đối tượng với UML, NXB Khoa học và Kỹ thuật, 2021.
+Hội đồng Tiêu chuẩn IEEE, IEEE Std 830-1998: IEEE Recommended Practice for Software Requirements Specifications, IEEE Computer Society, 1998.
+Routine Vietnam, Quy trình vận hành và quản lý cửa hàng bán lẻ, [Trực tuyến]. Tham khảo tại: https://routine.vn.
+The Object Management Group (OMG), Unified Modeling Language (UML) Specification Version 2.5.1, [Trực tuyến]. Có sẵn tại: https://www.omg.org/spec/UML/.
+Tài liệu hướng dẫn thực hành kiểm thử phần mềm, Khoa Công nghệ thông tin - Trường Đại học Công nghệ GTVT.
+
+
+
