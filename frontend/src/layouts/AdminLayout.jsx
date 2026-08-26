@@ -20,6 +20,7 @@ const MENU = {
     { to: '/quan-ly/khuyen-mai', label: 'Khuyến mãi', icon: IconGift },
     { to: '/quan-ly/nha-cung-cap', label: 'Nhà cung cấp', icon: IconTruck },
     { to: '/quan-ly/nhan-vien', label: 'Nhân viên', icon: IconBadgeUser },
+    { to: '/quan-ly/bao-cao', label: 'Báo cáo - Thống kê', icon: IconMoney },
     { to: '/quan-ly/hoa-don', label: 'Tra cứu hóa đơn', icon: IconSearchDoc },
     { to: '/quan-ly/ho-so', label: 'Hồ sơ cá nhân', icon: IconBadgeUser },
   ],

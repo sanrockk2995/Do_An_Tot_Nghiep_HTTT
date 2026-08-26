@@ -30,6 +30,9 @@ export default function CustomerLoginPage() {
 
   return (
     <div className="store-auth-page">
+      <Link to="/" className="brand auth-brand-link" aria-label="Về trang chủ Routine">
+        <span className="brand-mark">R</span> ROUTINE
+      </Link>
       <div className="auth-card">
         <h1>Chào mừng trở lại</h1>
         <p className="muted-text">Đăng nhập để mua sắm và theo dõi đơn hàng.</p>

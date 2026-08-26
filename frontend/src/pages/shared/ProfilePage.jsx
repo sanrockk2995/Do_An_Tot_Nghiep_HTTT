@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { api } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
+import { VN_PROVINCES, stripProvinceName } from '../../data/vnLocations';
 
 const EMPTY_PROFILE = { fullName: '', phone: '', branch: '' };
 const EMPTY_CUSTOMER = { fullName: '', phone: '', address: '', district: '', city: '' };
@@ -49,6 +50,19 @@ export default function ProfilePage({ customerMode = false }) {
   }, [isCustomer]);
 
   const setField = (setter) => (e) => setter((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+
+  // Combobox địa chính (34 tỉnh/thành → phường/xã, mô hình 2 tầng từ 01/07/2025)
+  const wardOptions = useMemo(() => {
+    if (!isCustomer) return [];
+    const p = VN_PROVINCES.find((x) => stripProvinceName(x.name) === profile.city);
+    return p ? p.wards : [];
+  }, [isCustomer, profile.city]);
+
+  /** Chọn tỉnh/TP → reset phường/xã để chọn lại theo danh mục của tỉnh mới. */
+  function handleProfileCityChange(e) {
+    const name = e.target.value;
+    setProfile((prev) => ({ ...prev, city: name, district: '' }));
+  }
 
   async function handleSaveProfile(e) {
     e.preventDefault();
@@ -157,14 +171,36 @@ export default function ProfilePage({ customerMode = false }) {
               </div>
               <div className="field-row" style={{ display: 'flex', gap: 12 }}>
                 <div className="field" style={{ flex: 1 }}>
-                  <label htmlFor="pf-district">Quận/huyện</label>
-                  <input id="pf-district" name="district" type="text" value={profile.district}
-                    onChange={setField(setProfile)} />
+                  <label htmlFor="pf-city">Tỉnh/thành phố</label>
+                  <select id="pf-city" value={profile.city} onChange={handleProfileCityChange}>
+                    <option value="">— Chọn tỉnh/thành phố —</option>
+                    {VN_PROVINCES.map((p) => (
+                      <option key={p.name} value={stripProvinceName(p.name)}>{p.name}</option>
+                    ))}
+                    {/* Giá trị cũ (tỉnh trước sáp nhập) không có trong 34 đơn vị mới */}
+                    {profile.city && !VN_PROVINCES.some((p) => stripProvinceName(p.name) === profile.city) && (
+                      <option value={profile.city}>{profile.city} (đơn vị cũ)</option>
+                    )}
+                  </select>
                 </div>
                 <div className="field" style={{ flex: 1 }}>
-                  <label htmlFor="pf-city">Tỉnh/thành</label>
-                  <input id="pf-city" name="city" type="text" value={profile.city}
-                    onChange={setField(setProfile)} />
+                  <label htmlFor="pf-district">Phường/xã</label>
+                  <select id="pf-district" name="district" value={profile.district}
+                    onChange={setField(setProfile)}
+                    disabled={wardOptions.length === 0 && !profile.district}>
+                    <option value="">
+                      {wardOptions.length === 0 ? '— Chọn tỉnh/thành phố trước —' : '— Chọn phường/xã —'}
+                    </option>
+                    {wardOptions.map((w) => (
+                      <option key={`${w.n}|${w.t}`} value={w.n}>
+                        {w.t === 'Xã' ? w.n : `${w.n} (${w.t})`}
+                      </option>
+                    ))}
+                    {/* Giá trị cũ (quận/huyện trước sáp nhập) không có trong danh mục mới */}
+                    {profile.district && !wardOptions.some((w) => w.n === profile.district) && (
+                      <option value={profile.district}>{profile.district} (đơn vị cũ)</option>
+                    )}
+                  </select>
                 </div>
               </div>
             </>

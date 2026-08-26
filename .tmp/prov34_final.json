@@ -1,0 +1,2936 @@
+[
+ {
+  "province": "Thành phố Hà Nội",
+  "districts": [
+   {
+    "name": "Ba Vì",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ba Đình",
+    "type": "Quận"
+   },
+   {
+    "name": "Bắc Từ Liêm",
+    "type": "Quận"
+   },
+   {
+    "name": "Chương Mỹ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cầu Giấy",
+    "type": "Quận"
+   },
+   {
+    "name": "Gia Lâm",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hai Bà Trưng",
+    "type": "Quận"
+   },
+   {
+    "name": "Hoài Đức",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hoàn Kiếm",
+    "type": "Quận"
+   },
+   {
+    "name": "Hoàng Mai",
+    "type": "Quận"
+   },
+   {
+    "name": "Hà Đông",
+    "type": "Quận"
+   },
+   {
+    "name": "Long Biên",
+    "type": "Quận"
+   },
+   {
+    "name": "Mê Linh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mỹ Đức",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nam Từ Liêm",
+    "type": "Quận"
+   },
+   {
+    "name": "Phú Xuyên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phúc Thọ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quốc Oai",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sóc Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sơn Tây",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Thanh Oai",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thanh Trì",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thanh Xuân",
+    "type": "Quận"
+   },
+   {
+    "name": "Thường Tín",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thạch Thất",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tây Hồ",
+    "type": "Quận"
+   },
+   {
+    "name": "Đan Phượng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đông Anh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đống Đa",
+    "type": "Quận"
+   },
+   {
+    "name": "Ứng Hoà",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Bắc Ninh",
+  "districts": [
+   {
+    "name": "Bắc Giang",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Bắc Ninh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Chũ",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Gia Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hiệp Hoà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lương Tài",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lạng Giang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lục Nam",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lục Ngạn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quế Võ",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Sơn Động",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thuận Thành",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Tiên Du",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Yên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Từ Sơn",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Việt Yên",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Yên Phong",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Thế",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Quảng Ninh",
+  "districts": [
+   {
+    "name": "Ba Chẽ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bình Liêu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cô Tô",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cẩm Phả",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hạ Long",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hải Hà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Móng Cái",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Quảng Yên",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Tiên Yên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Uông Bí",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Vân Đồn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đông Triều",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Đầm Hà",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Hải Phòng",
+  "districts": [
+   {
+    "name": "An Dương",
+    "type": "Quận"
+   },
+   {
+    "name": "An Lão",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bình Giang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bạch Long Vĩ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chí Linh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Cát Hải",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cẩm Giàng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Dương Kinh",
+    "type": "Quận"
+   },
+   {
+    "name": "Gia Lộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hải An",
+    "type": "Quận"
+   },
+   {
+    "name": "Hải Dương",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hồng Bàng",
+    "type": "Quận"
+   },
+   {
+    "name": "Kim Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kinh Môn",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Kiến An",
+    "type": "Quận"
+   },
+   {
+    "name": "Kiến Thụy",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lê Chân",
+    "type": "Quận"
+   },
+   {
+    "name": "Nam Sách",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ngô Quyền",
+    "type": "Quận"
+   },
+   {
+    "name": "Ninh Giang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thanh Hà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thanh Miện",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thuỷ Nguyên",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Tiên Lãng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tứ Kỳ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Bảo",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đồ Sơn",
+    "type": "Quận"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Hưng Yên",
+  "districts": [
+   {
+    "name": "Hưng Hà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hưng Yên",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Khoái Châu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kim Động",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kiến Xương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mỹ Hào",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Phù Cừ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quỳnh Phụ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thái Bình",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thái Thụy",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tiên Lữ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tiền Hải",
+    "type": "Huyện"
+   },
+   {
+    "name": "Văn Giang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Văn Lâm",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vũ Thư",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Mỹ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ân Thi",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đông Hưng",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Ninh Bình",
+  "districts": [
+   {
+    "name": "Bình Lục",
+    "type": "Huyện"
+   },
+   {
+    "name": "Duy Tiên",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Gia Viễn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Giao Thuỷ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hoa Lư",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hải Hậu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kim Bảng",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Kim Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lý Nhân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nam Trực",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nam Định",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Nghĩa Hưng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nho quan",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phủ Lý",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Tam Điệp",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thanh Liêm",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trực Ninh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vụ Bản",
+    "type": "Huyện"
+   },
+   {
+    "name": "Xuân Trường",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Khánh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Mô",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ý Yên",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Cao Bằng",
+  "districts": [
+   {
+    "name": "Bảo Lâm",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bảo Lạc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cao Bằng",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hoà An",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hà Quảng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hạ Lang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nguyên Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quảng Hòa",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thạch An",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trùng Khánh",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Tuyên Quang",
+  "districts": [
+   {
+    "name": "Bắc Mê",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bắc Quang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chiêm Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hoàng Su Phì",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hà Giang",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hàm Yên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lâm Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mèo Vạc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Na Hang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quang Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quản Bạ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sơn Dương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tuyên Quang",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Vị Xuyên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Xín Mần",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Minh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đồng Văn",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Lào Cai",
+  "districts": [
+   {
+    "name": "Bát Xát",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bảo Thắng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bảo Yên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bắc Hà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lào Cai",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Lục Yên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mù Cang Chải",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mường Khương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nghĩa Lộ",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Sa Pa",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Si Ma Cai",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trạm Tấu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trấn Yên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Văn Bàn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Văn Chấn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Văn Yên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Bái",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Yên Bình",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Thái Nguyên",
+  "districts": [
+   {
+    "name": "Ba Bể",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bạch Thông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bắc Kạn",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Chợ Mới",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chợ Đồn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Na Rì",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ngân Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Lương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phổ Yên",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Pác Nặm",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sông Công",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thái Nguyên",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Võ Nhai",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đại Từ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Định Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đồng Hỷ",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Lạng Sơn",
+  "districts": [
+   {
+    "name": "Bình Gia",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bắc Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cao Lộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chi Lăng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hữu Lũng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lạng Sơn",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Lộc Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tràng Định",
+    "type": "Huyện"
+   },
+   {
+    "name": "Văn Lãng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Văn Quan",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đình Lập",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Phú Thọ",
+  "districts": [
+   {
+    "name": "Bình Xuyên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cao Phong",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cẩm Khê",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hoà Bình",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hạ Hoà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kim Bôi",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lâm Thao",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lương Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lạc Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lạc Thuỷ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lập Thạch",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mai Châu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phù Ninh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Thọ",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Phúc Yên",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Sông Lô",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tam Dương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tam Nông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tam Đảo",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thanh Ba",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thanh Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thanh Thuỷ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Lạc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Việt Trì",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Vĩnh Tường",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Yên",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Yên Lạc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Lập",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Thuỷ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đoan Hùng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đà Bắc",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Điện Biên",
+  "districts": [
+   {
+    "name": "Mường Chà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mường Lay",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Mường Nhé",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mường Ảng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nậm Pồ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tuần Giáo",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tủa Chùa",
+    "type": "Huyện"
+   },
+   {
+    "name": "Điện Biên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Điện Biên Phủ",
+    "type": "TP."
+   },
+   {
+    "name": "Điện Biên Đông",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Lai Châu",
+  "districts": [
+   {
+    "name": "Lai Châu",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Mường Tè",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nậm Nhùn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phong Thổ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sìn Hồ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tam Đường",
+    "type": "Huyện"
+   },
+   {
+    "name": "Than Uyên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Uyên",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Sơn La",
+  "districts": [
+   {
+    "name": "Bắc Yên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mai Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mường La",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mộc Châu",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Phù Yên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quỳnh Nhai",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sông Mã",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sơn La",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Sốp Cộp",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thuận Châu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vân Hồ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Châu",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Thanh Hóa",
+  "districts": [
+   {
+    "name": "Bá Thước",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bỉm Sơn",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Cẩm Thuỷ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hoằng Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hà Trung",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hậu Lộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lang Chánh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mường Lát",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nga Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nghi Sơn",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Ngọc Lặc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Như Thanh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Như Xuân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nông Cống",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quan Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quan Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quảng Xương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sầm Sơn",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thanh Hoá",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thiệu Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thường Xuân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thạch Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thọ Xuân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Triệu Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Lộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Yên Định",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Nghệ An",
+  "districts": [
+   {
+    "name": "Anh Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Con Cuông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Diễn Châu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hoàng Mai",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Hưng Nguyên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kỳ Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nam Đàn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nghi Lộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nghĩa Đàn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quế Phong",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quỳ Châu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quỳ Hợp",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quỳnh Lưu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thanh Chương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thái Hoà",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Tân Kỳ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tương Dương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vinh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Yên Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đô Lương",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Hà Tĩnh",
+  "districts": [
+   {
+    "name": "Can Lộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cẩm Xuyên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hà Tĩnh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hương Khê",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hương Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hồng Lĩnh",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Kỳ Anh",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Kỳ Anh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nghi Xuân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thạch Hà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vũ Quang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đức Thọ",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Quảng Trị",
+  "districts": [
+   {
+    "name": "Ba Đồn",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Bố Trạch",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cam Lộ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Gio Linh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hướng Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hải Lăng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lệ Thuỷ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Minh Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quảng Ninh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quảng Trạch",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quảng Trị",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Triệu Phong",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tuyên Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Linh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đa Krông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đông Hà",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Đảo Cồn Cỏ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đồng Hới",
+    "type": "Thành phố"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Huế",
+  "districts": [
+   {
+    "name": "A Lưới",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hương Thuỷ",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Hương Trà",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Phong Điền",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Phú Lộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Vang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Xuân",
+    "type": "Quận"
+   },
+   {
+    "name": "Quảng Điền",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thuận Hóa",
+    "type": "Quận"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Đà Nẵng",
+  "districts": [
+   {
+    "name": "Bắc Trà My",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cẩm Lệ",
+    "type": "Quận"
+   },
+   {
+    "name": "Duy Xuyên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hiệp Đức",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hoà Vang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hải Châu",
+    "type": "Quận"
+   },
+   {
+    "name": "Hội An",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Liên Chiểu",
+    "type": "Quận"
+   },
+   {
+    "name": "Nam Giang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nam Trà My",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ngũ Hành Sơn",
+    "type": "Quận"
+   },
+   {
+    "name": "Núi Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Ninh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phước Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quế Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sơn Trà",
+    "type": "Quận"
+   },
+   {
+    "name": "Tam Kỳ",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thanh Khê",
+    "type": "Quận"
+   },
+   {
+    "name": "Thăng Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tiên Phước",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tây Giang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Điện Bàn",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Đông Giang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đại Lộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "đảo Hoàng Sa",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Quảng Ngãi",
+  "districts": [
+   {
+    "name": "Ba Tơ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bình Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ia H'Drai",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kon Plông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kon Rẫy",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kon Tum",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Lý Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Minh Long",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mộ Đức",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nghĩa Hành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ngọc Hồi",
+    "type": "Huyện"
+   },
+   {
+    "name": "Quảng Ngãi",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Sa Thầy",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sơn Hà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sơn Tây",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sơn Tịnh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trà Bồng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tu Mơ Rông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tư Nghĩa",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đăk Hà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đắk Glei",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đắk Tô",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đức Phổ",
+    "type": "Thị xã"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Khánh Hòa",
+  "districts": [
+   {
+    "name": "Bác Ái",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cam Lâm",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cam Ranh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Diên Khánh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Khánh Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Khánh Vĩnh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nha Trang",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Ninh Hoà",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Ninh Hải",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ninh Phước",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ninh Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phan Rang-Tháp Chàm",
+    "type": "TP."
+   },
+   {
+    "name": "Thuận Bắc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thuận Nam",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trường Sa",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vạn Ninh",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Gia Lai",
+  "districts": [
+   {
+    "name": "An Khê",
+    "type": "Thị xã"
+   },
+   {
+    "name": "An Lão",
+    "type": "Huyện"
+   },
+   {
+    "name": "An Nhơn",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Ayun Pa",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Chư Prông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chư Păh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chư Pưh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chư Sê",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hoài Nhơn",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Hoài Ân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ia Grai",
+    "type": "Huyện"
+   },
+   {
+    "name": "IaPa",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kbang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Krông Pa",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kông Chro",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mang Yang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phù Cát",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phù Mỹ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Thiện",
+    "type": "Huyện"
+   },
+   {
+    "name": "Pleiku",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Quy Nhơn",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Tuy Phước",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tây Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vân Canh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Thạnh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đak Đoa",
+    "type": "Huyện"
+   },
+   {
+    "name": "ĐakPơ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đức Cơ",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Đắk Lắk",
+  "districts": [
+   {
+    "name": "Buôn Hồ",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Buôn Ma Thuột",
+    "type": "TP."
+   },
+   {
+    "name": "Buôn Đôn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cư Kuin",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cư M'gar",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ea H'leo",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ea Kar",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ea Súp",
+    "type": "Huyện"
+   },
+   {
+    "name": "Krông A Na",
+    "type": "Huyện"
+   },
+   {
+    "name": "Krông Buk",
+    "type": "Huyện"
+   },
+   {
+    "name": "Krông Bông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Krông Năng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Krông Pắc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lắk",
+    "type": "Huyện"
+   },
+   {
+    "name": "M'ĐrắK",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Hoà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sông Cầu",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Sông Hinh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sơn Hoà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tuy An",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tuy Hoà",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Tây Hoà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đông Hòa",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Đồng Xuân",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Lâm Đồng",
+  "districts": [
+   {
+    "name": "Bảo Lâm",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bảo Lộc",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Bắc Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cư Jút",
+    "type": "Huyện"
+   },
+   {
+    "name": "Di Linh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Gia Nghĩa",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hàm Thuận Bắc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hàm Thuận Nam",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hàm Tân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Krông Nô",
+    "type": "Huyện"
+   },
+   {
+    "name": "La Gi",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Lâm Hà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lạc Dương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phan Thiết",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Phú Quý",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tuy Phong",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tuy Đức",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tánh Linh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đam Rông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đà Lạt",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Đơn Dương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đạ Huoai",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đắk Glong",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đắk Mil",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đắk R'Lấp",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đắk Song",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đức Linh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đức Trọng",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Tây Ninh",
+  "districts": [
+   {
+    "name": "Bến Cầu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bến Lức",
+    "type": "Huyện"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cần Giuộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cần Đước",
+    "type": "Huyện"
+   },
+   {
+    "name": "Dương Minh Châu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Gò Dầu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hoà Thành",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Kiến Tường",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Mộc Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thạnh Hoá",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thủ Thừa",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trảng Bàng",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Tân An",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Tân Biên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Châu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Hưng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Thạnh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Trụ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tây Ninh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Vĩnh Hưng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đức Hoà",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đức Huệ",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Đồng Nai",
+  "districts": [
+   {
+    "name": "Biên Hoà",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Bình Long",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Bù Gia Mập",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bù Đăng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bù Đốp",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chơn Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cẩm Mỹ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hớn Quản",
+    "type": "Huyện"
+   },
+   {
+    "name": "Long Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Long khánh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Lộc Ninh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nhơn Trạch",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Riềng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phước Long",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Thống Nhất",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trảng Bom",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Phú",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Cửu",
+    "type": "Huyện"
+   },
+   {
+    "name": "Xuân Lộc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Định Quán",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đồng Phú",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đồng Xoài",
+    "type": "Thành phố"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Hồ Chí Minh",
+  "districts": [
+   {
+    "name": "1",
+    "type": "Quận"
+   },
+   {
+    "name": "10",
+    "type": "Quận"
+   },
+   {
+    "name": "11",
+    "type": "Quận"
+   },
+   {
+    "name": "12",
+    "type": "Quận"
+   },
+   {
+    "name": "3",
+    "type": "Quận"
+   },
+   {
+    "name": "4",
+    "type": "Quận"
+   },
+   {
+    "name": "5",
+    "type": "Quận"
+   },
+   {
+    "name": "6",
+    "type": "Quận"
+   },
+   {
+    "name": "7",
+    "type": "Quận"
+   },
+   {
+    "name": "8",
+    "type": "Quận"
+   },
+   {
+    "name": "Bà Rịa",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Bàu Bàng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bình Chánh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bình Thạnh",
+    "type": "Quận"
+   },
+   {
+    "name": "Bình Tân",
+    "type": "Quận"
+   },
+   {
+    "name": "Bắc Tân Uyên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bến Cát",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Châu Đức",
+    "type": "Huyện"
+   },
+   {
+    "name": "Côn Đảo",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cần Giờ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Củ Chi",
+    "type": "Huyện"
+   },
+   {
+    "name": "Dĩ An",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Dầu Tiếng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Gò Vấp",
+    "type": "Quận"
+   },
+   {
+    "name": "Hóc Môn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Long Đất",
+    "type": "Huyện"
+   },
+   {
+    "name": "Nhà Bè",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Giáo",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Mỹ",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Phú Nhuận",
+    "type": "Quận"
+   },
+   {
+    "name": "Thuận An",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thủ Dầu Một",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thủ Đức",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Tân Bình",
+    "type": "Quận"
+   },
+   {
+    "name": "Tân Phú",
+    "type": "Quận"
+   },
+   {
+    "name": "Tân Uyên",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Vũng Tàu",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Xuyên Mộc",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Vĩnh Long",
+  "districts": [
+   {
+    "name": "Ba Tri",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bình Minh",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Bình Tân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bình Đại",
+    "type": "Huyện"
+   },
+   {
+    "name": "Bến Tre",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chợ Lách",
+    "type": "Huyện"
+   },
+   {
+    "name": "Càng Long",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cầu Kè",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cầu Ngang",
+    "type": "Huyện"
+   },
+   {
+    "name": "Duyên Hải",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Duyên Hải",
+    "type": "Huyện"
+   },
+   {
+    "name": "Giồng Trôm",
+    "type": "Huyện"
+   },
+   {
+    "name": "Long Hồ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mang Thít",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mỏ Cày Bắc",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mỏ Cày Nam",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tam Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thạnh Phú",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tiểu Cần",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trà Cú",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trà Vinh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Trà Ôn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Long",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Vũng Liêm",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Đồng Tháp",
+  "districts": [
+   {
+    "name": "Cai Lậy",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Cai Lậy",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cao Lãnh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cao Lãnh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Chợ Gạo",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cái Bè",
+    "type": "Huyện"
+   },
+   {
+    "name": "Gò Công",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Gò Công Tây",
+    "type": "Huyện"
+   },
+   {
+    "name": "Gò Công Đông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hồng Ngự",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hồng Ngự",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lai Vung",
+    "type": "Huyện"
+   },
+   {
+    "name": "Lấp Vò",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mỹ Tho",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Sa Đéc",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Tam Nông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thanh Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tháp Mười",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Hồng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Phú Đông",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Phước",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh An Giang",
+  "districts": [
+   {
+    "name": "An Biên",
+    "type": "Huyện"
+   },
+   {
+    "name": "An Minh",
+    "type": "Huyện"
+   },
+   {
+    "name": "An Phú",
+    "type": "Huyện"
+   },
+   {
+    "name": "Châu Phú",
+    "type": "Huyện"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Châu Đốc",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Chợ Mới",
+    "type": "Huyện"
+   },
+   {
+    "name": "Giang Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Giồng Riềng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Gò Quao",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hà Tiên",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Hòn Đất",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kiên Hải",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kiên Lương",
+    "type": "Huyện"
+   },
+   {
+    "name": "Long Xuyên",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Phú Quốc",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Phú Tân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Rạch Giá",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thoại Sơn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tri Tôn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tân Châu",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Tân Hiệp",
+    "type": "Huyện"
+   },
+   {
+    "name": "Tịnh Biên",
+    "type": "Thị xã"
+   },
+   {
+    "name": "U Minh Thượng",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Thuận",
+    "type": "Huyện"
+   }
+  ]
+ },
+ {
+  "province": "Thành phố Cần Thơ",
+  "districts": [
+   {
+    "name": "Bình Thuỷ",
+    "type": "Quận"
+   },
+   {
+    "name": "Châu Thành",
+    "type": "Huyện"
+   },
+   {
+    "name": "Châu Thành A",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cái Răng",
+    "type": "Quận"
+   },
+   {
+    "name": "Cù Lao Dung",
+    "type": "Huyện"
+   },
+   {
+    "name": "Cờ Đỏ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Kế Sách",
+    "type": "Huyện"
+   },
+   {
+    "name": "Long Mỹ",
+    "type": "Huyện"
+   },
+   {
+    "name": "Long Mỹ",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Long Phú",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mỹ Tú",
+    "type": "Huyện"
+   },
+   {
+    "name": "Mỹ Xuyên",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ngã Bảy",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Ngã Năm",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Ninh Kiều",
+    "type": "Quận"
+   },
+   {
+    "name": "Phong Điền",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phụng Hiệp",
+    "type": "Huyện"
+   },
+   {
+    "name": "Sóc Trăng",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Thạnh Trị",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thốt Nốt",
+    "type": "Quận"
+   },
+   {
+    "name": "Thới Lai",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trần Đề",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Châu",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Vĩnh Thạnh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vị Thanh",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Vị Thủy",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ô Môn",
+    "type": "Quận"
+   }
+  ]
+ },
+ {
+  "province": "Tỉnh Cà Mau",
+  "districts": [
+   {
+    "name": "Bạc Liêu",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Cà Mau",
+    "type": "Thành phố"
+   },
+   {
+    "name": "Cái Nước",
+    "type": "Huyện"
+   },
+   {
+    "name": "Giá Rai",
+    "type": "Thị xã"
+   },
+   {
+    "name": "Hoà Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Hồng Dân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Ngọc Hiển",
+    "type": "Huyện"
+   },
+   {
+    "name": "Năm Căn",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phú Tân",
+    "type": "Huyện"
+   },
+   {
+    "name": "Phước Long",
+    "type": "Huyện"
+   },
+   {
+    "name": "Thới Bình",
+    "type": "Huyện"
+   },
+   {
+    "name": "Trần Văn Thời",
+    "type": "Huyện"
+   },
+   {
+    "name": "U Minh",
+    "type": "Huyện"
+   },
+   {
+    "name": "Vĩnh Lợi",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đông Hải",
+    "type": "Huyện"
+   },
+   {
+    "name": "Đầm Dơi",
+    "type": "Huyện"
+   }
+  ]
+ }
+]

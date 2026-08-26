@@ -733,6 +733,7 @@ table.data-table {
 .product-card:hover { transform: translateY(-4px); }
 .product-thumb {
   position: relative;
+  display: block; /* <a> inline khiến aspect-ratio vô hiệu — ảnh tràn đè nội dung */
   aspect-ratio: 3/4;
   background: linear-gradient(160deg, #f5f5f4, #ebe9e6);
   border-radius: var(--radius);
@@ -1039,9 +1040,28 @@ table.data-table {
 .store-auth-page {
   min-height: 72vh;
   display: flex;
+  flex-direction: column; /* logo xếp chồng lên card, không đè nhau */
   align-items: center;
   justify-content: center;
   padding: var(--space-8) var(--space-4);
+}
+/* Logo ROUTINE bấm về trang chủ, đặt phía trên card đăng nhập/đăng ký */
+.auth-brand-link {
+  margin-bottom: var(--space-6);
+  color: var(--primary);
+}
+.auth-brand-link .brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 .auth-card {
   background: var(--card);

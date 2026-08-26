@@ -7,7 +7,7 @@ import { IconX } from '../../components/Icons';
  * Quản lý sản phẩm: bảng + tìm kiếm + thêm/sửa (form modal) + xoá mềm.
  * Dùng chung cho ADMIN / SALES_STAFF / WAREHOUSE_STAFF qua props salesMode/warehouseMode.
  */
-export default function AdminProductsPage() {
+export default function AdminProductsPage({ salesMode = false, warehouseMode = false }) {
   const [items, setItems] = useState([]);
   const [q, setQ] = useState('');
   const [status, setStatus] = useState('');
@@ -129,8 +129,10 @@ export default function AdminProductsPage() {
   return (
     <div className="admin-page">
       <header className="admin-page-head">
-        <h1>Sản phẩm</h1>
-        <button className="btn btn-primary" onClick={openCreate}>+ Thêm sản phẩm</button>
+        <h1>{warehouseMode ? 'Tồn kho sản phẩm' : 'Sản phẩm'}</h1>
+        {!warehouseMode && (
+          <button className="btn btn-primary" onClick={openCreate}>+ Thêm sản phẩm</button>
+        )}
       </header>
 
       <section className="admin-toolbar">
@@ -159,7 +161,8 @@ export default function AdminProductsPage() {
             <thead>
               <tr>
                 <th>Mã SP</th><th>Tên</th><th>Danh mục</th><th>Giá bán</th>
-                <th>Tồn kho</th><th>Trạng thái</th><th>Hành động</th>
+                <th>Tồn kho</th><th>Trạng thái</th>
+                {!warehouseMode && <th>Hành động</th>}
               </tr>
             </thead>
             <tbody>
@@ -175,16 +178,18 @@ export default function AdminProductsPage() {
                       ? <span className="badge badge-green">Đang bán</span>
                       : <span className="badge badge-gray">Ngừng bán</span>}
                   </td>
-                  <td className="row-actions">
-                    <button className="btn btn-outline" onClick={() => openEdit(p)}>Sửa</button>
-                    {p.status === 'ACTIVE' && (
-                      <button className="btn btn-ghost text-danger" onClick={() => handleDelete(p.id)}>Ngừng bán</button>
-                    )}
-                  </td>
+                  {!warehouseMode && (
+                    <td className="row-actions">
+                      <button className="btn btn-outline" onClick={() => openEdit(p)}>Sửa</button>
+                      {p.status === 'ACTIVE' && (
+                        <button className="btn btn-ghost text-danger" onClick={() => handleDelete(p.id)}>Ngừng bán</button>
+                      )}
+                    </td>
+                  )}
                 </tr>
               ))}
               {items.length === 0 && (
-                <tr><td colSpan={7} className="muted-text">Không có dữ liệu.</td></tr>
+                <tr><td colSpan={warehouseMode ? 6 : 7} className="muted-text">Không có dữ liệu.</td></tr>
               )}
             </tbody>
           </table>

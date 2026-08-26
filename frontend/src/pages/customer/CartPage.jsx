@@ -1,10 +1,11 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { api } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { formatVNDText } from '../../utils/format';
 import { IconX } from '../../components/Icons';
+import { VN_PROVINCES, stripProvinceName } from '../../data/vnLocations';
 
 /** Giỏ hàng: xem, sửa số lượng, nhập mã giảm giá, đặt hàng online. */
 export default function CartPage() {
@@ -16,13 +17,19 @@ export default function CartPage() {
   const [appliedPromo, setAppliedPromo] = useState(null);
   const [discount, setDiscount] = useState(0);
   const [prefilledNote, setPrefilledNote] = useState('');
-  const [form, setForm] = useState({ receiverName: '', phone: '', address: '', notes: '' });
+  const [form, setForm] = useState({ receiverName: '', phone: '', address: '', city: '', district: '', notes: '' });
   const [paymentMethod, setPaymentMethod] = useState('COD');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
   const [message, setMessage] = useState('');
   // Chọn mặt hàng để thanh toán: mặc định chọn tất cả
   const [selectedIds, setSelectedIds] = useState(null); // null = chưa đụng tới → coi như chọn hết
+
+  /** Tỉnh/TP đang chọn (34 tỉnh/thành mới) → suy ra danh sách phường/xã. */
+  const wardOptions = useMemo(() => {
+    const p = VN_PROVINCES.find((x) => stripProvinceName(x.name) === form.city);
+    return p ? p.wards : [];
+  }, [form.city]);
 
   const selectedSet = useMemo(
     () => (selectedIds == null ? new Set(cart.map((i) => i.id)) : selectedIds),
@@ -57,12 +64,14 @@ export default function CartPage() {
       .then((res) => {
         if (!alive) return;
         const p = res.data || {};
-        if (p.fullName || p.phone || p.address) {
+        if (p.fullName || p.phone || p.address || p.city) {
           setForm((f) => ({
             ...f,
             receiverName: f.receiverName || p.fullName || '',
             phone: f.phone || p.phone || '',
             address: f.address || p.address || '',
+            city: f.city || p.city || '',
+            district: f.district || p.district || '',
           }));
           setPrefilledNote('Đã tự điền từ hồ sơ của bạn.');
         }
@@ -108,8 +117,20 @@ export default function CartPage() {
       setError('Vui lòng chọn ít nhất một sản phẩm để thanh toán.');
       return;
     }
+    if (!form.city || !form.district) {
+      setError('Vui lòng chọn Tỉnh/Thành phố và Phường/Xã giao hàng.');
+      return;
+    }
     setSubmitting(true);
     try {
+      // Đơn online lấy địa chỉ giao từ hồ sơ khách → đồng bộ lựa chọn mới về hồ sơ trước
+      await api.put('/me/profile', {
+        fullName: form.receiverName.trim() || user?.fullName || '',
+        phone: form.phone.trim(),
+        address: form.address.trim(),
+        district: form.district,
+        city: form.city,
+      });
       await api.post('/orders', {
         customerId: user?.customerId ?? user?.id,
         items: selectedItems.map((i) => ({
@@ -244,11 +265,53 @@ export default function CartPage() {
                 onChange={(e) => setForm({ ...form, phone: e.target.value })}
               />
             </div>
+            <div style={{ display: 'flex', gap: 12 }}>
+              <div className="field" style={{ flex: 1 }}>
+                <label htmlFor="city">Tỉnh/Thành phố *</label>
+                <select
+                  id="city"
+                  required
+                  value={form.city}
+                  onChange={(e) => setForm((f) => ({ ...f, city: e.target.value, district: '' }))}
+                >
+                  <option value="">— Chọn tỉnh/thành phố —</option>
+                  {VN_PROVINCES.map((p) => (
+                    <option key={p.name} value={stripProvinceName(p.name)}>{p.name}</option>
+                  ))}
+                  {form.city && !VN_PROVINCES.some((p) => stripProvinceName(p.name) === form.city) && (
+                    <option value={form.city}>{form.city} (đơn vị cũ)</option>
+                  )}
+                </select>
+              </div>
+              <div className="field" style={{ flex: 1 }}>
+                <label htmlFor="district">Phường/Xã *</label>
+                <select
+                  id="district"
+                  required
+                  value={form.district}
+                  onChange={(e) => setForm({ ...form, district: e.target.value })}
+                  disabled={wardOptions.length === 0 && !form.district}
+                >
+                  <option value="">
+                    {wardOptions.length === 0 ? '— Chọn tỉnh/thành phố trước —' : '— Chọn phường/xã —'}
+                  </option>
+                  {wardOptions.map((w) => (
+                    <option key={`${w.n}|${w.t}`} value={w.n}>
+                      {w.t === 'Xã' ? w.n : `${w.n} (${w.t})`}
+                    </option>
+                  ))}
+                  {form.district && !wardOptions.some((w) => w.n === form.district) && (
+                    <option value={form.district}>{form.district} (đơn vị cũ)</option>
+                  )}
+                </select>
+              </div>
+            </div>
             <div className="field">
-              <label htmlFor="address">Địa chỉ giao hàng *</label>
+              <label htmlFor="address">Địa chỉ giao hàng * <span className="muted-text">(số nhà, tên đường)</span></label>
               <input
                 id="address"
                 required
+                placeholder="VD: 123 Nguyễn Trãi"
                 value={form.address}
                 onChange={(e) => setForm({ ...form, address: e.target.value })}
               />

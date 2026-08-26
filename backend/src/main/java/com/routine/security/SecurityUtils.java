@@ -21,6 +21,16 @@ public final class SecurityUtils {
         throw new BadRequestException("Yêu cầu đăng nhập tài khoản nhân viên");
     }
 
+    /** Họ tên của nhân viên nội bộ đang thao tác (dùng làm "Người lập" trên báo cáo). */
+    public static String currentFullName() {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null && auth.getPrincipal() instanceof UserPrincipal p
+                && p.getFullName() != null && !p.getFullName().isBlank()) {
+            return p.getFullName();
+        }
+        throw new BadRequestException("Yêu cầu đăng nhập tài khoản nhân viên");
+    }
+
     /** ID của khách hàng đang thao tác. */
     public static Long currentCustomerId() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
