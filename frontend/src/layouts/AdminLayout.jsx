@@ -7,51 +7,51 @@ import {
   IconSearchDoc, IconMoney, IconArrowLeft, IconLogout,
 } from '../components/Icons';
 
-/** Menu tương ứng từng vai trò — khớp với định tuyến trong App.jsx. */
+/** Menu tương ứng từng vai trò — khớp với định tuyến tiếng Anh trong App.jsx. */
 const MENU = {
   ADMIN: [
-    { to: '/quan-ly', label: 'Tổng quan', icon: IconDashboard, end: true },
-    { to: '/quan-ly/tao-hoa-don', label: 'Bán hàng tại quầy', icon: IconReceipt },
-    { to: '/quan-ly/san-pham', label: 'Sản phẩm', icon: IconDress },
-    { to: '/quan-ly/khach-hang', label: 'Khách hàng', icon: IconUsers },
-    { to: '/quan-ly/don-hang-online', label: 'Đơn hàng online', icon: IconBox },
-    { to: '/quan-ly/kho-hang', label: 'Kho hàng', icon: IconStore },
-    { to: '/quan-ly/kiem-ke', label: 'Kiểm kê', icon: IconClipboard },
-    { to: '/quan-ly/khuyen-mai', label: 'Khuyến mãi', icon: IconGift },
-    { to: '/quan-ly/nha-cung-cap', label: 'Nhà cung cấp', icon: IconTruck },
-    { to: '/quan-ly/nhan-vien', label: 'Nhân viên', icon: IconBadgeUser },
-    { to: '/quan-ly/bao-cao', label: 'Báo cáo - Thống kê', icon: IconMoney },
-    { to: '/quan-ly/hoa-don', label: 'Tra cứu hóa đơn', icon: IconSearchDoc },
-    { to: '/quan-ly/ho-so', label: 'Hồ sơ cá nhân', icon: IconBadgeUser },
+    { to: '/admin', label: 'Tổng quan', icon: IconDashboard, end: true },
+    { to: '/admin/pos', label: 'Bán hàng tại quầy', icon: IconReceipt },
+    { to: '/admin/products', label: 'Sản phẩm', icon: IconDress },
+    { to: '/admin/customers', label: 'Khách hàng', icon: IconUsers },
+    { to: '/admin/online-orders', label: 'Đơn hàng online', icon: IconBox },
+    { to: '/admin/warehouse', label: 'Kho hàng', icon: IconStore },
+    { to: '/admin/stocktake', label: 'Kiểm kê', icon: IconClipboard },
+    { to: '/admin/promotions', label: 'Khuyến mãi', icon: IconGift },
+    { to: '/admin/suppliers', label: 'Nhà cung cấp', icon: IconTruck },
+    { to: '/admin/users', label: 'Nhân viên', icon: IconBadgeUser },
+    { to: '/admin/reports', label: 'Báo cáo - Thống kê', icon: IconMoney },
+    { to: '/admin/invoices', label: 'Tra cứu hóa đơn', icon: IconSearchDoc },
+    { to: '/admin/profile', label: 'Hồ sơ cá nhân', icon: IconBadgeUser },
   ],
   SALES_STAFF: [
-    { to: '/ban-hang', label: 'Bán hàng tại quầy', icon: IconReceipt, end: true },
-    { to: '/ban-hang/san-pham', label: 'Sản phẩm', icon: IconDress },
-    { to: '/ban-hang/khach-hang', label: 'Khách hàng', icon: IconUsers },
-    { to: '/ban-hang/khuyen-mai', label: 'Khuyến mãi', icon: IconGift },
-    { to: '/ban-hang/don-hang-online', label: 'Đơn hàng online', icon: IconBox },
-    { to: '/ban-hang/hoa-don', label: 'Hóa đơn đã tạo', icon: IconSearchDoc },
-    { to: '/ban-hang/ho-so', label: 'Hồ sơ cá nhân', icon: IconBadgeUser },
+    { to: '/pos', label: 'Bán hàng tại quầy', icon: IconReceipt, end: true },
+    { to: '/pos/products', label: 'Sản phẩm', icon: IconDress },
+    { to: '/pos/customers', label: 'Khách hàng', icon: IconUsers },
+    { to: '/pos/promotions', label: 'Khuyến mãi', icon: IconGift },
+    { to: '/pos/online-orders', label: 'Đơn hàng online', icon: IconBox },
+    { to: '/pos/invoices', label: 'Hóa đơn đã tạo', icon: IconSearchDoc },
+    { to: '/pos/profile', label: 'Hồ sơ cá nhân', icon: IconBadgeUser },
   ],
   WAREHOUSE_STAFF: [
-    { to: '/kho-hang', label: 'Nhập / xuất kho', icon: IconStore, end: true },
-    { to: '/kho-hang/kiem-ke', label: 'Kiểm kê', icon: IconClipboard },
-    { to: '/kho-hang/san-pham', label: 'Tồn kho sản phẩm', icon: IconDress },
-    { to: '/kho-hang/ho-so', label: 'Hồ sơ cá nhân', icon: IconBadgeUser },
+    { to: '/warehouse', label: 'Nhập / xuất kho', icon: IconStore, end: true },
+    { to: '/warehouse/stocktake', label: 'Kiểm kê', icon: IconClipboard },
+    { to: '/warehouse/products', label: 'Tồn kho sản phẩm', icon: IconDress },
+    { to: '/warehouse/profile', label: 'Hồ sơ cá nhân', icon: IconBadgeUser },
   ],
   ACCOUNTANT: [
-    { to: '/ke-toan', label: 'Báo cáo doanh thu', icon: IconMoney, end: true },
-    { to: '/ke-toan/bang-luong', label: 'Bảng lương nhân viên', icon: IconBadgeUser },
-    { to: '/ke-toan/hoa-don', label: 'Tra cứu hóa đơn', icon: IconSearchDoc },
-    { to: '/ke-toan/ho-so', label: 'Hồ sơ cá nhân', icon: IconBadgeUser },
+    { to: '/accounting', label: 'Báo cáo doanh thu', icon: IconMoney, end: true },
+    { to: '/accounting/payroll', label: 'Bảng lương nhân viên', icon: IconBadgeUser },
+    { to: '/accounting/invoices', label: 'Tra cứu hóa đơn', icon: IconSearchDoc },
+    { to: '/accounting/profile', label: 'Hồ sơ cá nhân', icon: IconBadgeUser },
   ],
 };
 
 const HOME_BY_ROLE = {
-  ADMIN: '/quan-ly',
-  SALES_STAFF: '/ban-hang',
-  WAREHOUSE_STAFF: '/kho-hang',
-  ACCOUNTANT: '/ke-toan',
+  ADMIN: '/admin',
+  SALES_STAFF: '/pos',
+  WAREHOUSE_STAFF: '/warehouse',
+  ACCOUNTANT: '/accounting',
 };
 
 /** Layout quản trị — sidebar than + vùng nội dung sáng (dùng chung mọi vai trò nội bộ). */
@@ -63,7 +63,7 @@ export default function AdminLayout() {
 
   function handleLogout() {
     logout();
-    navigate('/dang-nhap-nhan-vien');
+    navigate('/staff-login');
   }
 
   const initial = (user?.fullName || user?.email || '?').trim().charAt(0).toUpperCase();

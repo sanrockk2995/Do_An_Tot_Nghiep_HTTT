@@ -134,7 +134,7 @@ export default function ProfilePage({ customerMode = false }) {
           <h1>Tài khoản của tôi</h1>
           <p className="muted-text">Quản lý thông tin cá nhân và bảo mật tài khoản.</p>
           <p style={{ marginTop: 10 }}>
-            <Link to="/don-hang-cua-toi" className="btn btn-outline">
+            <Link to="/my-orders" className="btn btn-outline">
               Xem lịch sử mua hàng →
             </Link>
           </p>

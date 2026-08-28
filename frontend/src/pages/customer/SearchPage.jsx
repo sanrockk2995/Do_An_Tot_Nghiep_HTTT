@@ -55,7 +55,7 @@ export default function SearchPage() {
       ) : products.length === 0 ? (
         <div className="empty-state">
           <p>Không tìm thấy sản phẩm phù hợp với từ khóa.</p>
-          <Link to="/san-pham" className="btn btn-outline">Xem tất cả sản phẩm →</Link>
+          <Link to="/products" className="btn btn-outline">Xem tất cả sản phẩm →</Link>
         </div>
       ) : (
         <div className="product-grid">

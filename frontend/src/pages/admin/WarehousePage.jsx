@@ -58,7 +58,7 @@ function PhieuNhapList() {
   const load = useCallback(() => {
     let alive = true;
     setLoading(true);
-    api.get('/phieu-nhap-kho', { params: { page: 0, size: 20 } })
+    api.get('/goods-receipts', { params: { page: 0, size: 20 } })
       .then((res) => {
         if (alive) setItems(res.data?.content || res.data || []);
       })
@@ -80,7 +80,7 @@ function PhieuNhapList() {
   async function handleDuyet(id) {
     if (!window.confirm('Duyệt phiếu nhập? Tồn kho sẽ được cộng sau khi duyệt.')) return;
     try {
-      await api.put(`/phieu-nhap-kho/${id}/duyet`);
+      await api.put(`/goods-receipts/${id}/approve`);
       alert('Đã duyệt phiếu nhập — tồn kho đã được cập nhật.');
       load();
     } catch (err) {
@@ -91,7 +91,7 @@ function PhieuNhapList() {
   /** In / tải Excel phiếu nhập. */
   async function handleExport(id, maPhieu) {
     try {
-      const res = await api.get(`/phieu-nhap-kho/${id}/export`, { responseType: 'blob' });
+      const res = await api.get(`/goods-receipts/${id}/export`, { responseType: 'blob' });
       const url = URL.createObjectURL(res.data);
       const a = document.createElement('a');
       a.href = url;
@@ -193,7 +193,7 @@ function PhieuNhapForm({ onClose, onSaved }) {
     e.preventDefault();
     setError('');
     try {
-      await api.post('/phieu-nhap-kho', {
+      await api.post('/goods-receipts', {
         nhaCungCapId: Number(nhaCungCapId),
         ghiChu,
         chiTiet: chiTiet.map((l) => ({
@@ -310,7 +310,7 @@ function PhieuXuatList() {
   const load = useCallback(() => {
     let alive = true;
     setLoading(true);
-    api.get('/phieu-xuat-kho', { params: { page: 0, size: 20 } })
+    api.get('/goods-issues', { params: { page: 0, size: 20 } })
       .then((res) => {
         if (alive) setItems(res.data?.content || res.data || []);
       })
@@ -332,7 +332,7 @@ function PhieuXuatList() {
   async function handleDuyet(id) {
     if (!window.confirm('Duyệt phiếu xuất? Tồn kho sẽ bị trừ sau khi duyệt.')) return;
     try {
-      await api.put(`/phieu-xuat-kho/${id}/duyet`);
+      await api.put(`/goods-issues/${id}/approve`);
       alert('Đã duyệt phiếu xuất.');
       load();
     } catch (err) {
@@ -343,7 +343,7 @@ function PhieuXuatList() {
   /** In / tải Excel phiếu xuất. */
   async function handleExport(id, maPhieu) {
     try {
-      const res = await api.get(`/phieu-xuat-kho/${id}/export`, { responseType: 'blob' });
+      const res = await api.get(`/goods-issues/${id}/export`, { responseType: 'blob' });
       const url = URL.createObjectURL(res.data);
       const a = document.createElement('a');
       a.href = url;
@@ -437,7 +437,7 @@ function PhieuXuatForm({ onClose, onSaved }) {
     e.preventDefault();
     setError('');
     try {
-      await api.post('/phieu-xuat-kho', {
+      await api.post('/goods-issues', {
         lyDoXuat,
         chiTiet: chiTiet.map((l) => ({
           productId: Number(l.productId),

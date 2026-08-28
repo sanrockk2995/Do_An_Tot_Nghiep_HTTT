@@ -64,7 +64,7 @@ export default function HeroCarousel() {
       {slides.map((p, i) => (
         <Link
           key={p.id}
-          to={`/san-pham/${p.id}`}
+          to={`/products/detail/${p.id}`}
           className={`hero-slide${i === current ? ' active' : ''}`}
           aria-hidden={i !== current}
           tabIndex={i === current ? 0 : -1}

@@ -99,12 +99,12 @@ export default function ProductsPage() {
           <h3>Danh mục</h3>
           <ul className="filter-list">
             <li>
-              <Link to="/san-pham" className={!slugCategory ? 'active' : ''}>Tất cả</Link>
+              <Link to="/products" className={!slugCategory ? 'active' : ''}>Tất cả</Link>
             </li>
             {categories.map((c) => (
               <li key={c.id}>
                 <Link
-                  to={`/san-pham/${c.slug}`}
+                  to={`/products/${c.slug}`}
                   className={currentCategory?.id === c.id ? 'active' : ''}
                 >
                   {c.name}

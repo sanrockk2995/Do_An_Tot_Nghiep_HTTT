@@ -19,7 +19,7 @@ import java.util.Map;
  * Bảng lương nhân viên — kế toán & quản lý (UC SRS "Bảng lương nhân viên").
  */
 @RestController
-@RequestMapping("/api/v1/bang-luong")
+@RequestMapping({"/api/v1/payrolls", "/api/v1/bang-luong"})
 @RequiredArgsConstructor
 @Tag(name = "Payroll", description = "Bảng lương nhân viên theo tháng")
 public class BangLuongController {
@@ -48,14 +48,14 @@ public class BangLuongController {
     }
 
     /** Duyệt (khoá) một dòng lương. */
-    @PutMapping("/{id}/duyet")
+    @PutMapping({"/{id}/approve", "/{id}/duyet"})
     @PreAuthorize("hasAnyRole('ADMIN', 'ACCOUNTANT')")
     public ResponseEntity<BangLuongDtos.BangLuongResponse> approve(@PathVariable Long id) {
         return ResponseEntity.ok(bangLuongService.approve(id));
     }
 
     /** Tổng quỹ lương kỳ (dùng cho báo cáo tài chính). */
-    @GetMapping("/tong-quy")
+    @GetMapping({"/total-fund", "/tong-quy"})
     @PreAuthorize("hasAnyRole('ADMIN', 'ACCOUNTANT')")
     public ResponseEntity<Map<String, BigDecimal>> tongQuy(
             @RequestParam Integer thang,

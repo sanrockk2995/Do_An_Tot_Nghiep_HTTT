@@ -69,7 +69,7 @@ export default function ProductDetailPage() {
 
   function requireLogin() {
     if (!user || user.role !== 'CUSTOMER') {
-      navigate('/dang-nhap');
+      navigate('/login');
       return true;
     }
     return false;
@@ -128,7 +128,7 @@ export default function ProductDetailPage() {
     return (
       <div className="container section empty-state">
         <p>{error || 'Sản phẩm không tồn tại.'}</p>
-        <Link to="/san-pham" className="btn btn-outline">← Về danh sách sản phẩm</Link>
+        <Link to="/products" className="btn btn-outline">← Về danh sách sản phẩm</Link>
       </div>
     );
   }
@@ -137,7 +137,7 @@ export default function ProductDetailPage() {
     <div className="container section product-detail">
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <Link to="/">Trang chủ</Link><span aria-hidden="true"> / </span>
-        <Link to="/san-pham">Sản phẩm</Link><span aria-hidden="true"> / </span>
+        <Link to="/products">Sản phẩm</Link><span aria-hidden="true"> / </span>
         <span>{product.name}</span>
       </nav>
 
@@ -266,7 +266,7 @@ export default function ProductDetailPage() {
 
         {(!user || user.role !== 'CUSTOMER') ? (
           <p className="muted-text">
-            <Link to="/dang-nhap">Đăng nhập</Link> để viết đánh giá của bạn.
+            <Link to="/login">Đăng nhập</Link> để viết đánh giá của bạn.
           </p>
         ) : (
           <form onSubmit={handleSubmitReview} className="review-form card">

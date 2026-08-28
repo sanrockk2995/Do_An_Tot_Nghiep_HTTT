@@ -13,7 +13,7 @@ export default function StocktakePage() {
   const load = useCallback(() => {
     let alive = true;
     setLoading(true);
-    api.get('/kiem-ke', { params: { page: 0, size: 20 } })
+    api.get('/stocktakes', { params: { page: 0, size: 20 } })
       .then((res) => {
         if (alive) setItems(res.data?.content || res.data || []);
       })
@@ -34,7 +34,7 @@ export default function StocktakePage() {
 
   async function openDetail(id) {
     try {
-      const res = await api.get(`/kiem-ke/${id}`);
+      const res = await api.get(`/stocktakes/${id}`);
       setDetail(res.data);
     } catch (err) {
       alert(err.message || 'Không tải được chi tiết kiểm kê.');
@@ -44,7 +44,7 @@ export default function StocktakePage() {
   async function handleHoanThanh() {
     if (!window.confirm('Hoàn thành kỳ kiểm kê? Tồn kho sẽ được điều chỉnh theo số thực tế đã nhập.')) return;
     try {
-      await api.put(`/kiem-ke/${detail.id}/hoan-thanh`, {
+      await api.put(`/stocktakes/${detail.id}/complete`, {
         chiTiet: (detail.chiTiet || []).map((it) => ({
           productId: it.productId,
           soLuongThucTe: it.soLuongThucTe != null ? Number(it.soLuongThucTe) : null,
@@ -228,7 +228,7 @@ function KiemKeForm({ onClose, onSaved }) {
     }
     setSaving(true);
     try {
-      await api.post('/kiem-ke', {
+      await api.post('/stocktakes', {
         ngayKiemKe: null,
         ghiChu,
         chiTiet: selected.map((s) => ({ productId: s.productId })),

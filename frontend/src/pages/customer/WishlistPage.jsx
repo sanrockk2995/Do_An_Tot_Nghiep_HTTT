@@ -44,13 +44,13 @@ export default function WishlistPage() {
       ) : items.length === 0 ? (
         <div className="empty-state">
           <p>Chưa có sản phẩm nào trong danh sách yêu thích.</p>
-          <Link to="/san-pham" className="btn btn-primary">Khám phá ngay</Link>
+          <Link to="/products" className="btn btn-primary">Khám phá ngay</Link>
         </div>
       ) : (
         <div className="product-grid">
           {items.map((w) => (
             <div key={w.id ?? w.productId} className="product-card">
-              <Link to={`/san-pham/chi-tiet/${w.productId}`} className="product-thumb">
+              <Link to={`/products/detail/${w.productId}`} className="product-thumb">
                 {w.imageUrl ? (
                   <img src={w.imageUrl} alt={w.name} loading="lazy" />
                 ) : (
@@ -59,7 +59,7 @@ export default function WishlistPage() {
               </Link>
               <div className="product-info">
                 <h3 className="product-name">
-                  <Link to={`/san-pham/chi-tiet/${w.productId}`}>{w.name}</Link>
+                  <Link to={`/products/detail/${w.productId}`}>{w.name}</Link>
                 </h3>
                 <div className="product-price-row">
                   <span className="product-price">{formatVNDText(w.price)}</span>
@@ -73,7 +73,7 @@ export default function WishlistPage() {
                     className="btn btn-outline"
                     style={{ flex: 1 }}
                     onClick={() =>
-                      (window.location.href = `/san-pham/chi-tiet/${w.productId}`)
+                      (window.location.href = `/products/detail/${w.productId}`)
                     }
                   >
                     Chọn size/màu

@@ -13,14 +13,14 @@ export default function ProductCard({ product }) {
   function handleWishlistClick(e) {
     e.preventDefault();
     if (!user || user.role !== 'CUSTOMER') {
-      navigate('/dang-nhap');
+      navigate('/login');
       return;
     }
     toggleWishlist(product.id);
   }
 
   return (
-    <Link to={`/san-pham/chi-tiet/${product.id}`} className="product-card">
+    <Link to={`/products/detail/${product.id}`} className="product-card">
       <div className="product-thumb">
         {product.imageUrl ? (
           <img src={product.imageUrl} alt={product.name} loading="lazy" />

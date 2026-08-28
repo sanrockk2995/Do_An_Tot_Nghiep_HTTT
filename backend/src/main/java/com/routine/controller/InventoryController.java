@@ -59,15 +59,15 @@ public class InventoryController {
         return ResponseEntity.ok(Map.of("message", "Đã vô hiệu hoá nhà cung cấp"));
     }
 
-    // ==================== PHIẾU NHẬP KHO ====================
+    // ==================== PHIẾU NHẬP KHO (GOODS RECEIPTS) ====================
 
-    @GetMapping("/phieu-nhap-kho")
+    @GetMapping({"/goods-receipts", "/phieu-nhap-kho"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF', 'ACCOUNTANT')")
     public ResponseEntity<List<InventoryDtos.PhieuNhapResponse>> listNhap() {
         return ResponseEntity.ok(inventoryService.listPhieuNhap());
     }
 
-    @PostMapping("/phieu-nhap-kho")
+    @PostMapping({"/goods-receipts", "/phieu-nhap-kho"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF')")
     public ResponseEntity<InventoryDtos.PhieuNhapResponse> createNhap(
             @Valid @RequestBody InventoryDtos.PhieuNhapRequest request) {
@@ -76,14 +76,14 @@ public class InventoryController {
     }
 
     /** Duyệt phiếu: cộng tồn kho. */
-    @PutMapping("/phieu-nhap-kho/{id}/duyet")
+    @PutMapping({"/goods-receipts/{id}/approve", "/phieu-nhap-kho/{id}/duyet"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF')")
     public ResponseEntity<InventoryDtos.PhieuNhapResponse> duyetNhap(@PathVariable Long id) {
         return ResponseEntity.ok(inventoryService.duyetPhieuNhap(id));
     }
 
     /** In / xuất Excel phiếu nhập kho. */
-    @GetMapping("/phieu-nhap-kho/{id}/export")
+    @GetMapping({"/goods-receipts/{id}/export", "/phieu-nhap-kho/{id}/export"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF', 'ACCOUNTANT')")
     public ResponseEntity<byte[]> exportNhap(@PathVariable Long id) {
         InventoryDtos.PhieuNhapResponse phieu = inventoryService.getPhieuNhap(id);
@@ -96,15 +96,15 @@ public class InventoryController {
                 .body(excelExportService.exportPhieuNhap(phieu));
     }
 
-    // ==================== PHIẾU XUẤT KHO ====================
+    // ==================== PHIẾU XUẤT KHO (GOODS ISSUES) ====================
 
-    @GetMapping("/phieu-xuat-kho")
+    @GetMapping({"/goods-issues", "/phieu-xuat-kho"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF', 'ACCOUNTANT')")
     public ResponseEntity<List<InventoryDtos.PhieuXuatResponse>> listXuat() {
         return ResponseEntity.ok(inventoryService.listPhieuXuat());
     }
 
-    @PostMapping("/phieu-xuat-kho")
+    @PostMapping({"/goods-issues", "/phieu-xuat-kho"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF')")
     public ResponseEntity<InventoryDtos.PhieuXuatResponse> createXuat(
             @Valid @RequestBody InventoryDtos.PhieuXuatRequest request) {
@@ -112,14 +112,14 @@ public class InventoryController {
                 .body(inventoryService.createPhieuXuat(request));
     }
 
-    @PutMapping("/phieu-xuat-kho/{id}/duyet")
+    @PutMapping({"/goods-issues/{id}/approve", "/phieu-xuat-kho/{id}/duyet"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF')")
     public ResponseEntity<InventoryDtos.PhieuXuatResponse> duyetXuat(@PathVariable Long id) {
         return ResponseEntity.ok(inventoryService.duyetPhieuXuat(id));
     }
 
     /** In / xuất Excel phiếu xuất kho. */
-    @GetMapping("/phieu-xuat-kho/{id}/export")
+    @GetMapping({"/goods-issues/{id}/export", "/phieu-xuat-kho/{id}/export"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF', 'ACCOUNTANT')")
     public ResponseEntity<byte[]> exportXuat(@PathVariable Long id) {
         InventoryDtos.PhieuXuatResponse phieu = inventoryService.getPhieuXuat(id);
@@ -132,22 +132,22 @@ public class InventoryController {
                 .body(excelExportService.exportPhieuXuat(phieu));
     }
 
-    // ==================== KIỂM KÊ ====================
+    // ==================== KIỂM KÊ (STOCKTAKES) ====================
 
-    @GetMapping("/kiem-ke")
+    @GetMapping({"/stocktakes", "/kiem-ke"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF', 'ACCOUNTANT')")
     public ResponseEntity<List<InventoryDtos.KiemKeResponse>> listKiemKe() {
         return ResponseEntity.ok(inventoryService.listKiemKe());
     }
 
     /** Chi tiết kỳ kiểm kê (kèm chi tiết sản phẩm, tồn hệ thống đã chốt). */
-    @GetMapping("/kiem-ke/{id}")
+    @GetMapping({"/stocktakes/{id}", "/kiem-ke/{id}"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF', 'ACCOUNTANT')")
     public ResponseEntity<InventoryDtos.KiemKeResponse> getKiemKe(@PathVariable Long id) {
         return ResponseEntity.ok(inventoryService.getKiemKe(id));
     }
 
-    @PostMapping("/kiem-ke")
+    @PostMapping({"/stocktakes", "/kiem-ke"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF')")
     public ResponseEntity<InventoryDtos.KiemKeResponse> createKiemKe(
             @Valid @RequestBody InventoryDtos.KiemKeRequest request) {
@@ -156,7 +156,7 @@ public class InventoryController {
     }
 
     /** Hoàn thành kiểm kê: chốt chênh lệch và cập nhật tồn kho. */
-    @PutMapping("/kiem-ke/{id}/hoan-thanh")
+    @PutMapping({"/stocktakes/{id}/complete", "/kiem-ke/{id}/hoan-thanh"})
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF')")
     public ResponseEntity<InventoryDtos.KiemKeResponse> hoanThanhKiemKe(
             @PathVariable Long id,

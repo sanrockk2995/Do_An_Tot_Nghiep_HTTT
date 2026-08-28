@@ -65,21 +65,21 @@ Build production: `npm run build` (kết quả ở `frontend/dist/`).
 
 ## 5. Tài khoản mẫu (mật khẩu chung: `123456`)
 
-### Nhân viên — đăng nhập tại `/dang-nhap-nhan-vien` (phải chọn đúng vai trò)
+### Nhân viên — đăng nhập tại `/staff-login` (phải chọn đúng vai trò)
 
 | Vai trò | Email | Trang chủ sau đăng nhập |
 |---|---|---|
-| ADMIN (Quản lý) | `admin@routine.vn` | `/quan-ly` |
-| SALES_STAFF (NV bán hàng) | `sales@routine.vn` | `/ban-hang` |
-| WAREHOUSE_STAFF (Thủ kho) | `kho@routine.vn` | `/kho-hang` |
-| ACCOUNTANT (Kế toán) | `keToan@routine.vn` | `/ke-toan` |
+| ADMIN (Quản lý) | `admin@routine.vn` | `/admin` |
+| SALES_STAFF (NV bán hàng) | `sales@routine.vn` | `/pos` |
+| WAREHOUSE_STAFF (Thủ kho) | `kho@routine.vn` | `/warehouse` |
+| ACCOUNTANT (Kế toán) | `keToan@routine.vn` | `/accounting` |
 
 > ⚠️ Đặc tả yêu cầu: form đăng nhập có chọn vai trò; nếu vai trò chọn không khớp vai trò trong DB thì hệ thống **từ chối đăng nhập**.
 
-### Khách hàng — đăng nhập tại `/dang-nhap`
+### Khách hàng — đăng nhập tại `/login`
 
 - `linh@example.com` / `123456`
-- Hoặc tự đăng ký tại `/dang-ky`.
+- Hoặc tự đăng ký tại `/register`.
 
 ### Mã khuyến mãi mẫu
 

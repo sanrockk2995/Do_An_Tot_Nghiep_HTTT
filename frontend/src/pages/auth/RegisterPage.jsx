@@ -93,7 +93,7 @@ export default function RegisterPage() {
         </form>
 
         <p className="auth-alt-link">
-          Đã có tài khoản? <Link to="/dang-nhap">Đăng nhập</Link>
+          Đã có tài khoản? <Link to="/login">Đăng nhập</Link>
         </p>
       </div>
     </div>

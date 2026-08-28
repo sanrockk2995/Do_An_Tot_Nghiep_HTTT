@@ -77,9 +77,9 @@ export default function CustomerLoginPage() {
         </form>
 
         <p className="auth-alt-link">
-          Chưa có tài khoản? <Link to="/dang-ky">Đăng ký ngay</Link>
+          Chưa có tài khoản? <Link to="/register">Đăng ký ngay</Link>
           {' · '}
-          Là nhân viên? <Link to="/dang-nhap-nhan-vien">Vào đây</Link>
+          Là nhân viên? <Link to="/staff-login">Vào đây</Link>
         </p>
       </div>
     </div>

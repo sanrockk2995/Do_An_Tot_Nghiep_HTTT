@@ -27,7 +27,7 @@ export default function PayrollPage() {
     setLoading(true);
     setError('');
     try {
-      const res = await api.get('/bang-luong', { params: { thang: t, nam: n } });
+      const res = await api.get('/payrolls', { params: { thang: t, nam: n } });
       setRows(res.data || []);
     } catch {
       setError('Không tải được bảng lương.');
@@ -52,7 +52,7 @@ export default function PayrollPage() {
   async function saveEdit(userId) {
     setSavingId(userId);
     try {
-      await api.put(`/bang-luong/${userId}`, editing, { params: { thang, nam } });
+      await api.put(`/payrolls/${userId}`, editing, { params: { thang, nam } });
       setEditing(null);
       await fetchPayroll();
     } catch (err) {
@@ -65,7 +65,7 @@ export default function PayrollPage() {
   async function approve(row) {
     if (!window.confirm(`Duyệt lương tháng ${thang}/${nam} cho ${row.tenNhanVien}?`)) return;
     try {
-      await api.put(`/bang-luong/${row.id}/duyet`);
+      await api.put(`/payrolls/${row.id}/approve`);
       await fetchPayroll();
     } catch (err) {
       alert(err?.response?.data?.message || 'Duyệt thất bại.');
@@ -74,7 +74,7 @@ export default function PayrollPage() {
 
   async function exportExcel() {
     try {
-      const res = await api.get('/bang-luong/export', {
+      const res = await api.get('/payrolls/export', {
         params: { thang, nam },
         responseType: 'blob',
       });

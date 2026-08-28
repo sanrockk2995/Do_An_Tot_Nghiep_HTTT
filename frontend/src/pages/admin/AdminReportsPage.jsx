@@ -101,7 +101,7 @@ export default function AdminReportsPage() {
     setPrinting(true);
     try {
       const params = { type: preview.meta.type, groupBy, ...periodParams() };
-      const res = await api.get('/reports/in', { params, responseType: 'blob' });
+      const res = await api.get('/reports/print', { params, responseType: 'blob' });
       const url = URL.createObjectURL(res.data);
       window.open(url, '_blank'); // trình duyệt hiển thị PDF + hộp thoại in (Ctrl+P)
       setTimeout(() => URL.revokeObjectURL(url), 60_000);

@@ -44,11 +44,11 @@ export default function SupportPage() {
         <aside className="support-contact card">
           <h2>Liên hệ</h2>
           <ul>
-            <li><IconMapPin /> 123 Nguyễn Trãi, Q.1, TP.HCM</li>
+            <li><IconMapPin /> 133 Cầu Giấy, quận Cầu Giấy, thành phố Hà Nội</li>
             <li><IconPhone /> 1900 1234</li>
             <li><IconMail /> cskh@routine.vn</li>
           </ul>
-          <Link to="/san-pham" className="btn btn-primary btn-block">Tiếp tục mua sắm</Link>
+          <Link to="/products" className="btn btn-primary btn-block">Tiếp tục mua sắm</Link>
         </aside>
       </div>
     </div>

@@ -48,7 +48,7 @@ export default function AccountingPage() {
       const params = { groupBy: group };
       if (from) params.from = `${from}T00:00:00`;
       if (to) params.to = `${to}T23:59:59`;
-      const res = await api.get('/reports/tai-chinh/export', {
+      const res = await api.get('/reports/financial/export', {
         params,
         responseType: 'blob',
       });

@@ -80,7 +80,7 @@ public class ReportController {
     }
 
     /** Xuất báo cáo tài chính (Excel) — kế toán & quản lý. */
-    @GetMapping("/tai-chinh/export")
+    @GetMapping({"/financial/export", "/tai-chinh/export"})
     @PreAuthorize("hasAnyRole('ADMIN', 'ACCOUNTANT')")
     public ResponseEntity<byte[]> exportTaiChinh(
             @RequestParam(required = false)
@@ -109,7 +109,7 @@ public class ReportController {
      * UC "In báo cáo" (Quản lý): xuất báo cáo ra PDF khổ A4 để in hoặc tải về.
      * type: doanh-thu | san-pham-ban-chay | ton-kho
      */
-    @GetMapping("/in")
+    @GetMapping({"/print", "/in"})
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<byte[]> printReport(
             @RequestParam String type,

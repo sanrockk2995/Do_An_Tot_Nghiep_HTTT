@@ -153,7 +153,7 @@ export default function CartPage() {
       setMessage(kept > 0
         ? 'Đặt hàng thành công! Các sản phẩm chưa chọn vẫn được giữ trong giỏ...'
         : 'Đặt hàng thành công! Đang chuyển đến trang đơn hàng của tôi...');
-      setTimeout(() => navigate(kept > 0 ? '/gio-hang' : '/don-hang-cua-toi'), 1500);
+      setTimeout(() => navigate(kept > 0 ? '/cart' : '/my-orders'), 1500);
     } catch (err) {
       setError(err.message || 'Đặt hàng thất bại.');
     } finally {
@@ -168,7 +168,7 @@ export default function CartPage() {
     return (
       <div className="container section empty-state">
         <p>Vui lòng đăng nhập để xem giỏ hàng.</p>
-        <Link to="/dang-nhap" className="btn btn-primary">Đăng nhập</Link>
+        <Link to="/login" className="btn btn-primary">Đăng nhập</Link>
       </div>
     );
   }
@@ -180,7 +180,7 @@ export default function CartPage() {
       {cart.length === 0 ? (
         <div className="empty-state">
           <p>Giỏ hàng đang trống.</p>
-          <Link to="/san-pham" className="btn btn-primary">Tiếp tục mua sắm</Link>
+          <Link to="/products" className="btn btn-primary">Tiếp tục mua sắm</Link>
         </div>
       ) : (
         <div className="cart-grid">

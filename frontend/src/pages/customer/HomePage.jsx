@@ -52,8 +52,8 @@ export default function HomePage() {
               cùng bạn trong từng khoảnh khắc thường nhật.
             </p>
             <div className="hero-actions">
-              <Link to="/san-pham" className="btn btn-primary btn-lg">Mua sắm ngay</Link>
-              <Link to="/ho-tro" className="btn btn-outline btn-lg">Cần hỗ trợ?</Link>
+              <Link to="/products" className="btn btn-primary btn-lg">Mua sắm ngay</Link>
+              <Link to="/support" className="btn btn-outline btn-lg">Cần hỗ trợ?</Link>
             </div>
             <div className="hero-stats">
               <div>
@@ -80,7 +80,7 @@ export default function HomePage() {
         <p className="section-subtitle">Khám phá theo phong cách của bạn</p>
         <div className="category-tiles">
           {CATEGORY_TILES.map(({ slug, label, Icon }) => (
-            <Link key={slug} to={`/san-pham/${slug}`} className="category-tile">
+            <Link key={slug} to={`/products/${slug}`} className="category-tile">
               <span aria-hidden="true"><Icon /></span> {label}
             </Link>
           ))}
@@ -90,7 +90,7 @@ export default function HomePage() {
       <section className="container section">
         <div className="section-title-row">
           <h2 className="section-title">Sản phẩm mới</h2>
-          <Link to="/san-pham" className="btn btn-outline" style={{ minHeight: 40 }}>
+          <Link to="/products" className="btn btn-outline" style={{ minHeight: 40 }}>
             Xem tất cả
             <span style={{ display: 'inline-flex', verticalAlign: 'middle' }}>
               <IconArrowRight size={15} />

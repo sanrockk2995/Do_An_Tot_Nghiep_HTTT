@@ -111,7 +111,7 @@ export default function StaffLoginPage() {
         </form>
 
         <p className="auth-alt-link">
-          Là khách hàng? <Link to="/dang-nhap">Đăng nhập mua sắm</Link> · <Link to="/">Về trang chủ</Link>
+          Là khách hàng? <Link to="/login">Đăng nhập mua sắm</Link> · <Link to="/">Về trang chủ</Link>
         </p>
       </div>
     </div>
