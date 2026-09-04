@@ -1,0 +1,2637 @@
+{
+	"info": {
+		"_postman_id": "8f5a11d8-4f26-4ee1-b94d-2a3b4e789901",
+		"name": "ROUTINE - Hệ Thống Quản Lý Bán Quần Áo Thời Trang API",
+		"description": "Bộ Postman Collection kiểm thử toàn bộ REST API của dự án Đồ án tốt nghiệp Hệ thống thông tin ROUTINE.\nBao gồm đầy đủ 11 nhóm chức năng: Auth, Users, Categories, Products, Customers, Cart & Wishlist, Orders, Promotions, Inventory, Payroll, Reports.\n\n### Hướng dẫn sử dụng:\n1. Import file JSON này vào Postman.\n2. Biến `baseUrl` mặc định là `http://localhost:8088` (hoặc cấu hình lại theo cổng bạn đang chạy).\n3. Chạy lần lượt các request trong thư mục **01. Auth & Xác thực** để tự động lưu Access Token vào các biến môi trường tương ứng.\n4. Các request tiếp theo đã được cài đặt sẵn Authorization Bearer Token (`{{admin_token}}`, `{{sales_token}}`, `{{warehouse_token}}`, `{{accountant_token}}`, `{{customer_token}}`).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8088",
+			"type": "string"
+		},
+		{
+			"key": "admin_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "sales_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "warehouse_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "accountant_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "customer_token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "created_product_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "created_category_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "created_order_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "created_supplier_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "created_receipt_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "created_stocktake_id",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "cart_item_id",
+			"value": "1",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "01. Auth & Xác thực",
+			"item": [
+				{
+					"name": "1.1 Đăng nhập ADMIN (Quản trị)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData = pm.response.json();",
+									"if (jsonData.accessToken) {",
+									"    pm.collectionVariables.set(\"admin_token\", jsonData.accessToken);",
+									"    console.log(\"Saved admin_token\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"admin@routine.vn\",\n    \"password\": \"123456\",\n    \"role\": \"ADMIN\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Đăng nhập tài khoản Quản trị viên (ADMIN)"
+					}
+				},
+				{
+					"name": "1.2 Đăng nhập SALES_STAFF (Nhân viên bán hàng)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData = pm.response.json();",
+									"if (jsonData.accessToken) {",
+									"    pm.collectionVariables.set(\"sales_token\", jsonData.accessToken);",
+									"    console.log(\"Saved sales_token\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"sales@routine.vn\",\n    \"password\": \"123456\",\n    \"role\": \"SALES_STAFF\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					}
+				},
+				{
+					"name": "1.3 Đăng nhập WAREHOUSE_STAFF (Thủ kho)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData = pm.response.json();",
+									"if (jsonData.accessToken) {",
+									"    pm.collectionVariables.set(\"warehouse_token\", jsonData.accessToken);",
+									"    console.log(\"Saved warehouse_token\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"kho@routine.vn\",\n    \"password\": \"123456\",\n    \"role\": \"WAREHOUSE_STAFF\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					}
+				},
+				{
+					"name": "1.4 Đăng nhập ACCOUNTANT (Kế toán)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData = pm.response.json();",
+									"if (jsonData.accessToken) {",
+									"    pm.collectionVariables.set(\"accountant_token\", jsonData.accessToken);",
+									"    console.log(\"Saved accountant_token\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"keToan@routine.vn\",\n    \"password\": \"123456\",\n    \"role\": \"ACCOUNTANT\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					}
+				},
+				{
+					"name": "1.5 Đăng nhập Khách hàng",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"var jsonData = pm.response.json();",
+									"if (jsonData.accessToken) {",
+									"    pm.collectionVariables.set(\"customer_token\", jsonData.accessToken);",
+									"    console.log(\"Saved customer_token\");",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"khach@routine.vn\",\n    \"password\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/customer-login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"customer-login"
+							]
+						}
+					}
+				},
+				{
+					"name": "1.6 Đăng ký tài khoản Khách hàng mới",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Khách Hàng Mới\",\n    \"phone\": \"0988654321\",\n    \"email\": \"khachhangmoi@example.com\",\n    \"password\": \"123456\",\n    \"address\": \"123 Nguyễn Trãi\",\n    \"district\": \"Thanh Xuân\",\n    \"city\": \"Hà Nội\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/register",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					}
+				},
+				{
+					"name": "1.7 Làm mới Access Token (Refresh Token)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refreshToken\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/refresh-token",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"refresh-token"
+							]
+						}
+					}
+				},
+				{
+					"name": "1.8 Đổi mật khẩu",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\": \"123456\",\n    \"newPassword\": \"123456\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/change-password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"change-password"
+							]
+						}
+					}
+				},
+				{
+					"name": "1.9 Đăng xuất",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/auth/logout",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "02. Quản lý Nhân sự (Users)",
+			"item": [
+				{
+					"name": "2.1 Danh sách nhân viên (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					}
+				},
+				{
+					"name": "2.2 Xem thông tin hồ sơ cá nhân nhân viên (/me)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/users/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					}
+				},
+				{
+					"name": "2.3 Cập nhật hồ sơ cá nhân nhân viên",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Quản Trị Viên Routine\",\n    \"phone\": \"0901234567\",\n    \"branch\": \"Chi nhánh Cầu Giấy\",\n    \"avatarUrl\": \"https://images.unsplash.com/photo-1534528741775-53994a69daeb\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/users/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					}
+				},
+				{
+					"name": "2.4 Thêm nhân viên mới (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"nhanvientest@routine.vn\",\n    \"password\": \"123456\",\n    \"fullName\": \"Trần Nhân Viên\",\n    \"phone\": \"0912345678\",\n    \"branch\": \"Chi nhánh Hà Đông\",\n    \"role\": \"SALES_STAFF\",\n    \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/users",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					}
+				},
+				{
+					"name": "2.5 Khóa / Mở khóa nhân viên (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/users/2/active",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2",
+								"active"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "03. Danh mục sản phẩm (Categories)",
+			"item": [
+				{
+					"name": "3.1 Lấy danh sách danh mục (Công khai)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					}
+				},
+				{
+					"name": "3.2 Tạo danh mục mới (ADMIN)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var data = pm.response.json();",
+									"    pm.collectionVariables.set(\"created_category_id\", data.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Phụ kiện thời trang Test\",\n    \"slug\": \"phu-kien-thoi-trang-test\",\n    \"description\": \"Các loại thắt lưng, ví da, nón thời trang\",\n    \"icon\": \"accessories\",\n    \"displayOrder\": 10,\n    \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories"
+							]
+						}
+					}
+				},
+				{
+					"name": "3.3 Cập nhật danh mục (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Áo sơ mi nam nữ cao cấp\",\n    \"slug\": \"ao-so-mi\",\n    \"description\": \"Bộ sưu tập áo sơ mi cao cấp\",\n    \"icon\": \"shirt\",\n    \"displayOrder\": 1,\n    \"isActive\": true\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "3.4 Xóa mềm danh mục (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/categories/{{created_category_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"categories",
+								"{{created_category_id}}"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "04. Sản phẩm & Biến thể (Products)",
+			"item": [
+				{
+					"name": "4.1 Danh sách sản phẩm (Công khai - lọc, phân trang)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/products?page=0&size=12&sort=newest",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "12"
+								},
+								{
+									"key": "sort",
+									"value": "newest"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "4.2 Tìm kiếm sản phẩm theo từ khóa",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/products/search?q=áo&page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "áo"
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "4.3 Sản phẩm nổi bật (Featured / Carousel)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/products/featured",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"featured"
+							]
+						}
+					}
+				},
+				{
+					"name": "4.4 Chi tiết sản phẩm theo ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/products/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "4.5 Danh sách sản phẩm quản trị (ADMIN/STAFF)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/admin/products?page=0&size=20",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"admin",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "4.6 Thêm sản phẩm mới kèm biến thể (ADMIN)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var data = pm.response.json();",
+									"    pm.collectionVariables.set(\"created_product_id\", data.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"TEST-POLO-001\",\n    \"name\": \"Áo Polo Nam Routine Premium\",\n    \"categoryId\": 1,\n    \"description\": \"Áo Polo chất liệu CVC thoáng mát\",\n    \"price\": 390000,\n    \"costPrice\": 180000,\n    \"oldPrice\": 450000,\n    \"stock\": 50,\n    \"minStock\": 10,\n    \"imageUrl\": \"https://images.unsplash.com/photo-1581655353564-df123a1eb820\",\n    \"sku\": \"POLO-TEST\",\n    \"material\": \"Cotton 95%, Spandex 5%\",\n    \"fit\": \"Regular Fit\",\n    \"season\": \"Mùa hè\",\n    \"careInstructions\": \"Giặt nước lạnh\",\n    \"badge\": \"NEW\",\n    \"targetGender\": \"MEN\",\n    \"variants\": [\n        {\n            \"size\": \"M\",\n            \"color\": \"Trắng\",\n            \"stock\": 25,\n            \"sku\": \"POLO-TRANG-M\"\n        },\n        {\n            \"size\": \"L\",\n            \"color\": \"Trắng\",\n            \"stock\": 25,\n            \"sku\": \"POLO-TRANG-L\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products"
+							]
+						}
+					}
+				},
+				{
+					"name": "4.7 Cập nhật thông tin sản phẩm (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"TEST-POLO-001\",\n    \"name\": \"Áo Polo Nam Routine Premium (Updated)\",\n    \"categoryId\": 1,\n    \"description\": \"Áo Polo chất liệu CVC cao cấp thoáng mát\",\n    \"price\": 420000,\n    \"costPrice\": 200000,\n    \"stock\": 60,\n    \"minStock\": 10,\n    \"targetGender\": \"MEN\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/products/{{created_product_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"{{created_product_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "4.8 Xóa mềm sản phẩm (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/products/{{created_product_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"{{created_product_id}}"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "05. Khách hàng & Hồ sơ (Customers)",
+			"item": [
+				{
+					"name": "5.1 Tra cứu / Danh sách khách hàng (Staff)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/customers?page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "5.2 Chi tiết thông tin khách hàng",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/customers/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "5.3 Lịch sử đơn hàng của khách",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/customers/1/orders?page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"customers",
+								"1",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "5.4 Khách hàng xem hồ sơ chính mình (/me)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/me",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"me"
+							]
+						}
+					}
+				},
+				{
+					"name": "5.5 Khách hàng cập nhật hồ sơ cá nhân",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Khách Hàng Thân Thiết\",\n    \"phone\": \"0987654321\",\n    \"address\": \"456 Kim Mã\",\n    \"district\": \"Ba Đình\",\n    \"city\": \"Hà Nội\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/me/profile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"me",
+								"profile"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "06. Giỏ hàng, Yêu thích & Đánh giá (Cart & Reviews)",
+			"item": [
+				{
+					"name": "6.1 Xem giỏ hàng cá nhân",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cart-items",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cart-items"
+							]
+						}
+					}
+				},
+				{
+					"name": "6.2 Thêm sản phẩm vào giỏ hàng",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var data = pm.response.json();",
+									"    if (data && data.length > 0) {",
+									"        pm.collectionVariables.set(\"cart_item_id\", data[0].id);",
+									"    }",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": 1,\n    \"size\": \"L\",\n    \"color\": \"Trắng\",\n    \"quantity\": 2\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cart-items",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cart-items"
+							]
+						}
+					}
+				},
+				{
+					"name": "6.3 Cập nhật số lượng mặt hàng trong giỏ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantity\": 3\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cart-items/{{cart_item_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cart-items",
+								"{{cart_item_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "6.4 Xóa mặt hàng khỏi giỏ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/cart-items/{{cart_item_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"cart-items",
+								"{{cart_item_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "6.5 Xem danh sách sản phẩm yêu thích (Wishlist)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/wishlist-items",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wishlist-items"
+							]
+						}
+					}
+				},
+				{
+					"name": "6.6 Thêm sản phẩm vào Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": 1\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/wishlist-items",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wishlist-items"
+							]
+						}
+					}
+				},
+				{
+					"name": "6.7 Bỏ sản phẩm khỏi Wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/wishlist-items/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"wishlist-items",
+								"1"
+							]
+						}
+					}
+				},
+				{
+					"name": "6.8 Xem đánh giá của một sản phẩm (Công khai)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/products/1/reviews?page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "6.9 Gửi đánh giá sản phẩm (Khách hàng)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rating\": 5,\n    \"comment\": \"Sản phẩm form đẹp, vải mặc rất mát và êm ái!\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/products/1/reviews",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"products",
+								"1",
+								"reviews"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "07. Đơn hàng & Hóa đơn (Orders)",
+			"item": [
+				{
+					"name": "7.1 Tạo đơn hàng mới (POS / Khách online)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var data = pm.response.json();",
+									"    pm.collectionVariables.set(\"created_order_id\", data.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customerId\": 1,\n    \"paymentMethod\": \"CASH\",\n    \"channel\": \"OFFLINE\",\n    \"notes\": \"Bán lẻ tại quầy POS Routine\",\n    \"promotionCode\": null,\n    \"items\": [\n        {\n            \"productId\": 1,\n            \"quantity\": 1,\n            \"size\": \"L\",\n            \"color\": \"Trắng\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/orders",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							]
+						}
+					}
+				},
+				{
+					"name": "7.2 Danh sách đơn hàng (Staff)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/orders?page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "7.3 Đơn hàng của tôi (Khách online)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{customer_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/orders/my-orders?page=0&size=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"my-orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "7.4 Chi tiết đơn hàng",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/orders/{{created_order_id}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"{{created_order_id}}"
+							]
+						}
+					}
+				},
+				{
+					"name": "7.5 Cập nhật trạng thái đơn hàng (Staff)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"COMPLETED\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/orders/{{created_order_id}}/status",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"{{created_order_id}}",
+								"status"
+							]
+						}
+					}
+				},
+				{
+					"name": "7.6 Xuất hóa đơn bán hàng PDF (In ấn)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/orders/{{created_order_id}}/invoice",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"orders",
+								"{{created_order_id}}",
+								"invoice"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "08. Khuyến mãi & Voucher (Promotions)",
+			"item": [
+				{
+					"name": "8.1 Danh sách chương trình khuyến mãi (Staff)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/promotions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"promotions"
+							]
+						}
+					}
+				},
+				{
+					"name": "8.2 Thêm chương trình khuyến mãi mới (ADMIN)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"GIAM20K\",\n    \"name\": \"Giảm 20.000đ cho đơn từ 200k\",\n    \"description\": \"Chương trình tri ân khách hàng Routine\",\n    \"type\": \"FIXED_AMOUNT\",\n    \"discountValue\": 20000,\n    \"minOrderAmount\": 200000,\n    \"startDate\": \"2026-01-01T00:00:00\",\n    \"endDate\": \"2026-12-31T23:59:59\",\n    \"applyToAllProducts\": true,\n    \"usageLimit\": 1000,\n    \"status\": \"ACTIVE\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/promotions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"promotions"
+							]
+						}
+					}
+				},
+				{
+					"name": "8.3 Kiểm tra & áp dụng mã giảm giá (/apply)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{sales_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"SALE10\",\n    \"orderAmount\": 500000,\n    \"productIds\": [1]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/promotions/apply",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"promotions",
+								"apply"
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "09. Quản lý Kho & Kiểm kê (Inventory)",
+			"item": [
+				{
+					"name": "9.1 Danh sách nhà cung cấp (Suppliers)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/suppliers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"suppliers"
+							]
+						}
+					}
+				},
+				{
+					"name": "9.2 Thêm nhà cung cấp mới",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var data = pm.response.json();",
+									"    pm.collectionVariables.set(\"created_supplier_id\", data.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maNcc\": \"NCC-0099\",\n    \"tenNcc\": \"Xưởng May Thời Trang Cao Cấp Việt\",\n    \"diaChi\": \"Khu Công Nghiệp Tân Bình, TP.HCM\",\n    \"soDienThoai\": \"02838123456\",\n    \"email\": \"contact@xuongmayviet.vn\",\n    \"nguoiLienHe\": \"Nguyễn Văn Đại\",\n    \"ghiChu\": \"Chuyên cung cấp áo sơ mi và quần âu\",\n    \"trangThai\": \"ACTIVE\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/suppliers",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"suppliers"
+							]
+						}
+					}
+				},
+				{
+					"name": "9.3 Danh sách phiếu nhập kho (Goods Receipts)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/goods-receipts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"goods-receipts"
+							]
+						}
+					}
+				},
+				{
+					"name": "9.4 Tạo phiếu nhập kho mới",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var data = pm.response.json();",
+									"    pm.collectionVariables.set(\"created_receipt_id\", data.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maPhieuNhap\": \"PNK-2026-0099\",\n    \"nhaCungCapId\": 1,\n    \"ghiChu\": \"Nhập kho hàng đợt 1\",\n    \"items\": [\n        {\n            \"productId\": 1,\n            \"soLuongNhap\": 20,\n            \"giaNhap\": 150000,\n            \"ghiChu\": \"Áo sơ mi trắng\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/goods-receipts",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"goods-receipts"
+							]
+						}
+					}
+				},
+				{
+					"name": "9.5 Duyệt phiếu nhập kho (Tăng tồn kho & giá vốn)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/goods-receipts/{{created_receipt_id}}/approve",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"goods-receipts",
+								"{{created_receipt_id}}",
+								"approve"
+							]
+						}
+					}
+				},
+				{
+					"name": "9.6 Xuất Excel phiếu nhập kho",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/goods-receipts/{{created_receipt_id}}/export",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"goods-receipts",
+								"{{created_receipt_id}}",
+								"export"
+							]
+						}
+					}
+				},
+				{
+					"name": "9.7 Danh sách phiếu xuất kho (Goods Issues)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/goods-issues",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"goods-issues"
+							]
+						}
+					}
+				},
+				{
+					"name": "9.8 Tạo đợt kiểm kê kho (Stocktake)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 201) {",
+									"    var data = pm.response.json();",
+									"    pm.collectionVariables.set(\"created_stocktake_id\", data.id);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"maKiemKe\": \"PKK-2026-0099\",\n    \"ngayKiemKe\": \"2026-09-04\",\n    \"ghiChu\": \"Đợt kiểm kê định kỳ quý 3/2026\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/stocktakes",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"stocktakes"
+							]
+						}
+					}
+				},
+				{
+					"name": "9.9 Hoàn thành kiểm kê kho (Cân đối tồn kho)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"ghiChu\": \"Đã kiểm đếm xong toàn bộ kệ hàng\",\n    \"items\": [\n        {\n            \"productId\": 1,\n            \"soLuongThucTe\": 48,\n            \"ghiChu\": \"Lệch 2 áo do lỗi trưng bày\"\n        }\n    ]\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/stocktakes/{{created_stocktake_id}}/complete",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"stocktakes",
+								"{{created_stocktake_id}}",
+								"complete"
+							]
+						}
+					}
+				},
+				{
+					"name": "9.10 Báo cáo tồn kho toàn hệ thống",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{warehouse_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reports/inventory?onlyLowStock=false",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"inventory"
+							],
+							"query": [
+								{
+									"key": "onlyLowStock",
+									"value": "false"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "10. Bảng lương nhân viên (Payrolls)",
+			"item": [
+				{
+					"name": "10.1 Bảng lương nhân viên theo tháng/năm",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accountant_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/payrolls?thang=9&nam=2026",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payrolls"
+							],
+							"query": [
+								{
+									"key": "thang",
+									"value": "9"
+								},
+								{
+									"key": "nam",
+									"value": "2026"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "10.2 Cập nhật lương/thưởng/phụ cấp cho nhân viên",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accountant_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"luongCoBan\": 8000000,\n    \"heSo\": 1.2,\n    \"phuCap\": 1500000,\n    \"thuong\": 2000000,\n    \"khauTru\": 500000,\n    \"ghiChu\": \"Đạt KPI xuất sắc tháng 9/2026\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/payrolls/2?thang=9&nam=2026",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payrolls",
+								"2"
+							],
+							"query": [
+								{
+									"key": "thang",
+									"value": "9"
+								},
+								{
+									"key": "nam",
+									"value": "2026"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "10.3 Duyệt dòng lương nhân viên",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accountant_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/payrolls/1/approve",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payrolls",
+								"1",
+								"approve"
+							]
+						}
+					}
+				},
+				{
+					"name": "10.4 Xem tổng quỹ lương kỳ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accountant_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/payrolls/total-fund?thang=9&nam=2026",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payrolls",
+								"total-fund"
+							],
+							"query": [
+								{
+									"key": "thang",
+									"value": "9"
+								},
+								{
+									"key": "nam",
+									"value": "2026"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "10.5 Xuất Excel bảng lương tháng",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accountant_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/payrolls/export?thang=9&nam=2026",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"payrolls",
+								"export"
+							],
+							"query": [
+								{
+									"key": "thang",
+									"value": "9"
+								},
+								{
+									"key": "nam",
+									"value": "2026"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "11. Báo cáo & Thống kê (Reports)",
+			"item": [
+				{
+					"name": "11.1 Tổng quan chỉ số kinh doanh (/overview)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reports/overview",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"overview"
+							]
+						}
+					}
+				},
+				{
+					"name": "11.2 Biểu đồ doanh thu theo thời gian (day/month/year)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reports/revenue?groupBy=day",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"revenue"
+							],
+							"query": [
+								{
+									"key": "groupBy",
+									"value": "day"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "11.3 Top sản phẩm bán chạy nhất",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reports/best-selling-products?limit=5",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"best-selling-products"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "11.4 Cảnh báo sản phẩm sắp hết hàng (Low stock)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reports/low-stock",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"low-stock"
+							]
+						}
+					}
+				},
+				{
+					"name": "11.5 Xuất báo cáo tài chính Excel",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accountant_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reports/financial/export?groupBy=day",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"financial",
+								"export"
+							],
+							"query": [
+								{
+									"key": "groupBy",
+									"value": "day"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "11.6 In báo cáo PDF chuẩn A4 (/print)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/v1/reports/print?type=doanh-thu&groupBy=day",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reports",
+								"print"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "doanh-thu"
+								},
+								{
+									"key": "groupBy",
+									"value": "day"
+								}
+							]
+						}
+					}
+				}
+			]
+		}
+	]
+}
