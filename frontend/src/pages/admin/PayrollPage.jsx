@@ -24,13 +24,19 @@ export default function PayrollPage() {
   const [savingId, setSavingId] = useState(null);
 
   async function fetchPayroll(t = thang, n = nam) {
+    if (n > init.nam || (n === init.nam && t > init.thang)) {
+      setError(`Không thể xem bảng lương kỳ tương lai (tối đa tháng ${init.thang}/${init.nam}).`);
+      setRows([]);
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     setError('');
     try {
       const res = await api.get('/payrolls', { params: { thang: t, nam: n } });
       setRows(res.data || []);
-    } catch {
-      setError('Không tải được bảng lương.');
+    } catch (err) {
+      setError(err?.response?.data?.message || 'Không tải được bảng lương.');
     } finally {
       setLoading(false);
     }
@@ -73,6 +79,10 @@ export default function PayrollPage() {
   }
 
   async function exportExcel() {
+    if (nam > init.nam || (nam === init.nam && thang > init.thang)) {
+      alert(`Không thể xuất bảng lương kỳ tương lai (tối đa tháng ${init.thang}/${init.nam}).`);
+      return;
+    }
     try {
       const res = await api.get('/payrolls/export', {
         params: { thang, nam },
@@ -105,15 +115,33 @@ export default function PayrollPage() {
         <div className="field-inline">
           <label htmlFor="pl-thang">Tháng:</label>
           <select id="pl-thang" value={thang} onChange={(e) => setThang(Number(e.target.value))}>
-            {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => (
-              <option key={m} value={m}>{m}</option>
-            ))}
+            {Array.from({ length: 12 }, (_, i) => i + 1).map((m) => {
+              const isFuture = nam === init.nam && m > init.thang;
+              return (
+                <option key={m} value={m} disabled={isFuture}>
+                  {m} {isFuture ? '(Chưa đến kỳ)' : ''}
+                </option>
+              );
+            })}
           </select>
         </div>
         <div className="field-inline">
           <label htmlFor="pl-nam">Năm:</label>
-          <input id="pl-nam" type="number" min={2000} max={2100} value={nam}
-            onChange={(e) => setNam(Number(e.target.value))} style={{ width: 100 }} />
+          <input
+            id="pl-nam"
+            type="number"
+            min={2020}
+            max={init.nam}
+            value={nam}
+            onChange={(e) => {
+              const val = Number(e.target.value);
+              setNam(val);
+              if (val >= init.nam && thang > init.thang) {
+                setThang(init.thang);
+              }
+            }}
+            style={{ width: 100 }}
+          />
         </div>
         <button type="submit" className="btn btn-primary">Xem bảng lương</button>
         <button type="button" className="btn btn-ghost" onClick={exportExcel}>

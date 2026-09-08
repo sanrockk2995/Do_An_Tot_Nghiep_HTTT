@@ -124,8 +124,14 @@ public class BangLuongService {
         if (thang == null || thang < 1 || thang > 12) {
             throw new BadRequestException("Vui lòng chọn tháng hợp lệ (1-12)");
         }
-        if (nam == null || nam < 2000 || nam > 2100) {
+        if (nam == null || nam < 2000) {
             throw new BadRequestException("Năm không hợp lệ");
+        }
+        java.time.YearMonth target = java.time.YearMonth.of(nam, thang);
+        java.time.YearMonth current = java.time.YearMonth.now();
+        if (target.isAfter(current)) {
+            throw new BadRequestException("Không thể xem hoặc tạo bảng lương cho kỳ tương lai (tối đa tháng "
+                    + current.getMonthValue() + "/" + current.getYear() + ")");
         }
     }
 

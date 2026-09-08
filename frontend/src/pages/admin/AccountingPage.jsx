@@ -12,42 +12,55 @@ export default function AccountingPage() {
   const [group, setGroup] = useState('day');
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
+  const [filterApplied, setFilterApplied] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  async function fetchRevenue(g, f, t) {
-    const res = await api.get('/reports/revenue', { params: { group: g, from: f || undefined, to: t || undefined } });
-    // Backend trả RevenuePoint(period, revenue, orderCount) → map sang label/value cho chart
-    setPoints((res.data || []).map((p) => ({ ...p, label: p.period, value: Number(p.revenue || 0) })));
+  function buildParams(g, f, t) {
+    const params = { groupBy: g, group: g };
+    if (f) params.from = f.includes('T') ? f : `${f}T00:00:00`;
+    if (t) params.to = t.includes('T') ? t : `${t}T23:59:59`;
+    return params;
+  }
+
+  async function loadReport(g, f, t) {
+    setLoading(true);
+    try {
+      const params = buildParams(g, f, t);
+      const [oRes, rRes] = await Promise.all([
+        api.get('/reports/overview', { params: { from: params.from, to: params.to } }),
+        api.get('/reports/revenue', { params }),
+      ]);
+      setOverview(oRes.data);
+      const rows = rRes.data || [];
+      setPoints(rows.map((p) => ({ ...p, label: p.period, value: Number(p.revenue || 0) })));
+      setFilterApplied(Boolean(f || t));
+    } catch (err) {
+      alert('Không tải được báo cáo: ' + (err.response?.data?.message || err.message || 'Lỗi kết nối máy chủ.'));
+    } finally {
+      setLoading(false);
+    }
   }
 
   useEffect(() => {
-    let alive = true;
-    Promise.all([
-      api.get('/reports/overview'),
-      api.get('/reports/revenue', { params: { group: 'day' } }),
-    ])
-      .then(([oRes, rRes]) => {
-        if (!alive) return;
-        setOverview(oRes.data);
-        const rows = rRes.data || [];
-        setPoints(rows.map((p) => ({ ...p, label: p.period, value: Number(p.revenue || 0) })));
-        setLoading(false);
-      })
-      .catch(() => alive && setLoading(false));
-    return () => { alive = false; };
+    loadReport('day', '', '');
   }, []);
 
   function handleFilter(e) {
     e.preventDefault();
-    fetchRevenue(group, from, to).catch(() => alert('Không tải được báo cáo.'));
+    loadReport(group, from, to);
+  }
+
+  function handleReset() {
+    setFrom('');
+    setTo('');
+    setGroup('day');
+    loadReport('day', '', '');
   }
 
   /** Xuất báo cáo tài chính ra Excel theo khoảng ngày đang chọn. */
   async function exportTaiChinh() {
     try {
-      const params = { groupBy: group };
-      if (from) params.from = `${from}T00:00:00`;
-      if (to) params.to = `${to}T23:59:59`;
+      const params = buildParams(group, from, to);
       const res = await api.get('/reports/financial/export', {
         params,
         responseType: 'blob',
@@ -74,17 +87,17 @@ export default function AccountingPage() {
         <div className="stat-tile card">
           <span className="stat-label">Doanh thu</span>
           <strong className="stat-value">{formatVNDText(overview?.revenue)}</strong>
-          <span className="muted-text">Tháng này</span>
+          <span className="muted-text">{filterApplied ? 'Khoảng đã chọn' : 'Tháng này'}</span>
         </div>
         <div className="stat-tile card">
           <span className="stat-label">Đơn hàng</span>
           <strong className="stat-value">{overview?.orderCount ?? '—'}</strong>
-          <span className="muted-text">Tháng này (không tính đơn hủy)</span>
+          <span className="muted-text">{filterApplied ? 'Khoảng đã chọn' : 'Tháng này (không tính đơn hủy)'}</span>
         </div>
         <div className="stat-tile card">
           <span className="stat-label">Sản phẩm bán ra</span>
           <strong className="stat-value">{overview?.productsSold ?? '—'}</strong>
-          <span className="muted-text">Tháng này</span>
+          <span className="muted-text">{filterApplied ? 'Khoảng đã chọn' : 'Tháng này'}</span>
         </div>
       </section>
 
@@ -106,6 +119,11 @@ export default function AccountingPage() {
           <input id="rp-to" type="date" value={to} onChange={(e) => setTo(e.target.value)} />
         </div>
         <button type="submit" className="btn btn-primary">Áp dụng</button>
+        {filterApplied && (
+          <button type="button" className="btn btn-outline" onClick={handleReset}>
+            Đặt lại
+          </button>
+        )}
         <button type="button" className="btn btn-ghost" onClick={exportTaiChinh}>
           ⬇ Xuất báo cáo tài chính
         </button>

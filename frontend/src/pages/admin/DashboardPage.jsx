@@ -16,7 +16,7 @@ export default function DashboardPage() {
     let alive = true;
     Promise.all([
       api.get('/reports/overview'),
-      api.get('/reports/revenue', { params: { group: 'day' } }),
+      api.get('/reports/revenue', { params: { groupBy: 'day', group: 'day' } }),
       api.get('/reports/best-selling-products', { params: { limit: 5 } }),
       api.get('/reports/low-stock', { params: { limit: 5 } }),
     ])

@@ -31,25 +31,59 @@ public class ReportController {
     private final ExcelExportService excelExportService;
     private final ReportPdfService reportPdfService;
 
-    private LocalDateTime resolveFrom(LocalDateTime from) {
-        return from != null ? from : ReportService.defaultFrom();
+    private LocalDateTime resolveFrom(String fromStr) {
+        if (fromStr == null || fromStr.isBlank()) {
+            return ReportService.defaultFrom();
+        }
+        try {
+            String s = fromStr.trim();
+            if (s.length() == 10) {
+                return LocalDate.parse(s).atStartOfDay();
+            }
+            if (s.contains("T")) {
+                return LocalDateTime.parse(s);
+            }
+            return LocalDate.parse(s).atStartOfDay();
+        } catch (Exception e) {
+            return ReportService.defaultFrom();
+        }
     }
 
-    private LocalDateTime resolveTo(LocalDateTime to) {
-        // to là ngày kết thúc (bao trọn ngày đó) → cộng 1 ngày
-        if (to != null) {
-            return LocalDate.from(to).plusDays(1).atStartOfDay();
+    private LocalDateTime resolveTo(String toStr) {
+        if (toStr == null || toStr.isBlank()) {
+            return ReportService.defaultTo();
         }
-        return ReportService.defaultTo();
+        try {
+            String s = toStr.trim();
+            LocalDate date;
+            if (s.length() == 10) {
+                date = LocalDate.parse(s);
+            } else if (s.contains("T")) {
+                date = LocalDateTime.parse(s).toLocalDate();
+            } else {
+                date = LocalDate.parse(s);
+            }
+            return date.plusDays(1).atStartOfDay();
+        } catch (Exception e) {
+            return ReportService.defaultTo();
+        }
+    }
+
+    private String resolveGroupBy(String groupBy, String group) {
+        if (groupBy != null && !groupBy.isBlank()) {
+            return groupBy.trim();
+        }
+        if (group != null && !group.isBlank()) {
+            return group.trim();
+        }
+        return "day";
     }
 
     @GetMapping("/overview")
     @PreAuthorize("hasAnyRole('ADMIN', 'ACCOUNTANT', 'SALES_STAFF', 'WAREHOUSE_STAFF')")
     public ResponseEntity<ReportDtos.OverviewResponse> overview(
-            @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
-            @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to) {
+            @RequestParam(required = false) String from,
+            @RequestParam(required = false) String to) {
         return ResponseEntity.ok(reportService.overview(resolveFrom(from), resolveTo(to)));
     }
 
@@ -57,13 +91,12 @@ public class ReportController {
     @GetMapping("/revenue")
     @PreAuthorize("hasAnyRole('ADMIN', 'ACCOUNTANT')")
     public ResponseEntity<List<ReportDtos.RevenuePoint>> revenue(
-            @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
-            @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to,
-            @RequestParam(defaultValue = "day") String groupBy) {
+            @RequestParam(required = false) String from,
+            @RequestParam(required = false) String to,
+            @RequestParam(required = false) String groupBy,
+            @RequestParam(required = false) String group) {
         return ResponseEntity.ok(
-                reportService.revenueByPeriod(resolveFrom(from), resolveTo(to), groupBy));
+                reportService.revenueByPeriod(resolveFrom(from), resolveTo(to), resolveGroupBy(groupBy, group)));
     }
 
     @GetMapping("/best-selling-products")
@@ -83,19 +116,19 @@ public class ReportController {
     @GetMapping({"/financial/export", "/tai-chinh/export"})
     @PreAuthorize("hasAnyRole('ADMIN', 'ACCOUNTANT')")
     public ResponseEntity<byte[]> exportTaiChinh(
-            @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
-            @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to,
-            @RequestParam(defaultValue = "day") String groupBy) {
+            @RequestParam(required = false) String from,
+            @RequestParam(required = false) String to,
+            @RequestParam(required = false) String groupBy,
+            @RequestParam(required = false) String group) {
+        String effectiveGroup = resolveGroupBy(groupBy, group);
         LocalDateTime f = resolveFrom(from);
         LocalDateTime t = resolveTo(to);
         ReportDtos.OverviewResponse overview = reportService.overview(f, t);
-        List<ReportDtos.RevenuePoint> revenue = reportService.revenueByPeriod(f, t, groupBy);
+        List<ReportDtos.RevenuePoint> revenue = reportService.revenueByPeriod(f, t, effectiveGroup);
         List<ReportDtos.BestSellingRow> bestSelling = reportService.bestSelling(10);
 
-        String label = (from != null ? from.toLocalDate().toString() : "toàn hệ thống")
-                + (from != null ? " → " + t.toLocalDate() : "");
+        String label = (from != null && !from.isBlank() ? f.toLocalDate().toString() : "toàn hệ thống")
+                + (to != null && !to.isBlank() ? " → " + t.toLocalDate() : "");
         byte[] xlsx = excelExportService.exportBaoCaoTaiChinh(label, overview, revenue, bestSelling);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION,
@@ -113,11 +146,10 @@ public class ReportController {
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<byte[]> printReport(
             @RequestParam String type,
-            @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime from,
-            @RequestParam(required = false)
-            @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime to,
-            @RequestParam(defaultValue = "day") String groupBy) {
+            @RequestParam(required = false) String from,
+            @RequestParam(required = false) String to,
+            @RequestParam(required = false) String groupBy,
+            @RequestParam(required = false) String group) {
         String reporterName;
         try {
             reporterName = SecurityUtils.currentFullName();
@@ -125,7 +157,7 @@ public class ReportController {
             reporterName = "Quản lý";
         }
         byte[] pdf = reportPdfService.generate(
-                type, resolveFrom(from), resolveTo(to), groupBy, reporterName);
+                type, resolveFrom(from), resolveTo(to), resolveGroupBy(groupBy, group), reporterName);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION,
                         "inline; filename=\"bao-cao-" + type + ".pdf\"")

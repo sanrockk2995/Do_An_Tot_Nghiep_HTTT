@@ -2,8 +2,9 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { api } from '../../services/api';
 import { formatVNDText, formatDateTime } from '../../utils/format';
 import { IconX, IconSearch } from '../../components/Icons';
+import { useAuth } from '../../context/AuthContext';
 
-/** Kho hàng: tab phiếu nhập / phiếu xuất / báo cáo tồn kho. */
+/** Kho hàng: tab phiếu nhập / phiếu xuất. */
 export default function WarehousePage() {
   const [tab, setTab] = useState('nhap');
 
@@ -30,19 +31,10 @@ export default function WarehousePage() {
         >
           Phiếu xuất kho
         </button>
-        <button
-          role="tab"
-          aria-selected={tab === 'tonkho'}
-          className={`tab ${tab === 'tonkho' ? 'active' : ''}`}
-          onClick={() => setTab('tonkho')}
-        >
-          Báo cáo tồn kho
-        </button>
       </div>
 
       {tab === 'nhap' && <PhieuNhapList />}
       {tab === 'xuat' && <PhieuXuatList />}
-      {tab === 'tonkho' && <InventoryReport />}
     </div>
   );
 }
@@ -50,6 +42,8 @@ export default function WarehousePage() {
 // ================= Phiếu nhập =================
 
 function PhieuNhapList() {
+  const { user } = useAuth();
+  const isWarehouseStaff = user?.role === 'WAREHOUSE_STAFF';
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -119,8 +113,12 @@ function PhieuNhapList() {
         <table className="data-table">
           <thead>
             <tr>
-              <th>Mã phiếu</th><th>Nhà cung cấp</th><th>Ngày nhập</th>
-              <th>Tổng tiền</th><th>Trạng thái</th><th>Hành động</th>
+              <th>Mã phiếu</th>
+              <th>Nhà cung cấp</th>
+              <th>Ngày nhập</th>
+              {!isWarehouseStaff && <th>Tổng tiền</th>}
+              <th>Trạng thái</th>
+              <th>Hành động</th>
             </tr>
           </thead>
           <tbody>
@@ -129,7 +127,7 @@ function PhieuNhapList() {
                 <td>{p.maPhieuNhap}</td>
                 <td>{p.tenNhaCungCap}</td>
                 <td>{formatDateTime(p.ngayNhap)}</td>
-                <td>{formatVNDText(p.tongTien)}</td>
+                {!isWarehouseStaff && <td>{formatVNDText(p.tongTien)}</td>}
                 <td>
                   <span className={`badge ${p.trangThai === 'APPROVED' ? 'badge-green' : p.trangThai === 'CHO_DUYET' || p.trangThai === 'DRAFT' ? 'badge-orange' : 'badge-red'}`}>
                     {p.trangThai === 'APPROVED' ? 'Đã duyệt'
@@ -148,7 +146,7 @@ function PhieuNhapList() {
               </tr>
             ))}
             {items.length === 0 && (
-              <tr><td colSpan={6} className="muted-text">Chưa có phiếu nhập nào.</td></tr>
+              <tr><td colSpan={isWarehouseStaff ? 5 : 6} className="muted-text">Chưa có phiếu nhập nào.</td></tr>
             )}
           </tbody>
         </table>
@@ -169,6 +167,8 @@ function PhieuNhapList() {
 
 /** Component tìm kiếm nhanh sản phẩm theo mã hoặc tên để thêm vào phiếu. */
 function ProductQuickSearch({ products, onSelectProduct, placeholder }) {
+  const { user } = useAuth();
+  const isWarehouseStaff = user?.role === 'WAREHOUSE_STAFF';
   const [query, setQuery] = useState('');
   const [open, setOpen] = useState(false);
   const [highlightIdx, setHighlightIdx] = useState(0);
@@ -242,7 +242,7 @@ function ProductQuickSearch({ products, onSelectProduct, placeholder }) {
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 13, color: 'var(--admin-text-muted)' }}>
                 <span>Tồn: <strong style={{ color: p.stock > 0 ? '#16a34a' : '#dc2626' }}>{p.stock}</strong></span>
-                {p.costPrice != null && <span>Vốn: {formatVNDText(p.costPrice)}</span>}
+                {!isWarehouseStaff && p.costPrice != null && <span>Vốn: {formatVNDText(p.costPrice)}</span>}
                 <button type="button" className="btn btn-outline" style={{ padding: '3px 8px', minHeight: 26, fontSize: 11 }}>+ Thêm</button>
               </div>
             </li>
@@ -338,11 +338,6 @@ function PhieuNhapForm({ onClose, onSaved }) {
     }
   }
 
-  const total = chiTiet.reduce(
-    (s, l) => s + (Number(l.giaNhap) || 0) * (Number(l.soLuongNhap) || 0),
-    0
-  );
-
   return (
     <div className="modal-overlay" role="dialog" aria-modal="true">
       <div className="modal card modal-wide">
@@ -389,16 +384,14 @@ function PhieuNhapForm({ onClose, onSaved }) {
               <table className="warehouse-items-table">
                 <thead>
                   <tr>
-                    <th style={{ width: '45%' }}>Mã & Tên sản phẩm</th>
-                    <th style={{ width: '15%' }}>Số lượng</th>
-                    <th style={{ width: '20%' }}>Đơn giá nhập (₫)</th>
-                    <th style={{ width: '15%' }}>Thành tiền</th>
+                    <th style={{ width: '50%' }}>Mã & Tên sản phẩm</th>
+                    <th style={{ width: '20%' }}>Số lượng</th>
+                    <th style={{ width: '25%' }}>Đơn giá nhập (₫)</th>
                     <th style={{ width: '5%', textAlign: 'center' }}>Xoá</th>
                   </tr>
                 </thead>
                 <tbody>
                   {chiTiet.map((l, idx) => {
-                    const lineTotal = (Number(l.giaNhap) || 0) * (Number(l.soLuongNhap) || 0);
                     return (
                       <tr key={idx}>
                         <td>
@@ -438,9 +431,6 @@ function PhieuNhapForm({ onClose, onSaved }) {
                             aria-label="Giá nhập"
                           />
                         </td>
-                        <td style={{ fontWeight: 600, color: 'var(--admin-accent)', whiteSpace: 'nowrap' }}>
-                          {formatVNDText(lineTotal)}
-                        </td>
                         <td style={{ textAlign: 'center' }}>
                           <button
                             type="button"
@@ -465,7 +455,7 @@ function PhieuNhapForm({ onClose, onSaved }) {
               </table>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 12 }}>
               <button
                 type="button"
                 className="btn btn-outline"
@@ -477,13 +467,6 @@ function PhieuNhapForm({ onClose, onSaved }) {
               <div style={{ fontSize: 13, color: 'var(--admin-text-muted)' }}>
                 Tổng mặt hàng: <strong>{chiTiet.filter((x) => x.productId).length}</strong> | Tổng SL nhập: <strong>{chiTiet.reduce((s, x) => s + (Number(x.soLuongNhap) || 0), 0)}</strong>
               </div>
-            </div>
-
-            <div className="warehouse-summary-bar">
-              <span style={{ fontSize: 14, color: 'var(--admin-text-muted)' }}>Tổng thanh toán tiền hàng:</span>
-              <strong style={{ fontSize: 20, color: 'var(--admin-accent)', fontFamily: 'var(--font-heading)' }}>
-                {formatVNDText(total)}
-              </strong>
             </div>
           </div>
 
@@ -822,84 +805,3 @@ function PhieuXuatForm({ onClose, onSaved }) {
   );
 }
 
-// ================= Báo cáo tồn kho =================
-
-function InventoryReport() {
-  const [rows, setRows] = useState([]);
-  const [q, setQ] = useState('');
-  const [onlyLowStock, setOnlyLowStock] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    let alive = true;
-    setLoading(true);
-    api.get('/reports/inventory', {
-      params: { q: q || undefined, onlyLowStock: onlyLowStock || undefined },
-    })
-      .then((res) => {
-        if (alive) setRows(res.data || []);
-      })
-      .catch(() => {})
-      .finally(() => {
-        if (alive) setLoading(false);
-      });
-    return () => {
-      alive = false;
-    };
-  }, [q, onlyLowStock]);
-
-  return (
-    <section aria-label="Báo cáo tồn kho">
-      <div className="admin-toolbar">
-        <input
-          type="search"
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          placeholder="Tìm sản phẩm..."
-          aria-label="Tìm trong báo cáo tồn"
-        />
-        <label className="checkbox-label">
-          <input
-            type="checkbox"
-            checked={onlyLowStock}
-            onChange={(e) => setOnlyLowStock(e.target.checked)}
-          />
-          Chỉ hiện sắp hết hàng
-        </label>
-      </div>
-
-      {loading ? (
-        <div style={{ textAlign: 'center', padding: 40 }}>
-          <div className="spinner" />
-        </div>
-      ) : (
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Mã SP</th><th>Tên sản phẩm</th><th>Tồn</th><th>Giá vốn</th><th>Giá trị tồn</th><th>Ghi chú</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r) => (
-              <tr key={r.productId}>
-                <td>{r.code}</td>
-                <td>{r.name}{r.categoryName ? ` — ${r.categoryName}` : ''}</td>
-                <td className={r.lowStock ? 'text-warn' : ''}>{r.stock}</td>
-                <td>{formatVNDText(r.costPrice)}</td>
-                <td>{formatVNDText(r.inventoryValue)}</td>
-                <td>
-                  {r.lowStock
-                    ? <span className="badge badge-red">Sắp hết</span>
-                    : <span className="badge badge-green">Bình thường</span>}
-                </td>
-              </tr>
-            ))}
-            {rows.length === 0 && (
-              <tr><td colSpan={6} className="muted-text">Không có dữ liệu.</td></tr>
-            )}
-          </tbody>
-        </table>
-      )}
-    </section>
-  );
-}
