@@ -32,7 +32,8 @@ spring:
       max-request-size: 10MB
 
 server:
-  port: 8080
+  address: "${SERVER_ADDRESS:::}"
+  port: ${SERVER_PORT:8080}
   servlet:
     encoding:
       charset: UTF-8
@@ -46,7 +47,7 @@ app:
     refresh-token-ttl-days: 7
     refresh-cookie-name: routine_refresh_token
   cors:
-    allowed-origins: http://localhost:5173,http://localhost:3000,https://routine.hoanguyendev.id.vn
+    allowed-origins: http://localhost:5173,http://localhost:3000,https://routine.hoanguyendev.id.vn,http://[::1]:5173,http://[::1]:3000,http://127.0.0.1:5173,http://127.0.0.1:3000
     # true → chấp nhận thêm mọi origin http(s)://<IP> và mọi tên miền (tunnel/LAN)
     allow-lan: true
   security:

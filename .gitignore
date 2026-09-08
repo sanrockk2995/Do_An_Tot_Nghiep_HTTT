@@ -22,4 +22,5 @@ Thumbs.db
 # Claude session metadata (công cụ AI, không thuộc mã nguồn)
 .claude/
 .tmp/
+.playwright-mcp/
 tools/.m2/

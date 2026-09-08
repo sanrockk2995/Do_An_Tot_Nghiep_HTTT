@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.net.InetAddress;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,8 +21,8 @@ import java.util.List;
  *       staff-ip-whitelist-enabled: true
  *
  * Hỗ trợ:
- *  - IP đơn:            192.168.1.10
- *  - Dải CIDR:          192.168.1.0/24
+ *  - IP đơn:            192.168.1.10, ::1, 2001:db8::1
+ *  - Dải CIDR:          192.168.1.0/24, fe80::/10, 2001:db8::/32
  *  - Dải gạch ngang:    192.168.1.10-192.168.1.50
  *  - Wildcard "*":      cho phép mọi IP (mặc định cho môi trường demo)
  *  - IPv6 loopback ::1 và IPv4-mapped (::ffff:192.168.1.10) được chuẩn hoá.
@@ -81,10 +82,13 @@ public class IpWhitelistService {
         return normalize(request.getRemoteAddr());
     }
 
-    /** Chuẩn hoá: bỏ prefix IPv6-mapped (::ffff:) và rút gọn IPv6 loopback dạng đầy đủ. */
+    /** Chuẩn hoá: bỏ ngoặc [], bỏ prefix IPv6-mapped (::ffff:) và rút gọn IPv6 loopback dạng đầy đủ. */
     private String normalize(String ip) {
         if (ip == null) return "";
         String result = ip.trim();
+        if (result.startsWith("[") && result.endsWith("]")) {
+            result = result.substring(1, result.length() - 1);
+        }
         // IPv4-mapped IPv6 (::ffff:192.168.1.10) → giữ phần IPv4
         if (result.startsWith("::ffff:")) {
             result = result.substring(7);
@@ -102,14 +106,30 @@ public class IpWhitelistService {
             return false;
         }
         for (String entry : whitelist) {
-            if (entry.equals(ip)) return true;                 // khớp chính xác
-            if (entry.contains("/")) {
-                if (matchesCidr(ip, entry)) return true;       // dải CIDR
-            } else if (entry.contains("-")) {
-                if (matchesRange(ip, entry)) return true;      // khoảng a-b
-            } else if (entry.endsWith(".*")) {
-                if (matchesWildcardPrefix(ip, entry)) return true; // 192.168.1.*
+            String cleanEntry = normalize(entry);
+            if (cleanEntry.equalsIgnoreCase(ip)) return true; // khớp chính xác chuỗi
+
+            // Thử so khớp qua InetAddress (xử lý biểu diễn khác nhau của IPv6, loopback)
+            if (matchesInetAddress(ip, cleanEntry)) return true;
+
+            if (cleanEntry.contains("/")) {
+                if (matchesCidr(ip, cleanEntry)) return true; // dải CIDR (IPv4 & IPv6)
+            } else if (cleanEntry.contains("-")) {
+                if (matchesRange(ip, cleanEntry)) return true; // khoảng a-b
+            } else if (cleanEntry.endsWith(".*")) {
+                if (matchesWildcardPrefix(ip, cleanEntry)) return true; // 192.168.1.*
             }
+        }
+        return false;
+    }
+
+    private boolean matchesInetAddress(String ip, String entry) {
+        try {
+            InetAddress ipAddr = InetAddress.getByName(ip);
+            InetAddress entryAddr = InetAddress.getByName(entry);
+            if (ipAddr.equals(entryAddr)) return true;
+            if (ipAddr.isLoopbackAddress() && entryAddr.isLoopbackAddress()) return true;
+        } catch (Exception ignored) {
         }
         return false;
     }
@@ -126,19 +146,34 @@ public class IpWhitelistService {
         return true;
     }
 
-    /** Khớp dải CIDR IPv4: 192.168.1.0/24 */
+    /** Khớp dải CIDR hỗ trợ cả IPv4 (192.168.1.0/24) và IPv6 (fe80::/10, 2001:db8::/32). */
     private boolean matchesCidr(String ip, String cidr) {
         try {
             String[] segs = cidr.split("/");
-            byte[] netBytes = toBytes(segs[0]);
-            if (netBytes == null || netBytes.length != 4) return false;
+            if (segs.length != 2) return false;
             int prefixLen = Integer.parseInt(segs[1]);
-            byte[] ipBytes = toBytes(ip);
-            if (ipBytes == null || ipBytes.length != 4) return false;
-            int mask = prefixLen == 0 ? 0 : (0xFFFFFFFF << (32 - prefixLen));
-            int netInt = toInt(netBytes) & mask;
-            int ipInt = toInt(ipBytes) & mask;
-            return netInt == ipInt;
+            InetAddress netAddr = InetAddress.getByName(normalize(segs[0]));
+            InetAddress ipAddr = InetAddress.getByName(ip);
+
+            byte[] netBytes = netAddr.getAddress();
+            byte[] ipBytes = ipAddr.getAddress();
+            if (netBytes.length != ipBytes.length) return false;
+
+            int maxBits = netBytes.length * 8;
+            if (prefixLen < 0 || prefixLen > maxBits) return false;
+
+            int fullBytes = prefixLen / 8;
+            int remBits = prefixLen % 8;
+            for (int i = 0; i < fullBytes; i++) {
+                if (netBytes[i] != ipBytes[i]) return false;
+            }
+            if (remBits > 0 && fullBytes < netBytes.length) {
+                int mask = (0xFF << (8 - remBits)) & 0xFF;
+                if ((netBytes[fullBytes] & mask) != (ipBytes[fullBytes] & mask)) {
+                    return false;
+                }
+            }
+            return true;
         } catch (Exception e) {
             log.warn("Mục whitelist CIDR không hợp lệ: {}", cidr);
             return false;

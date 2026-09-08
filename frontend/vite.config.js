@@ -5,13 +5,18 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    host: true, // lắng nghe mọi IP — cho phép truy cập qua LAN/tunnel
-    allowedHosts: ['routine.hoanguyendev.id.vn'],
+    host: '::',
+    allowedHosts: true,
     proxy: {
       '/api': {
         target: 'http://localhost:8080',
         changeOrigin: true,
       },
     },
+  },
+  preview: {
+    port: 5173,
+    host: '::',
+    allowedHosts: true,
   },
 });

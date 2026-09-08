@@ -31,7 +31,8 @@ echo " [1/2] BACKEND (port 8080)..."
   export JAVA_HOME="${JAVA_HOME:-/c/Program Files/Java/jdk-23}"
   export PATH="$JAVA_HOME/bin:$PATH"
   "$ROOT/tools/apache-maven-3.9.9/bin/mvn" spring-boot:run \
-    -Dmaven.repo.local="$ROOT/tools/.m2"
+    -Dmaven.repo.local="$ROOT/tools/.m2" \
+    -Dspring-boot.run.jvmArguments="-Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true"
 ) &
 BACKEND_PID=$!
 
@@ -41,7 +42,7 @@ echo " [2/2] FRONTEND (port 5173)..."
 (
   cd "$ROOT/frontend"
   [ -d node_modules ] || npm install
-  npm run dev
+  npm run dev -- --host ::
 ) &
 FRONTEND_PID=$!
 

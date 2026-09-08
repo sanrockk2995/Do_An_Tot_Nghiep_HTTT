@@ -24,7 +24,7 @@ if not exist node_modules (
   call npm install
 )
 
-call npm run dev -- --host 0.0.0.0
+call npm run dev -- --host ::
 
 echo.
 echo  Frontend da dung hoac co loi khi khoi dong.

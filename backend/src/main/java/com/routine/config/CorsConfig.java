@@ -33,13 +33,22 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
         List<String> origins = new ArrayList<>(Arrays.asList(allowedOrigins.split(",")));
         if (allowLan) {
-            // Mẫu khớp mọi host dạng IP: http://192.168.x.x:5173, http://10.0.0.5 ...
+            // Mẫu khớp mọi host dạng IP IPv4: http://192.168.x.x:5173, http://10.0.0.5 ...
             origins.add("http://*:*");
             origins.add("https://*:*");
             // Mẫu KHÔNG port — bắt buộc cho origin qua reverse proxy/tunnel
             // (vd https://ten-mien.tunnel chỉ gửi Origin "https://ten-mien.tunnel", không kèm :443)
             origins.add("http://*");
             origins.add("https://*");
+            // Mẫu khớp host dạng IPv6 (vd http://[::1]:5173, http://[2402:...]:5173 ...)
+            origins.add("http://[*]:*");
+            origins.add("https://[*]:*");
+            origins.add("http://[*]");
+            origins.add("https://[*]");
+            origins.add("http://[::1]:*");
+            origins.add("https://[::1]:*");
+            origins.add("http://[::1]");
+            origins.add("https://[::1]");
         }
         config.setAllowedOriginPatterns(origins);
         config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));

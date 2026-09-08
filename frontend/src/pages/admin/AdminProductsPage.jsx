@@ -10,6 +10,7 @@ import { IconX } from '../../components/Icons';
 export default function AdminProductsPage({ salesMode = false, warehouseMode = false }) {
   const [items, setItems] = useState([]);
   const [q, setQ] = useState('');
+  const [debouncedQ, setDebouncedQ] = useState('');
   const [status, setStatus] = useState('');
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
@@ -25,12 +26,27 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
     api.get('/categories').then((res) => setCategories(res.data || [])).catch(() => {});
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedQ(q.trim());
+      setPage(0);
+    }, 250);
+    return () => clearTimeout(timer);
+  }, [q]);
+
   const load = useCallback(() => {
     let alive = true;
     setLoading(true);
     setError('');
     api
-      .get('/admin/products', { params: { q, status, page, size: 10 } })
+      .get('/admin/products', {
+        params: {
+          q: debouncedQ || undefined,
+          status: status || undefined,
+          page,
+          size: 10,
+        },
+      })
       .then((res) => {
         if (!alive) return;
         setItems(res.data.content || []);
@@ -43,7 +59,7 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
         if (alive) setLoading(false);
       });
     return () => { alive = false; };
-  }, [q, status, page]);
+  }, [debouncedQ, status, page]);
 
   useEffect(() => {
     load();

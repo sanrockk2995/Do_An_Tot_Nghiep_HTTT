@@ -67,6 +67,20 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
                                           @Param("status") String status,
                                           Pageable pageable);
 
+    /** Quản trị: tìm kiếm theo pattern tên/mã/sku kết hợp lọc danh mục + trạng thái. */
+    @Query("""
+            SELECT p FROM Product p
+            WHERE (:categoryId IS NULL OR p.categoryId = :categoryId)
+              AND (:status IS NULL OR p.status = :status)
+              AND (LOWER(p.name) LIKE :pattern
+                OR LOWER(p.code) LIKE :pattern
+                OR LOWER(COALESCE(p.sku, '')) LIKE :pattern)
+            """)
+    Page<Product> searchAdmin(@Param("pattern") String pattern,
+                              @Param("categoryId") Long categoryId,
+                              @Param("status") String status,
+                              Pageable pageable);
+
     List<Product> findByStockLessThanEqualAndStatus(Integer minStock, String status);
 
     /** Sản phẩm bán chạy — join order_items đã COMPLETED. */

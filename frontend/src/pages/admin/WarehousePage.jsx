@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { api } from '../../services/api';
 import { formatVNDText, formatDateTime } from '../../utils/format';
-import { IconX } from '../../components/Icons';
+import { IconX, IconSearch } from '../../components/Icons';
 
 /** Kho hàng: tab phiếu nhập / phiếu xuất / báo cáo tồn kho. */
 export default function WarehousePage() {
@@ -167,6 +167,92 @@ function PhieuNhapList() {
   );
 }
 
+/** Component tìm kiếm nhanh sản phẩm theo mã hoặc tên để thêm vào phiếu. */
+function ProductQuickSearch({ products, onSelectProduct, placeholder }) {
+  const [query, setQuery] = useState('');
+  const [open, setOpen] = useState(false);
+  const [highlightIdx, setHighlightIdx] = useState(0);
+
+  const filtered = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return [];
+    return products.filter((p) =>
+      (p.code && p.code.toLowerCase().includes(q)) ||
+      (p.name && p.name.toLowerCase().includes(q)) ||
+      (p.sku && p.sku.toLowerCase().includes(q))
+    ).slice(0, 10);
+  }, [products, query]);
+
+  function handleSelect(p) {
+    onSelectProduct(p);
+    setQuery('');
+    setOpen(false);
+    setHighlightIdx(0);
+  }
+
+  function handleKeyDown(e) {
+    if (!open || filtered.length === 0) return;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setHighlightIdx((prev) => (prev + 1) % filtered.length);
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setHighlightIdx((prev) => (prev - 1 + filtered.length) % filtered.length);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (filtered[highlightIdx]) {
+        handleSelect(filtered[highlightIdx]);
+      }
+    } else if (e.key === 'Escape') {
+      setOpen(false);
+    }
+  }
+
+  return (
+    <div className="warehouse-quick-search">
+      <div style={{ position: 'relative' }}>
+        <span className="search-icon">
+          <IconSearch size={16} />
+        </span>
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setOpen(true);
+            setHighlightIdx(0);
+          }}
+          onFocus={() => { if (query.trim()) setOpen(true); }}
+          onBlur={() => { setTimeout(() => setOpen(false), 200); }}
+          onKeyDown={handleKeyDown}
+          placeholder={placeholder || "Tìm kiếm theo mã SP hoặc tên SP..."}
+        />
+      </div>
+      {open && filtered.length > 0 && (
+        <ul className="warehouse-search-dropdown" role="listbox">
+          {filtered.map((p, idx) => (
+            <li
+              key={p.id}
+              className={`warehouse-search-item ${idx === highlightIdx ? 'active' : ''}`}
+              onMouseDown={() => handleSelect(p)}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <span className="item-code">{p.code}</span>
+                <span className="item-name" style={{ fontWeight: 500 }}>{p.name}</span>
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 13, color: 'var(--admin-text-muted)' }}>
+                <span>Tồn: <strong style={{ color: p.stock > 0 ? '#16a34a' : '#dc2626' }}>{p.stock}</strong></span>
+                {p.costPrice != null && <span>Vốn: {formatVNDText(p.costPrice)}</span>}
+                <button type="button" className="btn btn-outline" style={{ padding: '3px 8px', minHeight: 26, fontSize: 11 }}>+ Thêm</button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 function PhieuNhapForm({ onClose, onSaved }) {
   const [suppliers, setSuppliers] = useState([]);
   const [products, setProducts] = useState([]);
@@ -180,7 +266,7 @@ function PhieuNhapForm({ onClose, onSaved }) {
     api.get('/suppliers', { params: { page: 0, size: 100 } })
       .then((res) => setSuppliers(res.data?.content || res.data || []))
       .catch(() => {});
-    api.get('/admin/products', { params: { page: 0, size: 200 } })
+    api.get('/admin/products', { params: { page: 0, size: 500 } })
       .then((res) => setProducts(res.data?.content || []))
       .catch(() => {});
   }, []);
@@ -189,9 +275,50 @@ function PhieuNhapForm({ onClose, onSaved }) {
     setChiTiet(chiTiet.map((l, i) => (i === idx ? { ...l, ...patch } : l)));
   }
 
+  function handleSelectProductInLine(idx, prodId) {
+    const p = products.find((x) => Number(x.id) === Number(prodId));
+    const currentGiaNhap = chiTiet[idx].giaNhap;
+    updateLine(idx, {
+      productId: prodId,
+      // Tự động điền giá vốn/giá sản phẩm nếu người dùng chưa nhập
+      giaNhap: currentGiaNhap !== '' ? currentGiaNhap : (p?.costPrice != null ? p.costPrice : p?.price || ''),
+    });
+  }
+
+  function handleQuickAdd(p) {
+    const existingIdx = chiTiet.findIndex((item) => Number(item.productId) === Number(p.id));
+    if (existingIdx >= 0) {
+      updateLine(existingIdx, { soLuongNhap: Number(chiTiet[existingIdx].soLuongNhap || 0) + 1 });
+    } else {
+      if (chiTiet.length === 1 && !chiTiet[0].productId) {
+        updateLine(0, {
+          productId: p.id,
+          soLuongNhap: 1,
+          giaNhap: p.costPrice != null ? p.costPrice : p.price || '',
+        });
+      } else {
+        setChiTiet([
+          ...chiTiet,
+          {
+            productId: p.id,
+            soLuongNhap: 1,
+            giaNhap: p.costPrice != null ? p.costPrice : p.price || '',
+          },
+        ]);
+      }
+    }
+  }
+
   async function handleSave(e) {
     e.preventDefault();
     setError('');
+
+    if (chiTiet.some((l) => !l.productId)) {
+      setError('Vui lòng chọn sản phẩm cho tất cả các dòng hàng nhập.');
+      return;
+    }
+
+    setSaving(true);
     try {
       await api.post('/goods-receipts', {
         nhaCungCapId: Number(nhaCungCapId),
@@ -206,6 +333,8 @@ function PhieuNhapForm({ onClose, onSaved }) {
       onSaved();
     } catch (err) {
       setError(err.message || 'Tạo phiếu thất bại.');
+    } finally {
+      setSaving(false);
     }
   }
 
@@ -236,62 +365,135 @@ function PhieuNhapForm({ onClose, onSaved }) {
             </div>
             <div className="field">
               <label htmlFor="pn-notes">Ghi chú</label>
-              <input id="pn-notes" value={ghiChu} onChange={(e) => setGhiChu(e.target.value)} />
+              <input
+                id="pn-notes"
+                value={ghiChu}
+                onChange={(e) => setGhiChu(e.target.value)}
+                placeholder="VD: Nhập hàng đợt 1 / đơn đặt tháng 9..."
+              />
             </div>
           </div>
 
-          <fieldset className="variants-fieldset">
-            <legend>Danh sách hàng nhập</legend>
-            {chiTiet.map((l, idx) => (
-              <div key={idx} className="variant-row variant-row-4col">
-                <select
-                  required
-                  value={l.productId}
-                  onChange={(e) => updateLine(idx, { productId: e.target.value })}
-                  aria-label="Sản phẩm"
-                >
-                  <option value="">— Sản phẩm —</option>
-                  {products.map((p) => (
-                    <option key={p.id} value={p.id}>{p.code} · {p.name}</option>
-                  ))}
-                </select>
-                <input
-                  type="number" min="1" required placeholder="Số lượng"
-                  value={l.soLuongNhap}
-                  onChange={(e) => updateLine(idx, { soLuongNhap: e.target.value })}
-                  aria-label="Số lượng nhập"
-                />
-                <input
-                  type="number" min="0" required placeholder="Giá nhập"
-                  value={l.giaNhap}
-                  onChange={(e) => updateLine(idx, { giaNhap: e.target.value })}
-                  aria-label="Giá nhập"
-                />
-                <button
-                  type="button"
-                  className="btn btn-ghost text-danger"
-                  onClick={() => setChiTiet(chiTiet.filter((_, i) => i !== idx))}
-                  aria-label="Xóa dòng"
-                ><IconX size={15} /></button>
+          <div className="field" style={{ marginTop: 12 }}>
+            <label style={{ fontWeight: 600, fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', marginBottom: 8, display: 'block' }}>
+              Danh sách hàng nhập
+            </label>
+
+            <ProductQuickSearch
+              products={products}
+              onSelectProduct={handleQuickAdd}
+              placeholder="🔍 Tìm / quét theo mã SP hoặc tên SP để thêm nhanh vào danh sách nhập..."
+            />
+
+            <div className="warehouse-items-container">
+              <table className="warehouse-items-table">
+                <thead>
+                  <tr>
+                    <th style={{ width: '45%' }}>Mã & Tên sản phẩm</th>
+                    <th style={{ width: '15%' }}>Số lượng</th>
+                    <th style={{ width: '20%' }}>Đơn giá nhập (₫)</th>
+                    <th style={{ width: '15%' }}>Thành tiền</th>
+                    <th style={{ width: '5%', textAlign: 'center' }}>Xoá</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {chiTiet.map((l, idx) => {
+                    const lineTotal = (Number(l.giaNhap) || 0) * (Number(l.soLuongNhap) || 0);
+                    return (
+                      <tr key={idx}>
+                        <td>
+                          <select
+                            required
+                            value={l.productId}
+                            onChange={(e) => handleSelectProductInLine(idx, e.target.value)}
+                            aria-label="Sản phẩm"
+                          >
+                            <option value="">— Chọn sản phẩm —</option>
+                            {products.map((p) => (
+                              <option key={p.id} value={p.id}>
+                                [{p.code}] {p.name} (Tồn: {p.stock})
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            min="1"
+                            required
+                            placeholder="Số lượng"
+                            value={l.soLuongNhap}
+                            onChange={(e) => updateLine(idx, { soLuongNhap: e.target.value })}
+                            aria-label="Số lượng nhập"
+                          />
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            min="0"
+                            required
+                            placeholder="Giá nhập"
+                            value={l.giaNhap}
+                            onChange={(e) => updateLine(idx, { giaNhap: e.target.value })}
+                            aria-label="Giá nhập"
+                          />
+                        </td>
+                        <td style={{ fontWeight: 600, color: 'var(--admin-accent)', whiteSpace: 'nowrap' }}>
+                          {formatVNDText(lineTotal)}
+                        </td>
+                        <td style={{ textAlign: 'center' }}>
+                          <button
+                            type="button"
+                            className="btn btn-ghost text-danger"
+                            style={{ padding: '6px', minHeight: 32 }}
+                            onClick={() => {
+                              if (chiTiet.length === 1) {
+                                setChiTiet([{ productId: '', soLuongNhap: 1, giaNhap: '' }]);
+                              } else {
+                                setChiTiet(chiTiet.filter((_, i) => i !== idx));
+                              }
+                            }}
+                            aria-label="Xóa dòng"
+                          >
+                            <IconX size={16} />
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
+              <button
+                type="button"
+                className="btn btn-outline"
+                style={{ fontSize: 13, minHeight: 36, padding: '7px 14px' }}
+                onClick={() => setChiTiet([...chiTiet, { productId: '', soLuongNhap: 1, giaNhap: '' }])}
+              >
+                + Thêm dòng trống
+              </button>
+              <div style={{ fontSize: 13, color: 'var(--admin-text-muted)' }}>
+                Tổng mặt hàng: <strong>{chiTiet.filter((x) => x.productId).length}</strong> | Tổng SL nhập: <strong>{chiTiet.reduce((s, x) => s + (Number(x.soLuongNhap) || 0), 0)}</strong>
               </div>
-            ))}
-            <button
-              type="button"
-              className="btn btn-outline"
-              onClick={() => setChiTiet([...chiTiet, { productId: '', soLuongNhap: 1, giaNhap: '' }])}
-            >
-              + Thêm dòng
-            </button>
-            <p style={{ marginTop: 8 }}>
-              Tổng tiền: <strong>{formatVNDText(total)}</strong>
-            </p>
-          </fieldset>
+            </div>
+
+            <div className="warehouse-summary-bar">
+              <span style={{ fontSize: 14, color: 'var(--admin-text-muted)' }}>Tổng thanh toán tiền hàng:</span>
+              <strong style={{ fontSize: 20, color: 'var(--admin-accent)', fontFamily: 'var(--font-heading)' }}>
+                {formatVNDText(total)}
+              </strong>
+            </div>
+          </div>
 
           {error && <div className="alert alert-error" role="alert">{error}</div>}
 
           <div className="modal-actions">
-            <button type="button" className="btn btn-ghost" onClick={onClose}>Huỷ</button>
-            <button type="submit" className="btn btn-primary">Tạo phiếu</button>
+            <button type="button" className="btn btn-ghost" onClick={onClose} disabled={saving}>Huỷ</button>
+            <button type="submit" className="btn btn-primary" disabled={saving}>
+              {saving ? 'Đang tạo...' : 'Tạo phiếu'}
+            </button>
           </div>
         </form>
       </div>
@@ -421,10 +623,11 @@ function PhieuXuatForm({ onClose, onSaved }) {
   const [products, setProducts] = useState([]);
   const [lyDoXuat, setLyDoXuat] = useState('');
   const [chiTiet, setChiTiet] = useState([{ productId: '', soLuongXuat: 1 }]);
+  const [saving, setSaving] = useState(false);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    api.get('/admin/products', { params: { page: 0, size: 200 } })
+    api.get('/admin/products', { params: { page: 0, size: 500 } })
       .then((res) => setProducts(res.data?.content || []))
       .catch(() => {});
   }, []);
@@ -433,9 +636,38 @@ function PhieuXuatForm({ onClose, onSaved }) {
     setChiTiet(chiTiet.map((l, i) => (i === idx ? { ...l, ...patch } : l)));
   }
 
+  function handleQuickAdd(p) {
+    const existingIdx = chiTiet.findIndex((item) => Number(item.productId) === Number(p.id));
+    if (existingIdx >= 0) {
+      updateLine(existingIdx, { soLuongXuat: Number(chiTiet[existingIdx].soLuongXuat || 0) + 1 });
+    } else {
+      if (chiTiet.length === 1 && !chiTiet[0].productId) {
+        updateLine(0, { productId: p.id, soLuongXuat: 1 });
+      } else {
+        setChiTiet([...chiTiet, { productId: p.id, soLuongXuat: 1 }]);
+      }
+    }
+  }
+
   async function handleSave(e) {
     e.preventDefault();
     setError('');
+
+    if (chiTiet.some((l) => !l.productId)) {
+      setError('Vui lòng chọn sản phẩm cho tất cả các dòng hàng xuất.');
+      return;
+    }
+
+    for (const line of chiTiet) {
+      const p = products.find((x) => Number(x.id) === Number(line.productId));
+      if (p && Number(line.soLuongXuat) > Number(p.stock)) {
+        if (!window.confirm(`Sản phẩm "${p.name}" (Mã: ${p.code}) có số lượng xuất (${line.soLuongXuat}) lớn hơn tồn kho hiện tại (${p.stock}). Bạn có chắc chắn muốn tiếp tục tạo phiếu?`)) {
+          return;
+        }
+      }
+    }
+
+    setSaving(true);
     try {
       await api.post('/goods-issues', {
         lyDoXuat,
@@ -448,6 +680,8 @@ function PhieuXuatForm({ onClose, onSaved }) {
       onSaved();
     } catch (err) {
       setError(err.message || 'Tạo phiếu thất bại.');
+    } finally {
+      setSaving(false);
     }
   }
 
@@ -463,54 +697,124 @@ function PhieuXuatForm({ onClose, onSaved }) {
               required
               value={lyDoXuat}
               onChange={(e) => setLyDoXuat(e.target.value)}
-              placeholder="VD: Hàng hỏng / trưng bày / điều chuyển..."
+              placeholder="VD: Hàng hỏng / Trưng bày cửa hàng / Xuất trả nhà cung cấp / Điều chuyển..."
             />
           </div>
 
-          <fieldset className="variants-fieldset">
-            <legend>Danh sách hàng xuất</legend>
-            {chiTiet.map((l, idx) => (
-              <div key={idx} className="variant-row variant-row-4col">
-                <select
-                  required
-                  value={l.productId}
-                  onChange={(e) => updateLine(idx, { productId: e.target.value })}
-                  aria-label="Sản phẩm"
-                >
-                  <option value="">— Sản phẩm —</option>
-                  {products.map((p) => (
-                    <option key={p.id} value={p.id}>{p.code} · {p.name} (tồn: {p.stock})</option>
-                  ))}
-                </select>
-                <input
-                  type="number" min="1" required placeholder="Số lượng"
-                  value={l.soLuongXuat}
-                  onChange={(e) => updateLine(idx, { soLuongXuat: e.target.value })}
-                  aria-label="Số lượng xuất"
-                />
-                <span />
-                <button
-                  type="button"
-                  className="btn btn-ghost text-danger"
-                  onClick={() => setChiTiet(chiTiet.filter((_, i) => i !== idx))}
-                  aria-label="Xóa dòng"
-                ><IconX size={15} /></button>
+          <div className="field" style={{ marginTop: 12 }}>
+            <label style={{ fontWeight: 600, fontSize: 13, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--muted-foreground)', marginBottom: 8, display: 'block' }}>
+              Danh sách hàng xuất
+            </label>
+
+            <ProductQuickSearch
+              products={products}
+              onSelectProduct={handleQuickAdd}
+              placeholder="🔍 Tìm / quét theo mã SP hoặc tên SP để thêm nhanh vào danh sách xuất..."
+            />
+
+            <div className="warehouse-items-container">
+              <table className="warehouse-items-table">
+                <thead>
+                  <tr>
+                    <th style={{ width: '55%' }}>Mã & Tên sản phẩm</th>
+                    <th style={{ width: '20%' }}>Tồn kho hiện tại</th>
+                    <th style={{ width: '20%' }}>Số lượng xuất</th>
+                    <th style={{ width: '5%', textAlign: 'center' }}>Xoá</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {chiTiet.map((l, idx) => {
+                    const selectedProd = products.find((x) => Number(x.id) === Number(l.productId));
+                    const isExceed = selectedProd && Number(l.soLuongXuat) > Number(selectedProd.stock);
+                    return (
+                      <tr key={idx}>
+                        <td>
+                          <select
+                            required
+                            value={l.productId}
+                            onChange={(e) => updateLine(idx, { productId: e.target.value })}
+                            aria-label="Sản phẩm"
+                          >
+                            <option value="">— Chọn sản phẩm —</option>
+                            {products.map((p) => (
+                              <option key={p.id} value={p.id}>
+                                [{p.code}] {p.name} (Tồn: {p.stock})
+                              </option>
+                            ))}
+                          </select>
+                        </td>
+                        <td>
+                          {selectedProd ? (
+                            <span className={`badge ${selectedProd.stock > 10 ? 'badge-green' : selectedProd.stock > 0 ? 'badge-orange' : 'badge-red'}`}>
+                              Tồn: {selectedProd.stock}
+                            </span>
+                          ) : (
+                            <span className="muted-text">—</span>
+                          )}
+                        </td>
+                        <td>
+                          <input
+                            type="number"
+                            min="1"
+                            required
+                            placeholder="Số lượng"
+                            value={l.soLuongXuat}
+                            onChange={(e) => updateLine(idx, { soLuongXuat: e.target.value })}
+                            aria-label="Số lượng xuất"
+                            style={isExceed ? { borderColor: '#dc2626', background: '#fef2f2' } : {}}
+                          />
+                          {isExceed && (
+                            <div style={{ color: '#dc2626', fontSize: 11, marginTop: 2 }}>
+                              Vượt tồn kho ({selectedProd.stock})
+                            </div>
+                          )}
+                        </td>
+                        <td style={{ textAlign: 'center' }}>
+                          <button
+                            type="button"
+                            className="btn btn-ghost text-danger"
+                            style={{ padding: '6px', minHeight: 32 }}
+                            onClick={() => {
+                              if (chiTiet.length === 1) {
+                                setChiTiet([{ productId: '', soLuongXuat: 1 }]);
+                              } else {
+                                setChiTiet(chiTiet.filter((_, i) => i !== idx));
+                              }
+                            }}
+                            aria-label="Xóa dòng"
+                          >
+                            <IconX size={16} />
+                          </button>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 8 }}>
+              <button
+                type="button"
+                className="btn btn-outline"
+                style={{ fontSize: 13, minHeight: 36, padding: '7px 14px' }}
+                onClick={() => setChiTiet([...chiTiet, { productId: '', soLuongXuat: 1 }])}
+              >
+                + Thêm dòng trống
+              </button>
+              <div style={{ fontSize: 13, color: 'var(--admin-text-muted)' }}>
+                Tổng mặt hàng: <strong>{chiTiet.filter((x) => x.productId).length}</strong> | Tổng SL xuất: <strong>{chiTiet.reduce((s, x) => s + (Number(x.soLuongXuat) || 0), 0)}</strong>
               </div>
-            ))}
-            <button
-              type="button"
-              className="btn btn-outline"
-              onClick={() => setChiTiet([...chiTiet, { productId: '', soLuongXuat: 1 }])}
-            >
-              + Thêm dòng
-            </button>
-          </fieldset>
+            </div>
+          </div>
 
           {error && <div className="alert alert-error" role="alert">{error}</div>}
 
           <div className="modal-actions">
-            <button type="button" className="btn btn-ghost" onClick={onClose}>Huỷ</button>
-            <button type="submit" className="btn btn-primary">Tạo phiếu</button>
+            <button type="button" className="btn btn-ghost" onClick={onClose} disabled={saving}>Huỷ</button>
+            <button type="submit" className="btn btn-primary" disabled={saving}>
+              {saving ? 'Đang tạo...' : 'Tạo phiếu'}
+            </button>
           </div>
         </form>
       </div>

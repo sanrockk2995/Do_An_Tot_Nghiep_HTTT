@@ -117,15 +117,16 @@ public class ProductController {
         return ResponseEntity.ok(Map.of("message", "Đã xoá mềm sản phẩm"));
     }
 
-    /** Danh sách quản trị: gồm cả INACTIVE; ADMIN/kho xem-full, bán hàng đọc để bán tại quầy. */
+    /** Danh sách quản trị: gồm cả INACTIVE; ADMIN/kho xem-full, bán hàng đọc để bán tại quầy; hỗ trợ tìm theo tên/mã/sku. */
     @GetMapping("/admin/products")
     @PreAuthorize("hasAnyRole('ADMIN', 'WAREHOUSE_STAFF', 'SALES_STAFF')")
     public ResponseEntity<Page<ProductDtos.ProductResponse>> adminProducts(
+            @RequestParam(required = false) String q,
             @RequestParam(required = false) String status,
             @RequestParam(required = false) Long categoryId,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "20") int size) {
-        return ResponseEntity.ok(productService.listAdmin(status, categoryId, page, size));
+        return ResponseEntity.ok(productService.listAdmin(q, status, categoryId, page, size));
     }
 
     // ==================== BIẾN THỂ ====================

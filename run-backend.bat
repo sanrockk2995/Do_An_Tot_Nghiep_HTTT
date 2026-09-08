@@ -9,8 +9,16 @@ rem  Dong cua so nay = tat backend.
 rem ============================================================
 
 set "ROOT=%~dp0"
-set "JAVA_HOME=C:\Program Files\Java\jdk-23"
-set "PATH=%JAVA_HOME%\bin;%PATH%"
+if not exist "%JAVA_HOME%\bin\javac.exe" (
+  if exist "D:\APP\Java\jdk-25.0.4.1" (
+    set "JAVA_HOME=D:\APP\Java\jdk-25.0.4.1"
+  ) else if exist "C:\Program Files\Java\latest\jdk-25" (
+    set "JAVA_HOME=C:\Program Files\Java\latest\jdk-25"
+  ) else if exist "C:\Program Files\Java\jdk-23" (
+    set "JAVA_HOME=C:\Program Files\Java\jdk-23"
+  )
+)
+if defined JAVA_HOME set "PATH=%JAVA_HOME%\bin;%PATH%"
 
 echo.
 echo  ============================================
@@ -28,7 +36,7 @@ for /f "tokens=5" %%a in ('netstat -ano ^| findstr ":8080" ^| findstr "LISTENING
   taskkill /f /pid %%a >nul 2>&1
 )
 
-call "%ROOT%tools\apache-maven-3.9.9\bin\mvn.cmd" spring-boot:run -Dmaven.repo.local="%ROOT%tools\.m2"
+call "%ROOT%tools\apache-maven-3.9.9\bin\mvn.cmd" spring-boot:run -Dmaven.repo.local="%ROOT%tools\.m2" -Dspring-boot.run.jvmArguments="-Djava.net.preferIPv4Stack=false -Djava.net.preferIPv6Addresses=true"
 
 echo.
 echo  Backend da dung hoac co loi khi khoi dong.

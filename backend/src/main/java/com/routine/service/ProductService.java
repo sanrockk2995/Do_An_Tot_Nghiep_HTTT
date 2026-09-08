@@ -117,20 +117,24 @@ public class ProductService {
         return merged.stream().limit(8).map(this::toResponse).toList();
     }
 
-    /** Danh sách cho trang quản trị: bao gồm cả sản phẩm INACTIVE. */
+    /** Danh sách cho trang quản trị: bao gồm cả sản phẩm INACTIVE, hỗ trợ tìm theo tên/mã/sku. */
     @Transactional(readOnly = true)
-    public Page<ProductDtos.ProductResponse> listAdmin(String status, Long categoryId, int page, int size) {
+    public Page<ProductDtos.ProductResponse> listAdmin(String q, String status, Long categoryId, int page, int size) {
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdAt"));
-        // FE gửi status="" khi chọn "Tất cả trạng thái" - coi như không lọc
         final String statusFilter = (status == null || status.isBlank()) ? null : status;
-        Page<Product> products;
+        final String qFilter = (q == null || q.isBlank()) ? null : q.trim();
+
         if (categoryId != null && !categoryRepository.existsById(categoryId)) {
             return new org.springframework.data.domain.PageImpl<>(List.of(), pageable, 0);
         }
-        if (categoryId != null && statusFilter == null) {
+
+        Page<Product> products;
+        if (qFilter != null) {
+            String pattern = "%" + qFilter.toLowerCase() + "%";
+            products = productRepository.searchAdmin(pattern, categoryId, statusFilter, pageable);
+        } else if (categoryId != null && statusFilter == null) {
             products = productRepository.findByCategoryIdIn(List.of(categoryId), pageable);
         } else if (categoryId != null) {
-            // Lọc kết hợp danh mục + trạng thái: dùng truy vấn có điều kiện để tổng phân trang đúng
             products = productRepository.findByCategoryAndStatus(categoryId, statusFilter, pageable);
         } else if (statusFilter != null) {
             products = productRepository.findByStatusOrderByCreatedAtDesc(statusFilter, pageable);
@@ -138,6 +142,11 @@ public class ProductService {
             products = productRepository.findAll(pageable);
         }
         return products.map(this::toResponse);
+    }
+
+    @Transactional(readOnly = true)
+    public Page<ProductDtos.ProductResponse> listAdmin(String status, Long categoryId, int page, int size) {
+        return listAdmin(null, status, categoryId, page, size);
     }
 
     @Transactional(readOnly = true)
