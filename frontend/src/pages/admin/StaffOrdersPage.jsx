@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
+import { IconAlertCircle, IconX } from '../../components/Icons';
 import {
   formatVNDText, formatDateTime,
   ORDER_STATUS_LABELS, ORDER_STATUS_BADGES, PAYMENT_METHOD_LABELS,
@@ -27,7 +28,7 @@ export default function StaffOrdersPage() {
         setItems(res.data?.content || res.data || []);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Không tải được danh sách.');
+        if (alive) setError(getErrorMessage(err, 'Không tải được danh sách.'));
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -49,7 +50,7 @@ export default function StaffOrdersPage() {
       a.remove();
       window.URL.revokeObjectURL(url);
     } catch (err) {
-      toast.error(err.message || 'Không tải được hóa đơn PDF.');
+      toast.error(getErrorMessage(err, 'Không tải được hóa đơn PDF.'));
     }
   }
 
@@ -65,7 +66,20 @@ export default function StaffOrdersPage() {
           placeholder="Mã ĐH / tên khách / SĐT..." aria-label="Tìm hóa đơn" />
       </section>
 
-      {error && <div className="alert alert-error">{error}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}><div className="spinner" /></div>

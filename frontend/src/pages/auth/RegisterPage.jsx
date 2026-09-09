@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { getErrorMessage } from '../../services/api';
+import { IconAlertCircle, IconX } from '../../components/Icons';
 
 /** Trang đăng ký tài khoản khách hàng. */
 export default function RegisterPage() {
@@ -38,10 +40,7 @@ export default function RegisterPage() {
       });
       navigate('/');
     } catch (err) {
-      // Hiển thị lỗi cụ thể từ backend (vd: "Mật khẩu phải từ 8 ký tự trở lên", email đã tồn tại)
-      const data = err?.response?.data;
-      const fieldMsg = data?.fieldErrors ? Object.values(data.fieldErrors).join(' ') : '';
-      setError(fieldMsg || data?.message || 'Đăng ký thất bại. Vui lòng thử lại.');
+      setError(getErrorMessage(err, 'Đăng ký thất bại. Vui lòng thử lại.'));
     } finally {
       setLoading(false);
     }
@@ -85,7 +84,20 @@ export default function RegisterPage() {
               placeholder="••••••" autoComplete="new-password" required />
           </div>
 
-          {error && <div className="alert alert-error" role="alert">{error}</div>}
+          {error && (
+            <div className="alert alert-error" role="alert">
+              <span className="alert-icon"><IconAlertCircle size={18} /></span>
+              <span className="alert-content">{error}</span>
+              <button
+                type="button"
+                className="alert-close"
+                onClick={() => setError('')}
+                aria-label="Đóng thông báo"
+              >
+                <IconX size={15} />
+              </button>
+            </div>
+          )}
 
           <button type="submit" className="btn btn-primary btn-block" disabled={loading}>
             {loading ? 'Đang tạo tài khoản...' : 'Đăng ký'}

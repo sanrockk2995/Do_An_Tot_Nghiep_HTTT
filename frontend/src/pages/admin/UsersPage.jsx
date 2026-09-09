@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { formatDateTime, ROLE_LABELS } from '../../utils/format';
+import { IconAlertCircle, IconCheckCircle, IconX } from '../../components/Icons';
 
 const EMPTY_FORM = { fullName: '', email: '', password: '', role: 'SALES_STAFF', branch: '', phone: '' };
 
@@ -23,7 +24,7 @@ export default function UsersPage() {
         if (alive) setItems(res.data?.content || res.data || []);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Không tải được danh sách nhân viên.');
+        if (alive) setError(getErrorMessage(err, 'Không tải được danh sách nhân viên.'));
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -98,7 +99,7 @@ export default function UsersPage() {
       setEditing(null);
       load();
     } catch (err) {
-      setError(err.response?.data?.message || err.message || 'Lưu thất bại.');
+      setError(getErrorMessage(err, 'Lưu thất bại.'));
     } finally {
       setSaving(false);
     }
@@ -112,7 +113,7 @@ export default function UsersPage() {
       setMessage(`Đã ${action} tài khoản ${u.email}.`);
       load();
     } catch (err) {
-      setError(err.message || 'Thao tác thất bại.');
+      setError(getErrorMessage(err, 'Thao tác thất bại.'));
     }
   }
 
@@ -136,8 +137,34 @@ export default function UsersPage() {
         </button>
       </section>
 
-      {error && <div className="alert alert-error" role="alert">{error}</div>}
-      {message && <div className="alert alert-success" role="status">{message}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
+      {message && (
+        <div className="alert alert-success" role="status">
+          <span className="alert-icon"><IconCheckCircle size={18} /></span>
+          <span className="alert-content">{message}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setMessage('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}><div className="spinner" /></div>
@@ -226,7 +253,20 @@ export default function UsersPage() {
                   required={!editing.id} />
               </div>
 
-              {error && <div className="alert alert-error" role="alert">{error}</div>}
+              {error && (
+                <div className="alert alert-error" role="alert">
+                  <span className="alert-icon"><IconAlertCircle size={18} /></span>
+                  <span className="alert-content">{error}</span>
+                  <button
+                    type="button"
+                    className="alert-close"
+                    onClick={() => setError('')}
+                    aria-label="Đóng thông báo"
+                  >
+                    <IconX size={15} />
+                  </button>
+                </div>
+              )}
 
               <div className="modal-actions">
                 <button type="button" className="btn btn-ghost" onClick={() => setEditing(null)}>

@@ -1,13 +1,20 @@
 import { useCallback, useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { formatVNDText } from '../../utils/format';
-import { IconX } from '../../components/Icons';
+import { IconX, IconAlertCircle, IconCheckCircle } from '../../components/Icons';
+import { useToast } from '../../context/ToastContext';
 
 /**
  * Quản lý sản phẩm: bảng + tìm kiếm + thêm/sửa (form modal) + xoá mềm.
  * Dùng chung cho ADMIN / SALES_STAFF / WAREHOUSE_STAFF qua props salesMode/warehouseMode.
+ * - salesMode: Thu ngân/bán hàng tra cứu giá, tồn kho biến thể, xem chi tiết (chỉ đọc).
+ * - warehouseMode: Nhân viên kho kiểm tra tồn kho (chỉ đọc).
+ * - ADMIN: Quản lý đầy đủ (thêm, sửa, ngừng kinh doanh).
  */
 export default function AdminProductsPage({ salesMode = false, warehouseMode = false }) {
+  const toast = useToast();
+  const isReadOnly = salesMode || warehouseMode;
+
   const [items, setItems] = useState([]);
   const [q, setQ] = useState('');
   const [debouncedQ, setDebouncedQ] = useState('');
@@ -19,7 +26,7 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
   const [message, setMessage] = useState('');
   const [categories, setCategories] = useState([]);
 
-  const [editing, setEditing] = useState(null); // null = đóng; {} = thêm mới; {...} = sửa
+  const [editing, setEditing] = useState(null); // null = đóng; { ...readOnly: true/false }
   const [saving, setSaving] = useState(false);
 
   useEffect(() => {
@@ -53,7 +60,10 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
         setTotalPages(res.data.totalPages || 1);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Không tải được danh sách sản phẩm.');
+        if (alive) {
+          const msg = getErrorMessage(err, 'Không tải được danh sách sản phẩm.');
+          setError(msg);
+        }
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -67,30 +77,45 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
 
   async function handleDelete(id) {
     if (!window.confirm('Chuyển sản phẩm này sang ngừng kinh doanh?')) return;
+    setError('');
     try {
       await api.delete(`/products/${id}`);
-      setMessage('Đã chuyển sản phẩm sang ngừng kinh doanh.');
+      toast.success('Đã chuyển sản phẩm sang ngừng kinh doanh.');
       load();
     } catch (err) {
-      setError(err.message || 'Xoá thất bại.');
+      const msg = getErrorMessage(err, 'Ngừng kinh doanh sản phẩm thất bại.');
+      setError(msg);
+      toast.error(msg);
     }
   }
 
   function openCreate() {
+    setError('');
     setEditing({
       code: '', name: '', categoryId: '', price: '', costPrice: '', oldPrice: '',
       description: '', imageUrl: '', sku: '', material: '', fit: '', season: '',
       careInstructions: '', minStock: 10, targetGender: 'UNISEX', badge: '',
       variants: [],
+      readOnly: false,
     });
   }
 
   function openEdit(p) {
-    setEditing({ ...p, variants: p.variants || [] });
+    setError('');
+    setEditing({ ...p, variants: p.variants || [], readOnly: false });
+  }
+
+  function openView(p) {
+    setError('');
+    setEditing({ ...p, variants: p.variants || [], readOnly: true });
   }
 
   async function handleSave(e) {
     e.preventDefault();
+    if (editing?.readOnly) {
+      setEditing(null);
+      return;
+    }
     setSaving(true);
     setError('');
     try {
@@ -104,15 +129,17 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
       };
       if (editing.id) {
         await api.put(`/products/${editing.id}`, payload);
-        setMessage('Đã cập nhật sản phẩm.');
+        toast.success('Cập nhật sản phẩm thành công.');
       } else {
         await api.post('/products', payload);
-        setMessage('Đã tạo mới sản phẩm.');
+        toast.success('Tạo mới sản phẩm thành công.');
       }
       setEditing(null);
       load();
     } catch (err) {
-      setError(err.message || 'Lưu thất bại.');
+      const msg = getErrorMessage(err, 'Lưu thông tin sản phẩm thất bại.');
+      setError(msg);
+      toast.error(msg);
     } finally {
       setSaving(false);
     }
@@ -142,11 +169,26 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
 
   const setField = (key) => (e) => setEditing({ ...editing, [key]: e.target.value });
 
+  const pageTitle = warehouseMode
+    ? 'Tồn kho sản phẩm'
+    : salesMode
+      ? 'Tra cứu sản phẩm'
+      : 'Quản lý sản phẩm';
+
+  const pageSubtitle = warehouseMode
+    ? 'Theo dõi số lượng tồn kho tổng và chi tiết từng biến thể kích thước/màu sắc.'
+    : salesMode
+      ? 'Tra cứu giá bán, kích thước, màu sắc và tồn kho thực tế phục vụ tư vấn khách hàng.'
+      : 'Thêm mới, sửa đổi thông tin, thiết lập giá và quản lý danh mục sản phẩm.';
+
   return (
     <div className="admin-page">
       <header className="admin-page-head">
-        <h1>{warehouseMode ? 'Tồn kho sản phẩm' : 'Sản phẩm'}</h1>
-        {!warehouseMode && (
+        <div>
+          <h1>{pageTitle}</h1>
+          <p className="muted-text">{pageSubtitle}</p>
+        </div>
+        {!isReadOnly && (
           <button className="btn btn-primary" onClick={openCreate}>+ Thêm sản phẩm</button>
         )}
       </header>
@@ -166,8 +208,35 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
         </select>
       </section>
 
-      {error && <div className="alert alert-error" role="alert">{error}</div>}
-      {message && <div className="alert alert-success" role="status">{message}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
+
+      {message && (
+        <div className="alert alert-success" role="status">
+          <span className="alert-icon"><IconCheckCircle size={18} /></span>
+          <span className="alert-content">{message}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setMessage('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}><div className="spinner" /></div>
@@ -178,34 +247,42 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
               <tr>
                 <th>Mã SP</th><th>Tên</th><th>Danh mục</th><th>Giá bán</th>
                 <th>Tồn kho</th><th>Trạng thái</th>
-                {!warehouseMode && <th>Hành động</th>}
+                <th>Hành động</th>
               </tr>
             </thead>
             <tbody>
               {items.map((p) => (
                 <tr key={p.id}>
-                  <td>{p.code}</td>
+                  <td><strong>{p.code}</strong></td>
                   <td>{p.name}</td>
                   <td>{p.categoryName || '—'}</td>
                   <td>{formatVNDText(p.price)}</td>
-                  <td className={p.lowStock ? 'text-warn' : ''}>{p.stock}</td>
+                  <td className={p.lowStock ? 'text-warn' : ''}>
+                    {p.stock} {p.lowStock && <small>(Sắp hết)</small>}
+                  </td>
                   <td>
                     {p.status === 'ACTIVE'
                       ? <span className="badge badge-green">Đang bán</span>
                       : <span className="badge badge-gray">Ngừng bán</span>}
                   </td>
-                  {!warehouseMode && (
-                    <td className="row-actions">
-                      <button className="btn btn-outline" onClick={() => openEdit(p)}>Sửa</button>
-                      {p.status === 'ACTIVE' && (
-                        <button className="btn btn-ghost text-danger" onClick={() => handleDelete(p.id)}>Ngừng bán</button>
-                      )}
-                    </td>
-                  )}
+                  <td className="row-actions">
+                    {isReadOnly ? (
+                      <button className="btn btn-outline" onClick={() => openView(p)}>
+                        Chi tiết
+                      </button>
+                    ) : (
+                      <>
+                        <button className="btn btn-outline" onClick={() => openEdit(p)}>Sửa</button>
+                        {p.status === 'ACTIVE' && (
+                          <button className="btn btn-ghost text-danger" onClick={() => handleDelete(p.id)}>Ngừng bán</button>
+                        )}
+                      </>
+                    )}
+                  </td>
                 </tr>
               ))}
               {items.length === 0 && (
-                <tr><td colSpan={warehouseMode ? 6 : 7} className="muted-text">Không có dữ liệu.</td></tr>
+                <tr><td colSpan={7} className="muted-text">Không có dữ liệu sản phẩm.</td></tr>
               )}
             </tbody>
           </table>
@@ -220,26 +297,60 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
         </>
       )}
 
-      {/* Modal thêm/sửa */}
+      {/* Modal thêm/sửa/chi tiết */}
       {editing !== null && (
         <div className="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="product-form-title">
-          <div className="modal card">
-            <h2 id="product-form-title">
-              {editing.id ? 'Cập nhật sản phẩm' : 'Thêm sản phẩm mới'}
-            </h2>
+          <div className="modal card modal-wide">
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 16 }}>
+              <h2 id="product-form-title" style={{ margin: 0 }}>
+                {editing.readOnly
+                  ? `Chi tiết sản phẩm: ${editing.name}`
+                  : editing.id
+                    ? 'Cập nhật sản phẩm'
+                    : 'Thêm sản phẩm mới'}
+              </h2>
+              <button
+                type="button"
+                className="btn btn-ghost"
+                onClick={() => setEditing(null)}
+                aria-label="Đóng"
+                style={{ padding: 6 }}
+              >
+                <IconX size={18} />
+              </button>
+            </div>
+
             <form onSubmit={handleSave}>
               <div className="form-grid-2col">
                 <div className="field">
                   <label htmlFor="pf-code">Mã SP *</label>
-                  <input id="pf-code" required value={editing.code} onChange={setField('code')} />
+                  <input
+                    id="pf-code"
+                    required
+                    value={editing.code}
+                    disabled={editing.readOnly}
+                    onChange={setField('code')}
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="pf-name">Tên sản phẩm *</label>
-                  <input id="pf-name" required value={editing.name} onChange={setField('name')} />
+                  <input
+                    id="pf-name"
+                    required
+                    value={editing.name}
+                    disabled={editing.readOnly}
+                    onChange={setField('name')}
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="pf-category">Danh mục *</label>
-                  <select id="pf-category" required value={editing.categoryId} onChange={setField('categoryId')}>
+                  <select
+                    id="pf-category"
+                    required
+                    value={editing.categoryId}
+                    disabled={editing.readOnly}
+                    onChange={setField('categoryId')}
+                  >
                     <option value="">— Chọn danh mục —</option>
                     {categories.map((c) => (
                       <option key={c.id} value={c.id}>{c.name}</option>
@@ -248,7 +359,12 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
                 </div>
                 <div className="field">
                   <label htmlFor="pf-gender">Đối tượng</label>
-                  <select id="pf-gender" value={editing.targetGender} onChange={setField('targetGender')}>
+                  <select
+                    id="pf-gender"
+                    value={editing.targetGender}
+                    disabled={editing.readOnly}
+                    onChange={setField('targetGender')}
+                  >
                     <option value="UNISEX">Unisex</option>
                     <option value="MALE">Nam</option>
                     <option value="FEMALE">Nữ</option>
@@ -256,56 +372,145 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
                 </div>
                 <div className="field">
                   <label htmlFor="pf-price">Giá bán * (₫)</label>
-                  <input id="pf-price" type="number" required min="0" value={editing.price} onChange={setField('price')} />
+                  <input
+                    id="pf-price"
+                    type="number"
+                    required
+                    min="0"
+                    value={editing.price}
+                    disabled={editing.readOnly}
+                    onChange={setField('price')}
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="pf-cost">Giá vốn (₫)</label>
-                  <input id="pf-cost" type="number" min="0" value={editing.costPrice ?? ''} onChange={setField('costPrice')} />
+                  <input
+                    id="pf-cost"
+                    type="number"
+                    min="0"
+                    value={editing.costPrice ?? ''}
+                    disabled={editing.readOnly}
+                    onChange={setField('costPrice')}
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="pf-old">Giá trước giảm (₫)</label>
-                  <input id="pf-old" type="number" min="0" value={editing.oldPrice ?? ''} onChange={setField('oldPrice')} />
+                  <input
+                    id="pf-old"
+                    type="number"
+                    min="0"
+                    value={editing.oldPrice ?? ''}
+                    disabled={editing.readOnly}
+                    onChange={setField('oldPrice')}
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="pf-minstock">Tồn tối thiểu</label>
-                  <input id="pf-minstock" type="number" min="0" value={editing.minStock ?? ''} onChange={setField('minStock')} />
+                  <input
+                    id="pf-minstock"
+                    type="number"
+                    min="0"
+                    value={editing.minStock ?? ''}
+                    disabled={editing.readOnly}
+                    onChange={setField('minStock')}
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="pf-image">URL hình ảnh</label>
-                  <input id="pf-image" value={editing.imageUrl ?? ''} onChange={setField('imageUrl')} placeholder="https://..." />
+                  <input
+                    id="pf-image"
+                    value={editing.imageUrl ?? ''}
+                    disabled={editing.readOnly}
+                    onChange={setField('imageUrl')}
+                    placeholder="https://..."
+                  />
                 </div>
                 <div className="field">
                   <label htmlFor="pf-material">Chất liệu</label>
-                  <input id="pf-material" value={editing.material ?? ''} onChange={setField('material')} />
+                  <input
+                    id="pf-material"
+                    value={editing.material ?? ''}
+                    disabled={editing.readOnly}
+                    onChange={setField('material')}
+                  />
                 </div>
               </div>
 
               <div className="field">
                 <label htmlFor="pf-desc">Mô tả</label>
-                <textarea id="pf-desc" rows={3} value={editing.description ?? ''} onChange={setField('description')} />
+                <textarea
+                  id="pf-desc"
+                  rows={3}
+                  value={editing.description ?? ''}
+                  disabled={editing.readOnly}
+                  onChange={setField('description')}
+                />
               </div>
 
               <fieldset className="variants-fieldset">
                 <legend>Biến thể (size × màu × tồn kho)</legend>
                 {(editing.variants || []).map((v, idx) => (
                   <div key={idx} className="variant-row">
-                    <input placeholder="Size (S/M/L)" value={v.size}
-                      onChange={(e) => updateVariant(idx, { size: e.target.value })} aria-label="Size" />
-                    <input placeholder="Màu (Đen/Trắng)" value={v.color}
-                      onChange={(e) => updateVariant(idx, { color: e.target.value })} aria-label="Màu" />
-                    <input type="number" min="0" placeholder="Tồn" value={v.stock}
-                      onChange={(e) => updateVariant(idx, { stock: e.target.value })} aria-label="Tồn kho biến thể" />
-                    <button type="button" className="btn btn-ghost text-danger" onClick={() => removeVariant(idx)} aria-label="Xóa biến thể"><IconX size={15} /></button>
+                    <input
+                      placeholder="Size (S/M/L)"
+                      value={v.size}
+                      disabled={editing.readOnly}
+                      onChange={(e) => updateVariant(idx, { size: e.target.value })}
+                      aria-label="Size"
+                    />
+                    <input
+                      placeholder="Màu (Đen/Trắng)"
+                      value={v.color}
+                      disabled={editing.readOnly}
+                      onChange={(e) => updateVariant(idx, { color: e.target.value })}
+                      aria-label="Màu"
+                    />
+                    <input
+                      type="number"
+                      min="0"
+                      placeholder="Tồn"
+                      value={v.stock}
+                      disabled={editing.readOnly}
+                      onChange={(e) => updateVariant(idx, { stock: e.target.value })}
+                      aria-label="Tồn kho biến thể"
+                    />
+                    {!editing.readOnly && (
+                      <button
+                        type="button"
+                        className="btn btn-ghost text-danger"
+                        onClick={() => removeVariant(idx)}
+                        aria-label="Xóa biến thể"
+                      >
+                        <IconX size={15} />
+                      </button>
+                    )}
                   </div>
                 ))}
-                <button type="button" className="btn btn-outline" onClick={addVariant}>+ Thêm dòng biến thể</button>
+                {!editing.readOnly && (
+                  <button type="button" className="btn btn-outline" onClick={addVariant}>
+                    + Thêm dòng biến thể
+                  </button>
+                )}
+                {editing.readOnly && (editing.variants || []).length === 0 && (
+                  <p className="muted-text" style={{ margin: '8px 0' }}>Chưa có biến thể chi tiết.</p>
+                )}
               </fieldset>
 
               <div className="modal-actions">
-                <button type="button" className="btn btn-ghost" onClick={() => setEditing(null)}>Huỷ</button>
-                <button type="submit" className="btn btn-primary" disabled={saving}>
-                  {saving ? 'Đang lưu...' : 'Lưu'}
-                </button>
+                {editing.readOnly ? (
+                  <button type="button" className="btn btn-primary" onClick={() => setEditing(null)}>
+                    Đóng
+                  </button>
+                ) : (
+                  <>
+                    <button type="button" className="btn btn-ghost" onClick={() => setEditing(null)}>
+                      Huỷ
+                    </button>
+                    <button type="submit" className="btn btn-primary" disabled={saving}>
+                      {saving ? 'Đang lưu...' : 'Lưu'}
+                    </button>
+                  </>
+                )}
               </div>
             </form>
           </div>
@@ -314,3 +519,4 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
     </div>
   );
 }
+

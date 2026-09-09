@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import {
   ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import { formatVNDText } from '../../utils/format';
 
@@ -37,7 +37,7 @@ export default function AccountingPage() {
       setPoints(rows.map((p) => ({ ...p, label: p.period, value: Number(p.revenue || 0) })));
       setFilterApplied(Boolean(f || t));
     } catch (err) {
-      toast.error('Không tải được báo cáo: ' + (err.response?.data?.message || err.message || 'Lỗi kết nối máy chủ.'));
+      toast.error(getErrorMessage(err, 'Không tải được báo cáo tài chính.'));
     } finally {
       setLoading(false);
     }

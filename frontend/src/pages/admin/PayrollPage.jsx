@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import { formatVNDText, ROLE_LABELS } from '../../utils/format';
+import { IconAlertCircle, IconX } from '../../components/Icons';
 
 /** Chọn tháng hiện tại làm mặc định. */
 function currentMonth() {
@@ -38,7 +39,7 @@ export default function PayrollPage() {
       const res = await api.get('/payrolls', { params: { thang: t, nam: n } });
       setRows(res.data || []);
     } catch (err) {
-      setError(err?.response?.data?.message || 'Không tải được bảng lương.');
+      setError(getErrorMessage(err, 'Không tải được bảng lương.'));
     } finally {
       setLoading(false);
     }
@@ -65,7 +66,7 @@ export default function PayrollPage() {
       await fetchPayroll();
       toast.success('Cập nhật bảng lương thành công.');
     } catch (err) {
-      toast.error(err?.response?.data?.message || 'Cập nhật thất bại.');
+      toast.error(getErrorMessage(err, 'Cập nhật thất bại.'));
     } finally {
       setSavingId(null);
     }
@@ -78,7 +79,7 @@ export default function PayrollPage() {
       await fetchPayroll();
       toast.success(`Đã duyệt lương cho ${row.tenNhanVien}.`);
     } catch (err) {
-      toast.error(err?.response?.data?.message || 'Duyệt thất bại.');
+      toast.error(getErrorMessage(err, 'Duyệt thất bại.'));
     }
   }
 
@@ -153,7 +154,20 @@ export default function PayrollPage() {
         </button>
       </form>
 
-      {error && <div className="alert alert-error">{error}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       <section className="card" style={{ marginTop: 16 }}>
         {loading ? (

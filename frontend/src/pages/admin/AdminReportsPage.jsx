@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { formatVNDText } from '../../utils/format';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
+import { IconCheckCircle, IconX } from '../../components/Icons';
 
 /**
  * Báo cáo - Thống kê (ADMIN) — theo SRS:
@@ -91,7 +92,7 @@ export default function AdminReportsPage() {
         });
       }
     } catch (err) {
-      toast.error(err.response?.data?.message || err.message || 'Không tải được dữ liệu báo cáo.');
+      toast.error(getErrorMessage(err, 'Không tải được dữ liệu báo cáo.'));
     } finally {
       setPreviewLoading(false);
     }
@@ -113,7 +114,7 @@ export default function AdminReportsPage() {
       }));
       toast.success('In báo cáo thành công. File PDF đã được mở để in hoặc tải về.');
     } catch (err) {
-      toast.error(err.response?.data?.message || err.message || 'Không in được báo cáo.');
+      toast.error(getErrorMessage(err, 'Không in được báo cáo.'));
     } finally {
       setPrinting(false);
     }
@@ -155,7 +156,20 @@ export default function AdminReportsPage() {
         </div>
       </form>
 
-      {message && <div className="alert alert-success" role="status">{message}</div>}
+      {message && (
+        <div className="alert alert-success" role="status">
+          <span className="alert-icon"><IconCheckCircle size={18} /></span>
+          <span className="alert-content">{message}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setMessage('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {/* Danh sách báo cáo */}
       <table className="data-table" style={{ marginTop: 16 }}>

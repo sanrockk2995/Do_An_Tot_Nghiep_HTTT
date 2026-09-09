@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import { formatVNDText, formatDateTime } from '../../utils/format';
-import { IconX, IconSearch } from '../../components/Icons';
+import { IconX, IconSearch, IconAlertCircle } from '../../components/Icons';
 import { useAuth } from '../../context/AuthContext';
 
 /** Kho hàng: tab phiếu nhập / phiếu xuất. */
@@ -59,7 +59,7 @@ function PhieuNhapList() {
         if (alive) setItems(res.data?.content || res.data || []);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Lỗi tải phiếu nhập.');
+        if (alive) setError(getErrorMessage(err, 'Lỗi tải phiếu nhập.'));
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -80,7 +80,7 @@ function PhieuNhapList() {
       toast.success('Đã duyệt phiếu nhập — tồn kho đã được cập nhật.');
       load();
     } catch (err) {
-      toast.error(err.message || 'Duyệt thất bại.');
+      toast.error(getErrorMessage(err, 'Duyệt thất bại.'));
     }
   }
 
@@ -105,7 +105,20 @@ function PhieuNhapList() {
         <button className="btn btn-primary" onClick={() => setShowForm(true)}>+ Tạo phiếu nhập</button>
       </div>
 
-      {error && <div className="alert alert-error" role="alert">{error}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}>
@@ -335,7 +348,7 @@ function PhieuNhapForm({ onClose, onSaved }) {
       toast.success('Tạo phiếu nhập thành công. Nhấn "Duyệt phiếu" để cộng tồn kho.');
       onSaved();
     } catch (err) {
-      setError(err.message || 'Tạo phiếu thất bại.');
+      setError(getErrorMessage(err, 'Tạo phiếu thất bại.'));
     } finally {
       setSaving(false);
     }
@@ -473,7 +486,20 @@ function PhieuNhapForm({ onClose, onSaved }) {
             </div>
           </div>
 
-          {error && <div className="alert alert-error" role="alert">{error}</div>}
+          {error && (
+            <div className="alert alert-error" role="alert">
+              <span className="alert-icon"><IconAlertCircle size={18} /></span>
+              <span className="alert-content">{error}</span>
+              <button
+                type="button"
+                className="alert-close"
+                onClick={() => setError('')}
+                aria-label="Đóng thông báo"
+              >
+                <IconX size={15} />
+              </button>
+            </div>
+          )}
 
           <div className="modal-actions">
             <button type="button" className="btn btn-ghost" onClick={onClose} disabled={saving}>Huỷ</button>
@@ -504,7 +530,7 @@ function PhieuXuatList() {
         if (alive) setItems(res.data?.content || res.data || []);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Lỗi tải phiếu xuất.');
+        if (alive) setError(getErrorMessage(err, 'Lỗi tải phiếu xuất.'));
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -525,7 +551,7 @@ function PhieuXuatList() {
       toast.success('Đã duyệt phiếu xuất.');
       load();
     } catch (err) {
-      toast.error(err.message || 'Duyệt thất bại (có thể do tồn kho không đủ).');
+      toast.error(getErrorMessage(err, 'Duyệt thất bại (có thể do tồn kho không đủ).'));
     }
   }
 
@@ -550,7 +576,20 @@ function PhieuXuatList() {
         <button className="btn btn-primary" onClick={() => setShowForm(true)}>+ Tạo phiếu xuất</button>
       </div>
 
-      {error && <div className="alert alert-error" role="alert">{error}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}>
@@ -667,7 +706,7 @@ function PhieuXuatForm({ onClose, onSaved }) {
       toast.success('Tạo phiếu xuất thành công. Nhấn "Duyệt phiếu" để trừ tồn kho.');
       onSaved();
     } catch (err) {
-      setError(err.message || 'Tạo phiếu thất bại.');
+      setError(getErrorMessage(err, 'Tạo phiếu thất bại.'));
     } finally {
       setSaving(false);
     }
@@ -796,7 +835,20 @@ function PhieuXuatForm({ onClose, onSaved }) {
             </div>
           </div>
 
-          {error && <div className="alert alert-error" role="alert">{error}</div>}
+          {error && (
+            <div className="alert alert-error" role="alert">
+              <span className="alert-icon"><IconAlertCircle size={18} /></span>
+              <span className="alert-content">{error}</span>
+              <button
+                type="button"
+                className="alert-close"
+                onClick={() => setError('')}
+                aria-label="Đóng thông báo"
+              >
+                <IconX size={15} />
+              </button>
+            </div>
+          )}
 
           <div className="modal-actions">
             <button type="button" className="btn btn-ghost" onClick={onClose} disabled={saving}>Huỷ</button>

@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { ROLE_LABELS } from '../../utils/format';
+import { getErrorMessage } from '../../services/api';
+import { IconAlertCircle, IconX } from '../../components/Icons';
 
 const STAFF_ROLES = ['ADMIN', 'SALES_STAFF', 'WAREHOUSE_STAFF', 'ACCOUNTANT'];
 
@@ -38,7 +40,7 @@ export default function StaffLoginPage() {
       const data = await staffLogin(form.email.trim(), form.password, form.role);
       navigate(homeByRole[data?.role] || '/');
     } catch (err) {
-      setError(err.message || 'Đăng nhập thất bại.');
+      setError(getErrorMessage(err, 'Đăng nhập thất bại. Vui lòng kiểm tra lại tài khoản, mật khẩu hoặc vai trò.'));
     } finally {
       setLoading(false);
     }
@@ -97,7 +99,18 @@ export default function StaffLoginPage() {
           </div>
 
           {error && (
-            <div className="alert alert-error" role="alert">{error}</div>
+            <div className="alert alert-error" role="alert">
+              <span className="alert-icon"><IconAlertCircle size={18} /></span>
+              <span className="alert-content">{error}</span>
+              <button
+                type="button"
+                className="alert-close"
+                onClick={() => setError('')}
+                aria-label="Đóng thông báo"
+              >
+                <IconX size={15} />
+              </button>
+            </div>
           )}
 
           <button

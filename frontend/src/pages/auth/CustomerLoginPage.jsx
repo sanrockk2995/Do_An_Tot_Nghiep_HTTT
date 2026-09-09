@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { getErrorMessage } from '../../services/api';
+import { IconAlertCircle, IconX } from '../../components/Icons';
 
 /** Trang đăng nhập dành cho khách hàng. */
 export default function CustomerLoginPage() {
@@ -22,7 +24,7 @@ export default function CustomerLoginPage() {
       await customerLogin(form.email.trim(), form.password);
       navigate('/');
     } catch (err) {
-      setError(err.message || 'Đăng nhập thất bại.');
+      setError(getErrorMessage(err, 'Email hoặc mật khẩu không chính xác.'));
     } finally {
       setLoading(false);
     }
@@ -64,7 +66,20 @@ export default function CustomerLoginPage() {
             />
           </div>
 
-          {error && <div className="alert alert-error" role="alert">{error}</div>}
+          {error && (
+            <div className="alert alert-error" role="alert">
+              <span className="alert-icon"><IconAlertCircle size={18} /></span>
+              <span className="alert-content">{error}</span>
+              <button
+                type="button"
+                className="alert-close"
+                onClick={() => setError('')}
+                aria-label="Đóng thông báo"
+              >
+                <IconX size={15} />
+              </button>
+            </div>
+          )}
 
           <button
             type="submit"

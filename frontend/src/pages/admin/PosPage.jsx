@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
 import { formatVNDText, TIER_LABELS } from '../../utils/format';
-import { IconX, IconSearch, IconChevronDown, IconUsers } from '../../components/Icons';
+import { IconX, IconSearch, IconChevronDown, IconUsers, IconAlertCircle } from '../../components/Icons';
 import { VN_PROVINCES } from '../../data/vnLocations';
 
 /**
@@ -330,7 +330,7 @@ export default function PosPage() {
     } catch (err) {
       setAppliedPromo(null);
       setDiscount(0);
-      toast.error(err.response?.data?.message || err.message || 'Mã không hợp lệ.');
+      toast.error(getErrorMessage(err, 'Mã không hợp lệ.'));
     }
   }
 
@@ -363,7 +363,7 @@ export default function PosPage() {
       resetSale();
       loadProducts(q);
     } catch (err) {
-      toast.error(err.response?.data?.message || err.message || 'Tạo hóa đơn thất bại.');
+      toast.error(getErrorMessage(err, 'Tạo hóa đơn thất bại.'));
     } finally {
       setCheckingOut(false);
     }
@@ -741,7 +741,20 @@ export default function PosPage() {
                 </div>
               </div>
 
-              {custNotice && <div className="alert alert-error" role="alert">{custNotice}</div>}
+              {custNotice && (
+                <div className="alert alert-error" role="alert">
+                  <span className="alert-icon"><IconAlertCircle size={18} /></span>
+                  <span className="alert-content">{custNotice}</span>
+                  <button
+                    type="button"
+                    className="alert-close"
+                    onClick={() => setCustNotice('')}
+                    aria-label="Đóng thông báo"
+                  >
+                    <IconX size={15} />
+                  </button>
+                </div>
+              )}
 
               <div className="modal-actions">
                 <button type="button" className="btn btn-ghost" onClick={() => setAddCustomerModal(false)}>

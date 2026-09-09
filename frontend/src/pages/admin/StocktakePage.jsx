@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
 import { formatDateTime } from '../../utils/format';
+import { IconAlertCircle, IconX } from '../../components/Icons';
 
 /** Kiểm kê kho: tạo kỳ kiểm kê (chốt tồn hệ thống) → nhập thực tế → hoàn thành điều chỉnh. */
 export default function StocktakePage() {
@@ -20,7 +21,7 @@ export default function StocktakePage() {
         if (alive) setItems(res.data?.content || res.data || []);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Lỗi tải danh sách kiểm kê.');
+        if (alive) setError(getErrorMessage(err, 'Lỗi tải danh sách kiểm kê.'));
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -39,7 +40,7 @@ export default function StocktakePage() {
       const res = await api.get(`/stocktakes/${id}`);
       setDetail(res.data);
     } catch (err) {
-      toast.error(err.message || 'Không tải được chi tiết kiểm kê.');
+      toast.error(getErrorMessage(err, 'Không tải được chi tiết kiểm kê.'));
     }
   }
 
@@ -57,7 +58,7 @@ export default function StocktakePage() {
       setDetail(null);
       load();
     } catch (err) {
-      toast.error(err.message || 'Thao tác thất bại.');
+      toast.error(getErrorMessage(err, 'Thao tác thất bại.'));
     }
   }
 
@@ -78,7 +79,20 @@ export default function StocktakePage() {
         <button className="btn btn-primary" onClick={() => setShowForm(true)}>+ Tạo kỳ kiểm kê</button>
       </header>
 
-      {error && <div className="alert alert-error" role="alert">{error}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}>
@@ -239,7 +253,7 @@ function KiemKeForm({ onClose, onSaved }) {
       toast.success('Tạo kỳ kiểm kê thành công — hệ thống đã chốt số tồn tại thời điểm tạo.');
       onSaved();
     } catch (err) {
-      toast.error(err.message || 'Tạo thất bại.');
+      toast.error(getErrorMessage(err, 'Tạo thất bại.'));
     } finally {
       setSaving(false);
     }

@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { formatVNDText, formatDateTime } from '../../utils/format';
+import { IconAlertCircle, IconCheckCircle, IconX } from '../../components/Icons';
 
 /** Quản lý khuyến mãi (ADMIN CRUD; SALES/ACCOUNTANT xem). */
 export default function PromotionsPage() {
@@ -21,7 +22,7 @@ export default function PromotionsPage() {
         setItems(res.data?.content || res.data || []);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Không tải được khuyến mãi.');
+        if (alive) setError(getErrorMessage(err, 'Không tải được khuyến mãi.'));
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -34,6 +35,8 @@ export default function PromotionsPage() {
   }, [load]);
 
   function openCreate() {
+    setError('');
+    setMessage('');
     setEditing({
       code: '', name: '', description: '', type: 'PERCENT', discountValue: '',
       minOrderAmount: '', maxDiscountAmount: '', startDate: '', endDate: '',
@@ -42,6 +45,8 @@ export default function PromotionsPage() {
   }
 
   function openEdit(p) {
+    setError('');
+    setMessage('');
     setEditing({
       ...p,
       startDate: (p.startDate || '').substring(0, 10),
@@ -52,6 +57,7 @@ export default function PromotionsPage() {
   async function handleSave(e) {
     e.preventDefault();
     setSaving(true);
+    setError('');
     try {
       // Backend nhận type/name và LocalDateTime đầy đủ giờ
       const payload = {
@@ -79,7 +85,7 @@ export default function PromotionsPage() {
       setEditing(null);
       load();
     } catch (err) {
-      setError(err.response?.data?.message || err.message || 'Lưu thất bại.');
+      setError(getErrorMessage(err, 'Lưu thất bại.'));
     } finally {
       setSaving(false);
     }
@@ -87,12 +93,13 @@ export default function PromotionsPage() {
 
   async function handleDelete(id) {
     if (!window.confirm('Xoá chương trình khuyến mãi này?')) return;
+    setError('');
     try {
       await api.delete(`/promotions/${id}`);
       setMessage('Đã xoá khuyến mãi.');
       load();
     } catch (err) {
-      setError(err.message || 'Xoá thất bại.');
+      setError(getErrorMessage(err, 'Xoá thất bại.'));
     }
   }
 
@@ -103,8 +110,34 @@ export default function PromotionsPage() {
         <button className="btn btn-primary" onClick={openCreate}>+ Thêm chương trình</button>
       </header>
 
-      {error && <div className="alert alert-error" role="alert">{error}</div>}
-      {message && <div className="alert alert-success" role="status">{message}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
+      {message && (
+        <div className="alert alert-success" role="status">
+          <span className="alert-icon"><IconCheckCircle size={18} /></span>
+          <span className="alert-content">{message}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setMessage('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}><div className="spinner" /></div>

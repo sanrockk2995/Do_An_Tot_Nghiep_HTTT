@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
+import { IconAlertCircle, IconX } from '../../components/Icons';
 import {
   formatVNDText, formatDateTime,
   ORDER_STATUS_LABELS, ORDER_STATUS_BADGES, PAYMENT_METHOD_LABELS,
@@ -27,7 +28,7 @@ export default function OnlineOrdersPage() {
         setItems(res.data?.content || res.data || []);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Không tải được đơn hàng.');
+        if (alive) setError(getErrorMessage(err, 'Không tải được đơn hàng.'));
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -44,7 +45,7 @@ export default function OnlineOrdersPage() {
       const res = await api.get(`/orders/${id}`);
       setDetail(res.data);
     } catch (err) {
-      toast.error(err.message || 'Không tải được chi tiết đơn hàng.');
+      toast.error(getErrorMessage(err, 'Không tải được chi tiết đơn hàng.'));
     }
   }
 
@@ -55,7 +56,7 @@ export default function OnlineOrdersPage() {
       setDetail(null);
       load();
     } catch (err) {
-      toast.error(err.message || 'Cập nhật thất bại.');
+      toast.error(getErrorMessage(err, 'Cập nhật thất bại.'));
     }
   }
 
@@ -75,7 +76,20 @@ export default function OnlineOrdersPage() {
         </select>
       </section>
 
-      {error && <div className="alert alert-error" role="alert">{error}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}>

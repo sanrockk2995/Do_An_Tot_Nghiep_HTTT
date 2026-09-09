@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
+import { IconAlertCircle, IconCheckCircle, IconX } from '../../components/Icons';
 
 /** Quản lý nhà cung cấp (ADMIN): CRUD + xoá mềm (ngừng hợp tác). */
 export default function SuppliersPage() {
@@ -21,7 +22,7 @@ export default function SuppliersPage() {
         setItems(res.data?.content || res.data || []);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Không tải được nhà cung cấp.');
+        if (alive) setError(getErrorMessage(err, 'Không tải được nhà cung cấp.'));
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -36,6 +37,8 @@ export default function SuppliersPage() {
   }, [load]);
 
   function openCreate() {
+    setError('');
+    setMessage('');
     setEditing({
       maNcc: '',
       tenNcc: '',
@@ -48,12 +51,15 @@ export default function SuppliersPage() {
   }
 
   function openEdit(s) {
+    setError('');
+    setMessage('');
     setEditing({ ...s, soDienThoai: s.soDienThoai ?? '', nguoiLienHe: s.nguoiLienHe ?? '' });
   }
 
   async function handleSave(e) {
     e.preventDefault();
     setSaving(true);
+    setError('');
     try {
       if (editing.id) {
         await api.put(`/suppliers/${editing.id}`, editing);
@@ -65,7 +71,7 @@ export default function SuppliersPage() {
       setEditing(null);
       load();
     } catch (err) {
-      setError(err.response?.data?.message || err.message || 'Lưu thất bại.');
+      setError(getErrorMessage(err, 'Lưu thất bại.'));
     } finally {
       setSaving(false);
     }
@@ -73,12 +79,13 @@ export default function SuppliersPage() {
 
   async function handleDelete(id) {
     if (!window.confirm('Ngừng hợp tác với nhà cung cấp này?')) return;
+    setError('');
     try {
       await api.delete(`/suppliers/${id}`);
       setMessage('Đã chuyển nhà cung cấp sang ngừng hợp tác.');
       load();
     } catch (err) {
-      setError(err.response?.data?.message || err.message || 'Xoá thất bại.');
+      setError(getErrorMessage(err, 'Xoá thất bại.'));
     }
   }
 
@@ -99,8 +106,34 @@ export default function SuppliersPage() {
         />
       </section>
 
-      {error && <div className="alert alert-error" role="alert">{error}</div>}
-      {message && <div className="alert alert-success" role="status">{message}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
+      {message && (
+        <div className="alert alert-success" role="status">
+          <span className="alert-icon"><IconCheckCircle size={18} /></span>
+          <span className="alert-content">{message}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setMessage('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}>

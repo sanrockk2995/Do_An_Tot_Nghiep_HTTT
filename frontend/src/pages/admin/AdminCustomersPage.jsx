@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { api } from '../../services/api';
+import { api, getErrorMessage } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
+import { IconAlertCircle, IconX } from '../../components/Icons';
 import {
   formatVNDText, formatDateTime, TIER_LABELS,
   ORDER_STATUS_LABELS, ORDER_STATUS_BADGES,
@@ -45,7 +46,7 @@ export default function AdminCustomersPage({ salesMode }) {
         setTotalPages(res.data.totalPages || 1);
       })
       .catch((err) => {
-        if (alive) setError(err.message || 'Không tải được khách hàng.');
+        if (alive) setError(getErrorMessage(err, 'Không tải được danh sách khách hàng.'));
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -172,7 +173,7 @@ export default function AdminCustomersPage({ salesMode }) {
       setDetail(cRes.data);
       setDetailOrders(oRes.data?.content || []);
     } catch (err) {
-      toast.error(err.message || 'Không tải được thông tin khách hàng.');
+      toast.error(getErrorMessage(err, 'Không tải được thông tin khách hàng.'));
     }
   }
 
@@ -203,7 +204,20 @@ export default function AdminCustomersPage({ salesMode }) {
         />
       </section>
 
-      {error && <div className="alert alert-error" role="alert">{error}</div>}
+      {error && (
+        <div className="alert alert-error" role="alert">
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{error}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
 
       {loading ? (
         <div style={{ textAlign: 'center', padding: 40 }}>
@@ -350,7 +364,20 @@ export default function AdminCustomersPage({ salesMode }) {
                 </div>
               </div>
 
-              {notice && <div className="alert alert-error" role="alert">{notice}</div>}
+              {notice && (
+                <div className="alert alert-error" role="alert">
+                  <span className="alert-icon"><IconAlertCircle size={18} /></span>
+                  <span className="alert-content">{notice}</span>
+                  <button
+                    type="button"
+                    className="alert-close"
+                    onClick={() => setNotice('')}
+                    aria-label="Đóng thông báo"
+                  >
+                    <IconX size={15} />
+                  </button>
+                </div>
+              )}
 
               <div className="modal-actions">
                 <button type="button" className="btn btn-ghost" onClick={() => setFormModalOpen(false)}>
