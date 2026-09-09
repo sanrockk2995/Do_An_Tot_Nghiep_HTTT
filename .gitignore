@@ -26,3 +26,7 @@ Thumbs.db
 .tmp/
 .playwright-mcp/
 tools/.m2/
+
+# Postman local workspace cache
+.postman/
+postman/

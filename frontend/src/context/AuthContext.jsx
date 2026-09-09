@@ -38,7 +38,7 @@ export function AuthProvider({ children }) {
       throw new Error(getErrorMessage(err,
         err.response?.status === 403
           ? 'Truy cập bị từ chối: địa chỉ/IP của bạn chưa được phép đăng nhập hệ thống nội bộ.'
-          : undefined));
+          : 'Email hoặc mật khẩu hoặc vai trò không chính xác.'));
     }
   }
 
@@ -50,7 +50,11 @@ export function AuthProvider({ children }) {
       setUser(data);
       return data;
     } catch (err) {
-      throw new Error(getErrorMessage(err, 'Email hoặc mật khẩu không đúng.'));
+      const msg = getErrorMessage(err);
+      // Với khách hàng: loại bỏ chữ "vai trò" nếu backend trả về chung
+      const cleanMsg =
+        msg && msg.includes('vai trò') ? 'Email hoặc mật khẩu không chính xác.' : msg;
+      throw new Error(cleanMsg || 'Email hoặc mật khẩu không chính xác.');
     }
   }
 

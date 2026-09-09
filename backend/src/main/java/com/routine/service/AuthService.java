@@ -63,11 +63,11 @@ public class AuthService {
     @Transactional(readOnly = true)
     public AuthDtos.AuthResponse customerLogin(AuthDtos.CustomerLoginRequest request) {
         Customer customer = customerRepository.findByEmailIgnoreCase(request.getEmail())
-                .orElseThrow(() -> new BadCredentialsException("Email hoặc mật khẩu không đúng"));
+                .orElseThrow(() -> new BadCredentialsException("Email hoặc mật khẩu không chính xác"));
 
         if (customer.getPasswordHash() == null
                 || !passwordEncoder.matches(request.getPassword(), customer.getPasswordHash())) {
-            throw new BadCredentialsException("Email hoặc mật khẩu không đúng");
+            throw new BadCredentialsException("Email hoặc mật khẩu không chính xác");
         }
 
         return new AuthDtos.AuthResponse(

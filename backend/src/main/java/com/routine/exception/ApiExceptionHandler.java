@@ -43,8 +43,11 @@ public class ApiExceptionHandler {
 
     @ExceptionHandler(BadCredentialsException.class)
     public ResponseEntity<Map<String, Object>> handleCredentials(BadCredentialsException ex) {
+        String message = (ex.getMessage() != null && !ex.getMessage().isBlank())
+                ? ex.getMessage()
+                : "Email hoặc mật khẩu không chính xác";
         return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                .body(body(HttpStatus.UNAUTHORIZED, "Email hoặc mật khẩu hoặc vai trò không đúng"));
+                .body(body(HttpStatus.UNAUTHORIZED, message));
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

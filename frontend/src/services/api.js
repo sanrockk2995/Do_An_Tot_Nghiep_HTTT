@@ -59,10 +59,15 @@ api.interceptors.response.use(
 export function getErrorMessage(error, fallback = 'Đã xảy ra lỗi. Vui lòng thử lại.') {
   if (!error) return fallback;
 
+  // 0. Nếu error là chuỗi thông báo thuần túy
+  if (typeof error === 'string' && error.trim()) {
+    return error.trim();
+  }
+
   // 1. Message chi tiết từ backend JSON ({ message: "..." })
   const backendMsg = error.response?.data?.message;
   if (backendMsg && typeof backendMsg === 'string' && backendMsg.trim()) {
-    return backendMsg;
+    return backendMsg.trim();
   }
 
   // 2. Field errors nếu có ({ fieldErrors: { field: "..." } })
@@ -74,13 +79,32 @@ export function getErrorMessage(error, fallback = 'Đã xảy ra lỗi. Vui lòn
     }
   }
 
-  // 3. Phân loại theo mã trạng thái HTTP
+  // 3. Nếu error là Error instance mang thông báo có nghĩa (từ AuthContext hoặc throw new Error)
+  const rawMsg = error.message;
+  const isAxiosTechnicalMsg =
+    typeof rawMsg === 'string' &&
+    (rawMsg.startsWith('Request failed with status code') ||
+      rawMsg.includes('status code') ||
+      rawMsg === 'Network Error');
+
+  if (rawMsg && typeof rawMsg === 'string' && !isAxiosTechnicalMsg && rawMsg.trim()) {
+    return rawMsg.trim();
+  }
+
+  // 4. Phân loại theo mã trạng thái HTTP từ response
   const status = error.response?.status;
+  const isAuthUrl = error.config?.url?.includes('/auth/');
+
+  if (status === 401) {
+    if (isAuthUrl) {
+      return fallback !== 'Đã xảy ra lỗi. Vui lòng thử lại.'
+        ? fallback
+        : 'Email hoặc mật khẩu không chính xác.';
+    }
+    return 'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.';
+  }
   if (status === 403) {
     return 'Bạn không có quyền thực hiện thao tác này.';
-  }
-  if (status === 401) {
-    return 'Phiên đăng nhập đã hết hạn. Vui lòng đăng nhập lại.';
   }
   if (status === 404) {
     return 'Không tìm thấy dữ liệu yêu cầu.';
@@ -95,22 +119,12 @@ export function getErrorMessage(error, fallback = 'Đã xảy ra lỗi. Vui lòn
     return 'Lỗi máy chủ nội bộ. Vui lòng thử lại sau.';
   }
 
-  // 4. Lỗi mất kết nối mạng hoặc timeout
-  if (error.code === 'ECONNABORTED' || error.message?.includes('timeout')) {
+  // 5. Lỗi mất kết nối mạng hoặc timeout (chỉ khi thực sự là lỗi Axios network không nhận được response)
+  if (error.code === 'ECONNABORTED' || (typeof rawMsg === 'string' && rawMsg.includes('timeout'))) {
     return 'Yêu cầu quá thời gian chờ (timeout). Vui lòng thử lại.';
   }
-  if (error.code === 'ERR_NETWORK' || !error.response) {
+  if (error.code === 'ERR_NETWORK' || (error.isAxiosError && error.request && !error.response)) {
     return 'Không thể kết nối đến máy chủ. Vui lòng kiểm tra kết nối mạng.';
-  }
-
-  // 5. Nếu error.message tồn tại và không phải là lỗi HTTP Axios thô
-  if (
-    error.message &&
-    typeof error.message === 'string' &&
-    !error.message.startsWith('Request failed with status code') &&
-    !error.message.includes('status code')
-  ) {
-    return error.message;
   }
 
   return fallback;
