@@ -23,10 +23,8 @@ public class OrderDtos {
         @NotNull(message = "Sản phẩm không được để trống")
         private Long productId;
 
-        @NotBlank(message = "Size không được để trống")
         private String size;
 
-        @NotBlank(message = "Màu không được để trống")
         private String color;
 
         @NotNull(message = "Số lượng không được để trống")

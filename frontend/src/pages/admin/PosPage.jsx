@@ -29,13 +29,17 @@ export default function PosPage() {
   async function loadProducts(searchText) {
     setLoadingProducts(true);
     try {
-      // ADMIN có quyền /admin/products; SALES_STAFF sẽ fallback về API công khai
-      const res = await api.get('/admin/products', { params: { page: 0, size: 60, q: searchText } });
-      setProducts(res.data.content || []);
+      // Chỉ tải các sản phẩm đang kinh doanh (ACTIVE) để bán tại quầy
+      const res = await api.get('/admin/products', {
+        params: { page: 0, size: 60, q: searchText, status: 'ACTIVE' },
+      });
+      const activeItems = (res.data.content || []).filter((p) => !p.status || p.status === 'ACTIVE');
+      setProducts(activeItems);
     } catch {
       try {
         const res = await api.get('/products', { params: { page: 0, size: 60 } });
-        setProducts(res.data.content || []);
+        const activeItems = (res.data.content || []).filter((p) => !p.status || p.status === 'ACTIVE');
+        setProducts(activeItems);
       } catch {
         setProducts([]);
       }
@@ -53,30 +57,43 @@ export default function PosPage() {
   }, []);
 
   function addLine(product) {
+    if (product.status && product.status !== 'ACTIVE') {
+      alert(`Sản phẩm "${product.name}" đã ngừng bán.`);
+      return;
+    }
     const stock = Number(product.stock ?? 0);
+    if (stock <= 0) {
+      alert(`Sản phẩm "${product.name}" đã hết hàng.`);
+      return;
+    }
+
+    const variants = product.variants || [];
+    // Ưu tiên chọn biến thể còn tồn kho
+    const availableVariant = variants.find((v) => Number(v.stock ?? 0) > 0) || variants[0];
+    const initialSize = availableVariant?.size || 'Freesize';
+    const initialColor = availableVariant?.color || 'Tiêu chuẩn';
+    const initialStock = availableVariant && availableVariant.stock != null ? Number(availableVariant.stock) : stock;
+
     setCartItems((prev) => {
-      const idx = prev.findIndex((i) => i.productId === product.id);
+      const idx = prev.findIndex((i) => i.productId === product.id && i.size === initialSize && i.color === initialColor);
       if (idx >= 0) {
-        if (prev[idx].quantity >= stock) {
-          alert(`Sản phẩm "${product.name}" chỉ còn ${stock} trong kho.`);
+        if (prev[idx].quantity >= initialStock) {
+          alert(`Sản phẩm "${product.name}" (${initialSize} - ${initialColor}) chỉ còn ${initialStock} trong kho.`);
           return prev;
         }
         const next = [...prev];
         next[idx] = { ...next[idx], quantity: next[idx].quantity + 1 };
         return next;
       }
-      if (stock <= 0) {
-        alert(`Sản phẩm "${product.name}" đã hết hàng.`);
-        return prev;
-      }
       return [...prev, {
         productId: product.id,
         productName: product.name,
         price: Number(product.price || 0),
         quantity: 1,
-        size: product.variants?.[0]?.size || '',
-        color: product.variants?.[0]?.color || '',
-        stock,
+        size: initialSize,
+        color: initialColor,
+        stock: initialStock,
+        variants,
       }];
     });
   }
@@ -114,7 +131,7 @@ export default function PosPage() {
     } catch (err) {
       setAppliedPromo(null);
       setDiscount(0);
-      alert(err.message || 'Mã không hợp lệ.');
+      alert(err.response?.data?.message || err.message || 'Mã không hợp lệ.');
     }
   }
 
@@ -147,7 +164,7 @@ export default function PosPage() {
       resetSale();
       loadProducts(q);
     } catch (err) {
-      alert(err.message || 'Tạo hóa đơn thất bại.');
+      alert(err.response?.data?.message || err.message || 'Tạo hóa đơn thất bại.');
     } finally {
       setCheckingOut(false);
     }
@@ -240,9 +257,40 @@ export default function PosPage() {
           <ul className="pos-lines">
             {cartItems.map((item, idx) => (
               <li key={`${item.productId}-${idx}`}>
-                <div>
-                  <strong>{item.productName}</strong>
-                  <span className="muted-text">{formatVNDText(item.price)} × {item.quantity}</span>
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <strong style={{ display: 'block', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    {item.productName}
+                  </strong>
+                  {item.variants && item.variants.length > 1 ? (
+                    <div style={{ margin: '3px 0' }}>
+                      <select
+                        style={{ fontSize: 12, padding: '2px 4px', maxWidth: 170 }}
+                        value={`${item.size}|${item.color}`}
+                        onChange={(e) => {
+                          const [newSize, newColor] = e.target.value.split('|');
+                          const v = item.variants.find((x) => x.size === newSize && x.color === newColor);
+                          updateLine(idx, {
+                            size: newSize,
+                            color: newColor,
+                            stock: v && v.stock != null ? Number(v.stock) : item.stock,
+                          });
+                        }}
+                      >
+                        {item.variants.map((v) => (
+                          <option key={v.id || `${v.size}-${v.color}`} value={`${v.size}|${v.color}`}>
+                            {v.size} - {v.color} (Còn {v.stock ?? 0})
+                          </option>
+                        ))}
+                      </select>
+                    </div>
+                  ) : (
+                    <div className="muted-text" style={{ fontSize: 12 }}>
+                      {item.size && item.size !== 'Freesize' && item.color && item.color !== 'Tiêu chuẩn'
+                        ? `${item.size} · ${item.color} · `
+                        : ''}
+                      {formatVNDText(item.price)} × {item.quantity}
+                    </div>
+                  )}
                 </div>
                 <div className="qty-stepper">
                   <button

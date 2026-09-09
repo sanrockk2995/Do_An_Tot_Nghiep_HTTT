@@ -65,7 +65,11 @@ public class OrderService {
             if (qty > 9999) {
                 throw new BadRequestException("Số lượng quá lớn (tối đa 9999)");
             }
-            String key = input.getProductId() + "|" + input.getSize() + "|" + input.getColor();
+            String size = (input.getSize() != null && !input.getSize().isBlank()) ? input.getSize().trim() : "Freesize";
+            String color = (input.getColor() != null && !input.getColor().isBlank()) ? input.getColor().trim() : "Tiêu chuẩn";
+            input.setSize(size);
+            input.setColor(color);
+            String key = input.getProductId() + "|" + size + "|" + color;
             OrderDtos.OrderItemInput prev = merged.get(key);
             if (prev == null) {
                 merged.put(key, input);
@@ -106,18 +110,18 @@ public class OrderService {
                         + "' chỉ còn " + product.getStock() + " sản phẩm");
             }
 
-            // Kiểm tra tồn kho BIẾN THỂ (size/màu) nếu gửi kèm
+            // Kiểm tra tồn kho BIẾN THỂ (size/màu) nếu sản phẩm có biến thể trong hệ thống
             if (input.getSize() != null && !input.getSize().isBlank()
                     && input.getColor() != null && !input.getColor().isBlank()) {
-                ProductVariant variant = variantRepository
+                variantRepository
                         .findByProductIdAndSizeAndColor(product.getId(), input.getSize(), input.getColor())
-                        .orElseThrow(() -> new BadRequestException("Sản phẩm '" + product.getName()
-                                + "' không có biến thể size " + input.getSize() + ", màu " + input.getColor()));
-                if (variant.getStock() < input.getQuantity()) {
-                    throw new BadRequestException("Sản phẩm '" + product.getName() + "' (size "
-                            + input.getSize() + ", màu " + input.getColor()
-                            + ") chỉ còn " + variant.getStock() + " sản phẩm");
-                }
+                        .ifPresent(variant -> {
+                            if (variant.getStock() < input.getQuantity()) {
+                                throw new BadRequestException("Sản phẩm '" + product.getName() + "' (size "
+                                        + input.getSize() + ", màu " + input.getColor()
+                                        + ") chỉ còn " + variant.getStock() + " sản phẩm");
+                            }
+                        });
             }
 
             BigDecimal lineTotal = product.getPrice()
@@ -337,20 +341,20 @@ public class OrderService {
             product.setStock(product.getStock() - item.getQuantity());
             productRepository.save(product);
 
-            // Trừ cả tồn của ĐÚNG biến thể (size/màu) trong đơn
+            // Trừ cả tồn của ĐÚNG biến thể (size/màu) trong đơn nếu sản phẩm có biến thể
             if (item.getSize() != null && !item.getSize().isBlank()
                     && item.getColor() != null && !item.getColor().isBlank()) {
-                ProductVariant variant = variantRepository
+                variantRepository
                         .findByProductIdAndSizeAndColor(product.getId(), item.getSize(), item.getColor())
-                        .orElseThrow(() -> new ResourceNotFoundException("Sản phẩm '" + product.getName()
-                                + "' không có biến thể size " + item.getSize() + ", màu " + item.getColor()));
-                if (variant.getStock() < item.getQuantity()) {
-                    throw new BadRequestException("Sản phẩm '" + product.getName() + "' (size "
-                            + item.getSize() + ", màu " + item.getColor()
-                            + ") không đủ hàng (còn " + variant.getStock() + ")");
-                }
-                variant.setStock(variant.getStock() - item.getQuantity());
-                variantRepository.save(variant);
+                        .ifPresent(variant -> {
+                            if (variant.getStock() < item.getQuantity()) {
+                                throw new BadRequestException("Sản phẩm '" + product.getName() + "' (size "
+                                        + item.getSize() + ", màu " + item.getColor()
+                                        + ") không đủ hàng (còn " + variant.getStock() + ")");
+                            }
+                            variant.setStock(variant.getStock() - item.getQuantity());
+                            variantRepository.save(variant);
+                        });
             }
         }
     }
