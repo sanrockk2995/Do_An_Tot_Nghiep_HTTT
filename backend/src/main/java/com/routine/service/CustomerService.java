@@ -38,18 +38,42 @@ public class CustomerService {
     /** Nhân viên thêm khách tại quầy (không có tài khoản đăng nhập). */
     @Transactional
     public CustomerDtos.CustomerResponse create(CustomerDtos.CustomerRequest request) {
-        if (request.getEmail() != null && !request.getEmail().isBlank()
-                && customerRepository.existsByEmailIgnoreCase(request.getEmail())) {
-            throw new BadRequestException("Email đã được sử dụng");
+        String fullName = request.getFullName() != null ? request.getFullName().trim() : "";
+        if (fullName.isBlank()) {
+            throw new BadRequestException("Họ tên không được để trống");
+        }
+
+        String phone = request.getPhone() != null ? request.getPhone().trim() : "";
+        if (phone.isBlank()) {
+            throw new BadRequestException("Số điện thoại không được để trống");
+        }
+
+        String cleanPhone = phone.replaceAll("[\\s.-]", "");
+        if (!cleanPhone.matches("^(0|\\+84)[0-9]{9}$")) {
+            throw new BadRequestException("Số điện thoại không đúng định dạng (yêu cầu 10 chữ số, ví dụ 0912345678)");
+        }
+
+        String email = (request.getEmail() != null && !request.getEmail().trim().isBlank())
+                ? request.getEmail().trim() : null;
+        if (email != null && !email.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
+            throw new BadRequestException("Định dạng email không hợp lệ");
+        }
+
+        // Kiểm tra khách hàng đã tồn tại (trùng SĐT hoặc Email)
+        if (customerRepository.existsByPhone(cleanPhone)) {
+            throw new BadRequestException("Khách hàng đã tồn tại. Số điện thoại này đã có trong hệ thống.");
+        }
+        if (email != null && customerRepository.existsByEmailIgnoreCase(email)) {
+            throw new BadRequestException("Khách hàng đã tồn tại. Email này đã có trong hệ thống.");
         }
 
         Customer customer = Customer.builder()
-                .fullName(request.getFullName())
-                .phone(request.getPhone())
-                .email(request.getEmail())
-                .address(request.getAddress())
-                .district(request.getDistrict())
-                .city(request.getCity())
+                .fullName(fullName)
+                .phone(cleanPhone)
+                .email(email)
+                .address(request.getAddress() != null ? request.getAddress().trim() : null)
+                .district(request.getDistrict() != null ? request.getDistrict().trim() : null)
+                .city(request.getCity() != null ? request.getCity().trim() : null)
                 .tier(request.getTier() != null ? request.getTier() : "REGULAR")
                 .totalOrders(0)
                 .totalSpent(BigDecimal.ZERO)
@@ -60,12 +84,42 @@ public class CustomerService {
     @Transactional
     public CustomerDtos.CustomerResponse update(Long id, CustomerDtos.CustomerRequest request) {
         Customer customer = getCustomer(id);
-        customer.setFullName(request.getFullName());
-        customer.setPhone(request.getPhone());
-        if (request.getEmail() != null) customer.setEmail(request.getEmail());
-        customer.setAddress(request.getAddress());
-        customer.setDistrict(request.getDistrict());
-        customer.setCity(request.getCity());
+
+        String fullName = request.getFullName() != null ? request.getFullName().trim() : "";
+        if (fullName.isBlank()) {
+            throw new BadRequestException("Họ tên không được để trống");
+        }
+
+        String phone = request.getPhone() != null ? request.getPhone().trim() : "";
+        if (phone.isBlank()) {
+            throw new BadRequestException("Số điện thoại không được để trống");
+        }
+
+        String cleanPhone = phone.replaceAll("[\\s.-]", "");
+        if (!cleanPhone.matches("^(0|\\+84)[0-9]{9}$")) {
+            throw new BadRequestException("Số điện thoại không đúng định dạng (yêu cầu 10 chữ số)");
+        }
+
+        if (!cleanPhone.equals(customer.getPhone()) && customerRepository.existsByPhone(cleanPhone)) {
+            throw new BadRequestException("Khách hàng đã tồn tại. Số điện thoại này đã có trong hệ thống.");
+        }
+
+        String email = (request.getEmail() != null && !request.getEmail().trim().isBlank())
+                ? request.getEmail().trim() : null;
+        if (email != null && !email.matches("^[\\w.-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
+            throw new BadRequestException("Định dạng email không hợp lệ");
+        }
+
+        if (email != null && !email.equalsIgnoreCase(customer.getEmail()) && customerRepository.existsByEmailIgnoreCase(email)) {
+            throw new BadRequestException("Khách hàng đã tồn tại. Email này đã có trong hệ thống.");
+        }
+
+        customer.setFullName(fullName);
+        customer.setPhone(cleanPhone);
+        customer.setEmail(email);
+        customer.setAddress(request.getAddress() != null ? request.getAddress().trim() : null);
+        customer.setDistrict(request.getDistrict() != null ? request.getDistrict().trim() : null);
+        customer.setCity(request.getCity() != null ? request.getCity().trim() : null);
         if (request.getTier() != null) customer.setTier(request.getTier());
         return toResponse(customerRepository.save(customer));
     }

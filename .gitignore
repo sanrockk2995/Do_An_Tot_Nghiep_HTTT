@@ -18,6 +18,8 @@ logs/
 # OS
 .DS_Store
 Thumbs.db
+~$*
+*.tmp
 
 # Claude session metadata (công cụ AI, không thuộc mã nguồn)
 .claude/

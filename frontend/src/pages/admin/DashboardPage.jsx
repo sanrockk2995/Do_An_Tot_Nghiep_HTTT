@@ -1,9 +1,42 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
-  ResponsiveContainer, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip,
 } from 'recharts';
 import { api } from '../../services/api';
 import { formatVNDText } from '../../utils/format';
+
+/** Đảm bảo biểu đồ doanh thu theo ngày trong tháng có đủ các ngày từ ngày 1 đến hôm nay. */
+function ensureMonthDays(rawPoints) {
+  const map = new Map();
+  if (Array.isArray(rawPoints)) {
+    rawPoints.forEach((p) => {
+      if (p && p.period) {
+        map.set(p.period, {
+          period: p.period,
+          revenue: Number(p.revenue || 0),
+          orderCount: Number(p.orderCount || 0),
+        });
+      }
+    });
+  }
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const today = now.getDate();
+
+  const points = [];
+  for (let d = 1; d <= today; d++) {
+    const dayStr = String(d).padStart(2, '0');
+    const period = `${year}-${month}-${dayStr}`;
+    if (map.has(period)) {
+      points.push(map.get(period));
+    } else {
+      points.push({ period, revenue: 0, orderCount: 0 });
+    }
+  }
+  return points;
+}
 
 /** Trang tổng quan ADMIN: thẻ số liệu + biểu đồ doanh thu + bán chạy + tồn kho thấp. */
 export default function DashboardPage() {
@@ -32,6 +65,8 @@ export default function DashboardPage() {
       alive = false;
     };
   }, []);
+
+  const chartData = useMemo(() => ensureMonthDays(revenuePoints), [revenuePoints]);
 
   return (
     <div className="admin-page">
@@ -67,23 +102,66 @@ export default function DashboardPage() {
         <section className="card chart-card">
           <h2>Doanh thu theo ngày (tháng này)</h2>
           <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={revenuePoints}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="period" />
-              <YAxis tickFormatter={(v) => `${Math.round(v / 1000)}k`} width={60} />
-              <Tooltip
-                formatter={(v) => formatVNDText(v)}
-                labelFormatter={(l) => `Ngày ${l}`}
+            <AreaChart data={chartData} margin={{ top: 12, right: 16, bottom: 4, left: 4 }}>
+              <defs>
+                <linearGradient id="routineRevenueGrad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#059669" stopOpacity={0.25} />
+                  <stop offset="95%" stopColor="#059669" stopOpacity={0.0} />
+                </linearGradient>
+              </defs>
+              <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" vertical={false} />
+              <XAxis
+                dataKey="period"
+                tickFormatter={(val) => {
+                  if (!val) return '';
+                  const parts = String(val).split('-');
+                  return parts.length === 3 ? `${parts[2]}/${parts[1]}` : val;
+                }}
+                tick={{ fontSize: 12, fill: '#64748b' }}
+                stroke="#cbd5e1"
+                tickLine={false}
+                axisLine={{ stroke: '#e2e8f0' }}
               />
-              <Line
+              <YAxis
+                tickFormatter={(v) => {
+                  if (v >= 1e6) return `${(v / 1e6).toFixed(1).replace(/\.0$/, '')}tr`;
+                  if (v >= 1e3) return `${Math.round(v / 1000)}k`;
+                  return `${v}`;
+                }}
+                width={56}
+                tick={{ fontSize: 12, fill: '#64748b' }}
+                stroke="#cbd5e1"
+                tickLine={false}
+                axisLine={false}
+              />
+              <Tooltip
+                formatter={(v) => [formatVNDText(v), 'Doanh thu']}
+                labelFormatter={(l) => {
+                  if (!l) return '';
+                  const parts = String(l).split('-');
+                  return parts.length === 3 ? `Ngày ${parts[2]}/${parts[1]}/${parts[0]}` : `Kỳ ${l}`;
+                }}
+                contentStyle={{
+                  backgroundColor: 'rgba(255, 255, 255, 0.96)',
+                  backdropFilter: 'blur(12px)',
+                  borderRadius: '10px',
+                  border: '1px solid rgba(226, 232, 240, 0.8)',
+                  boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.1)',
+                  fontSize: '13px',
+                }}
+              />
+              <Area
                 type="monotone"
                 dataKey="revenue"
                 name="Doanh thu"
-                stroke="#22C55E"
-                strokeWidth={2}
-                dot={false}
+                stroke="#059669"
+                strokeWidth={2.5}
+                fillOpacity={1}
+                fill="url(#routineRevenueGrad)"
+                dot={{ r: 3.5, fill: '#059669', stroke: '#ffffff', strokeWidth: 2 }}
+                activeDot={{ r: 6, fill: '#059669', stroke: '#ffffff', strokeWidth: 2 }}
               />
-            </LineChart>
+            </AreaChart>
           </ResponsiveContainer>
           <p className="muted-text">Đơn vị: VNĐ — chỉ tính đơn hàng hoàn tất.</p>
         </section>

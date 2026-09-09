@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { api } from '../../services/api';
+import { useToast } from '../../context/ToastContext';
 import { formatVNDText, formatDateTime } from '../../utils/format';
 import { IconX, IconSearch } from '../../components/Icons';
 import { useAuth } from '../../context/AuthContext';
@@ -43,6 +44,7 @@ export default function WarehousePage() {
 
 function PhieuNhapList() {
   const { user } = useAuth();
+  const toast = useToast();
   const isWarehouseStaff = user?.role === 'WAREHOUSE_STAFF';
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -75,10 +77,10 @@ function PhieuNhapList() {
     if (!window.confirm('Duyệt phiếu nhập? Tồn kho sẽ được cộng sau khi duyệt.')) return;
     try {
       await api.put(`/goods-receipts/${id}/approve`);
-      alert('Đã duyệt phiếu nhập — tồn kho đã được cập nhật.');
+      toast.success('Đã duyệt phiếu nhập — tồn kho đã được cập nhật.');
       load();
     } catch (err) {
-      alert(err.message || 'Duyệt thất bại.');
+      toast.error(err.message || 'Duyệt thất bại.');
     }
   }
 
@@ -93,7 +95,7 @@ function PhieuNhapList() {
       a.click();
       URL.revokeObjectURL(url);
     } catch {
-      alert('Không xuất được file Excel.');
+      toast.error('Không xuất được file Excel.');
     }
   }
 
@@ -254,6 +256,7 @@ function ProductQuickSearch({ products, onSelectProduct, placeholder }) {
 }
 
 function PhieuNhapForm({ onClose, onSaved }) {
+  const toast = useToast();
   const [suppliers, setSuppliers] = useState([]);
   const [products, setProducts] = useState([]);
   const [nhaCungCapId, setNhaCungCapId] = useState('');
@@ -329,7 +332,7 @@ function PhieuNhapForm({ onClose, onSaved }) {
           giaNhap: Number(l.giaNhap),
         })),
       });
-      alert('Tạo phiếu nhập thành công. Nhấn "Duyệt phiếu" để cộng tồn kho.');
+      toast.success('Tạo phiếu nhập thành công. Nhấn "Duyệt phiếu" để cộng tồn kho.');
       onSaved();
     } catch (err) {
       setError(err.message || 'Tạo phiếu thất bại.');
@@ -487,6 +490,7 @@ function PhieuNhapForm({ onClose, onSaved }) {
 // ================= Phiếu xuất =================
 
 function PhieuXuatList() {
+  const toast = useToast();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
@@ -518,10 +522,10 @@ function PhieuXuatList() {
     if (!window.confirm('Duyệt phiếu xuất? Tồn kho sẽ bị trừ sau khi duyệt.')) return;
     try {
       await api.put(`/goods-issues/${id}/approve`);
-      alert('Đã duyệt phiếu xuất.');
+      toast.success('Đã duyệt phiếu xuất.');
       load();
     } catch (err) {
-      alert(err.message || 'Duyệt thất bại (có thể do tồn kho không đủ).');
+      toast.error(err.message || 'Duyệt thất bại (có thể do tồn kho không đủ).');
     }
   }
 
@@ -536,7 +540,7 @@ function PhieuXuatList() {
       a.click();
       URL.revokeObjectURL(url);
     } catch {
-      alert('Không xuất được file Excel.');
+      toast.error('Không xuất được file Excel.');
     }
   }
 
@@ -603,6 +607,7 @@ function PhieuXuatList() {
 }
 
 function PhieuXuatForm({ onClose, onSaved }) {
+  const toast = useToast();
   const [products, setProducts] = useState([]);
   const [lyDoXuat, setLyDoXuat] = useState('');
   const [chiTiet, setChiTiet] = useState([{ productId: '', soLuongXuat: 1 }]);
@@ -659,7 +664,7 @@ function PhieuXuatForm({ onClose, onSaved }) {
           soLuongXuat: Number(l.soLuongXuat),
         })),
       });
-      alert('Tạo phiếu xuất thành công. Nhấn "Duyệt phiếu" để trừ tồn kho.');
+      toast.success('Tạo phiếu xuất thành công. Nhấn "Duyệt phiếu" để trừ tồn kho.');
       onSaved();
     } catch (err) {
       setError(err.message || 'Tạo phiếu thất bại.');

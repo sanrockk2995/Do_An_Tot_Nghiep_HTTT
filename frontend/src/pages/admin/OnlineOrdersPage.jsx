@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { api } from '../../services/api';
+import { useToast } from '../../context/ToastContext';
 import {
   formatVNDText, formatDateTime,
   ORDER_STATUS_LABELS, ORDER_STATUS_BADGES, PAYMENT_METHOD_LABELS,
@@ -9,6 +10,7 @@ const STATUS_FLOW = ['PENDING', 'CONFIRMED', 'SHIPPING', 'COMPLETED', 'CANCELLED
 
 /** Quản lý đơn hàng online (ADMIN/SALES_STAFF): lọc trạng thái + cập nhật + chi tiết. */
 export default function OnlineOrdersPage() {
+  const toast = useToast();
   const [items, setItems] = useState([]);
   const [statusFilter, setStatusFilter] = useState('');
   const [loading, setLoading] = useState(true);
@@ -42,18 +44,18 @@ export default function OnlineOrdersPage() {
       const res = await api.get(`/orders/${id}`);
       setDetail(res.data);
     } catch (err) {
-      alert(err.message || 'Không tải được chi tiết đơn hàng.');
+      toast.error(err.message || 'Không tải được chi tiết đơn hàng.');
     }
   }
 
   async function changeStatus(id, newStatus) {
     try {
       await api.put(`/orders/${id}/status`, { status: newStatus });
-      alert('Đã cập nhật trạng thái đơn hàng.');
+      toast.success('Đã cập nhật trạng thái đơn hàng.');
       setDetail(null);
       load();
     } catch (err) {
-      alert(err.message || 'Cập nhật thất bại.');
+      toast.error(err.message || 'Cập nhật thất bại.');
     }
   }
 

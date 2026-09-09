@@ -20,6 +20,8 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     boolean existsByEmailIgnoreCase(String email);
 
+    boolean existsByPhone(String phone);
+
     /** Tìm khách theo SĐT hoặc tên — phục vụ POS tra nhanh. */
     @Query("""
             SELECT c FROM Customer c

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { CartProvider } from './context/CartContext';
+import { ToastProvider } from './context/ToastContext';
 
 // Layout khách hàng
 import StoreLayout from './layouts/StoreLayout';
@@ -62,8 +63,9 @@ export default function App() {
   return (
     <AuthProvider>
       <CartProvider>
-        <BrowserRouter>
-          <Routes>
+        <ToastProvider>
+          <BrowserRouter>
+            <Routes>
             {/* ===== Khách hàng (Customer Storefront) ===== */}
             <Route element={<StoreLayout />}>
               <Route path="/" element={<HomePage />} />
@@ -195,6 +197,7 @@ export default function App() {
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </BrowserRouter>
+        </ToastProvider>
       </CartProvider>
     </AuthProvider>
   );

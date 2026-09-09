@@ -1,9 +1,11 @@
 import { useCallback, useEffect, useState } from 'react';
 import { api } from '../../services/api';
+import { useToast } from '../../context/ToastContext';
 import { formatDateTime } from '../../utils/format';
 
 /** Kiểm kê kho: tạo kỳ kiểm kê (chốt tồn hệ thống) → nhập thực tế → hoàn thành điều chỉnh. */
 export default function StocktakePage() {
+  const toast = useToast();
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
@@ -37,7 +39,7 @@ export default function StocktakePage() {
       const res = await api.get(`/stocktakes/${id}`);
       setDetail(res.data);
     } catch (err) {
-      alert(err.message || 'Không tải được chi tiết kiểm kê.');
+      toast.error(err.message || 'Không tải được chi tiết kiểm kê.');
     }
   }
 
@@ -51,11 +53,11 @@ export default function StocktakePage() {
           ghiChu: it.ghiChu ?? null,
         })),
       });
-      alert('Đã hoàn thành kiểm kê — tồn kho đã được điều chỉnh theo số thực tế.');
+      toast.success('Đã hoàn thành kiểm kê — tồn kho đã được điều chỉnh theo số thực tế.');
       setDetail(null);
       load();
     } catch (err) {
-      alert(err.message || 'Thao tác thất bại.');
+      toast.error(err.message || 'Thao tác thất bại.');
     }
   }
 
@@ -202,6 +204,7 @@ export default function StocktakePage() {
 // ================= Form tạo kỳ kiểm kê =================
 
 function KiemKeForm({ onClose, onSaved }) {
+  const toast = useToast();
   const [products, setProducts] = useState([]);
   const [selected, setSelected] = useState([]);
   const [ghiChu, setGhiChu] = useState('');
@@ -223,7 +226,7 @@ function KiemKeForm({ onClose, onSaved }) {
 
   async function handleSave() {
     if (selected.length === 0) {
-      alert('Chọn ít nhất một sản phẩm để kiểm kê.');
+      toast.warning('Chọn ít nhất một sản phẩm để kiểm kê.');
       return;
     }
     setSaving(true);
@@ -233,10 +236,10 @@ function KiemKeForm({ onClose, onSaved }) {
         ghiChu,
         chiTiet: selected.map((s) => ({ productId: s.productId })),
       });
-      alert('Tạo kỳ kiểm kê thành công — hệ thống đã chốt số tồn tại thời điểm tạo.');
+      toast.success('Tạo kỳ kiểm kê thành công — hệ thống đã chốt số tồn tại thời điểm tạo.');
       onSaved();
     } catch (err) {
-      alert(err.message || 'Tạo thất bại.');
+      toast.error(err.message || 'Tạo thất bại.');
     } finally {
       setSaving(false);
     }

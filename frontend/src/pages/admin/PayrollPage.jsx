@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { api } from '../../services/api';
+import { useToast } from '../../context/ToastContext';
 import { formatVNDText, ROLE_LABELS } from '../../utils/format';
 
 /** Chọn tháng hiện tại làm mặc định. */
@@ -13,6 +14,7 @@ function currentMonth() {
  * chọn tháng → xem bảng lương → cập nhật hệ số/phụ cấp/thưởng/khấu trừ.
  */
 export default function PayrollPage() {
+  const toast = useToast();
   const init = currentMonth();
   const [thang, setThang] = useState(init.thang);
   const [nam, setNam] = useState(init.nam);
@@ -61,8 +63,9 @@ export default function PayrollPage() {
       await api.put(`/payrolls/${userId}`, editing, { params: { thang, nam } });
       setEditing(null);
       await fetchPayroll();
+      toast.success('Cập nhật bảng lương thành công.');
     } catch (err) {
-      alert(err?.response?.data?.message || 'Cập nhật thất bại.');
+      toast.error(err?.response?.data?.message || 'Cập nhật thất bại.');
     } finally {
       setSavingId(null);
     }
@@ -73,14 +76,15 @@ export default function PayrollPage() {
     try {
       await api.put(`/payrolls/${row.id}/approve`);
       await fetchPayroll();
+      toast.success(`Đã duyệt lương cho ${row.tenNhanVien}.`);
     } catch (err) {
-      alert(err?.response?.data?.message || 'Duyệt thất bại.');
+      toast.error(err?.response?.data?.message || 'Duyệt thất bại.');
     }
   }
 
   async function exportExcel() {
     if (nam > init.nam || (nam === init.nam && thang > init.thang)) {
-      alert(`Không thể xuất bảng lương kỳ tương lai (tối đa tháng ${init.thang}/${init.nam}).`);
+      toast.warning(`Không thể xuất bảng lương kỳ tương lai (tối đa tháng ${init.thang}/${init.nam}).`);
       return;
     }
     try {
@@ -95,7 +99,7 @@ export default function PayrollPage() {
       a.click();
       URL.revokeObjectURL(url);
     } catch {
-      alert('Không xuất được file Excel.');
+      toast.error('Không xuất được file Excel.');
     }
   }
 

@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { api } from '../../services/api';
+import { useToast } from '../../context/ToastContext';
 import {
   formatVNDText, formatDateTime, TIER_LABELS,
   ORDER_STATUS_LABELS, ORDER_STATUS_BADGES,
@@ -10,7 +11,8 @@ import { VN_PROVINCES } from '../../data/vnLocations';
  * Quản lý khách hàng (ADMIN + SALES_STAFF): bảng + tìm kiếm + modal chi tiết
  * với lịch sử đơn hàng (tải riêng qua /customers/{id}/orders).
  */
-export default function AdminCustomersPage() {
+export default function AdminCustomersPage({ salesMode }) {
+  const toast = useToast();
   const [items, setItems] = useState([]);
   const [q, setQ] = useState('');
   const [page, setPage] = useState(0);
@@ -19,7 +21,8 @@ export default function AdminCustomersPage() {
   const [error, setError] = useState('');
   const [detail, setDetail] = useState(null);   // CustomerResponse
   const [detailOrders, setDetailOrders] = useState([]);
-  const [editing, setEditing] = useState(null); // CustomerResponse đang sửa
+  const [formModalOpen, setFormModalOpen] = useState(false);
+  const [editing, setEditing] = useState(null); // CustomerResponse đang sửa, null = thêm mới
   const [form, setForm] = useState({ fullName: '', phone: '', email: '', address: '', district: '', city: '' });
   const [saving, setSaving] = useState(false);
   const [notice, setNotice] = useState('');
@@ -56,6 +59,20 @@ export default function AdminCustomersPage() {
     load();
   }, [load]);
 
+  function openCreate() {
+    setNotice('');
+    setForm({
+      fullName: '',
+      phone: '',
+      email: '',
+      address: '',
+      district: '',
+      city: '',
+    });
+    setEditing(null);
+    setFormModalOpen(true);
+  }
+
   function openEdit(c) {
     setNotice('');
     setForm({
@@ -67,6 +84,7 @@ export default function AdminCustomersPage() {
       city: c.city || '',
     });
     setEditing(c);
+    setFormModalOpen(true);
   }
 
   /** Chọn tỉnh/TP → reset phường/xã để chọn lại theo danh mục của tỉnh mới. */
@@ -75,33 +93,71 @@ export default function AdminCustomersPage() {
     setForm((f) => ({ ...f, city: name, district: '' }));
   }
 
-  /** UC "Cập nhật thông tin" — PUT /customers/{id} (ADMIN + SALES_STAFF). */
+  /** UC "Thêm khách hàng" & "Cập nhật thông tin" (ADMIN + SALES_STAFF). */
   async function handleSave(e) {
     e.preventDefault();
-    if (!form.fullName.trim() || !form.phone.trim()) {
-      setNotice('Vui lòng nhập họ tên và số điện thoại.');
-      return;
-    }
-    if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      setNotice('Email không hợp lệ.');
-      return;
-    }
-    setSaving(true);
     setNotice('');
+
+    // 1. Kiểm tra trường bắt buộc
+    const fullName = form.fullName.trim();
+    if (!fullName) {
+      setNotice('Vui lòng nhập họ tên khách hàng.');
+      return;
+    }
+
+    const cleanPhone = form.phone.trim().replace(/[\s.-]/g, '');
+    if (!cleanPhone) {
+      setNotice('Vui lòng nhập số điện thoại.');
+      return;
+    }
+
+    // 2. Kiểm tra độ dài và định dạng số điện thoại
+    if (!/^(0|\+84)[0-9]{9}$/.test(cleanPhone)) {
+      setNotice('Số điện thoại không đúng định dạng hoặc độ dài (yêu cầu 10 chữ số, ví dụ 0912345678).');
+      return;
+    }
+
+    // 3. Kiểm tra định dạng email (nếu có nhập)
+    const email = form.email.trim();
+    if (email && !/^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/.test(email)) {
+      setNotice('Email không đúng định dạng (ví dụ: khachhang@example.com).');
+      return;
+    }
+
+    setSaving(true);
     try {
-      await api.put(`/customers/${editing.id}`, {
-        fullName: form.fullName.trim(),
-        phone: form.phone.trim(),
-        email: form.email.trim() || null,
-        address: form.address.trim(),
-        district: form.district.trim(),
-        city: form.city.trim(),
-      });
+      const payload = {
+        fullName,
+        phone: cleanPhone,
+        email: email || null,
+        address: form.address.trim() || null,
+        district: form.district.trim() || null,
+        city: form.city.trim() || null,
+      };
+
+      if (editing?.id) {
+        await api.put(`/customers/${editing.id}`, payload);
+        toast.success('Cập nhật thông tin thành công');
+      } else {
+        await api.post('/customers', payload);
+        toast.success('Thêm khách hàng thành công');
+      }
+      setFormModalOpen(false);
       setEditing(null);
       load();
-      alert('Cập nhật thông tin thành công');
     } catch (err) {
-      setNotice(err.response?.data?.message || 'Không cập nhật được thông tin khách hàng.');
+      const resp = err.response?.data;
+      const status = err.response?.status;
+      const message = resp?.message || resp?.fieldErrors?.email || resp?.fieldErrors?.phone || err.message;
+
+      if (message && (message.includes('đã tồn tại') || message.includes('đã có trong hệ thống') || message.includes('đã được sử dụng'))) {
+        setNotice(message || 'Khách hàng đã tồn tại.');
+      } else if (!status || status >= 500) {
+        setNotice('Lỗi kết nối hoặc lỗi hệ thống. Vui lòng thử lại.');
+        toast.error('Lỗi kết nối hoặc lỗi hệ thống. Vui lòng thử lại.');
+      } else {
+        setNotice(message || 'Thông tin không hợp lệ. Vui lòng nhập lại.');
+      }
     } finally {
       setSaving(false);
     }
@@ -116,17 +172,22 @@ export default function AdminCustomersPage() {
       setDetail(cRes.data);
       setDetailOrders(oRes.data?.content || []);
     } catch (err) {
-      alert(err.message || 'Không tải được thông tin khách hàng.');
+      toast.error(err.message || 'Không tải được thông tin khách hàng.');
     }
   }
 
   return (
     <div className="admin-page">
       <header className="admin-page-head">
-        <h1>Khách hàng</h1>
-        <p className="muted-text">
-          Hạng thành viên: SILVER ≥ 5 triệu · GOLD ≥ 20 triệu · VIP ≥ 50 triệu tổng mua.
-        </p>
+        <div>
+          <h1>{salesMode ? 'Tra cứu khách hàng' : 'Khách hàng'}</h1>
+          <p className="muted-text">
+            Hạng thành viên: SILVER ≥ 5 triệu · GOLD ≥ 20 triệu · VIP ≥ 50 triệu tổng mua.
+          </p>
+        </div>
+        <button className="btn btn-primary" onClick={openCreate}>
+          + Thêm khách hàng
+        </button>
       </header>
 
       <section className="admin-toolbar">
@@ -203,10 +264,10 @@ export default function AdminCustomersPage() {
         </>
       )}
 
-      {editing && (
+      {formModalOpen && (
         <div className="modal-overlay" role="dialog" aria-modal="true">
           <div className="modal card">
-            <h2>Cập nhật thông tin khách hàng</h2>
+            <h2>{editing ? `Cập nhật thông tin: ${editing.fullName}` : 'Thêm khách hàng mới'}</h2>
             <form onSubmit={handleSave} noValidate>
               <div className="field">
                 <label htmlFor="edit-fullname">Họ tên *</label>
@@ -214,6 +275,7 @@ export default function AdminCustomersPage() {
                   id="edit-fullname"
                   value={form.fullName}
                   onChange={(e) => setForm({ ...form, fullName: e.target.value })}
+                  placeholder="Nhập họ và tên khách hàng..."
                   required
                 />
               </div>
@@ -223,6 +285,7 @@ export default function AdminCustomersPage() {
                   id="edit-phone"
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                  placeholder="Ví dụ: 0912345678 (10 chữ số)"
                   required
                 />
               </div>
@@ -233,6 +296,7 @@ export default function AdminCustomersPage() {
                   type="email"
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
+                  placeholder="Ví dụ: khachhang@example.com (tùy chọn)"
                 />
               </div>
               <div className="field">
@@ -241,9 +305,28 @@ export default function AdminCustomersPage() {
                   id="edit-address"
                   value={form.address}
                   onChange={(e) => setForm({ ...form, address: e.target.value })}
+                  placeholder="Số nhà, tên đường..."
                 />
               </div>
               <div style={{ display: 'flex', gap: 12 }}>
+                <div className="field" style={{ flex: 1 }}>
+                  <label htmlFor="edit-city">Tỉnh/Thành phố</label>
+                  <select
+                    id="edit-city"
+                    value={form.city}
+                    onChange={handleProvinceChange}
+                  >
+                    <option value="">— Chọn tỉnh/thành phố —</option>
+                    {VN_PROVINCES.map((p) => (
+                      <option key={p.name} value={stripPrefix(p.name)}>
+                        {p.name}
+                      </option>
+                    ))}
+                    {form.city && !VN_PROVINCES.some((p) => stripPrefix(p.name) === form.city) && (
+                      <option value={form.city}>{form.city} (đơn vị cũ)</option>
+                    )}
+                  </select>
+                </div>
                 <div className="field" style={{ flex: 1 }}>
                   <label htmlFor="edit-ward">Phường/Xã</label>
                   <select
@@ -260,28 +343,8 @@ export default function AdminCustomersPage() {
                         {w.t === 'Xã' ? w.n : `${w.n} (${w.t})`}
                       </option>
                     ))}
-                    {/* Giá trị cũ trong DB (quận/huyện trước sáp nhập) không có trong danh mục mới */}
                     {form.district && !wardOptions.some((w) => w.n === form.district) && (
                       <option value={form.district}>{form.district} (đơn vị cũ)</option>
-                    )}
-                  </select>
-                </div>
-                <div className="field" style={{ flex: 1 }}>
-                  <label htmlFor="edit-city">Tỉnh/Thành phố</label>
-                  <select
-                    id="edit-city"
-                    value={form.city}
-                    onChange={handleProvinceChange}
-                  >
-                    <option value="">— Chọn tỉnh/thành phố —</option>
-                    {VN_PROVINCES.map((p) => (
-                      <option key={p.name} value={stripPrefix(p.name)}>
-                        {p.name}
-                      </option>
-                    ))}
-                    {/* Giá trị cũ trong DB (tỉnh cũ trước sáp nhập) không có trong 34 đơn vị mới */}
-                    {form.city && !VN_PROVINCES.some((p) => stripPrefix(p.name) === form.city) && (
-                      <option value={form.city}>{form.city} (đơn vị cũ)</option>
                     )}
                   </select>
                 </div>
@@ -290,7 +353,7 @@ export default function AdminCustomersPage() {
               {notice && <div className="alert alert-error" role="alert">{notice}</div>}
 
               <div className="modal-actions">
-                <button type="button" className="btn btn-ghost" onClick={() => setEditing(null)}>
+                <button type="button" className="btn btn-ghost" onClick={() => setFormModalOpen(false)}>
                   Huỷ
                 </button>
                 <button type="submit" className={`btn btn-primary${saving ? ' loading' : ''}`} disabled={saving}>

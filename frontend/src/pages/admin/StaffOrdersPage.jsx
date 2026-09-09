@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 import { api } from '../../services/api';
+import { useToast } from '../../context/ToastContext';
 import {
   formatVNDText, formatDateTime,
   ORDER_STATUS_LABELS, ORDER_STATUS_BADGES, PAYMENT_METHOD_LABELS,
@@ -10,6 +11,7 @@ import {
  * salesMode / accountingMode chỉ thay đổi tiêu đề.
  */
 export default function StaffOrdersPage() {
+  const toast = useToast();
   const [items, setItems] = useState([]);
   const [q, setQ] = useState('');
   const [loading, setLoading] = useState(true);
@@ -47,7 +49,7 @@ export default function StaffOrdersPage() {
       a.remove();
       window.URL.revokeObjectURL(url);
     } catch (err) {
-      alert(err.message || 'Không tải được hóa đơn PDF.');
+      toast.error(err.message || 'Không tải được hóa đơn PDF.');
     }
   }
 

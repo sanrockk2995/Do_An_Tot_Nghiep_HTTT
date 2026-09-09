@@ -1607,3 +1607,408 @@ table.data-table {
 .detail-list dd { font-weight: 500; }
 .status-flow { display: flex; gap: 8px; flex-wrap: wrap; }
 .status-flow .btn { padding: 8px 12px; min-height: 38px; font-size: 12px; }
+
+/* POS Customer Combobox (vừa chọn vừa tìm kiếm) */
+.pos-customer-combobox {
+  position: relative;
+  width: 100%;
+}
+
+.pos-customer-input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.pos-customer-input-wrap .search-icon {
+  position: absolute;
+  left: 10px;
+  color: var(--muted-foreground, #78716c);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+.pos-customer-input-wrap input {
+  width: 100%;
+  padding-left: 34px;
+  padding-right: 32px;
+  height: 40px;
+  font-size: 14px;
+  border-radius: var(--radius, 6px);
+  border: 1px solid var(--border, #e7e5e4);
+  background: #fff;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pos-customer-input-wrap input:focus {
+  border-color: var(--admin-accent, #000);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.06);
+  outline: none;
+}
+
+.pos-customer-input-wrap .chevron-btn {
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--muted-foreground, #78716c);
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+}
+
+.pos-customer-input-wrap .chevron-btn:hover {
+  color: var(--foreground, #000);
+  background: #f5f5f4;
+}
+
+.pos-customer-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid var(--border, #e7e5e4);
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  max-height: 260px;
+  overflow-y: auto;
+  z-index: 70;
+  list-style: none;
+  padding: 4px 0;
+  margin: 0;
+}
+
+.pos-customer-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #f5f5f4;
+  transition: background-color 120ms ease;
+  font-size: 13px;
+  gap: 8px;
+}
+
+.pos-customer-item:last-child {
+  border-bottom: none;
+}
+
+.pos-customer-item:hover,
+.pos-customer-item.active {
+  background-color: #f5f5f4;
+}
+
+.pos-customer-item.special-walkin {
+  background: #fafaf9;
+  font-weight: 500;
+  color: var(--muted-foreground, #57534e);
+}
+
+.pos-customer-item.special-walkin:hover,
+.pos-customer-item.special-walkin.active {
+  background-color: #f0f0ef;
+  color: #000;
+}
+
+.pos-customer-item .cust-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.pos-customer-item .cust-name {
+  font-weight: 600;
+  color: var(--foreground, #1c1917);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.pos-customer-item .cust-sub {
+  font-size: 12px;
+  color: var(--muted-foreground, #78716c);
+}
+
+.pos-customer-item .cust-badge {
+  flex-shrink: 0;
+}
+
+.pos-customer-empty {
+  padding: 12px 14px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted-foreground, #78716c);
+}
+
+/* Thẻ hiển thị khi đã chọn khách hàng */
+.pos-customer-selected-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  background: #fdfdfd;
+  border: 1px solid var(--border, #e7e5e4);
+  border-radius: var(--radius, 6px);
+  gap: 8px;
+  min-height: 42px;
+}
+
+.pos-customer-selected-card .cust-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  flex: 1;
+}
+
+.pos-customer-selected-card .cust-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f5f5f4;
+  color: #1c1917;
+  flex-shrink: 0;
+}
+
+.pos-customer-selected-card .cust-text {
+  min-width: 0;
+  flex: 1;
+  font-size: 13px;
+}
+
+.pos-customer-selected-card .cust-text strong {
+  display: inline-block;
+  margin-right: 6px;
+  color: var(--foreground, #1c1917);
+}
+
+.pos-customer-selected-card .cust-text span {
+  color: var(--muted-foreground, #78716c);
+  font-size: 12px;
+}
+
+.pos-customer-selected-card .btn-change-cust {
+  flex-shrink: 0;
+  padding: 3px 8px;
+  font-size: 12px;
+  height: auto;
+  min-height: unset;
+  border-radius: 4px;
+}
+
+/* ============================================================
+   Routine Toast Notification System (UI/UX Pro Max)
+   Thay thế alert() trình duyệt bằng thông báo hiện đại, sang trọng
+   ============================================================ */
+
+.routine-toast-container {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+  max-width: 420px;
+  width: calc(100vw - 48px);
+}
+
+.routine-toast {
+  pointer-events: auto;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px -4px rgba(28, 25, 23, 0.12), 0 4px 12px -2px rgba(28, 25, 23, 0.06);
+  color: var(--foreground);
+  font-family: var(--font-body);
+  animation: routineToastEnter 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.25s ease;
+}
+
+.routine-toast:hover {
+  box-shadow: 0 16px 40px -4px rgba(28, 25, 23, 0.18), 0 6px 16px -2px rgba(28, 25, 23, 0.08);
+}
+
+.routine-toast--exiting {
+  animation: routineToastExit 0.25s cubic-bezier(0.4, 0, 1, 1) forwards !important;
+}
+
+/* Biến thể màu sắc theo loại */
+.routine-toast--success {
+  border-left: 4px solid #059669;
+}
+.routine-toast--success .routine-toast-icon-wrap {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.12);
+}
+.routine-toast--success .routine-toast-progress {
+  background: #059669;
+}
+
+.routine-toast--error {
+  border-left: 4px solid #dc2626;
+}
+.routine-toast--error .routine-toast-icon-wrap {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.12);
+}
+.routine-toast--error .routine-toast-progress {
+  background: #dc2626;
+}
+
+.routine-toast--warning {
+  border-left: 4px solid #d97706;
+}
+.routine-toast--warning .routine-toast-icon-wrap {
+  color: #d97706;
+  background: rgba(217, 119, 6, 0.12);
+}
+.routine-toast--warning .routine-toast-progress {
+  background: #d97706;
+}
+
+.routine-toast--info {
+  border-left: 4px solid #1c1917;
+}
+.routine-toast--info .routine-toast-icon-wrap {
+  color: #1c1917;
+  background: rgba(28, 25, 23, 0.08);
+}
+.routine-toast--info .routine-toast-progress {
+  background: #1c1917;
+}
+
+/* Icon Wrap */
+.routine-toast-icon-wrap {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+/* Nội dung Toast */
+.routine-toast-body {
+  flex: 1;
+  min-width: 0;
+  padding-right: 4px;
+}
+
+.routine-toast-title {
+  font-weight: 600;
+  font-size: 14.5px;
+  line-height: 1.35;
+  color: #1c1917;
+  margin-bottom: 3px;
+  letter-spacing: -0.01em;
+}
+
+.routine-toast-message {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #44403c;
+  word-break: break-word;
+}
+
+/* Nút tắt X */
+.routine-toast-close {
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  margin: -4px -6px 0 0;
+  border-radius: 6px;
+  color: #a8a29e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.routine-toast-close:hover {
+  color: #1c1917;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+/* Thanh đếm ngược tiến trình tự đóng */
+.routine-toast-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  opacity: 0.85;
+  animation: routineToastProgress linear forwards;
+  transform-origin: left center;
+}
+
+.routine-toast-progress--paused {
+  animation-play-state: paused !important;
+}
+
+@keyframes routineToastEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(24px, 0, 0) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes routineToastExit {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(16px, 0, 0) scale(0.94);
+  }
+}
+
+@keyframes routineToastProgress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+@media (max-width: 640px) {
+  .routine-toast-container {
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    width: calc(100vw - 32px);
+    max-width: none;
+  }
+  .routine-toast {
+    padding: 14px 16px;
+  }
+}

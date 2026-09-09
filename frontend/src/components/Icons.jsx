@@ -252,3 +252,24 @@ export const IconLogout = (p) => (
     <path d="M21 12H9" />
   </Base>
 );
+
+export const IconInfo = (p) => (
+  <Base {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 8h.01M12 12v4" />
+  </Base>
+);
+
+export const IconAlertCircle = (p) => (
+  <Base {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 8v4M12 16h.01" />
+  </Base>
+);
+
+export const IconChevronDown = (p) => (
+  <Base {...p}>
+    <path d="m6 9 6 6 6-6" />
+  </Base>
+);
+

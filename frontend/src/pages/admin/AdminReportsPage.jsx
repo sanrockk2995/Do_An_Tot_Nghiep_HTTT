@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { api } from '../../services/api';
 import { formatVNDText } from '../../utils/format';
 import { useAuth } from '../../context/AuthContext';
+import { useToast } from '../../context/ToastContext';
 
 /**
  * Báo cáo - Thống kê (ADMIN) — theo SRS:
@@ -18,6 +19,7 @@ const EMPTY_STATUS = {}; // type → { printedAt, printedBy }
 
 export default function AdminReportsPage() {
   const { user } = useAuth();
+  const toast = useToast();
   const [typeFilter, setTypeFilter] = useState('');
   const [from, setFrom] = useState('');
   const [to, setTo] = useState('');
@@ -89,7 +91,7 @@ export default function AdminReportsPage() {
         });
       }
     } catch (err) {
-      alert(err.response?.data?.message || err.message || 'Không tải được dữ liệu báo cáo.');
+      toast.error(err.response?.data?.message || err.message || 'Không tải được dữ liệu báo cáo.');
     } finally {
       setPreviewLoading(false);
     }
@@ -109,9 +111,9 @@ export default function AdminReportsPage() {
         ...m,
         [preview.meta.type]: { printedAt: new Date().toISOString(), printedBy: user?.fullName || user?.email || 'Quản lý' },
       }));
-      setMessage('In báo cáo thành công. File PDF đã được mở để in hoặc tải về.');
+      toast.success('In báo cáo thành công. File PDF đã được mở để in hoặc tải về.');
     } catch (err) {
-      alert(err.response?.data?.message || err.message || 'Không in được báo cáo.');
+      toast.error(err.response?.data?.message || err.message || 'Không in được báo cáo.');
     } finally {
       setPrinting(false);
     }

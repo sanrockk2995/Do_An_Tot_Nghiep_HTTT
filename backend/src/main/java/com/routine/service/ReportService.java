@@ -12,8 +12,14 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.YearMonth;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Báo cáo thống kê: doanh thu theo ngày/tháng/năm,
@@ -52,22 +58,82 @@ public class ReportService {
 
     /**
      * Doanh thu nhóm theo thời gian cho biểu đồ tăng trưởng.
-     * groupBy: day | month | year
+     * groupBy: day | month | year.
+     * Tự động bù các mốc thời gian không có phát sinh đơn để biểu đồ liền mạch.
      */
     @Transactional(readOnly = true)
     public List<ReportDtos.RevenuePoint> revenueByPeriod(LocalDateTime from, LocalDateTime to, String groupBy) {
-        String pattern = switch (groupBy != null ? groupBy : "day") {
+        String type = (groupBy != null && !groupBy.isBlank()) ? groupBy.trim().toLowerCase() : "day";
+        String pattern = switch (type) {
             case "month" -> "%Y-%m";
             case "year" -> "%Y";
             default -> "%Y-%m-%d";
         };
         List<Object[]> rows = orderRepository.sumRevenueGrouped(pattern, from, to);
-        List<ReportDtos.RevenuePoint> points = new ArrayList<>();
+        Map<String, ReportDtos.RevenuePoint> existingMap = new LinkedHashMap<>();
         for (Object[] row : rows) {
             String period = String.valueOf(row[0]);
             BigDecimal revenue = row[1] != null ? new BigDecimal(row[1].toString()) : BigDecimal.ZERO;
             long count = row[2] != null ? Long.parseLong(row[2].toString()) : 0;
-            points.add(new ReportDtos.RevenuePoint(period, revenue, count));
+            existingMap.put(period, new ReportDtos.RevenuePoint(period, revenue, count));
+        }
+
+        List<ReportDtos.RevenuePoint> points = new ArrayList<>();
+        if (from != null && to != null && !from.isAfter(to)) {
+            LocalDate startDate = from.toLocalDate();
+            LocalDate endDate = to.toLocalDate();
+            if (to.toLocalTime().equals(LocalTime.MIN) && endDate.isAfter(startDate)) {
+                endDate = endDate.minusDays(1);
+            }
+            if (endDate.isBefore(startDate)) {
+                endDate = startDate;
+            }
+
+            switch (type) {
+                case "month" -> {
+                    YearMonth startMonth = YearMonth.from(startDate);
+                    YearMonth endMonth = YearMonth.from(endDate);
+                    DateTimeFormatter ymFmt = DateTimeFormatter.ofPattern("yyyy-MM");
+                    YearMonth curr = startMonth;
+                    while (!curr.isAfter(endMonth)) {
+                        String key = curr.format(ymFmt);
+                        points.add(existingMap.getOrDefault(key, new ReportDtos.RevenuePoint(key, BigDecimal.ZERO, 0L)));
+                        curr = curr.plusMonths(1);
+                    }
+                }
+                case "year" -> {
+                    int startYear = startDate.getYear();
+                    int endYear = endDate.getYear();
+                    for (int y = startYear; y <= endYear; y++) {
+                        String key = String.valueOf(y);
+                        points.add(existingMap.getOrDefault(key, new ReportDtos.RevenuePoint(key, BigDecimal.ZERO, 0L)));
+                    }
+                }
+                default -> {
+                    DateTimeFormatter dayFmt = DateTimeFormatter.ISO_LOCAL_DATE;
+                    LocalDate curr = startDate;
+                    long daysDiff = ChronoUnit.DAYS.between(startDate, endDate);
+                    if (daysDiff <= 366) {
+                        while (!curr.isAfter(endDate)) {
+                            String key = curr.format(dayFmt);
+                            points.add(existingMap.getOrDefault(key, new ReportDtos.RevenuePoint(key, BigDecimal.ZERO, 0L)));
+                            curr = curr.plusDays(1);
+                        }
+                    } else {
+                        for (Object[] row : rows) {
+                            String period = String.valueOf(row[0]);
+                            points.add(existingMap.get(period));
+                        }
+                    }
+                }
+            }
+        } else {
+            for (Object[] row : rows) {
+                String period = String.valueOf(row[0]);
+                BigDecimal revenue = row[1] != null ? new BigDecimal(row[1].toString()) : BigDecimal.ZERO;
+                long count = row[2] != null ? Long.parseLong(row[2].toString()) : 0;
+                points.add(new ReportDtos.RevenuePoint(period, revenue, count));
+            }
         }
         return points;
     }
