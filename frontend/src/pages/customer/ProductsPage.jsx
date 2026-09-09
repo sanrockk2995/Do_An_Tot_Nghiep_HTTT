@@ -20,7 +20,13 @@ export default function ProductsPage() {
     : undefined;
 
   useEffect(() => {
-    api.get('/categories').then((res) => setCategories(res.data || [])).catch(() => {});
+    api
+      .get('/categories')
+      .then((res) => {
+        const activeList = (res.data || []).filter((c) => c.isActive !== false);
+        setCategories(activeList);
+      })
+      .catch(() => {});
   }, []);
 
   // Reset về trang 1 khi đổi danh mục / bộ lọc

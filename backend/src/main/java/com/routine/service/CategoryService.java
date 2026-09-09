@@ -21,7 +21,7 @@ public class CategoryService {
 
     @Transactional(readOnly = true)
     public List<OtherDtos.CategoryResponse> getAll() {
-        return categoryRepository.findAllByOrderByDisplayOrderAsc().stream()
+        return categoryRepository.findAllByIsActiveTrueOrderByDisplayOrderAsc().stream()
                 .map(this::toResponse)
                 .toList();
     }
