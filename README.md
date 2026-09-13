@@ -112,7 +112,7 @@ Hệ thống đã được đóng gói toàn diện với Docker và tích hợp
    ```
 
 5. **Truy cập hệ thống:**
-   - **Giao diện Website & Quản trị**: `http://<IP_SERVER>:81` (hoặc Port đã cấu hình trong `.env`)
+   - **Giao diện Website & Quản trị**: `http://<IP_SERVER>:5173` (hoặc Port đã cấu hình trong `.env`)
    - **Backend API & Swagger UI**: `http://<IP_SERVER>:8080/swagger-ui.html`
    - *Lưu ý*: Nginx frontend đã được cấu hình Reverse Proxy chuyển tiếp toàn bộ yêu cầu `/api/**` về container Backend, đồng thời hỗ trợ SPA routing và nén Gzip.
 

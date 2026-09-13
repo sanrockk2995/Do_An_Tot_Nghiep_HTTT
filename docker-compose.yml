@@ -82,7 +82,7 @@ services:
     depends_on:
       - backend
     ports:
-      - "${FRONTEND_PORT:-80}:80"
+      - "${FRONTEND_PORT:-5173}:80"
     networks:
       - routine_net
 
