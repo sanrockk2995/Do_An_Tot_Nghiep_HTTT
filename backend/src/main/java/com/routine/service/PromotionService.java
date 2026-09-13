@@ -85,9 +85,9 @@ public class PromotionService {
         promotion = promotionRepository.save(promotion);
 
         // Đồng bộ lại danh sách sản phẩm áp dụng
+        promotionProductRepository.findByPromotionId(id)
+                .forEach(pp -> promotionProductRepository.delete(pp));
         if (!Boolean.TRUE.equals(promotion.getApplyToAllProducts())) {
-            promotionProductRepository.findByPromotionId(id)
-                    .forEach(pp -> promotionProductRepository.delete(pp));
             savePromotionProducts(promotion, request.getProductIds());
         }
         return toResponse(promotion);
@@ -127,13 +127,17 @@ public class PromotionService {
                     p.getCode(), BigDecimal.ZERO);
         }
         // Kiểm tra mã chỉ áp cho một số sản phẩm nhất định
-        if (!Boolean.TRUE.equals(p.getApplyToAllProducts()) && productIds != null && !productIds.isEmpty()) {
+        if (!Boolean.TRUE.equals(p.getApplyToAllProducts())) {
+            if (productIds == null || productIds.isEmpty()) {
+                return new ProductDtos.PromotionApplyResult(false,
+                        "Mã chỉ áp dụng cho một số sản phẩm cụ thể trong đơn hàng", p.getCode(), BigDecimal.ZERO);
+            }
             List<Long> allowed = promotionProductRepository.findByPromotionId(p.getId()).stream()
                     .map(PromotionProduct::getProduct).map(prod -> prod.getId()).toList();
             boolean anyMatch = productIds.stream().anyMatch(allowed::contains);
             if (!anyMatch) {
                 return new ProductDtos.PromotionApplyResult(false,
-                        "Mã chỉ áp dụng cho một số sản phẩm cụ thể", p.getCode(), BigDecimal.ZERO);
+                        "Mã chỉ áp dụng cho một số sản phẩm cụ thể trong đơn hàng", p.getCode(), BigDecimal.ZERO);
             }
         }
 
@@ -194,6 +198,10 @@ public class PromotionService {
         }
         if (r.getStartDate() == null || r.getEndDate() == null || !r.getEndDate().isAfter(r.getStartDate())) {
             throw new BadRequestException("Ngày kết thúc phải sau ngày bắt đầu");
+        }
+        if (Boolean.FALSE.equals(r.getApplyToAllProducts())
+                && (r.getProductIds() == null || r.getProductIds().isEmpty())) {
+            throw new BadRequestException("Vui lòng chọn ít nhất một sản phẩm khi không áp dụng cho tất cả sản phẩm");
         }
     }
 

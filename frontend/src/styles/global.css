@@ -161,7 +161,7 @@ button:focus-visible {
   margin-bottom: 6px;
   color: var(--muted-foreground);
 }
-.field input,
+.field input:not([type="checkbox"]):not([type="radio"]),
 .field select,
 .field textarea {
   width: 100%;
@@ -173,9 +173,18 @@ button:focus-visible {
   color: var(--foreground);
   transition: border-color 150ms ease, box-shadow 150ms ease;
 }
-.field input::placeholder,
+.field input[type="radio"],
+.field input[type="checkbox"] {
+  width: auto;
+  min-height: auto;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--accent);
+}
+.field input:not([type="checkbox"]):not([type="radio"])::placeholder,
 .field textarea::placeholder { color: #a8a29e; }
-.field input:focus,
+.field input:not([type="checkbox"]):not([type="radio"]):focus,
 .field select:focus,
 .field textarea:focus {
   outline: none;

@@ -85,9 +85,11 @@ export default function CartPage() {
     setMessage('');
     if (!promoCode.trim()) return;
     try {
+      const pIds = cart.map((it) => it.productId).filter(Boolean);
       const res = await api.post('/promotions/apply', {
         code: promoCode.trim(),
         orderAmount: subtotal,
+        productIds: pIds,
       });
       if (!res.data.valid) {
         setAppliedPromo(null);

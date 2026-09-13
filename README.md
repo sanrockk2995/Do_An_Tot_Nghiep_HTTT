@@ -63,7 +63,61 @@ Mở **http://localhost:5173**. Vite đã cấu hình proxy `/api` → `http://l
 
 Build production: `npm run build` (kết quả ở `frontend/dist/`).
 
-## 5. Tài khoản mẫu (mật khẩu chung: `123456`)
+## 5. Triển khai bằng Docker & Docker Compose (Server Production)
+
+Hệ thống đã được đóng gói toàn diện với Docker cho cả 3 thành phần: **MySQL 8.0**, **Backend Spring Boot 3** và **Frontend React/Nginx**.
+
+### 5.1. Yêu cầu trên Server
+- Docker Engine (v24+)
+- Docker Compose (v2+)
+
+### 5.2. Các bước triển khai
+
+1. **Clone repository về server:**
+   ```bash
+   git clone https://github.com/sanrockk2995/Do_An_Tot_Nghiep_HTTT.git
+   cd Do_An_Tot_Nghiep_HTTT
+   ```
+
+2. **Cấu hình biến môi trường:**
+   ```bash
+   cp .env.example .env
+   # Điều chỉnh mật khẩu DB, JWT secret và các port nếu cần
+   nano .env
+   ```
+
+3. **Build và khởi chạy toàn bộ dịch vụ ngầm:**
+   ```bash
+   docker compose up -d --build
+   ```
+
+4. **Kiểm tra trạng thái container và logs:**
+   ```bash
+   # Xem trạng thái các container (cả 3 service phải có status Up / healthy)
+   docker compose ps
+
+   # Theo dõi log thời gian thực
+   docker compose logs -f backend
+   ```
+
+5. **Truy cập hệ thống:**
+   - **Giao diện Website & Quản trị**: `http://<IP_SERVER>` (Port 80)
+   - **Backend API & Swagger UI**: `http://<IP_SERVER>:8080/swagger-ui.html`
+   - *Lưu ý*: Nginx frontend đã được cấu hình Reverse Proxy chuyển tiếp toàn bộ yêu cầu `/api/**` về container Backend, đồng thời hỗ trợ SPA routing và nén Gzip.
+
+6. **Cập nhật phiên bản mới khi có code mới:**
+   ```bash
+   git pull origin main
+   docker compose up -d --build
+   ```
+
+7. **Dừng hệ thống:**
+   ```bash
+   docker compose down
+   # Nếu muốn xoá cả dữ liệu database: docker compose down -v
+   ```
+
+## 6. Tài khoản mẫu (mật khẩu chung: `123456`)
 
 ### Nhân viên — đăng nhập tại `/staff-login` (phải chọn đúng vai trò)
 
@@ -86,7 +140,7 @@ Build production: `npm run build` (kết quả ở `frontend/dist/`).
 - `SALE10` — giảm 10% (tối đa 100.000₫)
 - `GIAM50K` — giảm cố định 50.000₫ cho đơn từ 500.000₫
 
-## 6. Chức năng chính theo vai trò
+## 7. Chức năng chính theo vai trò
 
 | Nhóm | Chức năng |
 |---|---|

@@ -317,7 +317,12 @@ export default function PosPage() {
   async function handleApplyPromo() {
     if (!promoCode.trim()) return;
     try {
-      const res = await api.post('/promotions/apply', { code: promoCode.trim(), orderAmount: subtotal });
+      const pIds = cartItems.map((it) => it.productId).filter(Boolean);
+      const res = await api.post('/promotions/apply', {
+        code: promoCode.trim(),
+        orderAmount: subtotal,
+        productIds: pIds,
+      });
       if (!res.data.valid) {
         setAppliedPromo(null);
         setDiscount(0);
