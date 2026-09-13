@@ -36,9 +36,11 @@ services:
 
   # ==============================================================================
   # Backend Service: Spring Boot 3 + Java 17
+  # Image được build tự động và lưu trên GitHub Packages (ghcr.io)
   # Kết nối tới MySQL qua biến DB_HOST (mặc định 10.216.1.218)
   # ==============================================================================
   backend:
+    image: ghcr.io/sanrockk2995/routine-backend:latest
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -68,8 +70,10 @@ services:
 
   # ==============================================================================
   # Frontend Service: ReactJS + Nginx Alpine (Reverse Proxy /api/ -> Backend)
+  # Image được build tự động và lưu trên GitHub Packages (ghcr.io)
   # ==============================================================================
   frontend:
+    image: ghcr.io/sanrockk2995/routine-frontend:latest
     build:
       context: ./frontend
       dockerfile: Dockerfile

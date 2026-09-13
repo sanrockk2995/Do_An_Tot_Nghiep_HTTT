@@ -65,7 +65,10 @@ Build production: `npm run build` (kết quả ở `frontend/dist/`).
 
 ## 5. Triển khai bằng Docker & Docker Compose (Server Production)
 
-Hệ thống đã được đóng gói toàn diện với Docker cho cả 3 thành phần: **MySQL 8.0**, **Backend Spring Boot 3** và **Frontend React/Nginx**.
+Hệ thống đã được đóng gói toàn diện với Docker và tích hợp **GitHub Actions CI/CD** tự động build và xuất bản Docker Images lên **GitHub Packages (GHCR - GitHub Container Registry)**:
+- **Backend Image**: `ghcr.io/sanrockk2995/routine-backend:latest`
+- **Frontend Image**: `ghcr.io/sanrockk2995/routine-frontend:latest`
+- **Database**: Mặc định kết nối trực tiếp MySQL Server tại `10.216.1.218:3306` (hoặc kích hoạt MySQL cục bộ qua profile `local-db`).
 
 ### 5.1. Yêu cầu trên Server
 - Docker Engine (v24+)
@@ -82,39 +85,56 @@ Hệ thống đã được đóng gói toàn diện với Docker cho cả 3 thà
 2. **Cấu hình biến môi trường:**
    ```bash
    cp .env.example .env
-   # Điều chỉnh mật khẩu DB, JWT secret và các port nếu cần
+   # Điều chỉnh thông tin nếu cần (mặc định đã kết nối 10.216.1.218)
    nano .env
    ```
 
-3. **Build và khởi chạy toàn bộ dịch vụ ngầm:**
-   ```bash
-   docker compose up -d --build
-   ```
+3. **Khởi chạy hệ thống:**
+   - **Cách 1: Kéo trực tiếp Image đã build sẵn từ GitHub Packages (Nhanh nhất, không tốn RAM build trên server):**
+     ```bash
+     # Đăng nhập GHCR (nếu repo private):
+     # echo $CR_PAT | docker login ghcr.io -u sanrockk2995 --password-stdin
+     docker compose pull
+     docker compose up -d
+     ```
+   - **Cách 2: Tự build image trực tiếp từ mã nguồn trên server:**
+     ```bash
+     docker compose up -d --build
+     ```
 
 4. **Kiểm tra trạng thái container và logs:**
    ```bash
-   # Xem trạng thái các container (cả 3 service phải có status Up / healthy)
+   # Xem trạng thái các container (backend và frontend có status Up / healthy)
    docker compose ps
 
-   # Theo dõi log thời gian thực
+   # Theo dõi log thời gian thực backend
    docker compose logs -f backend
    ```
 
 5. **Truy cập hệ thống:**
-   - **Giao diện Website & Quản trị**: `http://<IP_SERVER>` (Port 80)
+   - **Giao diện Website & Quản trị**: `http://<IP_SERVER>:81` (hoặc Port đã cấu hình trong `.env`)
    - **Backend API & Swagger UI**: `http://<IP_SERVER>:8080/swagger-ui.html`
    - *Lưu ý*: Nginx frontend đã được cấu hình Reverse Proxy chuyển tiếp toàn bộ yêu cầu `/api/**` về container Backend, đồng thời hỗ trợ SPA routing và nén Gzip.
 
 6. **Cập nhật phiên bản mới khi có code mới:**
    ```bash
    git pull origin main
-   docker compose up -d --build
+   docker compose pull
+   docker compose up -d
    ```
 
-7. **Dừng hệ thống:**
+7. **Dọn dẹp build cũ của riêng dự án (không ảnh hưởng Docker khác):**
+   ```bash
+   # Dừng container và chỉ xóa image của riêng dự án này
+   docker compose down --rmi local
+
+   # Xây dựng lại mới hoàn toàn (nếu cần)
+   docker compose up -d --build --no-cache
+   ```
+
+8. **Dừng hệ thống:**
    ```bash
    docker compose down
-   # Nếu muốn xoá cả dữ liệu database: docker compose down -v
    ```
 
 ## 6. Tài khoản mẫu (mật khẩu chung: `123456`)
