@@ -207,19 +207,14 @@ public class OrderService {
     }
 
     @Transactional(readOnly = true)
-    public Page<OrderDtos.OrderResponse> list(String status, String channel, Long customerId,
+    public Page<OrderDtos.OrderResponse> list(String q, String status, String channel, Long customerId,
                                               int page, int size) {
         Pageable pageable = PageRequest.of(page, size);
-        Page<Order> orders;
-        if (customerId != null) {
-            orders = orderRepository.findByCustomerIdOrderByCreatedAtDesc(customerId, pageable);
-        } else if (status != null) {
-            orders = orderRepository.findByStatusOrderByCreatedAtDesc(status, pageable);
-        } else if (channel != null) {
-            orders = orderRepository.findByChannelOrderByCreatedAtDesc(channel, pageable);
-        } else {
-            orders = orderRepository.findAllByOrderByCreatedAtDesc(pageable);
-        }
+        String pattern = (q != null && !q.isBlank()) ? "%" + q.trim().toLowerCase() + "%" : null;
+        String statusFilter = (status != null && !status.isBlank()) ? status.trim() : null;
+        String channelFilter = (channel != null && !channel.isBlank()) ? channel.trim() : null;
+
+        Page<Order> orders = orderRepository.searchOrders(pattern, statusFilter, channelFilter, customerId, pageable);
         return orders.map(this::toResponse);
     }
 
