@@ -35,17 +35,18 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.CREATED).body(orderService.create(request));
     }
 
-    /** Danh sách đơn — lọc theo trạng thái/kênh; cho mọi nhân viên đăng nhập. */
+    /** Danh sách đơn — tìm kiếm theo từ khóa q, lọc theo trạng thái/kênh; cho mọi nhân viên đăng nhập. */
     @GetMapping
     @PreAuthorize("hasAnyRole('ADMIN', 'SALES_STAFF', 'ACCOUNTANT', 'WAREHOUSE_STAFF')")
     public ResponseEntity<PageResponse<OrderDtos.OrderResponse>> list(
+            @RequestParam(required = false) String q,
             @RequestParam(required = false) String status,
             @RequestParam(required = false) String channel,
             @RequestParam(required = false) Long customerId,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "10") int size) {
         return ResponseEntity.ok(PageResponse.from(
-                orderService.list(status, channel, customerId, page, size)));
+                orderService.list(q, status, channel, customerId, page, size)));
     }
 
     /** Khách hàng xem danh sách đơn hàng của chính mình. */
