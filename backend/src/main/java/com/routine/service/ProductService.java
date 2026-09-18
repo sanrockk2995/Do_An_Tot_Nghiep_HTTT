@@ -26,10 +26,25 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Pattern;
 
 @Service
 @RequiredArgsConstructor
 public class ProductService {
+
+    private static final Pattern SQL_INJECTION_PATTERN = Pattern.compile(
+            "('|\"|;|--|/\\*|\\*/|\\\\|\\b(union|select|insert|update|delete|drop|alter|truncate|exec|xp_)\\b|\\b(or|and)\\s+['\"]?\\d+['\"]?\\s*=\\s*['\"]?\\d+)",
+            Pattern.CASE_INSENSITIVE
+    );
+
+    private static final Pattern XSS_PATTERN = Pattern.compile(
+            "(<[^>]*>|javascript:|on\\w+\\s*=)",
+            Pattern.CASE_INSENSITIVE
+    );
+
+    private static final Pattern VALID_SEARCH_CHARS = Pattern.compile(
+            "^[\\p{L}\\p{N}\\s._\\-+#/,]+$"
+    );
 
     private final ProductRepository productRepository;
     private final ProductVariantRepository variantRepository;
@@ -83,8 +98,23 @@ public class ProductService {
         return products.map(this::toResponse);
     }
 
+    public void validateSearchQuery(String q) {
+        if (q == null || q.isBlank()) return;
+        String trimmed = q.trim();
+        if (trimmed.length() > 100) {
+            throw new BadRequestException("Thông tin tìm kiếm không hợp lệ (độ dài tối đa 100 ký tự). Hệ thống yêu cầu người dùng nhập lại đúng thông tin.");
+        }
+        if (SQL_INJECTION_PATTERN.matcher(trimmed).find() || XSS_PATTERN.matcher(trimmed).find()) {
+            throw new BadRequestException("Thông tin nhập vào không hợp lệ (chứa ký tự đặc biệt hoặc mã độc SQL). Hệ thống yêu cầu người dùng nhập lại đúng thông tin.");
+        }
+        if (!VALID_SEARCH_CHARS.matcher(trimmed).matches()) {
+            throw new BadRequestException("Thông tin nhập vào không hợp lệ (sai định dạng hoặc chứa ký tự đặc biệt). Hệ thống yêu cầu người dùng nhập lại đúng thông tin.");
+        }
+    }
+
     @Transactional(readOnly = true)
     public Page<ProductDtos.ProductResponse> search(String q, int page, int size) {
+        validateSearchQuery(q);
         return productRepository.search(q, PageRequest.of(page, size))
                 .map(this::toResponse);
     }
@@ -120,6 +150,7 @@ public class ProductService {
     /** Danh sách cho trang quản trị: bao gồm cả sản phẩm INACTIVE, hỗ trợ tìm theo tên/mã/sku. */
     @Transactional(readOnly = true)
     public Page<ProductDtos.ProductResponse> listAdmin(String q, String status, Long categoryId, int page, int size) {
+        validateSearchQuery(q);
         Pageable pageable = PageRequest.of(page, size, Sort.by(Sort.Direction.DESC, "createdAt"));
         final String statusFilter = (status == null || status.isBlank()) ? null : status;
         final String qFilter = (q == null || q.isBlank()) ? null : q.trim();

@@ -228,12 +228,19 @@ table.data-table {
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
 }
+/* Border-bottom của từng dòng đặt trên container của cả row (tr), không đặt riêng trên từng td */
+.data-table tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+.data-table tbody tr:last-child {
+  border-bottom: none;
+}
 .data-table td {
   padding: 13px 16px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
   font-size: 14px;
+  vertical-align: middle;
 }
-.data-table tbody tr:last-child td { border-bottom: none; }
 .data-table tr:hover td { background: #fafaf9; }
 
 /* Badge trạng thái */
@@ -2100,4 +2107,335 @@ table.data-table {
   .routine-toast {
     padding: 14px 16px;
   }
+}
+
+/* ============================================================
+   POS Promotion List & Applied Status Styles (Routine POS)
+   Theo đúng Activity Diagram: Áp dụng khuyến mại
+   ============================================================ */
+
+/* Dòng tiêu đề Mã giảm giá trên POS */
+.pos-promo-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.pos-promo-link-btn {
+  font-size: 13px;
+  padding: 2px 8px;
+  color: var(--primary, #1c1917);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: opacity 150ms ease;
+}
+.pos-promo-link-btn:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Thẻ kết quả sau khi áp dụng mã giảm giá thành công */
+.pos-applied-promo-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  margin-top: 10px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--radius, 8px);
+  animation: modal-in 150ms ease;
+}
+
+.pos-applied-promo-card .promo-applied-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.pos-applied-promo-card .promo-applied-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #15803d;
+  flex-shrink: 0;
+}
+
+.pos-applied-promo-card .promo-applied-details {
+  min-width: 0;
+  flex: 1;
+}
+
+.pos-applied-promo-card .promo-applied-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.pos-applied-promo-card .promo-applied-code {
+  font-family: var(--font-mono, monospace);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #166534;
+}
+
+.pos-applied-promo-card .promo-applied-discount {
+  font-size: 12.5px;
+  color: #15803d;
+}
+
+.pos-applied-promo-card .promo-applied-discount strong {
+  font-weight: 700;
+}
+
+.pos-applied-promo-card .promo-applied-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* Modal danh sách chương trình khuyến mại */
+.pos-promo-modal {
+  max-width: 680px;
+  width: 100%;
+}
+
+.pos-promo-order-summary-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: #f5f5f4;
+  border-radius: var(--radius, 8px);
+  margin-bottom: 16px;
+  font-size: 13.5px;
+}
+
+.pos-promo-order-summary-box .order-stat {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pos-promo-filter-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.pos-promo-filter-bar .pos-promo-search-input {
+  flex: 1;
+  min-width: 220px;
+}
+
+.pos-promo-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--border, #e7e5e4);
+  padding-bottom: 8px;
+}
+
+.pos-promo-tab-btn {
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted-foreground, #78716c);
+  cursor: pointer;
+  transition: all 150ms ease;
+}
+
+.pos-promo-tab-btn:hover {
+  background: #f5f5f4;
+  color: var(--foreground, #1c1917);
+}
+
+.pos-promo-tab-btn.active {
+  background: #1c1917;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pos-promo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 440px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Thẻ bài khuyến mại (Promotion Card) */
+.pos-promo-card-item {
+  border: 1px solid var(--border, #e7e5e4);
+  border-radius: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+  position: relative;
+}
+
+.pos-promo-card-item:hover {
+  border-color: #a8a29e;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pos-promo-card-item.is-applied {
+  border-color: #86efac;
+  background: #fcfdfc;
+  box-shadow: 0 0 0 1px #86efac;
+}
+
+.pos-promo-card-item.is-ineligible {
+  background: #fafaf9;
+}
+
+.pos-promo-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.pos-promo-card-left {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  flex: 1;
+  min-width: 0;
+}
+
+.pos-promo-discount-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 68px;
+  height: 60px;
+  border-radius: 8px;
+  background: #1c1917;
+  color: #fff;
+  padding: 6px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.pos-promo-discount-badge .badge-val {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.pos-promo-discount-badge .badge-unit {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.85;
+}
+
+.pos-promo-card-main {
+  min-width: 0;
+  flex: 1;
+}
+
+.pos-promo-code-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.pos-promo-code-text {
+  font-family: var(--font-mono, monospace);
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--primary, #1c1917);
+  background: #f5f5f4;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: 1px dashed #d6d3d1;
+}
+
+.pos-promo-name-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--foreground, #1c1917);
+  margin-bottom: 4px;
+}
+
+.pos-promo-desc {
+  font-size: 12.5px;
+  color: var(--muted-foreground, #78716c);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.pos-promo-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 12px;
+  color: var(--muted-foreground, #78716c);
+  padding-top: 8px;
+  border-top: 1px solid #f5f5f4;
+}
+
+.pos-promo-card-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pos-promo-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 6px;
+}
+
+.pos-promo-eligibility-status {
+  font-size: 12.5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pos-promo-eligibility-status.eligible {
+  color: #15803d;
+  font-weight: 500;
+}
+
+.pos-promo-eligibility-status.ineligible {
+  color: #b45309;
+}
+
+.pos-promo-empty {
+  text-align: center;
+  padding: 48px 16px;
+  color: var(--muted-foreground, #78716c);
 }

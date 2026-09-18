@@ -30,3 +30,5 @@ tools/.m2/
 # Postman local workspace cache
 .postman/
 postman/
+
+data/

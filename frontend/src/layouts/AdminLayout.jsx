@@ -26,7 +26,7 @@ const MENU = {
   ],
   SALES_STAFF: [
     { to: '/pos', label: 'Bán hàng tại quầy', icon: IconReceipt, end: true },
-    { to: '/pos/products', label: 'Sản phẩm', icon: IconDress },
+    { to: '/pos/products', label: 'Truy vấn sản phẩm', icon: IconDress },
     { to: '/pos/customers', label: 'Khách hàng', icon: IconUsers },
     { to: '/pos/promotions', label: 'Khuyến mãi', icon: IconGift },
     { to: '/pos/online-orders', label: 'Đơn hàng online', icon: IconBox },

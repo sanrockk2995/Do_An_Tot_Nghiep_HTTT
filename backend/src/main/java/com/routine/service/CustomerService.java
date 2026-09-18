@@ -14,19 +14,55 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.regex.Pattern;
 
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
 
+    private static final Pattern SQL_INJECTION_PATTERN = Pattern.compile(
+            "('|\"|;|--|/\\*|\\*/|\\\\|\\b(union|select|insert|update|delete|drop|alter|truncate|exec|xp_)\\b|\\b(or|and)\\s+['\"]?\\d+['\"]?\\s*=\\s*['\"]?\\d+)",
+            Pattern.CASE_INSENSITIVE
+    );
+
+    private static final Pattern XSS_PATTERN = Pattern.compile(
+            "(<[^>]*>|javascript:|on\\w+\\s*=)",
+            Pattern.CASE_INSENSITIVE
+    );
+
+    private static final Pattern VALID_SEARCH_CHARS = Pattern.compile(
+            "^[\\p{L}\\p{N}\\s@._\\-+/,]+$"
+    );
+
     private final CustomerRepository customerRepository;
+
+    public void validateSearchQuery(String q) {
+        if (q == null || q.isBlank()) return;
+        String trimmed = q.trim();
+        if (trimmed.length() > 100) {
+            throw new BadRequestException("Thông tin tìm kiếm không hợp lệ (độ dài tối đa 100 ký tự). Hệ thống yêu cầu người dùng nhập lại đúng thông tin.");
+        }
+        if (SQL_INJECTION_PATTERN.matcher(trimmed).find() || XSS_PATTERN.matcher(trimmed).find()) {
+            throw new BadRequestException("Thông tin nhập vào không hợp lệ (chứa ký tự đặc biệt hoặc mã độc SQL). Hệ thống yêu cầu người dùng nhập lại đúng thông tin.");
+        }
+        if (!VALID_SEARCH_CHARS.matcher(trimmed).matches()) {
+            throw new BadRequestException("Thông tin nhập vào không hợp lệ (sai định dạng hoặc chứa ký tự đặc biệt). Hệ thống yêu cầu người dùng nhập lại đúng thông tin.");
+        }
+        if (trimmed.contains("@")) {
+            long atCount = trimmed.chars().filter(ch -> ch == '@').count();
+            if (atCount > 1 || trimmed.startsWith("@") || trimmed.contains(" ")) {
+                throw new BadRequestException("Thông tin nhập vào không hợp lệ (sai định dạng email). Hệ thống yêu cầu người dùng nhập lại đúng thông tin.");
+            }
+        }
+    }
 
     @Transactional(readOnly = true)
     public Page<CustomerDtos.CustomerResponse> search(String q, int page, int size) {
+        validateSearchQuery(q);
         Pageable pageable = PageRequest.of(page, size);
         Page<Customer> customers = (q == null || q.isBlank())
                 ? customerRepository.findAll(pageable)
-                : customerRepository.search(q, pageable);
+                : customerRepository.search(q.trim(), pageable);
         return customers.map(this::toResponse);
     }
 
