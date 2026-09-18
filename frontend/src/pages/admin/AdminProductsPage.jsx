@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useState } from 'react';
 import { api, getErrorMessage } from '../../services/api';
 import { formatVNDText } from '../../utils/format';
-import { IconX, IconAlertCircle, IconCheckCircle } from '../../components/Icons';
+import { IconX, IconAlertCircle, IconCheckCircle, IconSearch } from '../../components/Icons';
 import { useToast } from '../../context/ToastContext';
+import { validateProductSearch } from '../../utils/validators';
 
 /**
  * Quản lý sản phẩm: bảng + tìm kiếm + thêm/sửa (form modal) + xoá mềm.
  * Dùng chung cho ADMIN / SALES_STAFF / WAREHOUSE_STAFF qua props salesMode/warehouseMode.
- * - salesMode: Thu ngân/bán hàng tra cứu giá, tồn kho biến thể, xem chi tiết (chỉ đọc).
+ * - salesMode: Thu ngân/bán hàng "Truy vấn sản phẩm" theo tên, mã sản phẩm hoặc danh mục.
  * - warehouseMode: Nhân viên kho kiểm tra tồn kho (chỉ đọc).
  * - ADMIN: Quản lý đầy đủ (thêm, sửa, ngừng kinh doanh).
  */
@@ -16,9 +17,13 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
   const isReadOnly = salesMode || warehouseMode;
 
   const [items, setItems] = useState([]);
-  const [q, setQ] = useState('');
-  const [debouncedQ, setDebouncedQ] = useState('');
-  const [status, setStatus] = useState('');
+  const [searchInput, setSearchInput] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedStatus, setSelectedStatus] = useState('');
+  const [activeFilter, setActiveFilter] = useState({ q: '', categoryId: '', status: '' });
+  const [searched, setSearched] = useState(false);
+  const [searchError, setSearchError] = useState('');
+
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -33,14 +38,6 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
     api.get('/categories').then((res) => setCategories(res.data || [])).catch(() => {});
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setDebouncedQ(q.trim());
-      setPage(0);
-    }, 250);
-    return () => clearTimeout(timer);
-  }, [q]);
-
   const load = useCallback(() => {
     let alive = true;
     setLoading(true);
@@ -48,8 +45,9 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
     api
       .get('/admin/products', {
         params: {
-          q: debouncedQ || undefined,
-          status: status || undefined,
+          q: activeFilter.q || undefined,
+          categoryId: activeFilter.categoryId ? Number(activeFilter.categoryId) : undefined,
+          status: activeFilter.status || undefined,
           page,
           size: 10,
         },
@@ -69,11 +67,57 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
         if (alive) setLoading(false);
       });
     return () => { alive = false; };
-  }, [debouncedQ, status, page]);
+  }, [activeFilter, page]);
 
   useEffect(() => {
     load();
   }, [load]);
+
+  /**
+   * Xử lý tìm kiếm sản phẩm theo Đặc tả Use Case:
+   * - Tiêu chí: tên sản phẩm, mã sản phẩm hoặc danh mục
+   * - Luồng phụ 2: Bỏ trống trường tìm kiếm -> "Hệ thống yêu cầu nhập ít nhất một tiêu chí"
+   * - Kiểm soát đầu vào 2 lớp: SQLi, XSS, ký tự đặc biệt, độ dài tối đa 100
+   */
+  function handleSearch(e) {
+    if (e) e.preventDefault();
+    setSearchError('');
+
+    const trimmed = searchInput.trim();
+
+    // Luồng phụ 2: Người dùng bỏ trống trường tìm kiếm (không nhập tên/mã và không chọn danh mục)
+    if (!trimmed && !selectedCategory) {
+      setSearchError('Hệ thống yêu cầu nhập ít nhất một tiêu chí');
+      return;
+    }
+
+    // Kiểm tra tính hợp lệ của dữ liệu đầu vào (Luồng phụ bảo mật)
+    if (trimmed) {
+      const validation = validateProductSearch(trimmed);
+      if (!validation.valid) {
+        setSearchError(validation.error);
+        return;
+      }
+    }
+
+    setPage(0);
+    setActiveFilter({
+      q: trimmed,
+      categoryId: selectedCategory,
+      status: selectedStatus,
+    });
+    setSearched(true);
+  }
+
+  function handleClearSearch() {
+    setSearchInput('');
+    setSelectedCategory('');
+    setSelectedStatus('');
+    setActiveFilter({ q: '', categoryId: '', status: '' });
+    setSearched(false);
+    setSearchError('');
+    setPage(0);
+  }
 
   async function handleDelete(id) {
     if (!window.confirm('Chuyển sản phẩm này sang ngừng kinh doanh?')) return;
@@ -172,13 +216,13 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
   const pageTitle = warehouseMode
     ? 'Tồn kho sản phẩm'
     : salesMode
-      ? 'Tra cứu sản phẩm'
+      ? 'Truy vấn sản phẩm'
       : 'Quản lý sản phẩm';
 
   const pageSubtitle = warehouseMode
     ? 'Theo dõi số lượng tồn kho tổng và chi tiết từng biến thể kích thước/màu sắc.'
     : salesMode
-      ? 'Tra cứu giá bán, kích thước, màu sắc và tồn kho thực tế phục vụ tư vấn khách hàng.'
+      ? 'Tra cứu sản phẩm theo tên, mã sản phẩm hoặc danh mục phục vụ tư vấn bán hàng.'
       : 'Thêm mới, sửa đổi thông tin, thiết lập giá và quản lý danh mục sản phẩm.';
 
   return (
@@ -194,19 +238,97 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
       </header>
 
       <section className="admin-toolbar">
-        <input
-          type="search"
-          value={q}
-          onChange={(e) => { setQ(e.target.value); setPage(0); }}
-          placeholder="Tìm theo tên hoặc mã SP..."
-          aria-label="Tìm kiếm sản phẩm"
-        />
-        <select value={status} onChange={(e) => { setStatus(e.target.value); setPage(0); }}>
-          <option value="">Tất cả trạng thái</option>
-          <option value="ACTIVE">Đang bán</option>
-          <option value="INACTIVE">Ngừng bán</option>
-        </select>
+        <form
+          onSubmit={handleSearch}
+          noValidate
+          style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center', width: '100%' }}
+        >
+          <div style={{ flex: '1 1 240px', minWidth: 200 }}>
+            <input
+              type="search"
+              value={searchInput}
+              onChange={(e) => {
+                setSearchInput(e.target.value);
+                if (searchError) setSearchError('');
+              }}
+              placeholder="Tìm theo tên hoặc mã sản phẩm..."
+              aria-label="Tìm kiếm sản phẩm"
+              style={{ width: '100%' }}
+            />
+          </div>
+
+          <div style={{ minWidth: 160 }}>
+            <select
+              value={selectedCategory}
+              onChange={(e) => {
+                setSelectedCategory(e.target.value);
+                if (searchError) setSearchError('');
+              }}
+              aria-label="Chọn danh mục sản phẩm"
+              style={{ width: '100%' }}
+            >
+              <option value="">Tất cả danh mục</option>
+              {categories.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.name}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <div style={{ minWidth: 150 }}>
+            <select
+              value={selectedStatus}
+              onChange={(e) => setSelectedStatus(e.target.value)}
+              aria-label="Trạng thái kinh doanh"
+              style={{ width: '100%' }}
+            >
+              <option value="">Tất cả trạng thái</option>
+              <option value="ACTIVE">Đang bán</option>
+              <option value="INACTIVE">Ngừng bán</option>
+            </select>
+          </div>
+
+          <button type="submit" className="btn btn-primary" style={{ minHeight: 40, padding: '0 18px' }}>
+            <IconSearch size={16} style={{ marginRight: 6 }} /> Tìm kiếm
+          </button>
+
+          {(searched || searchInput || selectedCategory || selectedStatus || searchError) && (
+            <button
+              type="button"
+              className="btn btn-outline"
+              onClick={handleClearSearch}
+              style={{ minHeight: 40, padding: '0 14px' }}
+            >
+              Xóa tìm kiếm
+            </button>
+          )}
+        </form>
       </section>
+
+      {/* Luồng phụ 2 hoặc lỗi kiểm tra đầu vào */}
+      {searchError && (
+        <div className="alert alert-error" role="alert" style={{ marginBottom: 16 }}>
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">{searchError}</span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setSearchError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
+
+      {/* Luồng phụ 1: Không tìm thấy sản phẩm phù hợp */}
+      {!searchError && searched && !loading && items.length === 0 && (
+        <div className="alert alert-warning" role="alert" style={{ marginBottom: 16 }}>
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">Không tìm thấy sản phẩm phù hợp</span>
+        </div>
+      )}
 
       {error && (
         <div className="alert alert-error" role="alert">
@@ -282,7 +404,11 @@ export default function AdminProductsPage({ salesMode = false, warehouseMode = f
                 </tr>
               ))}
               {items.length === 0 && (
-                <tr><td colSpan={7} className="muted-text">Không có dữ liệu sản phẩm.</td></tr>
+                <tr>
+                  <td colSpan={7} className="muted-text text-center" style={{ padding: '24px 0' }}>
+                    {searched ? 'Không tìm thấy sản phẩm phù hợp' : 'Không có dữ liệu sản phẩm.'}
+                  </td>
+                </tr>
               )}
             </tbody>
           </table>

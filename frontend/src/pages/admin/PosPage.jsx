@@ -3,7 +3,18 @@ import { api, getErrorMessage } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 import { useToast } from '../../context/ToastContext';
 import { formatVNDText, TIER_LABELS } from '../../utils/format';
-import { IconX, IconSearch, IconChevronDown, IconUsers, IconAlertCircle } from '../../components/Icons';
+import {
+  IconX,
+  IconSearch,
+  IconChevronDown,
+  IconUsers,
+  IconAlertCircle,
+  IconGift,
+  IconCheckCircle,
+  IconCopy,
+  IconInfo,
+} from '../../components/Icons';
+import { validateCustomerSearch, validateProductSearch } from '../../utils/validators';
 import { VN_PROVINCES } from '../../data/vnLocations';
 
 /**
@@ -24,6 +35,7 @@ export default function PosPage() {
 
   // Tìm kiếm & chọn khách hàng nhanh tại quầy
   const [custSearch, setCustSearch] = useState('');
+  const [custSearchError, setCustSearchError] = useState('');
   const [custDropdownOpen, setCustDropdownOpen] = useState(false);
   const [highlightCustIdx, setHighlightCustIdx] = useState(0);
   const custComboboxRef = useRef(null);
@@ -34,6 +46,7 @@ export default function PosPage() {
   );
 
   const filteredCustomers = useMemo(() => {
+    if (custSearchError) return [];
     const q = custSearch.trim().toLowerCase();
     if (!q) return customers.slice(0, 40);
     const cleanDigits = q.replace(/[\s.-]/g, '');
@@ -43,11 +56,17 @@ export default function PosPage() {
       const emailMatch = c.email && c.email.toLowerCase().includes(q);
       return nameMatch || phoneMatch || emailMatch;
     }).slice(0, 40);
-  }, [customers, custSearch]);
+  }, [customers, custSearch, custSearchError]);
 
-  // Tìm kiếm ngầm mở rộng từ API khi gõ từ khóa
+  // Tìm kiếm ngầm mở rộng từ API khi gõ từ khóa (chỉ gọi khi query hợp lệ)
   useEffect(() => {
-    if (!custSearch.trim()) return;
+    if (!custSearch.trim() || custSearchError) return;
+    const check = validateCustomerSearch(custSearch);
+    if (!check.valid) {
+      setCustSearchError(check.error);
+      return;
+    }
+
     const timer = setTimeout(() => {
       api
         .get('/customers', { params: { q: custSearch.trim(), page: 0, size: 20 } })
@@ -62,10 +81,14 @@ export default function PosPage() {
             });
           }
         })
-        .catch(() => {});
+        .catch((err) => {
+          if (err.response?.status === 400) {
+            setCustSearchError(err.response?.data?.message || 'Thông tin nhập vào không hợp lệ. Hệ thống yêu cầu người dùng nhập lại đúng thông tin.');
+          }
+        });
     }, 300);
     return () => clearTimeout(timer);
-  }, [custSearch]);
+  }, [custSearch, custSearchError]);
 
   // Đóng dropdown khi click ra ngoài
   useEffect(() => {
@@ -82,9 +105,11 @@ export default function PosPage() {
     if (!cust) {
       setCustomerId('');
       setCustSearch('');
+      setCustSearchError('');
     } else {
       setCustomerId(String(cust.id));
       setCustSearch('');
+      setCustSearchError('');
     }
     setCustDropdownOpen(false);
   }
@@ -92,6 +117,7 @@ export default function PosPage() {
   function clearCustomer() {
     setCustomerId('');
     setCustSearch('');
+    setCustSearchError('');
     setCustDropdownOpen(true);
   }
 
@@ -138,10 +164,12 @@ export default function PosPage() {
   function openAddCustomer() {
     setCustNotice('');
     const query = custSearch.trim();
-    const isPhone = /^[0-9+]+$/.test(query);
+    const val = validateCustomerSearch(query);
+    const safeQuery = val.valid ? query : '';
+    const isPhone = /^[0-9+]+$/.test(safeQuery);
     setCustForm({
-      fullName: !isPhone ? query : '',
-      phone: isPhone ? query : '',
+      fullName: !isPhone ? safeQuery : '',
+      phone: isPhone ? safeQuery : '',
       email: '',
       address: '',
       district: '',
@@ -225,20 +253,50 @@ export default function PosPage() {
   const [paymentMethod, setPaymentMethod] = useState('CASH');
   const [checkingOut, setCheckingOut] = useState(false);
 
+  const subtotal = useMemo(
+    () => cartItems.reduce((s, i) => s + (Number(i.price) || 0) * (Number(i.quantity) || 0), 0),
+    [cartItems]
+  );
+  const total = Math.max(0, subtotal - discount);
+
+  // Danh sách khuyến mại (UML Activity Diagram: Áp dụng khuyến mại)
+  const [promotions, setPromotions] = useState([]);
+  const [loadingPromos, setLoadingPromos] = useState(false);
+  const [promoModalOpen, setPromoModalOpen] = useState(false);
+  const [promoSearch, setPromoSearch] = useState('');
+  const [promoFilterTab, setPromoFilterTab] = useState('ALL'); // ALL, ELIGIBLE, INELIGIBLE
+  const [promoNotice, setPromoNotice] = useState(null); // { type, message }
+  const [applyingPromo, setApplyingPromo] = useState(false);
+
   async function loadProducts(searchText) {
+    const trimmed = (searchText || '').trim();
+    if (trimmed) {
+      const validation = validateProductSearch(trimmed);
+      if (!validation.valid) {
+        toast.error(validation.error);
+        return;
+      }
+    }
+
     setLoadingProducts(true);
     try {
       // Chỉ tải các sản phẩm đang kinh doanh (ACTIVE) để bán tại quầy
       const res = await api.get('/admin/products', {
-        params: { page: 0, size: 60, q: searchText, status: 'ACTIVE' },
+        params: { page: 0, size: 60, q: trimmed || undefined, status: 'ACTIVE' },
       });
       const activeItems = (res.data.content || []).filter((p) => !p.status || p.status === 'ACTIVE');
       setProducts(activeItems);
+      if (trimmed && activeItems.length === 0) {
+        toast.info('Không tìm thấy sản phẩm phù hợp');
+      }
     } catch {
       try {
         const res = await api.get('/products', { params: { page: 0, size: 60 } });
         const activeItems = (res.data.content || []).filter((p) => !p.status || p.status === 'ACTIVE');
         setProducts(activeItems);
+        if (trimmed && activeItems.length === 0) {
+          toast.info('Không tìm thấy sản phẩm phù hợp');
+        }
       } catch {
         setProducts([]);
       }
@@ -247,8 +305,29 @@ export default function PosPage() {
     }
   }
 
+  async function loadPromotions() {
+    setLoadingPromos(true);
+    try {
+      const res = await api.get('/promotions');
+      const now = new Date();
+      // Chỉ lấy các chương trình khuyến mại đang phát hành (ACTIVE, còn hạn, còn lượt dùng)
+      const activePromos = (res.data || []).filter((p) => {
+        if (p.status !== 'ACTIVE') return false;
+        if (p.endDate && new Date(p.endDate) < now) return false;
+        if (p.usageLimit != null && (p.usageCount || 0) >= p.usageLimit) return false;
+        return true;
+      });
+      setPromotions(activePromos);
+    } catch (err) {
+      console.error('Không thể tải danh sách khuyến mại:', err);
+    } finally {
+      setLoadingPromos(false);
+    }
+  }
+
   useEffect(() => {
     loadProducts('');
+    loadPromotions();
     api
       .get('/customers', { params: { page: 0, size: 100 } })
       .then((res) => setCustomers(res.data.content || []))
@@ -314,30 +393,170 @@ export default function PosPage() {
     setCartItems((prev) => prev.filter((_, i) => i !== idx));
   }
 
-  async function handleApplyPromo() {
-    if (!promoCode.trim()) return;
+  /**
+   * Quy trình "Áp dụng khuyến mại" theo đúng chuẩn UML Activity Diagram:
+   * 1. Nhân viên bán hàng / Quản lý: Chọn chương trình khuyến mại hoặc nhập mã.
+   * 2. Hệ thống: Thực hiện "Kiểm tra khả năng áp dụng" (đối chiếu orderAmount, productIds, hiệu lực).
+   * 3. Quyết định (Decision Node): Có sử dụng được không?
+   *    - [Có sử dụng được]: Áp dụng khuyến mại, tính số tiền giảm, đóng modal, "Hiển thị kết quả sau khi áp dụng" (thẻ chi tiết mã + số tiền giảm), cập nhật tổng hóa đơn.
+   *    - [Không sử dụng được]: Thông báo chuẩn xác: "Thông báo không có chương trình khuyến mại phù hợp: [lý do chi tiết]".
+   */
+  async function handleApplyCode(codeToApply) {
+    const rawCode = (codeToApply || '').trim();
+    if (!rawCode) {
+      toast.warning('Vui lòng nhập hoặc chọn mã khuyến mại.');
+      return;
+    }
+
+    if (cartItems.length === 0) {
+      const msg = 'Thông báo không có chương trình khuyến mại phù hợp: Giỏ hàng chưa có sản phẩm nào để áp dụng khuyến mại.';
+      setPromoNotice({ type: 'error', message: msg });
+      toast.error(msg);
+      return;
+    }
+
+    setApplyingPromo(true);
+    setPromoNotice(null);
     try {
       const pIds = cartItems.map((it) => it.productId).filter(Boolean);
       const res = await api.post('/promotions/apply', {
-        code: promoCode.trim(),
+        code: rawCode,
         orderAmount: subtotal,
         productIds: pIds,
       });
+
+      // Node rẽ nhánh: Có sử dụng được không?
       if (!res.data.valid) {
-        setAppliedPromo(null);
-        setDiscount(0);
-        toast.error(res.data.message || 'Mã giảm giá không hợp lệ.');
+        // [Không sử dụng được] -> Thông báo không có chương trình khuyến mại phù hợp
+        const errMsg = res.data.message || 'Mã không đủ điều kiện áp dụng cho đơn hàng hiện tại.';
+        const noticeText = `Thông báo không có chương trình khuyến mại phù hợp: ${errMsg}`;
+        setPromoNotice({ type: 'error', message: noticeText });
+        toast.error(noticeText);
         return;
       }
+
+      // [Có sử dụng được] -> Áp dụng khuyến mại, Hiển thị kết quả sau khi áp dụng
       setAppliedPromo(res.data);
       setDiscount(Number(res.data.discountAmount || 0));
+      setPromoCode(res.data.promotionCode);
+      setPromoNotice(null);
+      setPromoModalOpen(false);
       toast.success(`Áp dụng mã ${res.data.promotionCode}: giảm ${formatVNDText(res.data.discountAmount)}`);
     } catch (err) {
-      setAppliedPromo(null);
-      setDiscount(0);
-      toast.error(getErrorMessage(err, 'Mã không hợp lệ.'));
+      const errDetail = getErrorMessage(err, 'Mã không hợp lệ hoặc đã hết hiệu lực.');
+      const noticeText = `Thông báo không có chương trình khuyến mại phù hợp: ${errDetail}`;
+      setPromoNotice({ type: 'error', message: noticeText });
+      toast.error(noticeText);
+    } finally {
+      setApplyingPromo(false);
     }
   }
+
+  function handleRemovePromo() {
+    setAppliedPromo(null);
+    setDiscount(0);
+    setPromoCode('');
+    setPromoNotice(null);
+    toast.info('Đã hủy áp dụng mã khuyến mại.');
+  }
+
+  function handleOpenPromoModal() {
+    setPromoNotice(null);
+    setPromoSearch('');
+    setPromoFilterTab('ALL');
+    setPromoModalOpen(true);
+    loadPromotions();
+  }
+
+  // Tự động kiểm tra lại và đồng bộ tiền giảm giá khi giỏ hàng thay đổi
+  useEffect(() => {
+    if (!appliedPromo) return;
+    if (cartItems.length === 0) {
+      setAppliedPromo(null);
+      setDiscount(0);
+      return;
+    }
+    const pIds = cartItems.map((it) => it.productId).filter(Boolean);
+    api.post('/promotions/apply', {
+      code: appliedPromo.promotionCode,
+      orderAmount: subtotal,
+      productIds: pIds,
+    }).then((res) => {
+      if (res.data.valid) {
+        setAppliedPromo(res.data);
+        setDiscount(Number(res.data.discountAmount || 0));
+      } else {
+        setAppliedPromo(null);
+        setDiscount(0);
+        toast.warning(`Mã ${appliedPromo.promotionCode} đã bị hủy do giỏ hàng không còn thỏa mãn điều kiện: ${res.data.message}`);
+      }
+    }).catch(() => {
+      setAppliedPromo(null);
+      setDiscount(0);
+    });
+  }, [subtotal, cartItems.length]);
+
+  // Kiểm tra khả năng thỏa mãn điều kiện của từng mã khuyến mại đối với giỏ hàng
+  function checkPromoEligibility(promo) {
+    if (!promo) return { eligible: false, reason: 'Không xác định' };
+    if (cartItems.length === 0) {
+      return { eligible: false, reason: 'Giỏ hàng đang trống' };
+    }
+    const minOrder = promo.minOrderAmount != null ? Number(promo.minOrderAmount) : 0;
+    if (subtotal < minOrder) {
+      const diff = minOrder - subtotal;
+      return { eligible: false, reason: `Mua thêm ${formatVNDText(diff)} để dùng mã này` };
+    }
+    if (!promo.applyToAllProducts) {
+      const cartProductIds = cartItems.map((it) => it.productId);
+      const matched = (promo.productIds || []).some((id) => cartProductIds.includes(id));
+      if (!matched) {
+        return { eligible: false, reason: 'Mã chỉ áp dụng cho một số sản phẩm riêng biệt' };
+      }
+    }
+    return { eligible: true, reason: 'Đủ điều kiện áp dụng' };
+  }
+
+  // Dự tính số tiền giảm giá nếu chọn mã
+  function getEstimatedDiscount(promo) {
+    if (!promo || subtotal <= 0) return 0;
+    if (promo.type === 'PERCENT') {
+      let val = (subtotal * Number(promo.discountValue || 0)) / 100;
+      if (promo.maxDiscountAmount != null) {
+        val = Math.min(val, Number(promo.maxDiscountAmount));
+      }
+      return val;
+    }
+    return Math.min(subtotal, Number(promo.discountValue || 0));
+  }
+
+  const eligibleCount = useMemo(() => {
+    return promotions.filter((p) => checkPromoEligibility(p).eligible).length;
+  }, [promotions, subtotal, cartItems]);
+
+  const ineligibleCount = useMemo(() => {
+    return promotions.length - eligibleCount;
+  }, [promotions.length, eligibleCount]);
+
+  const filteredPromotions = useMemo(() => {
+    let list = promotions;
+    const term = promoSearch.trim().toLowerCase();
+    if (term) {
+      list = list.filter((p) =>
+        (p.code || '').toLowerCase().includes(term) ||
+        (p.name || '').toLowerCase().includes(term) ||
+        (p.description || '').toLowerCase().includes(term)
+      );
+    }
+
+    if (promoFilterTab === 'ELIGIBLE') {
+      list = list.filter((p) => checkPromoEligibility(p).eligible);
+    } else if (promoFilterTab === 'INELIGIBLE') {
+      list = list.filter((p) => !checkPromoEligibility(p).eligible);
+    }
+
+    return list;
+  }, [promotions, promoSearch, promoFilterTab, subtotal, cartItems]);
 
   async function handleCheckout() {
     if (cartItems.length === 0) {
@@ -379,14 +598,14 @@ export default function PosPage() {
     setCustomerId('');
     setWalkInName('');
     setCustSearch('');
+    setCustSearchError('');
     setCustDropdownOpen(false);
     setPromoCode('');
     setAppliedPromo(null);
     setDiscount(0);
+    setPromoNotice(null);
+    setPromoFilterTab('ALL');
   }
-
-  const subtotal = cartItems.reduce((s, i) => s + i.price * i.quantity, 0);
-  const total = Math.max(0, subtotal - discount);
 
   return (
     <div className="admin-page pos-page">
@@ -424,7 +643,11 @@ export default function PosPage() {
                   <span className="muted-text">{p.categoryName}</span>
                 </button>
               ))}
-              {products.length === 0 && <p className="muted-text">Không có sản phẩm.</p>}
+              {products.length === 0 && (
+                <p className="muted-text">
+                  {q.trim() ? 'Không tìm thấy sản phẩm phù hợp.' : 'Không có sản phẩm.'}
+                </p>
+              )}
             </div>
           )}
 </section>
@@ -479,7 +702,14 @@ export default function PosPage() {
                     type="search"
                     value={custSearch}
                     onChange={(e) => {
-                      setCustSearch(e.target.value);
+                      const val = e.target.value;
+                      setCustSearch(val);
+                      const validation = validateCustomerSearch(val);
+                      if (!validation.valid) {
+                        setCustSearchError(validation.error);
+                      } else {
+                        setCustSearchError('');
+                      }
                       setCustDropdownOpen(true);
                       setHighlightCustIdx(0);
                     }}
@@ -502,6 +732,24 @@ export default function PosPage() {
                   </button>
                 </div>
 
+                {custSearchError && (
+                  <div
+                    className="alert alert-error"
+                    role="alert"
+                    style={{
+                      margin: '6px 0 8px 0',
+                      padding: '8px 10px',
+                      fontSize: '12px',
+                      borderRadius: '6px',
+                      background: '#fef2f2',
+                      color: '#b91c1c',
+                      border: '1px solid #fecaca',
+                    }}
+                  >
+                    <span><strong>Lỗi nhập liệu:</strong> {custSearchError}</span>
+                  </div>
+                )}
+
                 {custDropdownOpen && (
                   <ul className="pos-customer-dropdown" role="listbox">
                     <li
@@ -515,37 +763,50 @@ export default function PosPage() {
                       <span className="badge badge-gray cust-badge">Mặc định</span>
                     </li>
 
-                    {filteredCustomers.map((c, idx) => {
-                      const itemIdx = idx + 1;
-                      return (
-                        <li
-                          key={c.id}
-                          className={`pos-customer-item ${itemIdx === highlightCustIdx ? 'active' : ''}`}
-                          onMouseDown={() => selectCustomer(c)}
-                        >
-                          <div className="cust-main">
-                            <span className="cust-name">{c.fullName}</span>
-                            <span className="cust-sub">{c.phone || c.email}</span>
-                          </div>
-                          <span className={`badge ${tierBadge(c.tier)} cust-badge`}>
-                            {TIER_LABELS[c.tier] || c.tier}
-                          </span>
-                        </li>
-                      );
-                    })}
-
-                    {filteredCustomers.length === 0 && (
-                      <li className="pos-customer-empty">
-                        <p style={{ margin: '0 0 6px 0' }}>Không tìm thấy khách hàng "{custSearch}".</p>
-                        <button
-                          type="button"
-                          className="btn btn-primary"
-                          style={{ fontSize: 12, padding: '4px 10px' }}
-                          onMouseDown={openAddCustomer}
-                        >
-                          + Tạo mới khách này
-                        </button>
+                    {custSearchError ? (
+                      <li className="pos-customer-empty" style={{ padding: '12px', color: '#b91c1c' }}>
+                        <p style={{ margin: 0, fontWeight: 600 }}>
+                          Thông tin nhập vào không hợp lệ
+                        </p>
+                        <p style={{ margin: '4px 0 0 0', fontSize: 12 }}>
+                          Hệ thống yêu cầu người dùng nhập lại đúng thông tin.
+                        </p>
                       </li>
+                    ) : (
+                      <>
+                        {filteredCustomers.map((c, idx) => {
+                          const itemIdx = idx + 1;
+                          return (
+                            <li
+                              key={c.id}
+                              className={`pos-customer-item ${itemIdx === highlightCustIdx ? 'active' : ''}`}
+                              onMouseDown={() => selectCustomer(c)}
+                            >
+                              <div className="cust-main">
+                                <span className="cust-name">{c.fullName}</span>
+                                <span className="cust-sub">{c.phone || c.email}</span>
+                              </div>
+                              <span className={`badge ${tierBadge(c.tier)} cust-badge`}>
+                                {TIER_LABELS[c.tier] || c.tier}
+                              </span>
+                            </li>
+                          );
+                        })}
+
+                        {filteredCustomers.length === 0 && (
+                          <li className="pos-customer-empty">
+                            <p style={{ margin: '0 0 6px 0', fontWeight: 500 }}>Không tìm thấy khách hàng</p>
+                            <button
+                              type="button"
+                              className="btn btn-primary"
+                              style={{ fontSize: 12, padding: '4px 10px' }}
+                              onMouseDown={openAddCustomer}
+                            >
+                              + Tạo mới khách này
+                            </button>
+                          </li>
+                        )}
+                      </>
                     )}
                   </ul>
                 )}
@@ -623,17 +884,87 @@ export default function PosPage() {
             {cartItems.length === 0 && <li className="muted-text">Chưa chọn sản phẩm.</li>}
           </ul>
 
+          {/* Khu vực Áp dụng khuyến mại (Theo Activity Diagram) */}
           <div className="field">
-            <label htmlFor="pos-promo">Mã giảm giá</label>
+            <div className="pos-promo-header-row">
+              <label htmlFor="pos-promo" style={{ marginBottom: 0 }}>Mã giảm giá</label>
+              <button
+                type="button"
+                className="pos-promo-link-btn"
+                onClick={handleOpenPromoModal}
+              >
+                <IconGift size={15} />
+                Danh sách khuyến mại
+              </button>
+            </div>
             <div className="field-inline">
               <input
                 id="pos-promo"
                 value={promoCode}
                 onChange={(e) => setPromoCode(e.target.value.toUpperCase())}
-                placeholder="SALE10"
+                onKeyDown={(e) => e.key === 'Enter' && handleApplyCode(promoCode)}
+                placeholder="Ví dụ: SALE10, CHAOHUNG..."
+                disabled={!!appliedPromo}
               />
-              <button type="button" className="btn btn-outline" onClick={handleApplyPromo}>Áp dụng</button>
+              {appliedPromo ? (
+                <button
+                  type="button"
+                  className="btn btn-outline"
+                  onClick={handleRemovePromo}
+                  title="Hủy mã khuyến mại đang áp dụng"
+                >
+                  Hủy mã
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  className="btn btn-outline"
+                  onClick={() => handleApplyCode(promoCode)}
+                  disabled={applyingPromo || !promoCode.trim()}
+                >
+                  {applyingPromo ? 'Đang kiểm tra...' : 'Áp dụng'}
+                </button>
+              )}
             </div>
+
+            {/* Hiển thị kết quả sau khi áp dụng (UML Activity Diagram) */}
+            {appliedPromo && (
+              <div className="pos-applied-promo-card">
+                <div className="promo-applied-content">
+                  <div className="promo-applied-icon">
+                    <IconCheckCircle size={18} />
+                  </div>
+                  <div className="promo-applied-details">
+                    <div className="promo-applied-head">
+                      <span className="promo-applied-code">{appliedPromo.promotionCode}</span>
+                      <span className="badge badge-success">Đang áp dụng</span>
+                    </div>
+                    <div className="promo-applied-discount">
+                      Giảm: <strong>{formatVNDText(appliedPromo.discountAmount)}</strong>
+                    </div>
+                  </div>
+                </div>
+                <div className="promo-applied-actions">
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-outline"
+                    onClick={handleOpenPromoModal}
+                    title="Đổi sang chương trình khuyến mại khác"
+                  >
+                    Đổi mã
+                  </button>
+                  <button
+                    type="button"
+                    className="btn btn-sm btn-ghost"
+                    onClick={handleRemovePromo}
+                    title="Hủy áp dụng mã này"
+                    aria-label="Hủy mã"
+                  >
+                    <IconX size={15} />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="field">
@@ -773,8 +1104,221 @@ export default function PosPage() {
           </div>
         </div>
       )}
+
+      {/* Modal: Hiển thị danh sách khuyến mại (UML Activity Diagram: Áp dụng khuyến mại) */}
+      {promoModalOpen && (
+        <div className="modal-overlay" role="dialog" aria-modal="true">
+          <div className="modal card pos-promo-modal">
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+                <IconGift size={22} style={{ color: '#b45309' }} />
+                <h2 style={{ margin: 0, fontSize: 18 }}>Chương trình khuyến mại đang phát hành</h2>
+              </div>
+              <button
+                type="button"
+                className="btn btn-ghost"
+                onClick={() => setPromoModalOpen(false)}
+                aria-label="Đóng modal khuyến mại"
+              >
+                <IconX size={18} />
+              </button>
+            </div>
+
+            {/* Thông tin đơn hàng hiện tại */}
+            <div className="pos-promo-order-summary-box">
+              <div className="order-stat">
+                <span>Giỏ hàng:</span>
+                <strong>{cartItems.length} sản phẩm</strong>
+              </div>
+              <div className="order-stat">
+                <span>Tạm tính:</span>
+                <strong style={{ fontSize: 15, color: 'var(--primary)' }}>{formatVNDText(subtotal)}</strong>
+              </div>
+            </div>
+
+            {/* Thông báo không có chương trình khuyến mại phù hợp / lỗi khi kiểm tra (UML Activity Diagram) */}
+            {promoNotice && (
+              <div className={`alert alert-${promoNotice.type || 'error'}`} style={{ marginBottom: 14 }} role="alert">
+                <span className="alert-icon"><IconAlertCircle size={18} /></span>
+                <span className="alert-content">{promoNotice.message}</span>
+                <button
+                  type="button"
+                  className="alert-close"
+                  onClick={() => setPromoNotice(null)}
+                  aria-label="Đóng thông báo"
+                >
+                  <IconX size={15} />
+                </button>
+              </div>
+            )}
+
+            {/* Bộ lọc tìm kiếm và chuyển tab */}
+            <div className="pos-promo-filter-bar">
+              <div className="field-inline pos-promo-search-input">
+                <input
+                  type="search"
+                  value={promoSearch}
+                  onChange={(e) => setPromoSearch(e.target.value)}
+                  placeholder="Tìm theo mã hoặc tên khuyến mại..."
+                  aria-label="Tìm khuyến mại"
+                />
+              </div>
+            </div>
+
+            <div className="pos-promo-tabs">
+              <button
+                type="button"
+                className={`pos-promo-tab-btn${promoFilterTab === 'ALL' ? ' active' : ''}`}
+                onClick={() => setPromoFilterTab('ALL')}
+              >
+                Tất cả ({promotions.length})
+              </button>
+              <button
+                type="button"
+                className={`pos-promo-tab-btn${promoFilterTab === 'ELIGIBLE' ? ' active' : ''}`}
+                onClick={() => setPromoFilterTab('ELIGIBLE')}
+              >
+                Đủ điều kiện ({eligibleCount})
+              </button>
+              <button
+                type="button"
+                className={`pos-promo-tab-btn${promoFilterTab === 'INELIGIBLE' ? ' active' : ''}`}
+                onClick={() => setPromoFilterTab('INELIGIBLE')}
+              >
+                Chưa đủ điều kiện ({ineligibleCount})
+              </button>
+            </div>
+
+            {/* Danh sách thẻ khuyến mại */}
+            <div className="pos-promo-list">
+              {loadingPromos ? (
+                <div className="pos-promo-empty">Đang tải danh sách khuyến mại...</div>
+              ) : filteredPromotions.length === 0 ? (
+                <div className="pos-promo-empty">
+                  <IconAlertCircle size={32} style={{ margin: '0 auto 8px', opacity: 0.5 }} />
+                  <p>Không có chương trình khuyến mại phù hợp với bộ lọc.</p>
+                </div>
+              ) : (
+                filteredPromotions.map((p) => {
+                  const isApplied = appliedPromo?.promotionCode?.toUpperCase() === p.code?.toUpperCase();
+                  const { eligible, reason } = checkPromoEligibility(p);
+                  const estDiscount = getEstimatedDiscount(p);
+
+                  return (
+                    <div
+                      key={p.id || p.code}
+                      className={`pos-promo-card-item${isApplied ? ' is-applied' : ''}${!eligible ? ' is-ineligible' : ''}`}
+                    >
+                      <div className="pos-promo-card-top">
+                        <div className="pos-promo-card-left">
+                          <div className="pos-promo-discount-badge">
+                            <span className="badge-val">
+                              {p.type === 'PERCENT' ? `-${p.discountValue}%` : `-${formatShortVND(p.discountValue)}`}
+                            </span>
+                            <span className="badge-unit">
+                              {p.type === 'PERCENT' ? 'Giảm %' : 'Giảm tiền'}
+                            </span>
+                          </div>
+                          <div className="pos-promo-card-main">
+                            <div className="pos-promo-code-wrap">
+                              <span className="pos-promo-code-text">{p.code}</span>
+                              <button
+                                type="button"
+                                className="btn btn-ghost btn-sm"
+                                style={{ padding: '2px 6px', height: 'auto' }}
+                                onClick={() => {
+                                  if (navigator.clipboard?.writeText) {
+                                    navigator.clipboard.writeText(p.code).catch(() => {});
+                                  }
+                                  toast.info(`Đã sao chép mã: ${p.code}`);
+                                }}
+                                title="Sao chép mã"
+                              >
+                                <IconCopy size={13} />
+                              </button>
+                              {isApplied && (
+                                <span className="badge badge-success">Đang dùng</span>
+                              )}
+                            </div>
+                            <div className="pos-promo-name-title">{p.name}</div>
+                            {p.description && <div className="pos-promo-desc">{p.description}</div>}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="pos-promo-card-meta">
+                        {p.minOrderAmount != null && Number(p.minOrderAmount) > 0 && (
+                          <span>Đơn tối thiểu: <strong>{formatVNDText(p.minOrderAmount)}</strong></span>
+                        )}
+                        {p.type === 'PERCENT' && p.maxDiscountAmount != null && Number(p.maxDiscountAmount) > 0 && (
+                          <span>Giảm tối đa: <strong>{formatVNDText(p.maxDiscountAmount)}</strong></span>
+                        )}
+                        {p.endDate && (
+                          <span>HSD: <strong>{new Date(p.endDate).toLocaleDateString('vi-VN')}</strong></span>
+                        )}
+                      </div>
+
+                      <div className="pos-promo-card-bottom">
+                        <div className={`pos-promo-eligibility-status ${eligible ? 'eligible' : 'ineligible'}`}>
+                          {eligible ? (
+                            <>
+                              <IconCheckCircle size={15} />
+                              <span>{reason} (Tiết kiệm: <strong>{formatVNDText(estDiscount)}</strong>)</span>
+                            </>
+                          ) : (
+                            <>
+                              <IconAlertCircle size={15} />
+                              <span>{reason}</span>
+                            </>
+                          )}
+                        </div>
+
+                        {isApplied ? (
+                          <button
+                            type="button"
+                            className="btn btn-sm btn-outline"
+                            onClick={handleRemovePromo}
+                          >
+                            Hủy mã
+                          </button>
+                        ) : (
+                          <button
+                            type="button"
+                            className={`btn btn-sm ${eligible ? 'btn-primary' : 'btn-outline'}`}
+                            onClick={() => handleApplyCode(p.code)}
+                            disabled={applyingPromo}
+                          >
+                            {applyingPromo ? 'Đang kiểm tra...' : 'Áp dụng'}
+                          </button>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+
+            <div className="modal-actions" style={{ marginTop: 16 }}>
+              <button
+                type="button"
+                className="btn btn-outline"
+                onClick={() => setPromoModalOpen(false)}
+              >
+                Đóng
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
+}
+
+function formatShortVND(val) {
+  const n = Number(val || 0);
+  if (n >= 1000000) return `${(n / 1000000).toFixed(n % 1000000 === 0 ? 0 : 1)}Tr`;
+  if (n >= 1000) return `${(n / 1000).toFixed(n % 1000 === 0 ? 0 : 0)}K`;
+  return `${n}đ`;
 }
 
 function stripPrefix(name) {

@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { api, getErrorMessage } from '../../services/api';
 import { useToast } from '../../context/ToastContext';
-import { IconAlertCircle, IconX } from '../../components/Icons';
+import { IconAlertCircle, IconSearch, IconX } from '../../components/Icons';
+import { validateCustomerSearch } from '../../utils/validators';
 import {
   formatVNDText, formatDateTime, TIER_LABELS,
   ORDER_STATUS_LABELS, ORDER_STATUS_BADGES,
@@ -15,7 +16,10 @@ import { VN_PROVINCES } from '../../data/vnLocations';
 export default function AdminCustomersPage({ salesMode }) {
   const toast = useToast();
   const [items, setItems] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
   const [q, setQ] = useState('');
+  const [searchError, setSearchError] = useState('');
+  const [searched, setSearched] = useState(false);
   const [page, setPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(true);
@@ -38,6 +42,7 @@ export default function AdminCustomersPage({ salesMode }) {
   const load = useCallback(() => {
     let alive = true;
     setLoading(true);
+    setError('');
     api
       .get('/customers', { params: { q, page, size: 10 } })
       .then((res) => {
@@ -46,7 +51,15 @@ export default function AdminCustomersPage({ salesMode }) {
         setTotalPages(res.data.totalPages || 1);
       })
       .catch((err) => {
-        if (alive) setError(getErrorMessage(err, 'Không tải được danh sách khách hàng.'));
+        if (!alive) return;
+        const msg = getErrorMessage(err, 'Không tải được danh sách khách hàng.');
+        if (err.response?.status === 400) {
+          setSearchError(msg);
+          setItems([]);
+          setTotalPages(1);
+        } else {
+          setError(msg);
+        }
       })
       .finally(() => {
         if (alive) setLoading(false);
@@ -59,6 +72,48 @@ export default function AdminCustomersPage({ salesMode }) {
   useEffect(() => {
     load();
   }, [load]);
+
+  /** Xử lý tìm kiếm khách hàng theo chuẩn Luồng chính & Luồng phụ Use Case */
+  function handleSearch(e) {
+    if (e) e.preventDefault();
+    const raw = searchInput.trim();
+
+    if (!raw) {
+      // Nếu xóa trắng ô tìm kiếm và nhấn tìm
+      setSearchError('');
+      setSearched(false);
+      if (q) {
+        setQ('');
+        setPage(0);
+      }
+      return;
+    }
+
+    // Kiểm tra Luồng phụ 2: Thông tin nhập vào không hợp lệ (mã độc, sai định dạng,...)
+    const validation = validateCustomerSearch(raw);
+    if (!validation.valid) {
+      setSearchError(validation.error);
+      setSearched(true);
+      setItems([]);
+      setTotalPages(1);
+      return;
+    }
+
+    // Luồng chính: Hợp lệ -> thực hiện truy vấn
+    setSearchError('');
+    setSearched(true);
+    setPage(0);
+    setQ(raw);
+  }
+
+  /** Xóa tiêu chí tìm kiếm và quay về danh sách mặc định */
+  function handleClearSearch() {
+    setSearchInput('');
+    setQ('');
+    setSearchError('');
+    setSearched(false);
+    setPage(0);
+  }
 
   function openCreate() {
     setNotice('');
@@ -192,17 +247,67 @@ export default function AdminCustomersPage({ salesMode }) {
       </header>
 
       <section className="admin-toolbar">
-        <input
-          type="search"
-          value={q}
-          onChange={(e) => {
-            setQ(e.target.value);
-            setPage(0);
-          }}
-          placeholder="Tìm theo tên, SĐT hoặc email..."
-          aria-label="Tìm kiếm khách hàng"
-        />
+        <form
+          onSubmit={handleSearch}
+          noValidate
+          style={{ display: 'flex', gap: 10, flexWrap: 'wrap', alignItems: 'center', width: '100%', maxWidth: 720 }}
+        >
+          <div style={{ position: 'relative', flex: 1, minWidth: 260 }}>
+            <input
+              type="search"
+              value={searchInput}
+              onChange={(e) => {
+                setSearchInput(e.target.value);
+                if (searchError) setSearchError('');
+              }}
+              placeholder="Tìm theo tên, SĐT hoặc email..."
+              aria-label="Tìm kiếm khách hàng"
+              style={{ width: '100%' }}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary" style={{ minHeight: 44, padding: '0 18px' }}>
+            <IconSearch size={16} style={{ marginRight: 6 }} /> Tìm kiếm
+          </button>
+          {(q || searchInput || searchError) && (
+            <button
+              type="button"
+              className="btn btn-outline"
+              onClick={handleClearSearch}
+              style={{ minHeight: 44, padding: '0 14px' }}
+            >
+              Xóa tìm kiếm
+            </button>
+          )}
+        </form>
       </section>
+
+      {/* Luồng phụ 2: Lỗi thông tin nhập vào không hợp lệ (mã độc SQL, sai định dạng,...) */}
+      {searchError && (
+        <div className="alert alert-error" role="alert" style={{ marginBottom: 16 }}>
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">
+            <strong>Thông tin nhập vào không hợp lệ:</strong> {searchError}
+          </span>
+          <button
+            type="button"
+            className="alert-close"
+            onClick={() => setSearchError('')}
+            aria-label="Đóng thông báo"
+          >
+            <IconX size={15} />
+          </button>
+        </div>
+      )}
+
+      {/* Luồng phụ 1: Không tìm thấy khách hàng khớp tiêu chí */}
+      {!searchError && searched && !loading && items.length === 0 && (
+        <div className="alert alert-warning" role="alert" style={{ marginBottom: 16 }}>
+          <span className="alert-icon"><IconAlertCircle size={18} /></span>
+          <span className="alert-content">
+            <strong>Không tìm thấy khách hàng:</strong> Không có khách hàng nào khớp với tiêu chí tìm kiếm "{q}".
+          </span>
+        </div>
+      )}
 
       {error && (
         <div className="alert alert-error" role="alert">
@@ -262,7 +367,17 @@ export default function AdminCustomersPage({ salesMode }) {
               ))}
               {items.length === 0 && (
                 <tr>
-                  <td colSpan={7} className="muted-text">Không có dữ liệu.</td>
+                  <td colSpan={7} className="muted-text" style={{ textAlign: 'center', padding: '32px 16px' }}>
+                    {searchError ? (
+                      <span style={{ color: 'var(--color-danger, #b91c1c)' }}>
+                        Thông tin nhập vào không hợp lệ. Hệ thống yêu cầu người dùng nhập lại đúng thông tin.
+                      </span>
+                    ) : searched && q ? (
+                      <span>Không tìm thấy khách hàng.</span>
+                    ) : (
+                      'Không có dữ liệu.'
+                    )}
+                  </td>
                 </tr>
               )}
             </tbody>
