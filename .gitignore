@@ -32,3 +32,5 @@ tools/.m2/
 postman/
 
 data/
+.attach_pid*
+backend/.attach_pid*
