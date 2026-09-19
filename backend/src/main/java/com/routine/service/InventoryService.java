@@ -30,6 +30,9 @@ public class InventoryService {
     private final ProductRepository productRepository;
     private final UserRepository userRepository;
 
+    private static final String EMAIL_REGEX =
+            "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$";
+
     // ==================== NHÀ CUNG CẤP ====================
 
     @Transactional(readOnly = true)
@@ -42,22 +45,123 @@ public class InventoryService {
 
     @Transactional
     public Supplier createSupplier(Supplier supplier) {
-        if (supplier.getTrangThai() == null) supplier.setTrangThai("ACTIVE");
+        if (supplier == null) {
+            throw new BadRequestException("Thông tin nhà cung cấp không được để trống");
+        }
+        if (supplier.getMaNcc() == null || supplier.getMaNcc().isBlank()) {
+            throw new BadRequestException("Mã nhà cung cấp không được để trống");
+        }
+        String maNcc = supplier.getMaNcc().trim();
+        if (supplierRepository.existsByMaNccIgnoreCase(maNcc)) {
+            throw new BadRequestException("Mã nhà cung cấp đã tồn tại: " + maNcc);
+        }
+        supplier.setMaNcc(maNcc);
+
+        if (supplier.getTenNcc() == null || supplier.getTenNcc().isBlank()) {
+            throw new BadRequestException("Tên nhà cung cấp không được để trống");
+        }
+        supplier.setTenNcc(supplier.getTenNcc().trim());
+
+        supplier.setSoDienThoai(validateSupplierPhone(supplier.getSoDienThoai()));
+        supplier.setEmail(validateSupplierEmail(supplier.getEmail()));
+
+        if (supplier.getDiaChi() != null) {
+            supplier.setDiaChi(supplier.getDiaChi().trim());
+        }
+        if (supplier.getNguoiLienHe() != null) {
+            supplier.setNguoiLienHe(supplier.getNguoiLienHe().trim());
+        }
+        if (supplier.getGhiChu() != null) {
+            supplier.setGhiChu(supplier.getGhiChu().trim());
+        }
+
+        if (supplier.getTrangThai() == null || supplier.getTrangThai().isBlank()) {
+            supplier.setTrangThai("ACTIVE");
+        } else {
+            String status = supplier.getTrangThai().trim().toUpperCase();
+            if (!status.equals("ACTIVE") && !status.equals("INACTIVE")) {
+                throw new BadRequestException("Trạng thái nhà cung cấp không hợp lệ (chỉ chấp nhận ACTIVE hoặc INACTIVE)");
+            }
+            supplier.setTrangThai(status);
+        }
+
         return supplierRepository.save(supplier);
     }
 
     @Transactional
     public Supplier updateSupplier(Long id, Supplier input) {
+        if (input == null) {
+            throw new BadRequestException("Thông tin cập nhật nhà cung cấp không được để trống");
+        }
         Supplier supplier = supplierRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Không tìm thấy nhà cung cấp #" + id));
-        supplier.setTenNcc(input.getTenNcc());
-        supplier.setDiaChi(input.getDiaChi());
-        supplier.setSoDienThoai(input.getSoDienThoai());
-        supplier.setEmail(input.getEmail());
-        supplier.setNguoiLienHe(input.getNguoiLienHe());
-        supplier.setGhiChu(input.getGhiChu());
-        if (input.getTrangThai() != null) supplier.setTrangThai(input.getTrangThai());
+
+        if (input.getMaNcc() != null && !input.getMaNcc().isBlank()) {
+            String maNcc = input.getMaNcc().trim();
+            if (supplierRepository.existsByMaNccIgnoreCaseAndIdNot(maNcc, id)) {
+                throw new BadRequestException("Mã nhà cung cấp đã tồn tại: " + maNcc);
+            }
+            supplier.setMaNcc(maNcc);
+        }
+
+        if (input.getTenNcc() != null) {
+            if (input.getTenNcc().isBlank()) {
+                throw new BadRequestException("Tên nhà cung cấp không được để trống");
+            }
+            supplier.setTenNcc(input.getTenNcc().trim());
+        }
+
+        if (input.getDiaChi() != null) {
+            supplier.setDiaChi(input.getDiaChi().trim());
+        }
+        if (input.getSoDienThoai() != null) {
+            supplier.setSoDienThoai(validateSupplierPhone(input.getSoDienThoai()));
+        }
+        if (input.getEmail() != null) {
+            supplier.setEmail(validateSupplierEmail(input.getEmail()));
+        }
+        if (input.getNguoiLienHe() != null) {
+            supplier.setNguoiLienHe(input.getNguoiLienHe().trim());
+        }
+        if (input.getGhiChu() != null) {
+            supplier.setGhiChu(input.getGhiChu().trim());
+        }
+        if (input.getTrangThai() != null && !input.getTrangThai().isBlank()) {
+            String status = input.getTrangThai().trim().toUpperCase();
+            if (!status.equals("ACTIVE") && !status.equals("INACTIVE")) {
+                throw new BadRequestException("Trạng thái nhà cung cấp không hợp lệ (chỉ chấp nhận ACTIVE hoặc INACTIVE)");
+            }
+            supplier.setTrangThai(status);
+        }
         return supplierRepository.save(supplier);
+    }
+
+    public String validateSupplierPhone(String phone) {
+        if (phone == null || phone.isBlank()) {
+            return null;
+        }
+        String trimmed = phone.trim();
+        if (!trimmed.matches("^[0-9]+$")) {
+            throw new BadRequestException("Số điện thoại chỉ được chứa các chữ số");
+        }
+        if (trimmed.length() != 10) {
+            throw new BadRequestException("Số điện thoại phải bao gồm đúng 10 chữ số");
+        }
+        if (!trimmed.startsWith("0")) {
+            throw new BadRequestException("Số điện thoại phải bắt đầu bằng chữ số 0 (ví dụ: 0901234567)");
+        }
+        return trimmed;
+    }
+
+    public String validateSupplierEmail(String email) {
+        if (email == null || email.isBlank()) {
+            return null;
+        }
+        String trimmed = email.trim();
+        if (!trimmed.matches(EMAIL_REGEX)) {
+            throw new BadRequestException("Định dạng email không hợp lệ");
+        }
+        return trimmed;
     }
 
     /** Xoá mềm: vô hiệu hoá NCC (giữ lịch sử phiếu nhập). */

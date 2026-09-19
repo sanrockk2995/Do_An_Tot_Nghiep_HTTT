@@ -15,4 +15,8 @@ public interface SupplierRepository extends JpaRepository<Supplier, Long> {
                OR LOWER(s.maNcc) LIKE LOWER(CONCAT('%', :q, '%'))
             """)
     List<Supplier> search(@Param("q") String q);
+
+    boolean existsByMaNccIgnoreCase(String maNcc);
+
+    boolean existsByMaNccIgnoreCaseAndIdNot(String maNcc, Long id);
 }

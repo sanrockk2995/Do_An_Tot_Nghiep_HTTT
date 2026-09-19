@@ -23,6 +23,9 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
+    private static final String EMAIL_REGEX =
+            "^[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\\.)+[A-Za-z]{2,}$";
+
     @Transactional(readOnly = true)
     public List<OtherDtos.StaffResponse> getAll() {
         return userRepository.findAll().stream()
@@ -32,18 +35,29 @@ public class UserService {
     @Transactional
     public OtherDtos.StaffResponse create(OtherDtos.StaffRequest request) {
         validateRole(request.getRole());
+        if (request.getFullName() == null || request.getFullName().isBlank()) {
+            throw new BadRequestException("Họ tên không được để trống");
+        }
+        if (request.getEmail() == null || !request.getEmail().matches(EMAIL_REGEX)) {
+            throw new BadRequestException("Định dạng email không hợp lệ");
+        }
         if (userRepository.existsByEmailIgnoreCase(request.getEmail())) {
             throw new BadRequestException("Email đã được sử dụng");
         }
         if (request.getPassword() == null || request.getPassword().isBlank()) {
             throw new BadRequestException("Mật khẩu không được để trống");
         }
+        if (request.getPassword().length() < 6) {
+            throw new BadRequestException("Mật khẩu phải có độ dài tối thiểu 6 ký tự");
+        }
+
+        String validatedPhone = validatePhone(request.getPhone());
 
         User user = User.builder()
                 .email(request.getEmail())
                 .passwordHash(passwordEncoder.encode(request.getPassword()))
-                .fullName(request.getFullName())
-                .phone(request.getPhone())
+                .fullName(request.getFullName().trim())
+                .phone(validatedPhone)
                 .branch(request.getBranch())
                 .role(request.getRole())
                 .isActive(true)
@@ -55,12 +69,19 @@ public class UserService {
     public OtherDtos.StaffResponse update(Long id, OtherDtos.StaffRequest request) {
         validateRole(request.getRole());
         User user = getUser(id);
-        user.setFullName(request.getFullName());
-        if (request.getPhone() != null) user.setPhone(request.getPhone());
+        if (request.getFullName() != null && !request.getFullName().isBlank()) {
+            user.setFullName(request.getFullName().trim());
+        }
+        if (request.getPhone() != null) {
+            user.setPhone(validatePhone(request.getPhone()));
+        }
         user.setBranch(request.getBranch());
         // Không cho tự hạ vai trò của chính mình khỏi ADMIN duy nhất... đơn giản: cho phép đổi role
         user.setRole(request.getRole());
         if (request.getPassword() != null && !request.getPassword().isBlank()) {
+            if (request.getPassword().length() < 6) {
+                throw new BadRequestException("Mật khẩu phải có độ dài tối thiểu 6 ký tự");
+            }
             user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
         }
         return toResponse(userRepository.save(user));
@@ -76,8 +97,12 @@ public class UserService {
     @Transactional
     public OtherDtos.StaffResponse updateMyProfile(OtherDtos.MyProfileRequest request) {
         User user = getUser(com.routine.security.SecurityUtils.currentUserId());
-        user.setFullName(request.getFullName());
-        user.setPhone(request.getPhone());
+        if (request.getFullName() != null && !request.getFullName().isBlank()) {
+            user.setFullName(request.getFullName().trim());
+        }
+        if (request.getPhone() != null) {
+            user.setPhone(validatePhone(request.getPhone()));
+        }
         if (request.getBranch() != null) user.setBranch(request.getBranch());
         return toResponse(userRepository.save(user));
     }
@@ -92,6 +117,23 @@ public class UserService {
         }
         user.setIsActive(active);
         return toResponse(userRepository.save(user));
+    }
+
+    public String validatePhone(String phone) {
+        if (phone == null || phone.isBlank()) {
+            return null;
+        }
+        String trimmed = phone.trim();
+        if (!trimmed.matches("^[0-9]+$")) {
+            throw new BadRequestException("Số điện thoại chỉ được chứa các chữ số");
+        }
+        if (trimmed.length() != 10) {
+            throw new BadRequestException("Số điện thoại phải bao gồm đúng 10 chữ số");
+        }
+        if (!trimmed.startsWith("0")) {
+            throw new BadRequestException("Số điện thoại phải bắt đầu bằng chữ số 0 (ví dụ: 0901234567)");
+        }
+        return trimmed;
     }
 
     private void validateRole(String role) {
