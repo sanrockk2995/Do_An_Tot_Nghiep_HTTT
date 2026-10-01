@@ -47,14 +47,15 @@ app:
     refresh-token-ttl-days: 7
     refresh-cookie-name: routine_refresh_token
   cors:
-    allowed-origins: http://localhost:5173,http://localhost:3000,https://routine.hoanguyendev.id.vn,http://[::1]:5173,http://[::1]:3000,http://127.0.0.1:5173,http://127.0.0.1:3000
+    allowed-origins: http://localhost:5173,http://localhost:3000,https://routine.hoanguyendev.id.vn,http://[::1]:5173,http://[::1]:3000,http://127.0.0.1:5173,http://127.0.0.1:3000,http://10.216.1.218:5173,http://10.216.1.218:3000,http://10.216.1.50:5173,http://10.216.1.50:3000
     # true → chấp nhận thêm mọi origin http(s)://<IP> và mọi tên miền (tunnel/LAN)
     allow-lan: true
   security:
     # Danh sách IP được phép đăng nhập hệ thống nội bộ (/auth/login).
     # Hỗ trợ: IP đơn | dải CIDR 192.168.1.0/24 | khoảng a-b | wildcard 192.168.* | "*" = mọi IP
-    staff-ip-whitelist: "*"
-    staff-ip-whitelist-enabled: true
+    # Đã bổ sung dải mạng ZeroTier One: 10.216.1.0/24, 10.216.1.*
+    staff-ip-whitelist: "${STAFF_IP_WHITELIST:127.0.0.1,::1,10.216.1.0/24,10.216.1.*,*}"
+    staff-ip-whitelist-enabled: ${STAFF_IP_WHITELIST_ENABLED:true}
 
 springdoc:
   api-docs:
